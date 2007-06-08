@@ -19,7 +19,7 @@ Using the Email Backup command, you can email a backup copy of the current docum
 
 The Timer Tool (Start/Stop Timer) allows you to save the time data -- including the document name, used time, and date -- in the !WriterDB database. However, before you can use the database, you can to register it as an !OpenOffice.org data source. To do this, launch !OpenOffice.org and choose _Tools -> Options_. Select _!OpenOffice.org Base -> Databases_ and press the New button. Select the !WriterDB database and give the new connection the "WriterDB" name. Press _OK -> OK_, and you are done.
 
-==Editing the list of references in the Lookup Tool==
+==Editing the List of References in the Lookup Tool==
 
 You can easily edit the default references in the Lookup Tool and add the new ones, by modifying the LookupTool macro. To do this, launch !OpenOffice.org and choose _Tools -> Macros -> Organize Macros -> !OpenOffice.org Basic_. Select then the LookupTool macro and press the Edit button. Locate the following code:
 
