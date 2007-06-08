@@ -11,4 +11,6 @@ http://writertools.googlecode.com/svn/trunk/
 
 CHANGELOG
 
+* Version 0.7.1 Ask Oxford reference added to the Lookup tool.
+
 * Version 0.7.1 2007-06-08 The Timer tool (Start/Stop Timer) can now save the time data in the accompanying WriterDB database. The new version also adds a simple Word Hunt game, where you have to guess the word randomly picked by Writer.
