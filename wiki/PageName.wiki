@@ -1,0 +1,11 @@
+#How to change the default Firefox browser.
+
+=Changing the Default Browser=
+
+The Writer's Tools extension uses Firefox browser, and it expects to find it in the Program Files folder (on Windows). If you are using another browser or a non-US version of Windows, you have to update the default browser path. To do this, launch OpenOffice.org and choose _Tools -> Macros -> Organize Macros -> OpenOffice.org Basic_. Select then the !LookupTool macro as shown in the figure below and press the Edit button:
+
+Replace all occurrences of the `"C:\Program Files\Mozilla Firefox\firefox.exe"` string with the correct path, for example:
+
+`"C:\Program Files\Opera\opera.exe"` or `"C:\Programmer\Opera\opera.exe"`
+
+Save the changes, and you are done.
