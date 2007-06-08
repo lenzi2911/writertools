@@ -31,10 +31,10 @@ URLArray=Array("http://en.wikipedia.org/wiki/",_
 "http://www.askoxford.com/results/?view=searchresults&freesearch=")
 }}}
 
-The URLArray contains HTTP strings used to look up the currently selected word in a particular reference. Let'say you want  to add the Ask Oxford reference (http://www.askoxford.com/) to the Lookup Tool. First of all, do a simple search, and note the query URL. It should look something like this:
+The URLArray contains HTTP strings used to look up the currently selected word in a particular reference. Let'say you want  to add the Dictionary.com reference (http://dictionary.reference.com/) to the Lookup Tool. First of all, do a simple search, and note the query URL. It should look something like this:
 
 {{{
-http://www.askoxford.com/results/?view=searchresults&freesearch={SEARCHTERM}
+http://dictionary.reference.com/browse/{SEARCHTERM}
 }}}
 
 All you have to do is to add it to the URLArray as follows:
@@ -44,5 +44,8 @@ URLArray=Array("http://en.wikipedia.org/wiki/",_
 "http://dictionary.cambridge.org/results.asp?searchword=",_
 "http://www.google.com/search?q=define%3A",_
 "http://wordnet.princeton.edu/perl/webwn?s=",_
-"http://www.askoxford.com/results/?view=searchresults&freesearch=")
+"http://www.askoxford.com/results/?view=searchresults&freesearch=",_
+"http://dictionary.reference.com/browse/")
 }}}
+
+Next, you have to add the "Ask Oxford" entry to the drop-down list in the Lookup dialog. Click on the !LookupDialog tab at the bottom of the OpenOffice.org Basic IDE, then double-click on the drop-down list. In the Properties, add the Dictionary.com item in the List entries drop-down list (use Shift+Enter to add new line). Save the changes, and you are done.
