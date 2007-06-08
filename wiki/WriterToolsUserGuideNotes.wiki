@@ -1,18 +1,20 @@
 #labels Featured,Phase-Deploy
 =Writer's Tools User Guide Notes=
 
+==Installing Writer's Tools==
+
+To install the Writer's Tools extension, download the latest release. Unzip the downloaded file. Launch !OpenOffice.org, and choose _Tools -> Extension Manager_ (_Package Manager_ in older versions of !OpenOffice.org). Select the //My Extensions// section, and press the Add button. Select the downloaded extension (the !WriterTools.oxt package), and press OK. Restart !OpenOffice.org, and you should see the Writer's Tools menu in the Main toolbar.
+
 ==Changing the Default Browser==
 
 The Writer's Tools extension uses Firefox browser, and it expects to find it in the Program Files folder (on Windows). If you are using another browser or a non-US version of Windows, you have to update the default browser path. To do this, launch !OpenOffice.org and choose _Tools -> Macros -> Organize Macros -> !OpenOffice.org Basic_. Select then the !LookupTool macro as shown in the figure below and press the Edit button:
 
-Replace all occurrences of the `"C:\Program Files\Mozilla Firefox\firefox.exe"` string with the correct path, for example:
-
-`"C:\Program Files\Opera\opera.exe"` or `"C:\Programmer\Opera\opera.exe"`
-
-Save the changes, and you are done.
-
+Replace all occurrences of the `"C:\Program Files\Mozilla Firefox\firefox.exe"` string with the correct path, for example,`"C:\Program Files\Opera\opera.exe"` or `"C:\Programmer\Opera\opera.exe"`. Save the changes, and you are done.
 
 ==Automating the Email Backup tool==
 
 Using the Email Backup command, you can email a backup copy of the current document to a specified email address. If you are using a specific email address for all your backups, you might want to add it to the command, so you don't have to type it every single time. To do this, launch !OpenOffice.org and choose _Tools -> Macros -> Organize Macros -> !OpenOffice.org Basic_. Select then the EMailBackup macro and press the Edit button. Locate the following line `MailAddress=InputBox("Email address")` and replace the `InputBox("Email address")` part with your actual email address, for example, `MailAddress="user@email.org"`.
 
+==Using the WriterDB database with the Timer tool==
+
+The Timer Tool (Start/Stop Timer) allows you to save the time data -- including the document name, used time, and date -- in the !WriterDB database. However, before you can use the database, you can to register it as an !OpenOffice.org data source. To do this, launch !OpenOffice.org and choose _Tools -> Options_. Select _!OpenOffice.org Base -> Databases_ and press the New button. Select the !WriterDB database and give the new connection the "WriterDB" name. Press _OK -> OK_, and you are done.
