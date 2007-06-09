@@ -31,7 +31,7 @@ URLArray=Array("http://en.wikipedia.org/wiki/",_
 "http://www.askoxford.com/results/?view=searchresults&freesearch=")
 }}}
 
-The URLArray contains HTTP strings used to look up the currently selected word in a particular reference. Let'say you want  to add the Dictionary.com reference (http://dictionary.reference.com/) to the Lookup Tool. First of all, do a simple search, and note the query URL. It should look something like this:
+The URLArray contains HTTP strings used to look up the currently selected word in a particular reference. Let's say you want  to add the Dictionary.com reference (http://dictionary.reference.com/) to the Lookup Tool. First of all, do a simple search, and note the query URL. It should look something like this:
 
 {{{
 http://dictionary.reference.com/browse/{SEARCHTERM}
