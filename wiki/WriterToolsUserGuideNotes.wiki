@@ -21,7 +21,7 @@ The Timer Tool (Start/Stop Timer) allows you to save the time data -- including 
 
 ==Editing the List of References in the Lookup Tool==
 
-You can easily edit the default references in the Lookup Tool and add the new ones, by modifying the LookupTool macro. To do this, launch !OpenOffice.org and choose _Tools -> Macros -> Organize Macros -> !OpenOffice.org Basic_. Select then the LookupTool macro and press the Edit button. Locate the following code:
+You can easily edit the default references in the Lookup Tool and add the new ones, by modifying the !LookupTool macro. To do this, launch !OpenOffice.org and choose _Tools -> Macros -> Organize Macros -> !OpenOffice.org Basic_. Select then the !LookupTool macro and press the Edit button. Locate the following code:
 
 {{{
 URLArray=Array("http://en.wikipedia.org/wiki/",_
@@ -49,3 +49,13 @@ URLArray=Array("http://en.wikipedia.org/wiki/",_
 }}}
 
 Next, you have to add the "Ask Oxford" entry to the drop-down list in the Lookup dialog. Click on the !LookupDialog tab at the bottom of the OpenOffice.org Basic IDE, then double-click on the drop-down list. In the Properties, add the Dictionary.com item in the List entries drop-down list (use Shift+Enter to add new line). Save the changes, and you are done.
+
+==Word Hunt Game==
+
+Writer's Tools features a simple game, where Writer randomly picks one of five words and you task is to guess it. The default words are: apple, potato, carrot, cucumber, and orange. To change the default set, launch !OpenOffice.org and choose _Tools -> Macros -> Organize Macros -> !OpenOffice.org Basic_. Select then the _!WordGame -> !WordHunt_ macro and press the Edit button. Locate the following code:
+
+{{{
+WordArray=Array("apple", "potato", "carrot", "cucumber", "orange")
+}}}
+
+Replace the words in the array with your own.
