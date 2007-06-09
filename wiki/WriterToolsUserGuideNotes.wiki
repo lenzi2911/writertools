@@ -48,7 +48,7 @@ URLArray=Array("http://en.wikipedia.org/wiki/",_
 "http://dictionary.reference.com/browse/")
 }}}
 
-Next, you have to add the "Ask Oxford" entry to the drop-down list in the Lookup dialog. Click on the !LookupDialog tab at the bottom of the !OpenOffice.org Basic IDE, then double-click on the drop-down list. In the Properties, add the Dictionary.com item in the List entries drop-down list (use Shift+Enter to add new line). Save the changes, and you are done.
+Next, you have to add the Dictionary.com entry to the drop-down list in the Lookup dialog. Click on the !LookupDialog tab at the bottom of the !OpenOffice.org Basic IDE, then double-click on the drop-down list. In the Properties window, add the Dictionary.com item in the List entries drop-down list (use Shift+Enter to add new line). Save the changes, and you are done.
 
 ==Word Hunt Game==
 
