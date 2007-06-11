@@ -11,7 +11,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 0.7.2
+VERSION 0.7.2 2007-06-11
   * Ask Oxford reference added to the Lookup tool.
   * Added Russian to the Google Translate tool (thanks to Konstantin Lavrov).
   * Fixed the HTTP link for the Google Translate tool on Linux.
