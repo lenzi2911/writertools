@@ -77,10 +77,13 @@ DialogField2.SelectItemPos(1, True)
 If Dialog.Execute=exitOK Then
 CurrentItemPos1=DialogField1.SelectedItemPos
 CurrentItemPos2=DialogField2.SelectedItemPos
+Dim s as string
+s = ConvertToUrl(GoogleTranslateURL &amp; TranslateWord.String) &amp; &quot;&amp;hl=&quot;&amp; TargetLanguage(CurrentItemPos2) &amp; &quot;&amp;langpair=&quot; &amp; SourceLanguage(CurrentItemPos1)&amp; &quot;|&quot; &amp; TargetLanguage(CurrentItemPos2)
+
  If GetGUIType=1 Then
-  Shell(&quot;C:\Program Files\Mozilla Firefox\firefox.exe&quot;,1, GoogleTranslateURL &amp;&quot;&quot;&quot;&quot;&amp; TranslateWord.String &amp;&quot;&quot;&quot;&quot; &amp; &quot;&amp;langpair=&quot; &amp; SourceLanguage(CurrentItemPos1)&amp; &quot;|&quot; &amp; TargetLanguage(CurrentItemPos2))
+  Shell(&quot;C:\Program Files\Mozilla Firefox\firefox.exe&quot;,1, s)
  Else
-  Shell(&quot;firefox&quot;,1, GoogleTranslateURL &amp;&quot;&quot;&quot;&quot;&amp; TranslateWord.String &amp;&quot;&quot;&quot;&quot; &amp; &quot;&amp;langpair=&quot; &amp; SourceLanguage(CurrentItemPos1)&amp; &quot;|&quot; &amp; TargetLanguage(CurrentItemPos2))
+  Shell(&quot;firefox&quot;,1, s)
  End If
 End If
 

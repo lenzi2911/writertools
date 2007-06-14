@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
-<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="TranslateDialog" dlg:left="167" dlg:top="51" dlg:width="201" dlg:height="164" dlg:closeable="true" dlg:moveable="true">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="TranslateDialog" dlg:left="167" dlg:top="51" dlg:width="201" dlg:height="164" dlg:help-text="&amp;34.TranslateDialog.HelpText" dlg:closeable="true" dlg:moveable="true" dlg:title="&amp;35.TranslateDialog.Title">
  <dlg:styles>
   <dlg:style dlg:style-id="0" dlg:text-color="0x999999" dlg:font-name="Bitstream Vera Sans" dlg:font-height="17" dlg:font-stylename="Roman" dlg:font-family="swiss" dlg:font-weight="150"/>
   <dlg:style dlg:style-id="1" dlg:font-name="Bitstream Vera Sans" dlg:font-height="9" dlg:font-stylename="Oblique" dlg:font-family="swiss" dlg:font-slant="italic"/>
@@ -8,42 +8,42 @@
   <dlg:style dlg:style-id="3" dlg:font-name="Bitstream Vera Sans" dlg:font-height="9" dlg:font-stylename="Oblique" dlg:font-family="swiss"/>
  </dlg:styles>
  <dlg:bulletinboard>
-  <dlg:text dlg:style-id="0" dlg:id="Label1" dlg:tab-index="0" dlg:left="31" dlg:top="13" dlg:width="137" dlg:height="16" dlg:value="GOOGLE TRANSLATE" dlg:align="center"/>
-  <dlg:text dlg:style-id="1" dlg:id="Label2" dlg:tab-index="1" dlg:left="31" dlg:top="34" dlg:width="137" dlg:height="17" dlg:value="Select the desired language pair and press the Translate button." dlg:align="center" dlg:multiline="true"/>
-  <dlg:fixedline dlg:id="FixedLine1" dlg:tab-index="2" dlg:left="10" dlg:top="55" dlg:width="178" dlg:height="2"/>
-  <dlg:menulist dlg:style-id="2" dlg:id="ListBox1" dlg:tab-index="3" dlg:left="10" dlg:top="74" dlg:width="178" dlg:height="12" dlg:spin="true">
+  <dlg:text dlg:style-id="0" dlg:id="Label1" dlg:tab-index="0" dlg:left="31" dlg:top="13" dlg:width="137" dlg:height="16" dlg:help-text="&amp;36.TranslateDialog.Label1.HelpText" dlg:value="&amp;37.TranslateDialog.Label1.Label" dlg:align="center"/>
+  <dlg:text dlg:style-id="1" dlg:id="Label2" dlg:tab-index="1" dlg:left="31" dlg:top="34" dlg:width="137" dlg:height="17" dlg:help-text="&amp;38.TranslateDialog.Label2.HelpText" dlg:value="&amp;39.TranslateDialog.Label2.Label" dlg:align="center" dlg:multiline="true"/>
+  <dlg:fixedline dlg:id="FixedLine1" dlg:tab-index="2" dlg:left="10" dlg:top="55" dlg:width="178" dlg:height="2" dlg:help-text="&amp;40.TranslateDialog.FixedLine1.HelpText" dlg:value="&amp;41.TranslateDialog.FixedLine1.Label"/>
+  <dlg:menulist dlg:style-id="2" dlg:id="ListBox1" dlg:tab-index="3" dlg:left="10" dlg:top="74" dlg:width="178" dlg:height="12" dlg:help-text="&amp;42.TranslateDialog.ListBox1.HelpText" dlg:spin="true">
    <dlg:menupopup>
-    <dlg:menuitem dlg:value="English"/>
-    <dlg:menuitem dlg:value="German"/>
-    <dlg:menuitem dlg:value="French"/>
-    <dlg:menuitem dlg:value="Italian"/>
-    <dlg:menuitem dlg:value="Spanish"/>
-    <dlg:menuitem dlg:value="Portugese"/>
-    <dlg:menuitem dlg:value="Arabic"/>
-    <dlg:menuitem dlg:value="Japanese"/>
-    <dlg:menuitem dlg:value="Korean"/>
-    <dlg:menuitem dlg:value="Simplified Chinese"/>
-    <dlg:menuitem dlg:value="Russian"/>
+    <dlg:menuitem dlg:value="&amp;43.ListBox1.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;44.ListBox1.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;45.ListBox1.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;46.ListBox1.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;47.ListBox1.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;48.ListBox1.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;49.ListBox1.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;50.ListBox1.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;51.ListBox1.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;52.ListBox1.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;53.ListBox1.StringItemList"/>
    </dlg:menupopup>
   </dlg:menulist>
-  <dlg:button dlg:id="CommandButton1" dlg:tab-index="4" dlg:left="37" dlg:top="132" dlg:width="58" dlg:height="18" dlg:value="Translate" dlg:button-type="ok"/>
-  <dlg:button dlg:id="CommandButton2" dlg:tab-index="5" dlg:left="104" dlg:top="132" dlg:width="58" dlg:height="18" dlg:value="Cancel" dlg:button-type="cancel"/>
-  <dlg:menulist dlg:style-id="2" dlg:id="ListBox2" dlg:tab-index="6" dlg:left="11" dlg:top="102" dlg:width="178" dlg:height="12" dlg:spin="true">
+  <dlg:button dlg:id="CommandButton1" dlg:tab-index="4" dlg:left="37" dlg:top="132" dlg:width="58" dlg:height="18" dlg:help-text="&amp;54.TranslateDialog.CommandButton1.HelpText" dlg:value="&amp;55.TranslateDialog.CommandButton1.Label" dlg:button-type="ok"/>
+  <dlg:button dlg:id="CommandButton2" dlg:tab-index="5" dlg:left="104" dlg:top="132" dlg:width="58" dlg:height="18" dlg:help-text="&amp;56.TranslateDialog.CommandButton2.HelpText" dlg:value="&amp;57.TranslateDialog.CommandButton2.Label" dlg:button-type="cancel"/>
+  <dlg:menulist dlg:style-id="2" dlg:id="ListBox2" dlg:tab-index="6" dlg:left="11" dlg:top="102" dlg:width="178" dlg:height="12" dlg:help-text="&amp;58.TranslateDialog.ListBox2.HelpText" dlg:spin="true">
    <dlg:menupopup>
-    <dlg:menuitem dlg:value="English"/>
-    <dlg:menuitem dlg:value="German"/>
-    <dlg:menuitem dlg:value="French"/>
-    <dlg:menuitem dlg:value="Italian"/>
-    <dlg:menuitem dlg:value="Spanish"/>
-    <dlg:menuitem dlg:value="Portugese"/>
-    <dlg:menuitem dlg:value="Arabic"/>
-    <dlg:menuitem dlg:value="Japanese"/>
-    <dlg:menuitem dlg:value="Korean"/>
-    <dlg:menuitem dlg:value="Simplified Chinese"/>
-    <dlg:menuitem dlg:value="Russian"/>
+    <dlg:menuitem dlg:value="&amp;59.ListBox2.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;60.ListBox2.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;61.ListBox2.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;62.ListBox2.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;63.ListBox2.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;64.ListBox2.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;65.ListBox2.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;66.ListBox2.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;67.ListBox2.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;68.ListBox2.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;69.ListBox2.StringItemList"/>
    </dlg:menupopup>
   </dlg:menulist>
-  <dlg:text dlg:style-id="3" dlg:id="Label3" dlg:tab-index="7" dlg:left="10" dlg:top="63" dlg:width="52" dlg:height="8" dlg:value="Translate from:" dlg:multiline="true"/>
-  <dlg:text dlg:style-id="3" dlg:id="Label4" dlg:tab-index="8" dlg:left="10" dlg:top="92" dlg:width="48" dlg:height="8" dlg:value="Translate to:" dlg:multiline="true"/>
+  <dlg:text dlg:style-id="3" dlg:id="Label3" dlg:tab-index="7" dlg:left="10" dlg:top="63" dlg:width="52" dlg:height="8" dlg:help-text="&amp;70.TranslateDialog.Label3.HelpText" dlg:value="&amp;71.TranslateDialog.Label3.Label" dlg:multiline="true"/>
+  <dlg:text dlg:style-id="3" dlg:id="Label4" dlg:tab-index="8" dlg:left="10" dlg:top="92" dlg:width="48" dlg:height="8" dlg:help-text="&amp;72.TranslateDialog.Label4.HelpText" dlg:value="&amp;73.TranslateDialog.Label4.Label" dlg:multiline="true"/>
  </dlg:bulletinboard>
 </dlg:window>

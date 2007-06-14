@@ -4,10 +4,11 @@
     <node oor:name="OfficeMenuBar">
       <node oor:name="org.openoffice.Office.addon.WriterTools" oor:op="replace">
         <prop oor:name="Context" oor:type="xs:string">
-          <value/>
+            <value>com.sun.star.text.TextDocument</value>
         </prop>
         <prop oor:name="Title" oor:type="xs:string">
           <value>Writer&apos;s Tools</value>
+          <value xml:lang="ru-RU">Writer&apos;s Tools</value>
         </prop>
         <node oor:name="Submenu">
           <node oor:name="menu01" oor:op="replace">
@@ -16,6 +17,7 @@
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
               <value>Lookup Tool</value>
+              <value xml:lang="ru-RU">Поиск</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
               <value>macro:///WriterTools.Tools.LookupTool</value>
@@ -33,6 +35,7 @@
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
               <value>Google Translate</value>
+              <value xml:lang="ru-RU">Перевод с Google</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
               <value>macro:///WriterTools.Tools.GoogleTranslate</value>
@@ -72,6 +75,7 @@
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
               <value>Multi-format Backup</value>
+              <value xml:lang="ru-RU">Мульти-Архив</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
               <value>macro:///WriterTools.Tools.MultiFormatBackup</value>
@@ -94,6 +98,7 @@
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
               <value>Open FTP Document</value>
+              <value xml:lang="ru-RU">Открыть документ по FTP</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
               <value>macro:///WriterTools.Tools.OpenFTP</value>
@@ -116,6 +121,7 @@
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
               <value>Convert to DokuWiki</value>
+              <value xml:lang="ru-RU">Преобразовать в DokuWiki</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
               <value>macro:///WriterTools.modDokuWiki.DokuWiki</value>
@@ -138,6 +144,7 @@
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
               <value>Start Timer</value>
+              <value xml:lang="ru-RU">Запустить таймер</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
               <value>macro:///WriterTools.Timer.StartTiming</value>
@@ -155,6 +162,7 @@
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
               <value>Stop Timer</value>
+              <value xml:lang="ru-RU">Остановить таймер</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
               <value>macro:///WriterTools.Timer.EndTiming</value>
@@ -177,6 +185,7 @@
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
               <value>Word Hunt Game</value>
+              <value xml:lang="ru-RU">Word Hunt Game</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
               <value>macro:///WriterTools.WordGame.WordHunt</value>
