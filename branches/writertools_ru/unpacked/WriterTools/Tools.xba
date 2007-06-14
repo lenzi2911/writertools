@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">
+<script:module xmlns:script="http://openoffice.org/2000/script" script:name="Tools" script:language="StarBasic">&apos;************************************************************
+&apos;	Copyright © 2007 Dmitri Popov
+&apos;	Anyone may run this code.
+&apos;	If you wish to modify or distribute this code, then
+&apos;	 you are granted a license to do so under the terms
+&apos;	 of the Gnu General Public License.
+&apos;	See:  http://www.gnu.org/licenses/gpl.html
+&apos;************************************************************
+
+Sub LookupTool()
+
+Dim Dialog As Object, Library As Object
+Dim TheDialog As Object, DialogField As Object
+Dim exitOK As String, CurrentItemPos As Integer
+
+URLArray=Array(&quot;http://en.wikipedia.org/wiki/&quot;,_
+&quot;http://dictionary.cambridge.org/results.asp?searchword=&quot;,_
+&quot;http://www.google.com/search?q=define%3A&quot;,_
+&quot;http://wordnet.princeton.edu/perl/webwn?s=&quot;,_
+&quot;http://www.askoxford.com/results/?view=searchresults&amp;freesearch=&quot;)
+
+ThisDoc=ThisComponent
+LookupWord=ThisDoc.CurrentController.getViewCursor
+If LookupWord.String =&quot;&quot; then MsgBox &quot;Please select a word to look up!&quot; : End
+
+
+exitOK=com.sun.star.ui.dialogs.ExecutableDialogResults.OK
+DialogLibraries.LoadLibrary(&quot;WriterTools&quot;)
+Library=DialogLibraries.GetByName(&quot;WriterTools&quot;)
+TheDialog=Library.GetByName(&quot;LookupDialog&quot;)
+
+Dialog=CreateUnoDialog(TheDialog)
+DialogField=Dialog.GetControl(&quot;ListBox1&quot;)
+DialogField.SelectItemPos(1, True)
+
+If Dialog.Execute=exitOK Then
+CurrentItemPos=DialogField.SelectedItemPos
+ If GetGUIType=1 Then
+  Shell(&quot;C:\Program Files\Mozilla Firefox\firefox.exe&quot;,1, URLArray(CurrentItemPos) &amp; LookupWord.String)
+ Else
+  Shell(&quot;firefox&quot;,1, URLArray(CurrentItemPos) &amp; LookupWord.String)
+ End If
+End If
+
+Dialog.Dispose
+
+End Sub
+
+Sub GoogleTranslate()
+
+Dim Dialog As Object, Library As Object
+Dim TheDialog As Object, DialogField As Object
+Dim exitOK As String, CurrentItemPos As Integer
+
+GoogleTranslateURL=&quot;http://translate.google.com/translate_t?text=&quot;
+SourceLanguage=Array(&quot;en&quot;, &quot;de&quot;, &quot;fr&quot;, &quot;it&quot;, &quot;es&quot;, &quot;pt&quot;, &quot;ar&quot;, &quot;ja&quot;, &quot;ko&quot;, &quot;zh-CN&quot;, &quot;ru&quot;)
+TargetLanguage=Array(&quot;en&quot;, &quot;de&quot;, &quot;fr&quot;, &quot;it&quot;, &quot;es&quot;, &quot;pt&quot;, &quot;ar&quot;, &quot;ja&quot;, &quot;ko&quot;, &quot;zh-CN&quot;, &quot;ru&quot;)
+
+ThisDoc=ThisComponent
+TranslateWord=ThisDoc.CurrentController.getViewCursor
+If TranslateWord.String =&quot;&quot; then MsgBox &quot;Please select a word to look up!&quot; : End
+
+
+exitOK=com.sun.star.ui.dialogs.ExecutableDialogResults.OK
+DialogLibraries.LoadLibrary(&quot;WriterTools&quot;)
+Library=DialogLibraries.GetByName(&quot;WriterTools&quot;)
+TheDialog=Library.GetByName(&quot;TranslateDialog&quot;)
+
+Dialog=CreateUnoDialog(TheDialog)
+DialogField1=Dialog.GetControl(&quot;ListBox1&quot;)
+DialogField1.SelectItemPos(0, True)
+DialogField2=Dialog.GetControl(&quot;ListBox2&quot;)
+DialogField2.SelectItemPos(1, True)
+
+If Dialog.Execute=exitOK Then
+CurrentItemPos1=DialogField1.SelectedItemPos
+CurrentItemPos2=DialogField2.SelectedItemPos
+ If GetGUIType=1 Then
+  Shell(&quot;C:\Program Files\Mozilla Firefox\firefox.exe&quot;,1, GoogleTranslateURL &amp;&quot;&quot;&quot;&quot;&amp; TranslateWord.String &amp;&quot;&quot;&quot;&quot; &amp; &quot;&amp;langpair=&quot; &amp; SourceLanguage(CurrentItemPos1)&amp; &quot;|&quot; &amp; TargetLanguage(CurrentItemPos2))
+ Else
+  Shell(&quot;firefox&quot;,1, GoogleTranslateURL &amp;&quot;&quot;&quot;&quot;&amp; TranslateWord.String &amp;&quot;&quot;&quot;&quot; &amp; &quot;&amp;langpair=&quot; &amp; SourceLanguage(CurrentItemPos1)&amp; &quot;|&quot; &amp; TargetLanguage(CurrentItemPos2))
+ End If
+End If
+
+Dialog.Dispose
+
+End Sub
+
+Sub EMailBackup()
+Dim MailAddress As String, MessageSubject As String
+Dim ThisDocURL As String, DocDir As String, FileName As String
+Dim MailAgent As Object, MailClient As Object, MailMessage As Object, ThisDoc As Object
+Dim Args()
+
+ThisDoc=ThisComponent
+If ThisDoc.hasLocation=False Then
+MsgBox &quot;You must save the document first!&quot; :End
+End If
+ThisDocURL=ThisDoc.getURL()
+
+If ThisDoc.isModified Then
+ThisDoc.storeAsURL(ThisDocURL, Args)
+End if
+
+If (Not GlobalScope.BasicLibraries.isLibraryLoaded(&quot;Tools&quot;)) Then
+GlobalScope.BasicLibraries.LoadLibrary(&quot;Tools&quot;)
+End If
+
+DocDir=DirectoryNameoutofPath(ThisDocURL, &quot;/&quot;)
+FileName=Dir(ThisDocURL, 0)
+
+MailAddress=InputBox(&quot;Email address&quot;)
+MessageSubject=&quot;[OOO_DOC_BACKUP] &quot; &amp; FileName &amp; &quot; &quot; &amp; CDateToISO(Date) &amp; &quot; - &quot; &amp; _
+Format(Hour(Now), &quot;00&quot;) &amp; &quot;:&quot; &amp; _
+Format(Minute(Now), &quot;00&quot;) &amp; &quot;:&quot;  &amp; _
+Format(Second(Now), &quot;00&quot;)
+
+If MailAddress=&quot;&quot; then MsgBox &quot;The email address field is empty!&quot; : End
+
+If GetGUIType=1 Then
+MailAgent=CreateUnoService(&quot;com.sun.star.system.SimpleSystemMail&quot;)
+Else
+MailAgent=CreateUnoService(&quot;com.sun.star.system.SimpleCommandMail&quot;)
+End If
+MailClient=MailAgent.querySimpleMailClient()
+MailMessage=MailClient.createSimpleMailMessage()
+
+MailMessage.setRecipient(MailAddress)
+MailMessage.setSubject(MessageSubject)
+MailMessage.setAttachement(Array(ThisDocURL))
+
+MailClient.sendSimpleMailMessage(MailMessage, 1)
+  
+MsgBox &quot;All done!&quot;
+  
+End Sub
+
+Sub OpenFTP()
+
+Dim Dialog As Object, Library As Object
+Dim ObjDialog As Object, exitOK As Integer
+Dim sConnectionString As String
+Dim sFileName As String
+Dim fServer As Object, Server As String
+Dim fUsername As Object, Username As String
+Dim fPassword As Object, Password As String
+Dim fDocmument As Object, Document As String
+
+exitOK=com.sun.star.ui.dialogs.ExecutableDialogResults.OK
+
+DialogLibraries.LoadLibrary(&quot;WriterTools&quot;)
+Library=DialogLibraries.GetByName(&quot;WriterTools&quot;)
+TheDialog=Library.GetByName(&quot;FTPDialog&quot;)
+
+Dialog=CreateUnoDialog(TheDialog)
+
+If Dialog.Execute=exitOK then
+  fServer=Dialog.GetControl(&quot;TextField1&quot;)
+  Server=fServer.Text
+  fUsername=Dialog.GetControl(&quot;TextField2&quot;)
+  Username=fUsername.Text
+  fPassword=Dialog.GetControl(&quot;TextField3&quot;)
+  Password=fPassword.Text
+  fDocument=Dialog.GetControl(&quot;TextField4&quot;)
+  Document=fDocument.Text
+  ConnectionString=&quot;ftp://&quot;&amp; Username &amp; &quot;:&quot; &amp; Password &amp; &quot;@&quot; &amp; Server &amp; &quot;/&quot; &amp; Document
+  ThisDoc=StarDesktop.loadComponentFromURL(ConnectionString, &quot;_blank&quot;, 0, Array())
+End If
+
+End Sub
+
+ Sub MultiFormatBackup()
+Dim ThisDoc As Object
+Dim DocURL As String, DocDir As String, DocName As String, TarString As String
+Dim Args(0) As New com.sun.star.beans.PropertyValue
+ThisDoc=ThisComponent
+
+If (Not GlobalScope.BasicLibraries.isLibraryLoaded(&quot;Tools&quot;)) Then
+GlobalScope.BasicLibraries.LoadLibrary(&quot;Tools&quot;)
+End If
+
+If ThisDoc.hasLocation=False Then
+MsgBox &quot;You must save the document first!&quot; :End
+End If
+
+DocURL=ThisDoc.getURL()
+DocDir=DirectoryNameoutofPath(DocURL, &quot;/&quot;)
+FileName=Left(Dir(DocURL, 0), Len(Dir(DocURL, 0))-4)
+
+Args(0).Name=&quot;FilterName&quot;
+Args(0).Value=&quot;Text&quot;
+BackupFilePath=ConvertToURL(DocDir &amp; &quot;/&quot; &amp; CDateToISO(Date()) &amp; &quot;/&quot; &amp; FileName &amp; &quot;.txt&quot;)
+
+ThisDoc.StoreToURL(BackupFilePath, Args())
+Args(0).Name=&quot;FilterName&quot;
+Args(0).Value=&quot;Rich Text Format&quot;
+BackupFilePath=ConvertToURL(DocDir &amp; &quot;/&quot; &amp; CDateToISO(Date()) &amp; &quot;/&quot; &amp; FileName &amp; &quot;.rtf&quot;)
+
+ThisDoc.StoreToURL(BackupFilePath, Args())
+Args(0).Name=&quot;FilterName&quot;
+Args(0).Value=&quot;MS Word 97&quot;
+BackupFilePath=ConvertToURL(DocDir &amp; &quot;/&quot; &amp; CDateToISO(Date()) &amp; &quot;/&quot; &amp; FileName &amp; &quot;.doc&quot;)
+ThisDoc.StoreToURL(BackupFilePath, Args())
+
+If GetGUIType=4 Then
+ TarString=&quot; -cjvf &quot; &amp; ConvertFromURL(DocDir) &amp; &quot;/&quot; &amp; CDateToISO(Date()) &amp; &quot;.tar.bz2 &quot; &amp; ConvertFromURL(DocDir) &amp; &quot;/&quot; &amp; CDateToISO(Date()
+ Shell(&quot;tar&quot;, 1, TarString)
+End If
+
+MsgBox &quot;All done!&quot;
+End Sub
+</script:module>

@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">
+<script:module xmlns:script="http://openoffice.org/2000/script" script:name="modDokuWiki" script:language="StarBasic">&apos;Created: 2004-12-08
+&apos;Last modified: 2005-04-01
+
+
+&apos;Creating a new document that contains the current document in DokuWiki format
+
+&apos;************************************************************
+&apos;	Copyright © 2005 Ian Laurenson
+&apos;	Anyone may run this code.
+&apos;	If you wish to modify or distribute this code, then
+&apos;	 you are granted a license to do so under the terms
+&apos;	 of the Gnu Lesser General Public License.
+&apos;	See:  http://www.gnu.org/licenses/lgpl.html
+&apos;************************************************************
+
+const sBOLDSTART=&quot;**&quot;
+const sBOLDEND=&quot;**&quot;
+const sUNDERSTART=&quot;__&quot;
+const sUNDEREND=&quot;__&quot;
+const sITALICSTART=&quot;//&quot;
+const sITALICEND=&quot;//&quot;
+const sMONOSTART=&quot;&apos;&apos;&quot;
+const sMONOEND=&quot;&apos;&apos;&quot;
+const sSUPERSTART=&quot;&lt;sup&gt;&quot;
+const sSUPEREND=&quot;&lt;/sup&gt;&quot;
+const sSUBSTART=&quot;&lt;sub&gt;&quot;
+const sSUBEND=&quot;&lt;/sub&gt;&quot;
+const sDELSTART=&quot;&lt;del&gt;&quot;
+const sDELEND=&quot;&lt;/del&gt;&quot;
+const sFOOTSTART=&quot;((&quot;
+const sFOOTEND=&quot;))&quot;
+const sHEADCHAR=&quot;=&quot;
+const sHORIZLINE=&quot;----&quot;
+const sTABLESEP=&quot;|&quot;
+const sTABLEHEADSEP=&quot;^&quot;
+const sNEWLINE=&quot;\\ &quot;
+const sLITERALSTART=&quot;%%&quot;
+const sLITERALEND=&quot;%%&quot;
+const sORDEREDLIST=&quot;-&quot;
+const sUNORDEREDLIST=&quot;*&quot;
+const sHYPERSTART=&quot;[[&quot;
+const sHYPEREND=&quot;]]&quot;
+const sPICTURESTART=&quot;{{wiki:&quot;
+const sPICTUREEND=&quot;}}&quot;
+const sCODESTART=&quot;&lt;code &quot;
+
+const sDEFAULTCODE=&quot;oobas&quot;
+
+private sLineEnd as string
+
+private s as string
+private oVC
+private bInCode as boolean
+private mCodes
+
+&apos;This routine processes all html files in a directory tree. 
+sub Folders
+dim mTextFile(0)
+
+mTextFile(0)=createUnoStruct(&quot;com.sun.star.beans.PropertyValue&quot;)
+mTextFile(0).Name=&quot;FilterName&quot;
+mTextFile(0).Value=&quot;Text&quot;
+
+basicLibraries.loadLibrary(&quot;Tools&quot;)
+&apos;ReadDirectories(ByVal AnchorDir As String, bRecursive as Boolean,  bcheckFileType as Boolean, bGetByTitle as Boolean, Optional sFileContent(), Optional sExtension as String)
+mFiles=ReadDirectories(&quot;/var/www/html/dokuwiki/data/ref&quot;, true,  false, false,,&quot;html&quot;)
+
+&apos;sStart=&quot;file:///var/www/html/dokuwiki/data/&quot;
+&apos;nStart=len(sStart) + 1
+
+for i=0 to uBound(mfiles)
+	sFile=mFiles(i)
+	if right(sFile,5)=&quot;.html&quot; then
+	oSourceDoc=StarDesktop.loadComponentFromURL(sFile, &quot;_blank&quot;, 0, Array())
+	oText=oSourceDoc.text
+
+	oDestDoc=StarDesktop.loadComponentFromURL( &quot;private:factory/swriter&quot;, &quot;_blank&quot;, 0, Array() ) 
+	oDestText=oDestDoc.getText()
+&apos;	oCursor=oDestText.createTextCursor()
+	oVC=oDestDoc.currentController.viewCursor
+	subDokuWiki(oText)
+
+&apos;	oVC.text.insertString(oVC.text.end, &quot;[[http://api.openoffice.org/docs/common/&quot; &amp; mid(sFile, nStart) &amp; &quot;]]&quot;, false)
+	oDestDoc.storeAsUrl(left(sFile,len(sFile)-4) &amp; &quot;txt&quot;, mTextFile())
+	oDestDoc.close(true)
+
+	oSourceDoc.close(false)
+&apos;	kill sFile	&apos;Uncomment this line to remove the original file
+	end if
+next
+end sub
+
+
+&apos;This is the main routine to run on the currently open document
+sub DokuWiki
+oSourceDoc=thisComponent
+oDestDoc= fnDokuWiki(oSourceDoc)
+&apos;oDestDoc.close(false)
+end sub
+
+
+function fnDokuWiki(oSourceDoc)
+oText=oSourceDoc.text
+&apos;Create a new document
+oNewDoc=StarDesktop.loadComponentFromURL( &quot;private:factory/swriter&quot;, &quot;_blank&quot;, 0, Array() ) 
+oNewText=oNewDoc.getText()
+oCursor=oNewText.createTextCursor()
+&apos;oNewText.insertString(oCursor,sDokuWiki , true)
+oVC=oNewDoc.currentController.viewCursor
+mCodes=array(&quot;actionscript&quot;, &quot;ada&quot;, &quot;apache&quot;, &quot;asm&quot;, &quot;asp&quot;, &quot;bash&quot;, &quot;caddcl&quot;, &quot;cadlisp&quot;, &quot;c_mac&quot;, &quot;cpp&quot;, &quot;csharp&quot;, _
+ &quot;css&quot;, &quot;delphi&quot;, &quot;html4strict&quot;, &quot;javascript&quot;, &quot;java&quot;, &quot;lisp&quot;, &quot;lua&quot;, &quot;nsis&quot;, &quot;objc&quot;, &quot;oobas&quot;, &quot;pascal&quot;, &quot;perl&quot;, _
+ &quot;php-brief&quot;, &quot;php&quot;, &quot;python&quot;, &quot;qbasic&quot;, &quot;smarty&quot;, &quot;sql&quot;, &quot;vbnet&quot;, &quot;vb&quot;, &quot;visualfoxpro&quot;, &quot;xml&quot;, &quot;c&quot;)
+
+subDokuWiki(oText)
+
+&apos;Copy to clipboard
+&apos;There is a way of doing this via the API but this will do
+oVC.gotoStart(false)
+oVC.gotoEnd(true)
+oFrame=oNewDoc.CurrentController.Frame
+oDispatcher=createUnoService(&quot;com.sun.star.frame.DispatchHelper&quot;)
+oDispatcher.executeDispatch(oFrame, &quot;.uno:Copy&quot;, &quot;&quot;, 0, array())
+
+
+fnDokuWiki=oNewDoc
+end function
+
+
+sub subDokuWiki(oText)
+sLineEnd=chr(10)
+
+&apos;If not oDoc.supportsService(&quot;com.sun.star.text.TextDocument&quot;) then
+&apos;	msgBox &quot;Sorry - I can only create DokuWiki documents out of text documents&quot;, 16, &quot;Error&quot;
+&apos;	exit function
+&apos;end if
+s=&quot;&quot;
+oEnum1=oText.createEnumeration
+&apos; loop over all paragraphs
+while oEnum1.hasMoreElements
+	oTextElement=oEnum1.nextElement
+	if oTextElement.supportsService(&quot;com.sun.star.text.Paragraph&quot;) Then
+		subParagraph(oTextElement)
+	elseif oTextElement.supportsService(&quot;com.sun.star.text.TextTable&quot;) Then
+		subTable(oTextElement)
+	end if
+wend
+if bIncode then
+	subAddString(&quot;&lt;/code&gt;&quot; &amp; sLineEnd)
+end if
+end sub
+
+
+sub subParagraph(oTextElement)
+nHeadLevel=oTextElement.ParaChapterNumberingLevel + 1
+bInlist=false
+sCode=oTextElement.paraStyleName
+sCode=fnInCode(sCode)
+if bIncode and sCode =&quot;&quot; then
+	subAddString(&quot;&lt;/code&gt;&quot; &amp; sLineEnd)
+	bInCode=false
+end if
+if nHeadLevel &gt;= 1 and nHeadLevel &lt;= 5 then
+	sHead=string(7 - nHeadLevel,  sHEADCHAR)
+	subAddString(sLineEnd &amp; sHead &amp; oTextElement.string &amp; sHead &amp; sLineEnd)
+elseif sCode &lt;&gt; &quot;&quot; then
+	if not bInCode then
+		subAddString(sCODESTART &amp; sCode &amp; &quot;&gt;&quot; &amp; sLineEnd)
+		bInCode=true
+	end if
+	subAddString(oTextElement.string &amp; sLineEnd)
+else
+	if oTextElement.NumberingIsNumber then &apos;if not isEmpty(oTextElement.NumberingLevel) then
+	&apos;	xray.xray oTextElement
+		bInlist=true
+		subAddString(string((oTextElement.NumberingLevel + 1) * 2, &quot; &quot;))
+		if instr(&quot;0123456789&quot;, left(oTextElement.string, 1)) &gt; 0 then
+			subAddString(sORDEREDLIST)
+		else
+			subAddString(sUNORDEREDLIST)
+		end if
+	end if
+	oEnum2=oTextElement.createEnumeration
+	&apos; loop over all text portions
+	while oEnum2.hasMoreElements
+		oTextPortion=oEnum2.nextElement
+		subAddString(fnTextPortion(oTextPortion, false))
+	wend
+	subAddString(sLineEnd)
+	if oTextElement.bottomBorder.OuterLineWidth &gt; 0 then
+		subAddString(sHORIZLINE &amp; sLineEnd)
+	else
+		if not bInList then subAddString(sLineEnd)
+	end if
+end if
+end sub
+
+
+sub subTable(oTable)
+mCellnames=oTable.getCellNames
+
+nMaxCols=0
+for i=0 to uBound(mCellNames)
+	sCellName=mCellNames(i)
+	nCol=0
+	for j=1 to len(sCellName)
+		ch=mid(sCellName, j, 1)
+		select case ch
+		case &quot;A&quot; to &quot;Z&quot;
+			nCol=nCol * 26 + (asc(ch) - asc(&quot;A&quot;))
+		case &quot;0&quot; to &quot;9&quot;
+			&apos;nRow=val(mid(sCellName, j)) - 1
+			exit for
+		end select
+	next
+	if nCol &gt; nMaxCols then nMaxCols=nCol
+next
+
+nRows=oTable.rows.count - 1
+
+if nMaxCols=0 then
+	for i=0 to nRows
+		oCell=oTable.getCellByPosition(0, i)
+		oCellEnum=oCell.createEnumeration
+		while oCellEnum.hasMoreElements
+			subParagraph(oCellEnum.nextElement)
+		wend
+	next
+	exit sub
+end if
+		
+dim mCells(nRows, nMaxCols)
+
+&apos;for i=0 to nRows
+&apos;	for j=0 to nmaxCols - 1
+&apos;		mCells(i, j)=&quot;&quot;
+&apos;	next
+&apos;next
+
+for i=0 to uBound(mCellNames)
+	sCellName=mCellNames(i)
+	nCol=0
+	for j=1 to len(sCellName)
+		ch=mid(sCellName, j, 1)
+		select case ch
+		case &quot;A&quot; to &quot;Z&quot;
+			nCol=nCol * 26 + (asc(ch) - asc(&quot;A&quot;))
+		case &quot;0&quot; to &quot;9&quot;
+			nRow=val(mid(sCellName, j)) - 1
+			exit for
+		end select
+	next
+	oCell=oTable.getCellByName(sCellName)
+	sCell=&quot; &quot;
+	oCellEnum=oCell.createEnumeration
+	while oCellEnum.hasMoreElements
+		oTextElement=oCellEnum.nextElement
+		if sCell &lt;&gt; &quot; &quot; then
+			sCell=sCell &amp; sNEWLINE
+		end if
+
+		if oTextElement.ParaStyleName=&quot;Table Heading&quot; then
+			sSep=sTABLEHEADSEP
+		else
+			sSep=sTABLESEP
+		end if
+
+		if oTextElement.NumberingIsNumber then
+			if instr(&quot;0123456789&quot;, left(oTextElement.string, 1)) &gt; 0 then
+				sCell=sCell &amp; str(val(oTextElement.string))
+			else
+				sCell=sCell &amp; &quot;* &quot;
+			end if
+		end if
+		
+		oPortionEnum= oTextElement.createEnumeration
+		while oPortionEnum.hasMoreElements
+			oTextPortion=oPortionEnum.nextElement
+			sCell=sCell &amp; fnTextPortion(oTextPortion, true)
+		wend
+	wend
+	sCell =trim(sCell)
+	select case oTextElement.paraAdjust
+	case com.sun.star.style.ParagraphAdjust.CENTER
+		sCell=&quot;  &quot; &amp; sCell &amp; &quot;  &quot;
+	case com.sun.star.style.ParagraphAdjust.RIGHT
+		sCell=&quot;  &quot; &amp; sCell
+	end select
+	mCells(nRow, nCol)=sCell
+next
+
+for i=0 to nRows
+	sRow=&quot;&quot;
+	sRow=sRow &amp; sTableSep
+	bHeading=false
+	for j=0 to nmaxCols
+		if mCells(i, j) &lt;&gt; &quot;&quot; then
+			if j=0 and instr(mCells(i, j), chr(10))=0 then
+				bHeading=true
+			else
+				bHeading=false
+			end if
+		end if
+		sRow=sRow &amp; mCells(i, j) &amp; sTableSep
+	next
+	if bHeading then
+		if i=0 then
+			sRow=string(6, sHEADCHAR) &amp; mCells(i, 0) &amp; string(6, sHEADCHAR) &amp; sLineEnd &amp; sLineEnd
+		else
+			sRow=string(5, sHEADCHAR) &amp; mCells(i, 0) &amp; string(5, sHEADCHAR) &amp; sLineEnd &amp; sLineEnd
+		end if
+	else
+		sRow=sRow &amp; sLineEnd
+	end if
+
+	subAddString(sRow)
+next
+
+subAddString(sLineEnd)
+end sub
+
+
+function fnTextPortion(oTextPortion, bInTable as boolean)
+
+if not isNull(oTextPortion.footnote) then
+	fnTextPortion=sFOOTStart &amp; oTextPortion.footnote.string &amp; sFOOTEND
+elseif oTextPortion.hyperlinkURL &lt;&gt; &quot;&quot; then
+	&apos;NB: If the link has separate text portions (i.e. formats inside it) this will repeat the link :(
+	fnTextPortion=sHYPERSTART &amp; fnHyperConvert(oTextPortion.hyperlinkURL) &amp; sTABLESEP &amp; oTextPortion.string &amp; sHYPEREND
+elseif oTextPortion.TextPortionType=&quot;Frame&quot; then
+	&apos;The above condition may need to be tightened
+	sName=oTextPortion.createContentEnumeration(&quot;com.sun.star.text.TextContent&quot;).nextElement.name
+	if sName &lt;&gt; &quot;&quot; then
+		fnTextPortion=sPICTURESTART &amp; sName &amp; sPICTUREEND
+	end if
+else
+	sPortion=oTextPortion.string
+	if sPortion=&quot;&quot; then
+		fnTextPortion=&quot;&quot;
+		exit function
+	end if
+	if bInTable then
+		&apos;In case the separators are actually in the text of the table
+		mSplits=split(sPortion, sTABLESEP)
+		sPortion=join(mSplits, sLITERALSTART &amp; sTABLESEP &amp; sLITERALEND)
+		mSplits=split(sPortion, sTABLEHEADSEP)
+		sPortion=join(mSplits, sLITERALSTART &amp; sTABLEHEADSEP &amp; sLITERALEND)	
+	else
+		&apos;In the unlikley event of a paragraph starting and finishing with separator characters.
+		sFirstChar=left(sPortion, 1)
+		if sFirstChar=sTABLESEP or sFirstChar=sTABLEHEADSEP then
+			sPortion=sLITERALSTART &amp; sFirstChar &amp; sLITERALEND &amp; mid(sPortion,2)
+		end if
+	end if
+	&apos;Convert smart quotes
+	mSplits=split(sPortion, &quot;“&quot;)
+	sPortion=join(mSplits, chr(34))
+	mSplits=split(sPortion, &quot;”&quot;)
+	sPortion=join(mSplits, chr(34))
+	mSplits=split(sPortion, &quot;‘&quot;)
+	sPortion=join(mSplits, &quot;&apos;&quot;)
+	mSplits=split(sPortion, &quot;’&quot;)
+	sPortion=join(mSplits, &quot;&apos;&quot;)
+	&apos;Convert em dashes
+	mSplits=split(sPortion, &quot;–&quot;)
+	sPortion=join(mSplits, &quot;-&quot;)
+	&apos;In case the text holds any of the formatting charaters make sure that they are treated literally
+	mSplits=split(sPortion, sBOLDSTART)
+	sPortion=join(mSplits, sLITERALSTART &amp; sBOLDSTART &amp; sLITERALEND)
+	mSplits=split(sPortion, sUNDERSTART)
+	sPortion=join(mSplits, sLITERALSTART &amp; sUNDERSTART &amp; sLITERALEND)
+	mSplits=split(sPortion, sITALICSTART)
+	sPortion=join(mSplits, sLITERALSTART &amp; sITALICSTART &amp; sLITERALEND)
+	mSplits=split(sPortion, sMONOSTART)
+	sPortion=join(mSplits, sLITERALSTART &amp; sMONOSTART &amp; sLITERALEND)
+	mSplits=split(sPortion, sSUPERSTART)
+	sPortion=join(mSplits, sLITERALSTART &amp; sSUPERSTART &amp; sLITERALEND)
+	mSplits=split(sPortion, sSUBSTART)
+	sPortion=join(mSplits, sLITERALSTART &amp; sSUBSTART &amp; sLITERALEND)
+	mSplits=split(sPortion, sDELSTART)
+	sPortion=join(mSplits, sLITERALSTART &amp; sDELSTART &amp; sLITERALEND)
+	mSplits=split(sPortion, sFOOTSTART)
+	sPortion=join(mSplits, sLITERALSTART &amp; sFOOTSTART &amp; sLITERALEND)
+	mSplits=split(sPortion, sPICTURESTART)
+	sPortion=join(mSplits, sLITERALSTART &amp; sPICTURESTART &amp; sLITERALEND)
+	mSplits=split(sPortion, sCODESTART)
+	sPortion=join(mSplits, sLITERALSTART &amp; sCODESTART &amp; sLITERALEND)
+	mSplits=split(sPortion, sLineEnd)
+	sPortion=join(mSplits, sNEWLINE &amp; &quot; &quot;)
+	
+	&apos;This is not very elegant as it will produce **bold**//**bold &amp; italic**// 
+	&apos;rather than **bold//bold &amp; italic//**
+	if oTextPortion.charWeight &gt; 100 then sPortion=sBOLDSTART &amp; sPortion &amp; sBOLDEND
+	if oTextPortion.charPosture &gt; 0 then sPortion=sITALICSTART &amp; sPortion &amp; sITALICEND
+	if oTextPortion.charUnderline &gt; 0 then sPortion=sUNDERSTART &amp; sPortion &amp; sUNDEREND
+	if oTextPortion.charFontPitch=com.sun.star.awt.FontPitch.FIXED then sPortion=sMONOSTART &amp; sPortion &amp; sMONOEND
+	if oTextPortion.charEscapement &gt; 0 then sPortion=sSUPERSTART &amp; sPortion &amp; sSUPEREND
+	if oTextPortion.charEscapement &lt; 0 then sPortion=sSUBSTART &amp; sPortion &amp; sSUBEND
+	if oTextPortion.charStrikeOut &gt; 0 then sPortion=sDELSTART &amp; sPortion &amp; sDELEND
+	fnTextPortion=sPortion
+end if
+end function
+
+
+function fnHyperConvert(sURL as string) as string
+const sINTLINK=&quot;doku.php?id=&quot;
+
+&apos;sIDL=&quot;vnd.sun.star.help://sbasic/text/sbasic/shared/&quot;
+&apos;sGuide=&quot;file:///var/www/html/dokuwiki/DevelopersGuide&quot;
+&apos;nIDL=len(sIDL)
+&apos;nGuide=len(sGuide)
+nStartInternalLink=instr(sUrl, sINTLINK)
+if nStartInternalLink &gt; 0 then
+	nStartInternalLink=nStartInternalLink + len(sINTLINK)
+	fnHyperConvert=mid(sURL, nStartInternalLink)
+&apos;elseif sIDL=left(sURL, nIDL) then
+&apos;	sTemp=mid(sURL, nIDL + 1)
+&apos;	sTemp=left(stemp,(instr(sTemp, &quot;.xhp&quot;)-1))
+&apos;	mSplits=split(sTemp, &quot;.html&quot;)
+&apos;	sTemp=join(mSplits, &quot;&quot;)
+&apos;	mSplits=split(sTemp, &quot;/&quot;)
+	fnHyperConvert=sTemp	&apos;join(mSplits, &quot;:&quot;)
+&apos;elseif left(sURL, nGuide)=sGuide then
+&apos;	sTemp=&quot;http://api.openoffice.org/docs/DevelopersGuide&quot; &amp; mid(sURL, nGuide + 1)
+&apos;	mSplits=split(sTemp, &quot;.xhtml&quot;)
+&apos;	fnHyperConvert=join(mSplits, &quot;.htm&quot;)
+else
+	fnHyperConvert=sURL
+end if
+end function
+
+
+function fnInCode(sParaStyleName)
+nCode= instr(1, sParaStyleName, &quot;Code&quot;)
+
+if nCode &gt; 0 then
+	nCode=nCode + 4
+	for i=0 to ubound(mCodes)
+		if instr(nCode, sParaStyleName, mCodes(i)) &gt; 0 then
+			fnInCode=mCodes(i)
+			exit for
+		end if
+	next
+elseif sParaStyleName=&quot;Preformatted Text&quot; then
+	fnInCode=sDEFAULTCODE
+else
+	fnInCode=&quot;&quot;
+end if
+end function
+
+
+sub subAddString(sAdd as string)
+
+if sAdd=sLineEnd then	&apos;A paragraph can&apos;t be &gt; 64k therefore this hack makes sure of some paragraph breaks
+	oVC.text.insertControlCharacter(oVC, com.sun.star.text.ControlCharacter.PARAGRAPH_BREAK, False)
+else
+	oVC.text.insertString(oVC, sAdd , false)
+end if
+end sub
+
+</script:module>

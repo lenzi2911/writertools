@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="FTPDialog" dlg:left="167" dlg:top="51" dlg:width="201" dlg:height="164" dlg:closeable="true" dlg:moveable="true">
+ <dlg:styles>
+  <dlg:style dlg:style-id="0" dlg:text-color="0x999999" dlg:font-name="Bitstream Vera Sans" dlg:font-height="17" dlg:font-stylename="Roman" dlg:font-family="swiss" dlg:font-weight="150"/>
+ </dlg:styles>
+ <dlg:bulletinboard>
+  <dlg:text dlg:style-id="0" dlg:id="Label1" dlg:tab-index="0" dlg:left="37" dlg:top="16" dlg:width="121" dlg:height="16" dlg:value="CONNECT TO FTP" dlg:align="center"/>
+  <dlg:textfield dlg:id="TextField1" dlg:tab-index="1" dlg:left="12" dlg:top="47" dlg:width="178" dlg:height="12" dlg:value="FTP server (e. g., 192.168.1.7/public/)"/>
+  <dlg:textfield dlg:id="TextField2" dlg:tab-index="2" dlg:left="12" dlg:top="65" dlg:width="178" dlg:height="12" dlg:value="User name (your FTP user name)"/>
+  <dlg:textfield dlg:id="TextField3" dlg:tab-index="3" dlg:left="12" dlg:top="83" dlg:width="178" dlg:height="12" dlg:value="Password (your FTP password)"/>
+  <dlg:textfield dlg:id="TextField4" dlg:tab-index="4" dlg:left="12" dlg:top="101" dlg:width="178" dlg:height="12" dlg:value="Document name (e. g., Loremipsum.odt)"/>
+  <dlg:button dlg:id="CommandButton1" dlg:tab-index="5" dlg:left="35" dlg:top="129" dlg:width="58" dlg:height="18" dlg:value="Open" dlg:button-type="ok"/>
+  <dlg:button dlg:id="CommandButton2" dlg:tab-index="6" dlg:left="102" dlg:top="129" dlg:width="58" dlg:height="18" dlg:value="Cancel" dlg:button-type="cancel"/>
+ </dlg:bulletinboard>
+</dlg:window>
