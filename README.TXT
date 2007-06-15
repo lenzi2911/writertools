@@ -11,6 +11,9 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 0.7.3
+  * The Word Hunt game improved.
+
 VERSION 0.7.2 2007-06-11
   * Ask Oxford reference added to the Lookup tool.
   * Added Russian to the Google Translate tool (thanks to Konstantin Lavrov).
