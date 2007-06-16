@@ -62,3 +62,12 @@ WordArray=Array("apple", "potato", "carrot", "cucumber", "orange")
 
 Replace the words in the array with your own.
 
+==Importing data into the WriterDB database==
+
+The wnotes table in the WriterDB database contains a few sample records. However, in some cases, you’d want to import the existing data into the database. The following description shows hoe to import data from a Calc spreadsheet into WriterDB. First off, open WriterDB and delete the wnotes table.
+
+Since properly formatted source data can greatly simplify the import procedure, it's worth spending time on some preparatory work. First of all, you need to tweak the spreadsheets structure, so that it becomes identical to the structure of the wnotes table. Make sure that the first row contains the field names identical to those in the database table. Ideally, they should also be in the same order. Ensure that all the data bits is in the proper columns.
+
+Now select the data in the sheet and copy it into the Clipboard (_Edit -> Copy_ or Ctrl+C). In the WriterDB database, click on the Tables button, right-click somewhere in the Table pane, an choose Paste. In the Copy table dialog window, enter "wnotes" into the Table name field and select the Definitions and data option. Tick the Create primary key check box and enter "ID" into the Name field.
+
+In the Assign Columns dialog window, move all the fields into the right pane, and click Create to import the data.
