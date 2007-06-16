@@ -1,6 +1,8 @@
 #labels Featured,Phase-Deploy
 =Writer's Tools User Guide Notes=
 
+*A more comprehensive Writer's Tools User Guide is available here:* http://nothickmanuals.info/doku.php/writertools
+
 ==Installing Writer's Tools==
 
 To install the Writer's Tools extension, download the latest release. Unzip the downloaded file. Launch !OpenOffice.org, and choose _Tools -> Extension Manager_ (_Package Manager_ in older versions of !OpenOffice.org). Select the //My Extensions// section, and press the Add button. Select the downloaded extension (the !WriterTools.oxt package), and press OK. Restart !OpenOffice.org, and you should see the Writer's Tools menu in the Main toolbar.
@@ -59,3 +61,4 @@ WordArray=Array("apple", "potato", "carrot", "cucumber", "orange")
 }}}
 
 Replace the words in the array with your own.
+
