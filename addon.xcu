@@ -188,6 +188,28 @@
               <value/>
             </prop>
           </node>
+		  <node oor:name="menu09s" oor:op="replace">
+            <prop oor:name="URL" oor:type="xs:string">
+              <value>private:separator</value>
+            </prop>
+          </node>
+		  <node oor:name="menu10" oor:op="replace">
+            <prop oor:name="Context" oor:type="xs:string">
+              <value/>
+            </prop>
+            <prop oor:name="Title" oor:type="xs:string">
+              <value>Word of the Day</value>
+            </prop>
+            <prop oor:name="URL" oor:type="xs:string">
+              <value>macro:///WriterTools.WordOfTheDay.RandomWord</value>
+            </prop>
+            <prop oor:name="Target" oor:type="xs:string">
+              <value>_self</value>
+            </prop>
+            <prop oor:name="ImageIdentifier" oor:type="xs:string">
+              <value/>
+            </prop>
+          </node>
         </node>
       </node>
     </node>
@@ -279,6 +301,16 @@
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
             <value>%origin%/WriterTools/cake.png</value>
+          </prop>
+        </node>
+      </node>
+	  <node oor:name="org.openoffice.Office.addon.WriterTools.img10" oor:op="replace">
+        <prop oor:name="URL" oor:type="xs:string">
+          <value>macro:///WriterTools.WordOfTheDay.RandomWord</value>
+        </prop>
+        <node oor:name="UserDefinedImages">
+          <prop oor:name="ImageSmallURL">
+            <value>%origin%/WriterTools/randomword.png</value>
           </prop>
         </node>
       </node>
