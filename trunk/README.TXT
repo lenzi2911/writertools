@@ -1,6 +1,6 @@
 =WRITER'S TOOLS EXTENSION FOR OPENOFFICE.ORG =
 
-Copyright © 2007 Dmitri Popov
+Copyright 2007 Dmitri Popov
 Anyone may run the code associated with this document. If you wish to modify or distribute this document and or its code, then you are granted a license to do so under the terms of the GNU General Public License. See:  http://www.gnu.org/licenses/gpl.html
 
 Thanks to JohnV, Mark Bain, and other OOoForum users for their help.
@@ -13,7 +13,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 0.8.0 2007-06-17
+VERSION 0.8.1 2007-06-17
   * The Word Hunt game improved.
   * Added BEOLINGUS reference to the Lookup tool.
   * Word of the Day tool added.
