@@ -13,7 +13,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 0.8.0
+VERSION 0.8.0 2007-06-17
   * The Word Hunt game improved.
   * Added BEOLINGUS reference to the Lookup tool.
   * Word of the Day tool added.
