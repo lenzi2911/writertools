@@ -17,6 +17,7 @@ VERSION 0.8.0
   * The Word Hunt game improved.
   * Added BEOLINGUS reference to the Lookup tool.
   * Word of the Day tool added.
+  * Add to Basket tool added.
 
 VERSION 0.7.2 2007-06-11
   * Ask Oxford reference added to the Lookup tool.
