@@ -332,7 +332,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/cake.png</value>
+            <value>%origin%/WriterTools/randomword.png</value>
           </prop>
         </node>
       </node>
