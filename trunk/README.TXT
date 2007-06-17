@@ -13,6 +13,9 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 0.x.x
+  * Cosmetic changes of the messages boxes.
+
 VERSION 0.8.1 2007-06-17
   * The Word Hunt game improved.
   * Added BEOLINGUS reference to the Lookup tool.
