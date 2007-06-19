@@ -15,6 +15,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 VERSION 0.8.3 207-06-19
   * Cosmetic changes of the messages boxes.
+  * Minor improvemens to the Word Hunt game.
   * Show on the Map tool added.
 
 VERSION 0.8.1 2007-06-17
