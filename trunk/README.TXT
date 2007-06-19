@@ -13,7 +13,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 0.x.x
+VERSION 0.8.3 207-06-19
   * Cosmetic changes of the messages boxes.
   * Show on the Map tool added.
 
