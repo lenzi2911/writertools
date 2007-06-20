@@ -13,9 +13,13 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 0.8.3 207-06-19
+VERSION 0.8.5
+  * The Open FTP Document tool has been removed in favor of the new REmote Backup tool.
+  * Minor improvements to the Word Hunt game.
+
+VERSION 0.8.3 2007-06-19
   * Cosmetic changes of the messages boxes.
-  * Minor improvemens to the Word Hunt game.
+  * Minor improvements to the Word Hunt game.
   * Show on the Map tool added.
 
 VERSION 0.8.1 2007-06-17
