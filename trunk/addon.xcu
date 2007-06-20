@@ -100,20 +100,15 @@
               <value/>
             </prop>
           </node>
-		  <node oor:name="menu05s" oor:op="replace">
-            <prop oor:name="URL" oor:type="xs:string">
-              <value>private:separator</value>
-            </prop>
-          </node>
 		  <node oor:name="menu06" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
-              <value>Open FTP Document</value>
+              <value>Remote Backup</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
-              <value>macro:///WriterTools.Tools.OpenFTP</value>
+              <value>macro:///WriterTools.RemoteBackup.SaveFTPDocument</value>
             </prop>
             <prop oor:name="Target" oor:type="xs:string">
               <value>_self</value>
@@ -275,11 +270,11 @@
       </node>
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img03" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
-          <value>macro:///WriterTools.Tools.OpenFTP</value>
+          <value>macro:///WriterTools.RemoteBackup.SaveFTPDocument</value>
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/openftp.png</value>
+            <value>%origin%/WriterTools/remotebackup.png</value>
           </prop>
         </node>
       </node>
