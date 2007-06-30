@@ -13,7 +13,10 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 0.8.5 2007-06-30
+VERSION 0.8.x
+  * The Mode option added to the Google Translate Tool.
+
+VERSION 0.8.5.1 2007-06-30
   * Minor improvements and bug fixes.
 
 VERSION 0.8.5 2007-06-20
