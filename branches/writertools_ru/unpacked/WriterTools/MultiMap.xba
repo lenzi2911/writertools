@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">
+<script:module xmlns:script="http://openoffice.org/2000/script" script:name="MultiMap" script:language="StarBasic">&apos;************************************************************
+&apos;	Copyright © 2007 Dmitri Popov
+&apos;	Anyone may run this code.
+&apos;	If you wish to modify or distribute this code, then
+&apos;	 you are granted a license to do so under the terms
+&apos;	 of the Gnu General Public License.
+&apos;	See:  http://www.gnu.org/licenses/gpl.html
+&apos;************************************************************
+
+Sub ShowOnTheMap()
+
+Dim Dialog As Object, Library As Object
+Dim TheDialog As Object, DialogField As Object
+Dim exitOK As String, CurrentItemPos As Integer, AddressInfoURL As String
+
+CountryArray=Array(&quot;AU&quot;, &quot;AT&quot;, &quot;BE&quot;, &quot;CA&quot;, &quot;CN&quot;, &quot;DK&quot;, &quot;FI&quot;, &quot;FR&quot;, &quot;DE&quot;,_
+&quot;GR&quot;, &quot;HK&quot;, &quot;HU&quot;, &quot;IN&quot;, &quot;IT&quot;, &quot;LU&quot;, &quot;NL&quot;, &quot;NZ&quot;, &quot;NO&quot;, &quot;ES&quot;, &quot;SE&quot;, &quot;GB&quot;, &quot;USA&quot;, &quot;&quot;)
+MultimapURL=&quot;http://www.multimap.com/maps/#hloc=&quot;
+
+ThisDoc=ThisComponent
+AddressInfo=ThisDoc.CurrentController.getViewCursor
+If AddressInfo.String =&quot;&quot; then MsgBox (&quot;Please select an address info to map!&quot;, , &quot;Attention!&quot;) : End
+
+AddressInfoURL=Right(ConvertToURL(AddressInfo.String), Len(ConvertToURL(AddressInfo.String))-8)
+
+exitOK=com.sun.star.ui.dialogs.ExecutableDialogResults.OK
+DialogLibraries.LoadLibrary(&quot;WriterTools&quot;)
+Library=DialogLibraries.GetByName(&quot;WriterTools&quot;)
+TheDialog=Library.GetByName(&quot;MapDialog&quot;)
+
+Dialog=CreateUnoDialog(TheDialog)
+DialogField=Dialog.GetControl(&quot;ListBox1&quot;)
+DialogField.SelectItemPos(0, True)
+
+If Dialog.Execute=exitOK Then
+CurrentItemPos=DialogField.SelectedItemPos
+ If GetGUIType=1 Then
+  Shell(&quot;C:\Program Files\Mozilla Firefox\firefox.exe&quot;,1, MultimapURL &amp; CountryArray(CurrentItemPos) &amp;&quot;|&quot; &amp; AddressInfoURL)
+ Else
+  Shell(&quot;firefox&quot;,1, MultimapURL &amp; CountryArray(CurrentItemPos) &amp;&quot;|&quot; &amp; AddressInfoURL)
+ End If
+End If
+
+Dialog.Dispose
+
+End Sub
+</script:module>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">
+<script:module xmlns:script="http://openoffice.org/2000/script" script:name="BasketDB" script:language="StarBasic">Sub InsertTextSnippet()
+
+ThisDoc=ThisComponent
+TextSnippet=ThisDoc.CurrentController.getViewCursor
+If TextSnippet.String =&quot;&quot; then MsgBox (&quot;Please select a text snippet first!&quot;, , &quot;Attention!&quot;) : End
+
+DBContext=createUnoService(&quot;com.sun.star.sdb.DatabaseContext&quot;)
+DataSource=DBContext.getByName(&quot;WriterDB&quot;)
+ConnectToDB=DataSource.GetConnection (&quot;&quot;,&quot;&quot;)
+
+DateToday=Format(Year(Now), &quot;0000&quot;) &amp; &quot;-&quot; &amp; Format(Month(Now), &quot;00&quot;) &amp; &quot;-&quot;  &amp; Format(Day(Now), &quot;00&quot;)
+
+SQLQuery=&quot;INSERT INTO &quot;&quot;basket&quot;&quot; &quot; + &quot;(&quot;&quot;Snippet&quot;&quot;, &quot;&quot;Date&quot;&quot;) VALUES &quot;_
++ &quot;(&apos;&quot; + TextSnippet.String + &quot;&apos;,&apos;&quot; + DateToday + &quot;&apos;)&quot;
+
+SQLStatement=ConnectToDB.createStatement
+Result=SQLStatement.executeQuery (SQLQuery)
+
+ConnectToDB.close
+ConnectToDB.dispose()
+
+MsgBox (&quot;The text snippet has been saved.&quot;, , &quot;All done!&quot;)
+
+End Sub
+</script:module>

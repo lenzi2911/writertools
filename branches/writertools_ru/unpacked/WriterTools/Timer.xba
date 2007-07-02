@@ -61,7 +61,7 @@ DBContext=createUnoService(&quot;com.sun.star.sdb.DatabaseContext&quot;)
 DataSource=DBContext.getByName(&quot;WriterDB&quot;)
 ConnectToDB=DataSource.GetConnection (&quot;&quot;,&quot;&quot;)
 
-SQLQuery=&quot;INSERT INTO &quot;&quot;timelog&quot;&quot; &quot; + &quot;(&quot;&quot;FileName&quot;&quot;, &quot;&quot;TimeUsed&quot;&quot;, &quot;&quot;Date&quot;&quot;) VALUES &quot;_
+SQLQuery=&quot;INSERT INTO &quot;&quot;docstats&quot;&quot; &quot; + &quot;(&quot;&quot;FileName&quot;&quot;, &quot;&quot;TimeUsed&quot;&quot;, &quot;&quot;Date&quot;&quot;) VALUES &quot;_
 + &quot;(&apos;&quot; + FileName + &quot;&apos;,&apos;&quot; + ElapsedTimeMinutes + &quot;&apos;,&apos;&quot; + DateToday + &quot;&apos;)&quot;
 
 SQLStatement=ConnectToDB.createStatement
@@ -71,6 +71,8 @@ ConnectToDB.close
 ConnectToDB.dispose()
 
 ElapsedTime=0
+
+MsgBox (&quot;The data has been saved.&quot;, , &quot;All done!&quot;)
 
 End Sub
 </script:module>

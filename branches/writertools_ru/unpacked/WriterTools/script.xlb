@@ -5,4 +5,8 @@
  <library:element library:name="modDokuWiki"/>
  <library:element library:name="Timer"/>
  <library:element library:name="WordGame"/>
+ <library:element library:name="WordOfTheDay"/>
+ <library:element library:name="BasketDB"/>
+ <library:element library:name="MultiMap"/>
+ <library:element library:name="RemoteBackup"/>
 </library:library>

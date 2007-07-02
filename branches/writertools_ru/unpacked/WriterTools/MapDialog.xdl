@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="MapDialog" dlg:left="167" dlg:top="51" dlg:width="201" dlg:height="164" dlg:closeable="true" dlg:moveable="true">
+ <dlg:styles>
+  <dlg:style dlg:style-id="0" dlg:text-color="0x999999" dlg:font-name="Bitstream Vera Sans" dlg:font-height="17" dlg:font-stylename="Roman" dlg:font-family="swiss" dlg:font-weight="150"/>
+  <dlg:style dlg:style-id="1" dlg:font-name="Bitstream Vera Sans" dlg:font-height="9" dlg:font-stylename="Oblique" dlg:font-family="swiss" dlg:font-slant="italic"/>
+  <dlg:style dlg:style-id="2" dlg:font-name="Bitstream Vera Sans" dlg:font-height="9" dlg:font-stylename="Roman" dlg:font-family="swiss"/>
+ </dlg:styles>
+ <dlg:bulletinboard>
+  <dlg:text dlg:style-id="0" dlg:id="Label1" dlg:tab-index="0" dlg:left="31" dlg:top="7" dlg:width="137" dlg:height="16" dlg:value="MULTIMAP TOOL" dlg:align="center"/>
+  <dlg:text dlg:style-id="1" dlg:id="Label2" dlg:tab-index="1" dlg:left="31" dlg:top="28" dlg:width="137" dlg:height="17" dlg:value="Select the country you want and press the Map button." dlg:align="center" dlg:multiline="true"/>
+  <dlg:fixedline dlg:id="FixedLine1" dlg:tab-index="2" dlg:left="11" dlg:top="58" dlg:width="178" dlg:height="2"/>
+  <dlg:menulist dlg:style-id="2" dlg:id="ListBox1" dlg:tab-index="3" dlg:left="11" dlg:top="66" dlg:width="178" dlg:height="12" dlg:spin="true">
+   <dlg:menupopup>
+    <dlg:menuitem dlg:value="Australia"/>
+    <dlg:menuitem dlg:value="Austria"/>
+    <dlg:menuitem dlg:value="Belgium"/>
+    <dlg:menuitem dlg:value="Canada"/>
+    <dlg:menuitem dlg:value="China"/>
+    <dlg:menuitem dlg:value="Denmark"/>
+    <dlg:menuitem dlg:value="Finland"/>
+    <dlg:menuitem dlg:value="France"/>
+    <dlg:menuitem dlg:value="Germany"/>
+    <dlg:menuitem dlg:value="Greece"/>
+    <dlg:menuitem dlg:value="Hong Kong"/>
+    <dlg:menuitem dlg:value="Hungary"/>
+    <dlg:menuitem dlg:value="India"/>
+    <dlg:menuitem dlg:value="Italy"/>
+    <dlg:menuitem dlg:value="Luxembourg"/>
+    <dlg:menuitem dlg:value="Netherlands"/>
+    <dlg:menuitem dlg:value="New Zealand"/>
+    <dlg:menuitem dlg:value="Norway"/>
+    <dlg:menuitem dlg:value="Spain"/>
+    <dlg:menuitem dlg:value="Sweden"/>
+    <dlg:menuitem dlg:value="United Kingdom"/>
+    <dlg:menuitem dlg:value="United States"/>
+    <dlg:menuitem dlg:value="Rest of World"/>
+   </dlg:menupopup>
+  </dlg:menulist>
+  <dlg:button dlg:id="CommandButton1" dlg:tab-index="4" dlg:left="37" dlg:top="122" dlg:width="58" dlg:height="18" dlg:value="Map" dlg:button-type="ok"/>
+  <dlg:button dlg:id="CommandButton2" dlg:tab-index="5" dlg:left="106" dlg:top="122" dlg:width="58" dlg:height="18" dlg:value="Cancel" dlg:button-type="cancel"/>
+ </dlg:bulletinboard>
+</dlg:window>

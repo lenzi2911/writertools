@@ -47,17 +47,36 @@
               <value/>
             </prop>
           </node>
-		  <node oor:name="menu02s" oor:op="replace">
+		  <node oor:name="menu03" oor:op="replace">
+            <prop oor:name="Context" oor:type="xs:string">
+              <value/>
+            </prop>
+            <prop oor:name="Title" oor:type="xs:string">
+              <value>Show on the Map</value>
+              <value xml:lang="ru-RU">Показать на карте</value>
+            </prop>
+            <prop oor:name="URL" oor:type="xs:string">
+              <value>macro:///WriterTools.MultiMap.ShowOnTheMap</value>
+            </prop>
+            <prop oor:name="Target" oor:type="xs:string">
+              <value>_self</value>
+            </prop>
+            <prop oor:name="ImageIdentifier" oor:type="xs:string">
+              <value/>
+            </prop>
+          </node>
+		  <node oor:name="menu03s" oor:op="replace">
             <prop oor:name="URL" oor:type="xs:string">
               <value>private:separator</value>
             </prop>
           </node>
-          <node oor:name="menu03" oor:op="replace">
+          <node oor:name="menu04" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
               <value>Email Backup</value>
+              <value xml:lang="ru-RU">Email Архив</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
               <value>macro:///WriterTools.Tools.EmailBackup</value>
@@ -69,7 +88,7 @@
               <value/>
             </prop>
           </node>
-		  <node oor:name="menu04" oor:op="replace">
+		  <node oor:name="menu05" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
             </prop>
@@ -87,44 +106,16 @@
               <value/>
             </prop>
           </node>
-		  <node oor:name="menu04s" oor:op="replace">
-            <prop oor:name="URL" oor:type="xs:string">
-              <value>private:separator</value>
-            </prop>
-          </node>
-		  <node oor:name="menu05" oor:op="replace">
-            <prop oor:name="Context" oor:type="xs:string">
-              <value/>
-            </prop>
-            <prop oor:name="Title" oor:type="xs:string">
-              <value>Open FTP Document</value>
-              <value xml:lang="ru-RU">Открыть документ по FTP</value>
-            </prop>
-            <prop oor:name="URL" oor:type="xs:string">
-              <value>macro:///WriterTools.Tools.OpenFTP</value>
-            </prop>
-            <prop oor:name="Target" oor:type="xs:string">
-              <value>_self</value>
-            </prop>
-            <prop oor:name="ImageIdentifier" oor:type="xs:string">
-              <value/>
-            </prop>
-          </node>
-		  <node oor:name="menu05s" oor:op="replace">
-            <prop oor:name="URL" oor:type="xs:string">
-              <value>private:separator</value>
-            </prop>
-          </node>
 		  <node oor:name="menu06" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
-              <value>Convert to DokuWiki</value>
-              <value xml:lang="ru-RU">Преобразовать в DokuWiki</value>
+              <value>Remote Backup</value>
+              <value xml:lang="ru-RU">Внешний Архив</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
-              <value>macro:///WriterTools.modDokuWiki.DokuWiki</value>
+              <value>macro:///WriterTools.RemoteBackup.SaveFTPDocument</value>
             </prop>
             <prop oor:name="Target" oor:type="xs:string">
               <value>_self</value>
@@ -143,6 +134,29 @@
               <value/>
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
+              <value>Convert to DokuWiki</value>
+              <value xml:lang="ru-RU">Преобразовать в DokuWiki</value>
+            </prop>
+            <prop oor:name="URL" oor:type="xs:string">
+              <value>macro:///WriterTools.modDokuWiki.DokuWiki</value>
+            </prop>
+            <prop oor:name="Target" oor:type="xs:string">
+              <value>_self</value>
+            </prop>
+            <prop oor:name="ImageIdentifier" oor:type="xs:string">
+              <value/>
+            </prop>
+          </node>
+		  <node oor:name="menu07s" oor:op="replace">
+            <prop oor:name="URL" oor:type="xs:string">
+              <value>private:separator</value>
+            </prop>
+          </node>
+		  <node oor:name="menu08" oor:op="replace">
+            <prop oor:name="Context" oor:type="xs:string">
+              <value/>
+            </prop>
+            <prop oor:name="Title" oor:type="xs:string">
               <value>Start Timer</value>
               <value xml:lang="ru-RU">Запустить таймер</value>
             </prop>
@@ -156,7 +170,7 @@
               <value/>
             </prop>
           </node>
-		  <node oor:name="menu08" oor:op="replace">
+		  <node oor:name="menu09" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
             </prop>
@@ -174,12 +188,12 @@
               <value/>
             </prop>
           </node>
-		  <node oor:name="menu08s" oor:op="replace">
+		  <node oor:name="menu09s" oor:op="replace">
             <prop oor:name="URL" oor:type="xs:string">
               <value>private:separator</value>
             </prop>
           </node>
-		  <node oor:name="menu09" oor:op="replace">
+		  <node oor:name="menu10" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
             </prop>
@@ -189,6 +203,51 @@
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
               <value>macro:///WriterTools.WordGame.WordHunt</value>
+            </prop>
+            <prop oor:name="Target" oor:type="xs:string">
+              <value>_self</value>
+            </prop>
+            <prop oor:name="ImageIdentifier" oor:type="xs:string">
+              <value/>
+            </prop>
+          </node>
+		  <node oor:name="menu10s" oor:op="replace">
+            <prop oor:name="URL" oor:type="xs:string">
+              <value>private:separator</value>
+            </prop>
+          </node>
+		  <node oor:name="menu11" oor:op="replace">
+            <prop oor:name="Context" oor:type="xs:string">
+              <value/>
+            </prop>
+            <prop oor:name="Title" oor:type="xs:string">
+              <value>Word of the Day</value>
+              <value xml:lang="ru-RU">Слово дня</value>
+            </prop>
+            <prop oor:name="URL" oor:type="xs:string">
+              <value>macro:///WriterTools.WordOfTheDay.RandomWord</value>
+            </prop>
+            <prop oor:name="Target" oor:type="xs:string">
+              <value>_self</value>
+            </prop>
+            <prop oor:name="ImageIdentifier" oor:type="xs:string">
+              <value/>
+            </prop>
+          </node>
+		  <node oor:name="menu11s" oor:op="replace">
+            <prop oor:name="URL" oor:type="xs:string">
+              <value>private:separator</value>
+            </prop>
+          </node>
+		  <node oor:name="menu12" oor:op="replace">
+            <prop oor:name="Context" oor:type="xs:string">
+              <value/>
+            </prop>
+            <prop oor:name="Title" oor:type="xs:string">
+              <value>Add to Basket</value>
+            </prop>
+            <prop oor:name="URL" oor:type="xs:string">
+              <value>macro:///WriterTools.BasketDB.InsertTextSnippet</value>
             </prop>
             <prop oor:name="Target" oor:type="xs:string">
               <value>_self</value>
@@ -223,11 +282,11 @@
       </node>
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img03" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
-          <value>macro:///WriterTools.Tools.OpenFTP</value>
+          <value>macro:///WriterTools.RemoteBackup.SaveFTPDocument</value>
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/openftp.png</value>
+            <value>%origin%/WriterTools/remotebackup.png</value>
           </prop>
         </node>
       </node>
@@ -288,6 +347,36 @@
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
             <value>%origin%/WriterTools/cake.png</value>
+          </prop>
+        </node>
+      </node>
+	  <node oor:name="org.openoffice.Office.addon.WriterTools.img10" oor:op="replace">
+        <prop oor:name="URL" oor:type="xs:string">
+          <value>macro:///WriterTools.WordOfTheDay.RandomWord</value>
+        </prop>
+        <node oor:name="UserDefinedImages">
+          <prop oor:name="ImageSmallURL">
+            <value>%origin%/WriterTools/randomword.png</value>
+          </prop>
+        </node>
+      </node>
+	  <node oor:name="org.openoffice.Office.addon.WriterTools.img11" oor:op="replace">
+        <prop oor:name="URL" oor:type="xs:string">
+          <value>macro:///WriterTools.BasketDB.InsertTextSnippet</value>
+        </prop>
+        <node oor:name="UserDefinedImages">
+          <prop oor:name="ImageSmallURL">
+            <value>%origin%/WriterTools/basket.png</value>
+          </prop>
+        </node>
+      </node>
+	  <node oor:name="org.openoffice.Office.addon.WriterTools.img12" oor:op="replace">
+        <prop oor:name="URL" oor:type="xs:string">
+          <value>macro:///WriterTools.MultiMap.ShowOnTheMap</value>
+        </prop>
+        <node oor:name="UserDefinedImages">
+          <prop oor:name="ImageSmallURL">
+            <value>%origin%/WriterTools/map.png</value>
           </prop>
         </node>
       </node>

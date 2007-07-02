@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">
+<script:module xmlns:script="http://openoffice.org/2000/script" script:name="RemoteBackup" script:language="StarBasic">Sub SaveFTPDocument()
+
+Dim Args(0) As New com.sun.star.beans.PropertyValue
+ThisDoc=thisComponent
+
+
+If (Not GlobalScope.BasicLibraries.isLibraryLoaded(&quot;Tools&quot;)) Then
+GlobalScope.BasicLibraries.LoadLibrary(&quot;Tools&quot;)
+End If
+
+If ThisDoc.hasLocation=False Then
+MsgBox (&quot;You must save the document first!&quot;, , &quot;Attention!&quot;) :End
+End If
+
+ConnectionString=InputBox(&quot;Enter the FTP address&quot;, &quot;Remote Backup&quot; , &quot;ftp://user:password@192.168.1.7/pub/&quot;)
+
+If ConnectionString=&quot;&quot; then MsgBox (&quot;The FTP address field is empty!&quot;, , &quot;Attention!&quot;) : End
+
+DateToday=CDateToISO(Date) &amp; &quot;_&quot; &amp; Format(Hour(Now), &quot;00&quot;) &amp; &quot;-&quot; &amp; Format(Minute(Now), &quot;00&quot;) &amp; &quot;-&quot;  &amp; _
+Format(Second(Now), &quot;00&quot;)
+
+DocURL=ThisDoc.getURL()
+DocDir=DirectoryNameoutofPath(DocURL, GetPathSeparator())
+FileName=Dir(DocURL, 0)
+SaveFTP = ConnectionString &amp; DateToday &amp; &quot;_&quot; &amp; FileName
+Args(0).Name=&quot;Overwrite&quot;
+Args(0).Value=True
+ThisDoc.storeToURL(SaveFTP, Args())
+
+End Sub
+</script:module>

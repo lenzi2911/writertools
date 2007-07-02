@@ -17,6 +17,7 @@
     <dlg:menuitem dlg:value="Google Define"/>
     <dlg:menuitem dlg:value="WordNet"/>
     <dlg:menuitem dlg:value="Ask Oxford"/>
+    <dlg:menuitem dlg:value="BEOLINGUS"/>
    </dlg:menupopup>
   </dlg:menulist>
   <dlg:button dlg:id="CommandButton1" dlg:tab-index="4" dlg:left="37" dlg:top="132" dlg:width="58" dlg:height="18" dlg:value="Lookup" dlg:button-type="ok"/>

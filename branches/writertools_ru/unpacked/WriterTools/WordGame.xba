@@ -23,16 +23,21 @@ REM Note that item numbering in any array always starts with 0.
 REM This means that the word &quot;apple&quot; is item number 0
 WordArray=Array(&quot;apple&quot;, &quot;potato&quot;, &quot;carrot&quot;, &quot;cucumber&quot;, &quot;orange&quot;)
 REM To make the game a bit more user-friendly, let&apos;s show the display message
-REM asking user whether she wants to play
-Message=&quot;Writer has picked up a word&quot; &amp; Chr(13)
-Message=Message &amp; &quot;Would you like to guess which one?&quot;
+REM asking user whether she wants to play and explaining the basic rules.
+REM Note the Join(WordArray(), &quot;, &quot;) function. It lists all the words in teh WordArray.
+
+Counter=3
+Message=&quot;Writer has picked up one of these words: &quot; &amp; Chr(13) &amp; Chr(13) &amp; Join(WordArray(), &quot;, &quot;) &amp; Chr(13) &amp; Chr(13) &amp; &quot;Would you like to guess which one?&quot;
 Answer=MsgBox(Message,4,&quot;Play&quot;)
 If Answer=7 then End
-REM The Do ... Loop block makes the game run over and over again.
-Do
+REM The While ... WEnd block makes the game run until you either guess the correct word
+REM or you run out of attemps.
+
+While Counter&gt;0
 REM Next, we need to generate a random number from 0 to 4.
-REM The max. random number must not exceed the number of items in the array.
-RandomNumber=Rnd()*4
+REM To do this, we simply use the UBound() function that returns the upper limit of the Array
+
+RandomNumber=Rnd()*UBound(WordArray())
 REM Time to pick up a random word from the array.
 RandomWord=WordArray(RandomNumber)
 REM Now, we have to ask the user to type a word. 
@@ -47,13 +52,15 @@ REM Otherwise the If block check whether the word entered by the user is the sam
 REM as the random word.
 If InputWord=RandomWord then
 REM If it is, then it displays the following message:
-MsgBox &quot;Yep, that&apos;s the word!&quot;
+MsgBox (&quot;Yep, that&apos;s the word!&quot; &amp; Chr(13) &amp; &quot;You win!&quot;, , &quot;Congratulations!&quot;) : End
 REM But if it&apos;s not...
 else
-REM ...then it displays another message.
-MsgBox &quot;Nope, try again.&quot;
+REM ... it displays another message.
+Counter=Counter-1
+MsgBox (&quot;Nope, try again.&quot; &amp; Chr(13) &amp; &quot;You have &quot; &amp; Counter &amp; &quot; attemps left.&quot;, , &quot;Try again&quot;)
+If Counter=0 Then MsgBox (&quot;No more attemps left!&quot; &amp; Chr(13) &amp; &quot;Sorry, you lose!&quot;, , &quot;Better luck next time!&quot;) : End
 End if
-Loop
+WEnd
 End Sub
 
 

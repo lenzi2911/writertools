@@ -19,11 +19,12 @@ URLArray=Array(&quot;http://en.wikipedia.org/wiki/&quot;,_
 &quot;http://dictionary.cambridge.org/results.asp?searchword=&quot;,_
 &quot;http://www.google.com/search?q=define%3A&quot;,_
 &quot;http://wordnet.princeton.edu/perl/webwn?s=&quot;,_
-&quot;http://www.askoxford.com/results/?view=searchresults&amp;freesearch=&quot;)
+&quot;http://www.askoxford.com/results/?view=searchresults&amp;freesearch=&quot;,_
+&quot;http://dict.tu-chemnitz.de/dings.cgi?lang=en&amp;query=&quot;)
 
 ThisDoc=ThisComponent
 LookupWord=ThisDoc.CurrentController.getViewCursor
-If LookupWord.String =&quot;&quot; then MsgBox &quot;Please select a word to look up!&quot; : End
+If LookupWord.String =&quot;&quot; then MsgBox (&quot;Please select a word to look up!&quot;, , &quot;Attention!&quot;) : End
 
 
 exitOK=com.sun.star.ui.dialogs.ExecutableDialogResults.OK
@@ -54,13 +55,14 @@ Dim Dialog As Object, Library As Object
 Dim TheDialog As Object, DialogField As Object
 Dim exitOK As String, CurrentItemPos As Integer
 
-GoogleTranslateURL=&quot;http://translate.google.com/translate_t?text=&quot;
+GoogleTranslateURL=Array(&quot;http://translate.google.com/translate_t?text=&quot;,_
+&quot;http://translate.google.com/translate_dict?q=&quot;)
 SourceLanguage=Array(&quot;en&quot;, &quot;de&quot;, &quot;fr&quot;, &quot;it&quot;, &quot;es&quot;, &quot;pt&quot;, &quot;ar&quot;, &quot;ja&quot;, &quot;ko&quot;, &quot;zh-CN&quot;, &quot;ru&quot;)
 TargetLanguage=Array(&quot;en&quot;, &quot;de&quot;, &quot;fr&quot;, &quot;it&quot;, &quot;es&quot;, &quot;pt&quot;, &quot;ar&quot;, &quot;ja&quot;, &quot;ko&quot;, &quot;zh-CN&quot;, &quot;ru&quot;)
 
 ThisDoc=ThisComponent
 TranslateWord=ThisDoc.CurrentController.getViewCursor
-If TranslateWord.String =&quot;&quot; then MsgBox &quot;Please select a word to look up!&quot; : End
+If TranslateWord.String =&quot;&quot; then MsgBox (&quot;Please select a word to look up!&quot;, , &quot;Attention!&quot;) : End
 
 
 exitOK=com.sun.star.ui.dialogs.ExecutableDialogResults.OK
@@ -73,13 +75,15 @@ DialogField1=Dialog.GetControl(&quot;ListBox1&quot;)
 DialogField1.SelectItemPos(0, True)
 DialogField2=Dialog.GetControl(&quot;ListBox2&quot;)
 DialogField2.SelectItemPos(1, True)
+DialogField3=Dialog.GetControl(&quot;ListBox3&quot;)
+DialogField3.SelectItemPos(0, True)
 
 If Dialog.Execute=exitOK Then
 CurrentItemPos1=DialogField1.SelectedItemPos
 CurrentItemPos2=DialogField2.SelectedItemPos
+CurrentItemPos3=DialogField3.SelectedItemPos
 Dim s as string
-s = ConvertToUrl(GoogleTranslateURL &amp; TranslateWord.String) &amp; &quot;&amp;hl=&quot;&amp; TargetLanguage(CurrentItemPos2) &amp; &quot;&amp;langpair=&quot; &amp; SourceLanguage(CurrentItemPos1)&amp; &quot;|&quot; &amp; TargetLanguage(CurrentItemPos2)
-
+s = ConvertToUrl(GoogleTranslateURL(CurrentItemPos3) &amp; TranslateWord.String) &amp; &quot;&amp;hl=&quot;&amp; TargetLanguage(CurrentItemPos2) &amp; &quot;&amp;langpair=&quot; &amp; SourceLanguage(CurrentItemPos1)&amp; &quot;|&quot; &amp; TargetLanguage(CurrentItemPos2)
  If GetGUIType=1 Then
   Shell(&quot;C:\Program Files\Mozilla Firefox\firefox.exe&quot;,1, s)
  Else
@@ -99,7 +103,7 @@ Dim Args()
 
 ThisDoc=ThisComponent
 If ThisDoc.hasLocation=False Then
-MsgBox &quot;You must save the document first!&quot; :End
+MsgBox (&quot;You must save the document first!&quot;, , &quot;Attention!&quot;) :End
 End If
 ThisDocURL=ThisDoc.getURL()
 
@@ -136,7 +140,7 @@ MailMessage.setAttachement(Array(ThisDocURL))
 
 MailClient.sendSimpleMailMessage(MailMessage, 1)
   
-MsgBox &quot;All done!&quot;
+MsgBox (&quot;The document has been sent.&quot;, , &quot;All done!&quot;)
   
 End Sub
 
@@ -185,7 +189,7 @@ GlobalScope.BasicLibraries.LoadLibrary(&quot;Tools&quot;)
 End If
 
 If ThisDoc.hasLocation=False Then
-MsgBox &quot;You must save the document first!&quot; :End
+MsgBox (&quot;You must save the document first!&quot;, , &quot;Attention!&quot;) :End
 End If
 
 DocURL=ThisDoc.getURL()
@@ -212,6 +216,6 @@ If GetGUIType=4 Then
  Shell(&quot;tar&quot;, 1, TarString)
 End If
 
-MsgBox &quot;All done!&quot;
+MsgBox (&quot;The document has been saved.&quot;, ,&quot;All done!&quot;)
 End Sub
 </script:module>
