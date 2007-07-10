@@ -15,6 +15,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 VERSION 0.8.x
   * The Mode option added to the Google Translate Tool.
+  * Word Count statistics added to the Timer tool.
 
 VERSION 0.8.5.1 2007-06-30
   * Minor improvements and bug fixes.
