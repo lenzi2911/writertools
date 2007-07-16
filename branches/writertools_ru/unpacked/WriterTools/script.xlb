@@ -9,4 +9,5 @@
  <library:element library:name="BasketDB"/>
  <library:element library:name="MultiMap"/>
  <library:element library:name="RemoteBackup"/>
+ <library:element library:name="RSSFeed"/>
 </library:library>

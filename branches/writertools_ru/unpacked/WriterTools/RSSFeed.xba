@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">
+<script:module xmlns:script="http://openoffice.org/2000/script" script:name="RSSFeed" script:language="StarBasic">Sub AddRSSItem()
+
+Dim ObjSearch As Object
+Dim Args(0) As New com.sun.star.beans.PropertyValue
+
+ThisDoc=ThisComponent
+
+If ThisDoc.hasLocation=False Then
+MsgBox (&quot;You must save the document first!&quot;, , &quot;Attention!&quot;) :End
+End If
+
+DocURL=ThisDoc.getURL()
+FileName=Dir(DocURL, 0)
+
+RSSFile=&quot;ftp://user:password@192.168.1.7/web/RSS.odt&quot;
+RSSPath=&quot;ftp://user:password@192.168.1.7/web/&quot;
+RSSXMLFile=&quot;rss.xml&quot;
+Timestamp=CDateToISO(Date) &amp; &quot;_&quot; &amp; Format(Hour(Now), &quot;00&quot;) &amp; &quot;-&quot; &amp; Format(Minute(Now), &quot;00&quot;) &amp; &quot;-&quot;  &amp; _
+Format(Second(Now), &quot;00&quot;)
+
+VersionPath = RSSPath &amp; Timestamp &amp; &quot;_&quot; &amp; FileName
+Args(0).Name=&quot;Overwrite&quot;
+Args(0).Value=True
+ThisDoc.storeToURL(VersionPath, Args())
+
+ThisDoc=StarDesktop.loadComponentFromURL(RSSFile, &quot;_blank&quot;, 0, Array())
+
+ChangesDescription=InputBox(&quot;Summary of changes&quot;, &quot;Enter a brief description of changes&quot; , &quot;&quot;)
+
+RSSEnd=&quot;&lt;/channel&gt;&quot;
+NewRSSItem=Chr(13) &amp; &quot;&lt;item&gt;\n &lt;title&gt;&quot;&amp; FileName &amp; &quot;&lt;/title&gt;\n &lt;description&gt;&quot; &amp; ChangesDescription &amp;_
+&quot;&lt;/description&gt;\n &lt;guid&gt;&quot; &amp; VersionPath &amp; &quot;&lt;/guid&gt;\n &lt;/item&gt;\n\n&lt;/channel&gt;&quot;
+
+ThisDoc=ThisComponent
+
+ObjSearch=ThisDoc.createReplaceDescriptor
+ObjSearch.SearchString=RSSEnd
+ObjSearch.ReplaceString=NewRSSItem
+ObjSearch.SearchWords=true
+ObjSearch.SearchRegularExpression=true
+nReplace=ThisDoc.ReplaceAll(ObjSearch)
+
+REM Saves the RSS file as text file
+
+ThisDoc=ThisComponent
+ThisDoc.Store
+
+Args(0).Name=&quot;FilterName&quot;
+Args(0).Value=&quot;Text&quot;
+ThisDoc.StoreAsURL (RSSPath &amp; RSSXMLFile, Args())
+
+ThisDoc.Close(True)
+End Sub
+</script:module>

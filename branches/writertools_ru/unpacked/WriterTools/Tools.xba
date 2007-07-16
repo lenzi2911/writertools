@@ -74,7 +74,7 @@ Dialog=CreateUnoDialog(TheDialog)
 DialogField1=Dialog.GetControl(&quot;ListBox1&quot;)
 DialogField1.SelectItemPos(0, True)
 DialogField2=Dialog.GetControl(&quot;ListBox2&quot;)
-DialogField2.SelectItemPos(1, True)
+DialogField2.SelectItemPos(10, True)
 DialogField3=Dialog.GetControl(&quot;ListBox3&quot;)
 DialogField3.SelectItemPos(0, True)
 
@@ -124,7 +124,7 @@ Format(Hour(Now), &quot;00&quot;) &amp; &quot;:&quot; &amp; _
 Format(Minute(Now), &quot;00&quot;) &amp; &quot;:&quot;  &amp; _
 Format(Second(Now), &quot;00&quot;)
 
-If MailAddress=&quot;&quot; then MsgBox &quot;The email address field is empty!&quot; : End
+If MailAddress=&quot;&quot; then MsgBox (&quot;The email address field is empty!&quot;, , &quot;Attention!&quot;) : End
 
 If GetGUIType=1 Then
 MailAgent=CreateUnoService(&quot;com.sun.star.system.SimpleSystemMail&quot;)

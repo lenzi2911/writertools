@@ -53,6 +53,7 @@ ThisDoc=ThisComponent
 DocURL=ThisDoc.getURL()
 DocDir=DirectoryNameoutofPath(DocURL, GetPathSeparator())
 FileName=Dir(DocURL, 0)
+WordCount=ThisDoc.WordCount
 
 ElapsedTimeMinutes=Int(ElapsedTime/60)
 DateToday=Format(Year(Now), &quot;0000&quot;) &amp; &quot;-&quot; &amp; Format(Month(Now), &quot;00&quot;) &amp; &quot;-&quot;  &amp; Format(Day(Now), &quot;00&quot;)
@@ -61,8 +62,8 @@ DBContext=createUnoService(&quot;com.sun.star.sdb.DatabaseContext&quot;)
 DataSource=DBContext.getByName(&quot;WriterDB&quot;)
 ConnectToDB=DataSource.GetConnection (&quot;&quot;,&quot;&quot;)
 
-SQLQuery=&quot;INSERT INTO &quot;&quot;docstats&quot;&quot; &quot; + &quot;(&quot;&quot;FileName&quot;&quot;, &quot;&quot;TimeUsed&quot;&quot;, &quot;&quot;Date&quot;&quot;) VALUES &quot;_
-+ &quot;(&apos;&quot; + FileName + &quot;&apos;,&apos;&quot; + ElapsedTimeMinutes + &quot;&apos;,&apos;&quot; + DateToday + &quot;&apos;)&quot;
+SQLQuery=&quot;INSERT INTO &quot;&quot;docstats&quot;&quot; &quot; + &quot;(&quot;&quot;FileName&quot;&quot;, &quot;&quot;TimeUsed&quot;&quot;, &quot;&quot;WordCount&quot;&quot;, &quot;&quot;Date&quot;&quot;) VALUES &quot;_
++ &quot;(&apos;&quot; + FileName + &quot;&apos;,&apos;&quot; + ElapsedTimeMinutes + &quot;&apos;,&apos;&quot; + WordCount + &quot;&apos;,&apos;&quot; + DateToday + &quot;&apos;)&quot;
 
 SQLStatement=ConnectToDB.createStatement
 Result=SQLStatement.executeQuery (SQLQuery)
