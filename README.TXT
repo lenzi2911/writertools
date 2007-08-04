@@ -13,7 +13,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 0.8.x
+VERSION 0.8.6.1 2007-08-04
   * The Mode option added to the Google Translate Tool.
   * Word Count statistics added to the Timer tool.
   * Minor fixes in the Timer tool.
