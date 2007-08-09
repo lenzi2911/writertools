@@ -29,5 +29,7 @@ Args(0).Name=&quot;Overwrite&quot;
 Args(0).Value=True
 ThisDoc.storeToURL(SaveFTP, Args())
 
+MsgBox (&quot;The document has been uploaded.&quot;, , &quot;All done!&quot;)
+
 End Sub
 </script:module>

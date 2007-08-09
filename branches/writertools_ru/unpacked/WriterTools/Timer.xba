@@ -15,11 +15,10 @@ Global StartTime
 Sub StartTiming()
 
 If ElapsedTime &lt;&gt; 0 then
-  Message=&quot;A timing session is in progress!&quot; &amp; Chr(13)
-  Message=Message &amp; &quot;Start a new one?&quot;
- Else Message=&quot;Do you want to start a timing session?&quot;
+Message=&quot;A timing session is in progress!&quot; &amp; Chr(13) &amp; &quot;Start a new one?&quot;
+Else Message=&quot;Do you want to start a timing session?&quot;
 EndIf
-iAns=MsgBox(Message,4,&quot;Start Timing?&quot;)
+Answer=MsgBox(Message,4,&quot;Start Timing?&quot;)
 If Answer=7 then End
 StartTime=Time
 ElapsedTime=Timer
@@ -30,6 +29,7 @@ Sub EndTiming()
 
 If ElapsedTime &lt;&gt; 0 then
 Answer=MsgBox(&quot;End current timing session?&quot;,4,&quot;End Timing?&quot;)
+If Answer=7 then End
  Else 
 MsgBox &quot;No session running, nothing to stop.&quot;
  End
@@ -37,13 +37,15 @@ EndIf
 
 EndTime=Time
 ElapsedTime=Timer-ElapsedTime
-Message=ElapsedTime &amp; &quot; Seconds&quot; &amp; Chr(13) &amp; ElapsedTime/60 &amp; &quot; Minutes&quot;
-Message=Message &amp; Chr(13) &amp; &quot;Started at &quot; &amp; StartTime &amp; &quot; - Ended at &quot; &amp; EndTime
+ElapsedTimeMinutes=CInt(ElapsedTime/60)
+Message=&quot;Elapsed time: ~ &quot; &amp; ElapsedTimeMinutes &amp; &quot; minute(s) or &quot; &amp;_
+ElapsedTime &amp; &quot; second(s)&quot; &amp; Chr(13) &amp;_
+&quot;Started at &quot; &amp; StartTime &amp; &quot; - Ended at &quot; &amp; EndTime
 MsgBox (Message,,&quot;Elapsed Time&quot;)
 
 Message=&quot;Would you like to save the data?&quot;
 Answer=MsgBox(Message,4,&quot;Save&quot;)
-If Answer=7 then End
+If Answer=7 then ElapsedTime=0 End
 
 If (Not GlobalScope.BasicLibraries.isLibraryLoaded(&quot;Tools&quot;)) Then
 GlobalScope.BasicLibraries.LoadLibrary(&quot;Tools&quot;)
@@ -55,7 +57,6 @@ DocDir=DirectoryNameoutofPath(DocURL, GetPathSeparator())
 FileName=Dir(DocURL, 0)
 WordCount=ThisDoc.WordCount
 
-ElapsedTimeMinutes=Int(ElapsedTime/60)
 DateToday=Format(Year(Now), &quot;0000&quot;) &amp; &quot;-&quot; &amp; Format(Month(Now), &quot;00&quot;) &amp; &quot;-&quot;  &amp; Format(Day(Now), &quot;00&quot;)
 
 DBContext=createUnoService(&quot;com.sun.star.sdb.DatabaseContext&quot;)
