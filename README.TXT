@@ -13,6 +13,10 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 0.8.7.1 2007-09-22
+  * Minor bug fixes.
+  * Donate menu item added.
+
 VERSION 0.8.7 2007-09-21
   * Completely reworked the Add to Basket tool.
   * Convert to DokuWiki tool removed (OpenOffice.org 2.3 has a built-in MediaWiki export filter).
