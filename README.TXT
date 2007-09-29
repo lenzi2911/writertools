@@ -13,6 +13,12 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 0.8.8 2007-09-29
+  * Wikify Word tool added.
+  * Writer templates (generec article and book) added.
+  * User-friendly error messages for failed database connection.
+  * Minor fixes.
+
 VERSION 0.8.7.1 2007-09-22
   * Minor bug fixes.
   * Donate menu item added.
