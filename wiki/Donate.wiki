@@ -1,4 +1,2 @@
 #labels Featured
-= Donate =
-
 If you find Writer's Tools useful, and you would like to support its development, consider donating a few coppers to the author via [https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=lazylegs%40gmail%2ecom&item_name=Writer%27s%20Tools&buyer_credit_promo_code=&buyer_credit_product_category=&buyer_credit_shipping_method=&buyer_credit_user_address_change=&no_shipping=0&no_note=1&tax=0&currency_code=EUR&lc=DK&bn=PP%2dDonationsBF&charset=UTF%2d8 PayPal]. Thank you!
