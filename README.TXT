@@ -16,6 +16,7 @@ http://writertools.googlecode.com/svn/trunk/
 VERSION 0.8.9
   * Word Source reference added to the Lookup tool.
   * Fixed a bug in Google Traslate on Linux.
+  * Improved default browser detection on Windows (http://code.google.com/p/writertools/issues/detail?id=12).
 
 VERSION 0.8.8 2007-09-29
   * Wikify Word tool added.
