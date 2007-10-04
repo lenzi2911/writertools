@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">
-<script:module xmlns:script="http://openoffice.org/2000/script" script:name="RSSFeed" script:language="StarBasic">Sub AddRSSItem()
+<script:module xmlns:script="http://openoffice.org/2000/script" script:name="RSSFeed" script:language="StarBasic">&apos;************************************************************
+&apos;	Copyright © 2007 Dmitri Popov
+&apos;	Anyone may run this code.
+&apos;	If you wish to modify or distribute this code, then
+&apos;	you are granted a license to do so under the terms
+&apos;   of the Gnu General Public License.
+&apos;	See:  http://www.gnu.org/licenses/gpl.html
+&apos;************************************************************
+
+Sub AddRSSItem()
 
 Dim ObjSearch As Object
 Dim Args(0) As New com.sun.star.beans.PropertyValue

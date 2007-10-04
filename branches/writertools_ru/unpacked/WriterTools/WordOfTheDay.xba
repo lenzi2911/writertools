@@ -4,8 +4,8 @@
 &apos;	Copyright © 2007 Dmitri Popov
 &apos;	Anyone may run this code.
 &apos;	If you wish to modify or distribute this code, then
-&apos;	 you are granted a license to do so under the terms
-&apos;	 of the Gnu General Public License.
+&apos;	you are granted a license to do so under the terms
+&apos;	of the Gnu General Public License.
 &apos;	See:  http://www.gnu.org/licenses/gpl.html
 &apos;************************************************************
 
@@ -16,6 +16,10 @@ Dim DataSource As Object,ConnectToDB,SQLStatement
 Dim SQLQuery As String,SQLResult,RandomID,rows,ResultRecord
 
 DBContext=createUnoService(&quot;com.sun.star.sdb.DatabaseContext&quot;)
+If not DBContext.hasByName(&quot;WriterDB&quot;) then
+MsgBox (&quot;Connection to the database failed. Make sure that the WriterDB database is registered in OpenOffice.org. See Writer&apos;s Tools Use Guide for further info.&quot;, , &quot;Connection failed!&quot;) : End
+End If
+
 SQLResult=createUnoService(&quot;com.sun.star.sdb.RowSet&quot;)
 
 DataSource=DBContext.getByName(&quot;WriterDB&quot;)

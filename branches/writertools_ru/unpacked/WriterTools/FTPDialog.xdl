@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
-<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="FTPDialog" dlg:left="167" dlg:top="51" dlg:width="201" dlg:height="164" dlg:help-text="&amp;0.FTPDialog.HelpText" dlg:closeable="true" dlg:moveable="true" dlg:title="&amp;1.FTPDialog.Title">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="FTPDialog" dlg:left="167" dlg:top="51" dlg:width="201" dlg:height="164" dlg:help-text="&amp;18.FTPDialog.HelpText" dlg:closeable="true" dlg:moveable="true" dlg:title="&amp;19.FTPDialog.Title">
  <dlg:styles>
   <dlg:style dlg:style-id="0" dlg:text-color="0x999999" dlg:font-name="Bitstream Vera Sans" dlg:font-height="17" dlg:font-stylename="Roman" dlg:font-family="swiss" dlg:font-weight="150"/>
  </dlg:styles>
  <dlg:bulletinboard>
-  <dlg:text dlg:style-id="0" dlg:id="Label1" dlg:tab-index="0" dlg:left="37" dlg:top="16" dlg:width="121" dlg:height="16" dlg:help-text="&amp;2.FTPDialog.Label1.HelpText" dlg:value="&amp;3.FTPDialog.Label1.Label" dlg:align="center"/>
-  <dlg:textfield dlg:id="TextField1" dlg:tab-index="1" dlg:left="12" dlg:top="47" dlg:width="178" dlg:height="12" dlg:help-text="&amp;4.FTPDialog.TextField1.HelpText" dlg:value="&amp;5.FTPDialog.TextField1.Text"/>
-  <dlg:textfield dlg:id="TextField2" dlg:tab-index="2" dlg:left="12" dlg:top="65" dlg:width="178" dlg:height="12" dlg:help-text="&amp;6.FTPDialog.TextField2.HelpText" dlg:value="&amp;7.FTPDialog.TextField2.Text"/>
-  <dlg:textfield dlg:id="TextField3" dlg:tab-index="3" dlg:left="12" dlg:top="83" dlg:width="178" dlg:height="12" dlg:help-text="&amp;8.FTPDialog.TextField3.HelpText" dlg:value="&amp;9.FTPDialog.TextField3.Text"/>
-  <dlg:textfield dlg:id="TextField4" dlg:tab-index="4" dlg:left="12" dlg:top="101" dlg:width="178" dlg:height="12" dlg:help-text="&amp;10.FTPDialog.TextField4.HelpText" dlg:value="&amp;11.FTPDialog.TextField4.Text"/>
-  <dlg:button dlg:id="CommandButton1" dlg:tab-index="5" dlg:left="35" dlg:top="129" dlg:width="58" dlg:height="18" dlg:help-text="&amp;12.FTPDialog.CommandButton1.HelpText" dlg:value="&amp;13.FTPDialog.CommandButton1.Label" dlg:button-type="ok"/>
-  <dlg:button dlg:id="CommandButton2" dlg:tab-index="6" dlg:left="102" dlg:top="129" dlg:width="58" dlg:height="18" dlg:help-text="&amp;14.FTPDialog.CommandButton2.HelpText" dlg:value="&amp;15.FTPDialog.CommandButton2.Label" dlg:button-type="cancel"/>
+  <dlg:text dlg:style-id="0" dlg:id="Label1" dlg:tab-index="0" dlg:left="37" dlg:top="16" dlg:width="121" dlg:height="16" dlg:help-text="&amp;20.FTPDialog.Label1.HelpText" dlg:value="&amp;21.FTPDialog.Label1.Label" dlg:align="center"/>
+  <dlg:textfield dlg:id="TextField1" dlg:tab-index="1" dlg:left="12" dlg:top="47" dlg:width="178" dlg:height="12" dlg:help-text="&amp;22.FTPDialog.TextField1.HelpText" dlg:value="&amp;23.FTPDialog.TextField1.Text"/>
+  <dlg:textfield dlg:id="TextField2" dlg:tab-index="2" dlg:left="12" dlg:top="65" dlg:width="178" dlg:height="12" dlg:help-text="&amp;24.FTPDialog.TextField2.HelpText" dlg:value="&amp;25.FTPDialog.TextField2.Text"/>
+  <dlg:textfield dlg:id="TextField3" dlg:tab-index="3" dlg:left="12" dlg:top="83" dlg:width="178" dlg:height="12" dlg:help-text="&amp;26.FTPDialog.TextField3.HelpText" dlg:value="&amp;27.FTPDialog.TextField3.Text"/>
+  <dlg:textfield dlg:id="TextField4" dlg:tab-index="4" dlg:left="12" dlg:top="101" dlg:width="178" dlg:height="12" dlg:help-text="&amp;28.FTPDialog.TextField4.HelpText" dlg:value="&amp;29.FTPDialog.TextField4.Text"/>
+  <dlg:button dlg:id="CommandButton1" dlg:tab-index="5" dlg:left="35" dlg:top="129" dlg:width="58" dlg:height="18" dlg:help-text="&amp;30.FTPDialog.CommandButton1.HelpText" dlg:value="&amp;31.FTPDialog.CommandButton1.Label" dlg:button-type="ok"/>
+  <dlg:button dlg:id="CommandButton2" dlg:tab-index="6" dlg:left="102" dlg:top="129" dlg:width="58" dlg:height="18" dlg:help-text="&amp;32.FTPDialog.CommandButton2.HelpText" dlg:value="&amp;33.FTPDialog.CommandButton2.Label" dlg:button-type="cancel"/>
  </dlg:bulletinboard>
 </dlg:window>

@@ -13,6 +13,25 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 0.8.9
+  * Word Source reference added to the Lookup tool.
+  * Fixed a bug in Google Traslate on Linux.
+  * Improved default browser detection on Windows (http://code.google.com/p/writertools/issues/detail?id=12).
+
+VERSION 0.8.8 2007-09-29
+  * Wikify Word tool added.
+  * Writer templates (generec article and book) added.
+  * User-friendly error messages for failed database connection.
+  * Minor fixes.
+
+VERSION 0.8.7.1 2007-09-22
+  * Minor bug fixes.
+  * Donate menu item added.
+
+VERSION 0.8.7 2007-09-21
+  * Completely reworked the Add to Basket tool.
+  * Convert to DokuWiki tool removed (OpenOffice.org 2.3 has a built-in MediaWiki export filter).
+
 VERSION 0.8.6.1 2007-08-04
   * The Mode option added to the Google Translate Tool.
   * Word Count statistics added to the Timer tool.

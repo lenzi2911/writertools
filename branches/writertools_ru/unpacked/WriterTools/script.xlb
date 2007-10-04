@@ -2,7 +2,7 @@
 <!DOCTYPE library:library PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "library.dtd">
 <library:library xmlns:library="http://openoffice.org/2000/library" library:name="WriterTools" library:readonly="false" library:passwordprotected="false">
  <library:element library:name="Tools"/>
- <library:element library:name="modDokuWiki"/>
+ <library:element library:name="Donate"/>
  <library:element library:name="Timer"/>
  <library:element library:name="WordGame"/>
  <library:element library:name="WordOfTheDay"/>
@@ -10,4 +10,5 @@
  <library:element library:name="MultiMap"/>
  <library:element library:name="RemoteBackup"/>
  <library:element library:name="RSSFeed"/>
+ <library:element library:name="Wikify"/>
 </library:library>

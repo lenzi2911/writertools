@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">
+<script:module xmlns:script="http://openoffice.org/2000/script" script:name="Wikify" script:language="StarBasic">&apos;************************************************************
+&apos;	Copyright © 2007 Dmitri Popov
+&apos;	Anyone may run this code.
+&apos;	If you wish to modify or distribute this code, then
+&apos;	you are granted a license to do so under the terms
+&apos;	of the Gnu General Public License.
+&apos;	See:  http://www.gnu.org/licenses/gpl.html
+&apos;************************************************************
+
+&apos;   The WikifyWord macro allows you to turn any word in the document into a wiki word.
+&apos;   Select any word or text segment in the document (e.g. &quot;BigWikiWord&quot;) and run the macro.
+&apos;   This creates a document called BigWikiWord.odt in the same folder as the current document
+&apos;   and links the selected word to the created file.
+
+Sub WikifyWord()
+Dim ThisDoc As Object, WikiWord As Object, WikiWordURL As String
+Dim DocURL As String, DocDir As String
+Dim Args1()
+Dim Args2(0) As New com.sun.star.beans.PropertyValue
+
+ThisDoc=ThisComponent
+
+REM The following code is required in order to obtain the document&apos;s directory
+If (Not GlobalScope.BasicLibraries.isLibraryLoaded(&quot;Tools&quot;)) Then
+    GlobalScope.BasicLibraries.LoadLibrary(&quot;Tools&quot;)
+End If
+
+REM The If block checks whether the document has been saved.
+If ThisDoc.hasLocation=False Then
+MsgBox &quot;You must save the document first!&quot; :End
+End If
+
+REM The first thing is to obtain the document&apos;s directory.
+DocURL = ThisDoc.getURL()
+DocDir=DirectoryNameoutofPath(DocURL, &quot;/&quot;)
+
+REM The next step is to construct a full path to the new document named as the currently selected word + .odt
+WikiWord=ThisDoc.CurrentController.getViewCursor
+If WikiWord.String=&quot;&quot; Then
+MsgBox &quot;Please select a word or a text fragment first!&quot; :End
+End If
+WikiWordURL=DocDir &amp; &quot;/&quot; &amp; WikiWord.String &amp; &quot;.odt&quot;
+WikiWord.HyperlinkURL=WikiWordURL
+
+REM The optional step applies colour (blue) and underlines the linked word.
+WikiWord.CharColor=RGB(0,0,255)
+WikiWord.CharUnderline=com.sun.star.awt.FontUnderline.SINGLE
+
+REM Finally, the following code creates a new document with the specified name and in the specified location.
+ThisDoc=StarDesktop.loadComponentFromURL(&quot;private:factory/swriter&quot;, &quot;_blank&quot;, 0, Args1())
+ThisDoc=thisComponent
+Args2(0).Name = &quot;Overwrite&quot;
+Args2(0).Value = True
+ThisDoc.storeToURL(WikiWordURL, Args2())
+
+REM Closes the created document to keep things tidy.
+ThisDoc.close(True)
+End Sub
+
+Sub WikipediaWord()
+Dim ThisDoc As Object, WikipediaWord As Object, WikipediaURL As String
+
+ThisDoc=ThisComponent
+Cursor=ThisDoc.CurrentController.getViewCursor
+
+WikipediaURL=&quot;http://en.wikipedia.org/wiki/&quot;
+WikipediaWord=ThisDoc.CurrentController.getViewCursor
+WikipediaWord.HyperlinkURL=WikipediaURL &amp; WikipediaWord.String
+WikipediaWord.CharColor=RGB(0,125,0)
+WikipediaWord.CharUnderline=com.sun.star.awt.FontUnderline.DOUBLE
+
+Cursor.collapseToEnd
+Document=ThisComponent.CurrentController.Frame
+Dispatcher = createUnoService(&quot;com.sun.star.frame.DispatchHelper&quot;)
+Dispatcher.executeDispatch(Document, &quot;.uno:ResetAttributes&quot;, &quot;&quot;, 0, Array())
+
+End Sub
+</script:module>

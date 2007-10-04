@@ -5,4 +5,5 @@
  <library:element library:name="TranslateDialog"/>
  <library:element library:name="LookupDialog"/>
  <library:element library:name="MapDialog"/>
+ <library:element library:name="BasketDialog"/>
 </library:library>

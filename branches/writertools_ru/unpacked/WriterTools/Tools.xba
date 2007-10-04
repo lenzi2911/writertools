@@ -4,8 +4,8 @@
 &apos;	Copyright © 2007 Dmitri Popov
 &apos;	Anyone may run this code.
 &apos;	If you wish to modify or distribute this code, then
-&apos;	 you are granted a license to do so under the terms
-&apos;	 of the Gnu General Public License.
+&apos;	you are granted a license to do so under the terms
+&apos;	of the Gnu General Public License.
 &apos;	See:  http://www.gnu.org/licenses/gpl.html
 &apos;************************************************************
 
@@ -20,7 +20,9 @@ URLArray=Array(&quot;http://en.wikipedia.org/wiki/&quot;,_
 &quot;http://www.google.com/search?q=define%3A&quot;,_
 &quot;http://wordnet.princeton.edu/perl/webwn?s=&quot;,_
 &quot;http://www.askoxford.com/results/?view=searchresults&amp;freesearch=&quot;,_
-&quot;http://dict.tu-chemnitz.de/dings.cgi?lang=en&amp;query=&quot;)
+&quot;http://dict.tu-chemnitz.de/dings.cgi?lang=en&amp;query=&quot;,_
+&quot;http://word.sc/&quot;,_
+&quot;http://word.sc/thes/&quot;)
 
 ThisDoc=ThisComponent
 LookupWord=ThisDoc.CurrentController.getViewCursor
@@ -39,7 +41,7 @@ DialogField.SelectItemPos(1, True)
 If Dialog.Execute=exitOK Then
 CurrentItemPos=DialogField.SelectedItemPos
  If GetGUIType=1 Then
-  Shell(&quot;C:\Program Files\Mozilla Firefox\firefox.exe&quot;,1, URLArray(CurrentItemPos) &amp; LookupWord.String)
+  Shell(&quot;C:\WINDOWS\system32\cmd.exe /c start&quot;,1, URLArray(CurrentItemPos) &amp; LookupWord.String)
  Else
   Shell(&quot;firefox&quot;,1, URLArray(CurrentItemPos) &amp; LookupWord.String)
  End If

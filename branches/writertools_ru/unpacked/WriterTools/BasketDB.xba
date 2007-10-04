@@ -1,19 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">
-<script:module xmlns:script="http://openoffice.org/2000/script" script:name="BasketDB" script:language="StarBasic">Sub InsertTextSnippet()
+<script:module xmlns:script="http://openoffice.org/2000/script" script:name="BasketDB" script:language="StarBasic">&apos;************************************************************
+&apos;	Copyright © 2007 Dmitri Popov
+&apos;	Anyone may run this code.
+&apos;	If you wish to modify or distribute this code, then
+&apos;	you are granted a license to do so under the terms
+&apos;	of the Gnu General Public License.
+&apos;	See:  http://www.gnu.org/licenses/gpl.html
+&apos;************************************************************
+
+Sub InsertTextSnippet()
+
+Dim Dialog As Object, Library As Object
+Dim TheDialog As Object, DialogField As Object
+Dim exitOK As String
 
 ThisDoc=ThisComponent
-TextSnippet=ThisDoc.CurrentController.getViewCursor
-If TextSnippet.String =&quot;&quot; then MsgBox (&quot;Please select a text snippet first!&quot;, , &quot;Attention!&quot;) : End
+SelectedSnippet=ThisDoc.getCurrentController().getSelection().getByIndex(0).getString()
 
 DBContext=createUnoService(&quot;com.sun.star.sdb.DatabaseContext&quot;)
+If not DBContext.hasByName(&quot;WriterDB&quot;) then
+MsgBox (&quot;Connection to the database failed. Make sure that the WriterDB database is registered in OpenOffice.org. See Writer&apos;s Tools Use Guide for further info.&quot;, , &quot;Connection failed!&quot;) : End
+End If
+
 DataSource=DBContext.getByName(&quot;WriterDB&quot;)
 ConnectToDB=DataSource.GetConnection (&quot;&quot;,&quot;&quot;)
 
+exitOK=com.sun.star.ui.dialogs.ExecutableDialogResults.OK
+DialogLibraries.LoadLibrary(&quot;WriterTools&quot;)
+Library=DialogLibraries.GetByName(&quot;WriterTools&quot;)
+TheDialog=Library.GetByName(&quot;BasketDialog&quot;)
+
+Dialog=CreateUnoDialog(TheDialog)
+
+DialogField1=Dialog.getControl(&quot;TextField1&quot;).setText(SelectedSnippet)
+
+If Dialog.Execute=exitOK Then
+DialogField1=Dialog.getControl(&quot;TextField1&quot;)
+TextSnippet=DialogField1.Text
+DialogField2=Dialog.GetControl(&quot;TextField2&quot;)
+SnippetCategory=DialogField2.Text
+DialogField3=Dialog.GetControl(&quot;TextField3&quot;)
+SnippetTags=DialogField3.Text
+
 DateToday=Format(Year(Now), &quot;0000&quot;) &amp; &quot;-&quot; &amp; Format(Month(Now), &quot;00&quot;) &amp; &quot;-&quot;  &amp; Format(Day(Now), &quot;00&quot;)
 
-SQLQuery=&quot;INSERT INTO &quot;&quot;basket&quot;&quot; &quot; + &quot;(&quot;&quot;Snippet&quot;&quot;, &quot;&quot;Date&quot;&quot;) VALUES &quot;_
-+ &quot;(&apos;&quot; + TextSnippet.String + &quot;&apos;,&apos;&quot; + DateToday + &quot;&apos;)&quot;
+SQLQuery=&quot;INSERT INTO &quot;&quot;basket&quot;&quot; &quot; + &quot;(&quot;&quot;Snippet&quot;&quot;, &quot;&quot;Category&quot;&quot;, &quot;&quot;Tags&quot;&quot;, &quot;&quot;Date&quot;&quot;) VALUES &quot;_
++ &quot;(&apos;&quot; + TextSnippet + &quot;&apos;,&apos;&quot; + SnippetCategory + &quot;&apos;,&apos;&quot; + SnippetTags + &quot;&apos;,&apos;&quot; + DateToday + &quot;&apos;)&quot;
 
 SQLStatement=ConnectToDB.createStatement
 Result=SQLStatement.executeQuery (SQLQuery)
@@ -22,6 +55,10 @@ ConnectToDB.close
 ConnectToDB.dispose()
 
 MsgBox (&quot;The text snippet has been saved.&quot;, , &quot;All done!&quot;)
+
+End If
+
+Dialog.Dispose
 
 End Sub
 </script:module>

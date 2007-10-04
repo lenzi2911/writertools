@@ -134,11 +134,11 @@
               <value/>
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
-              <value>Convert to DokuWiki</value>
-              <value xml:lang="ru-RU">Преобразовать в DokuWiki</value>
+              <value>Wikify Word</value>
+              <value xml:lang="ru-RU">Викизировать слово</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
-              <value>macro:///WriterTools.modDokuWiki.DokuWiki</value>
+              <value>macro:///WriterTools.Wikify.WikifyWord</value>
             </prop>
             <prop oor:name="Target" oor:type="xs:string">
               <value>_self</value>
@@ -199,7 +199,7 @@
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
               <value>Word Hunt Game</value>
-              <value xml:lang="ru-RU">Word Hunt Game</value>
+              <value xml:lang="ru-RU">Охота на слово</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
               <value>macro:///WriterTools.WordGame.WordHunt</value>
@@ -245,9 +245,33 @@
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
               <value>Add to Basket</value>
+			  <value xml:lang="ru-RU">Пополнить багаж</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
               <value>macro:///WriterTools.BasketDB.InsertTextSnippet</value>
+            </prop>
+            <prop oor:name="Target" oor:type="xs:string">
+              <value>_self</value>
+            </prop>
+            <prop oor:name="ImageIdentifier" oor:type="xs:string">
+              <value/>
+            </prop>
+          </node>
+		  <node oor:name="menu12s" oor:op="replace">
+            <prop oor:name="URL" oor:type="xs:string">
+              <value>private:separator</value>
+            </prop>
+          </node>
+		  <node oor:name="menu13" oor:op="replace">
+            <prop oor:name="Context" oor:type="xs:string">
+              <value/>
+            </prop>
+            <prop oor:name="Title" oor:type="xs:string">
+              <value>Donate</value>
+			  <value xml:lang="ru-RU">Пожертвование</value>
+            </prop>
+            <prop oor:name="URL" oor:type="xs:string">
+              <value>macro:///WriterTools.Donate.DonatePayPal</value>
             </prop>
             <prop oor:name="Target" oor:type="xs:string">
               <value>_self</value>
@@ -312,11 +336,11 @@
       </node>
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img06" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
-          <value>macro:///WriterTools.modDokuWiki.DokuWiki</value>
+          <value>macro:///WriterTools.Wikify.WikifyWord</value>
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/dokuwiki.png</value>
+            <value>%origin%/WriterTools/wikifyword.png</value>
           </prop>
         </node>
       </node>
@@ -379,7 +403,17 @@
             <value>%origin%/WriterTools/map.png</value>
           </prop>
         </node>
-      </node>
+      </node>	  
+	  	  <node oor:name="org.openoffice.Office.addon.WriterTools.img13" oor:op="replace">
+        <prop oor:name="URL" oor:type="xs:string">
+          <value>macro:///WriterTools.Donate.DonatePayPal</value>
+        </prop>
+        <node oor:name="UserDefinedImages">
+          <prop oor:name="ImageSmallURL">
+            <value>%origin%/WriterTools/money.png</value>
+          </prop>
+        </node>
+      </node>  
     </node>
   </node>
 </oor:node>
