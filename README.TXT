@@ -13,6 +13,9 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 0.8.x.x
+  * Minor fixes in the Word Hunt game.
+
 VERSION 0.8.9.2 2007-10-04
   * Word Source reference added to the Lookup tool.
   * Fixed a few serious bugs in Google Translate.
