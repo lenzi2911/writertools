@@ -15,6 +15,8 @@ http://writertools.googlecode.com/svn/trunk/
 
 VERSION 0.8.x.x
   * Minor fixes in the Word Hunt game.
+  * Minor cosmetic tweak to dialog windows.
+  * Post to Gelato tool added.
 
 VERSION 0.8.9.2 2007-10-04
   * Word Source reference added to the Lookup tool.
