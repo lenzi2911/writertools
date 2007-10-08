@@ -13,11 +13,11 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 0.8.x.x
+VERSION 0.9.0 2007-10-08
   * Minor fixes in the Word Hunt game.
   * Minor cosmetic tweak to dialog windows.
   * Added package meta info (provides extension info in Extension Manager).
-  * Post to Gelato tool added (experimental).
+  * Post to Gelato tool added (experimental and is not in the Writer's Tools menu).
   * Tasks tool added.
 
 VERSION 0.8.9.2 2007-10-04
