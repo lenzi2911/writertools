@@ -13,6 +13,9 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 0.9.x
+  * Status messages added to the Timer tool.
+
 VERSION 0.9.0 2007-10-08
   * Minor fixes in the Word Hunt game.
   * Minor cosmetic tweak to dialog windows.
