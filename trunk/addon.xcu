@@ -52,7 +52,7 @@
               <value>Show on the Map</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
-              <value>macro:///WriterTools.MultiMap.ShowOnTheMap</value>
+              <value>macro:///WriterTools.GoogleMaps.ShowOnTheMap</value>
             </prop>
             <prop oor:name="Target" oor:type="xs:string">
               <value>_self</value>
@@ -382,7 +382,7 @@
       </node>
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img12" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
-          <value>macro:///WriterTools.MultiMap.ShowOnTheMap</value>
+          <value>macro:///WriterTools.GoogleMaps.ShowOnTheMap</value>
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
