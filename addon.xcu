@@ -27,6 +27,7 @@
               <value/>
             </prop>
           </node>
+		  
 		  <node oor:name="menu02" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
@@ -44,6 +45,7 @@
               <value/>
             </prop>
           </node>
+		  
 		  <node oor:name="menu03" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
@@ -61,11 +63,13 @@
               <value/>
             </prop>
           </node>
+		  
 		  <node oor:name="menu03s" oor:op="replace">
             <prop oor:name="URL" oor:type="xs:string">
               <value>private:separator</value>
             </prop>
           </node>
+		  
           <node oor:name="menu04" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
@@ -83,6 +87,7 @@
               <value/>
             </prop>
           </node>
+		  
 		  <node oor:name="menu05" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
@@ -100,6 +105,7 @@
               <value/>
             </prop>
           </node>
+		  
 		  <node oor:name="menu06" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
@@ -117,11 +123,13 @@
               <value/>
             </prop>
           </node>
+		  
 		  <node oor:name="menu06s" oor:op="replace">
             <prop oor:name="URL" oor:type="xs:string">
               <value>private:separator</value>
             </prop>
-          </node>	  
+          </node>	
+		  
 		  <node oor:name="menu07" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
@@ -139,11 +147,13 @@
               <value/>
             </prop>
           </node>
+		  
 		  <node oor:name="menu07s" oor:op="replace">
             <prop oor:name="URL" oor:type="xs:string">
               <value>private:separator</value>
             </prop>
           </node>
+		  
 		  <node oor:name="menu08" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
@@ -161,6 +171,7 @@
               <value/>
             </prop>
           </node>
+		  
 		  <node oor:name="menu09" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
@@ -178,11 +189,13 @@
               <value/>
             </prop>
           </node>
+		  
 		  <node oor:name="menu09s" oor:op="replace">
             <prop oor:name="URL" oor:type="xs:string">
               <value>private:separator</value>
             </prop>
           </node>
+		  
 		  <node oor:name="menu10" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
@@ -200,11 +213,13 @@
               <value/>
             </prop>
           </node>
+		  
 		  <node oor:name="menu10s" oor:op="replace">
             <prop oor:name="URL" oor:type="xs:string">
               <value>private:separator</value>
             </prop>
           </node>
+		  
 		  <node oor:name="menu11" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
@@ -222,11 +237,13 @@
               <value/>
             </prop>
           </node>
+		  
 		  <node oor:name="menu11s" oor:op="replace">
             <prop oor:name="URL" oor:type="xs:string">
               <value>private:separator</value>
             </prop>
           </node>
+		  
 		  <node oor:name="menu12" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
@@ -244,12 +261,74 @@
               <value/>
             </prop>
           </node>
+		  
 		  <node oor:name="menu12s" oor:op="replace">
             <prop oor:name="URL" oor:type="xs:string">
               <value>private:separator</value>
             </prop>
           </node>
+		  
 		  <node oor:name="menu13" oor:op="replace">
+            <prop oor:name="Context" oor:type="xs:string">
+              <value/>
+            </prop>
+            <prop oor:name="Title" oor:type="xs:string">
+              <value>Add Task</value>
+            </prop>
+            <prop oor:name="URL" oor:type="xs:string">
+              <value>macro:///WriterTools.Tasks.NewTask</value>
+            </prop>
+            <prop oor:name="Target" oor:type="xs:string">
+              <value>_self</value>
+            </prop>
+            <prop oor:name="ImageIdentifier" oor:type="xs:string">
+              <value/>
+            </prop>
+          </node>
+		  
+		  <node oor:name="menu14" oor:op="replace">
+            <prop oor:name="Context" oor:type="xs:string">
+              <value/>
+            </prop>
+            <prop oor:name="Title" oor:type="xs:string">
+              <value>Show Tasks</value>
+            </prop>
+            <prop oor:name="URL" oor:type="xs:string">
+              <value>macro:///WriterTools.Tasks.ShowTasks</value>
+            </prop>
+            <prop oor:name="Target" oor:type="xs:string">
+              <value>_self</value>
+            </prop>
+            <prop oor:name="ImageIdentifier" oor:type="xs:string">
+              <value/>
+            </prop>
+          </node>
+		  
+		  <node oor:name="menu15" oor:op="replace">
+            <prop oor:name="Context" oor:type="xs:string">
+              <value/>
+            </prop>
+            <prop oor:name="Title" oor:type="xs:string">
+              <value>Purge Tasks</value>
+            </prop>
+            <prop oor:name="URL" oor:type="xs:string">
+              <value>macro:///WriterTools.Tasks.PurgeTasks</value>
+            </prop>
+            <prop oor:name="Target" oor:type="xs:string">
+              <value>_self</value>
+            </prop>
+            <prop oor:name="ImageIdentifier" oor:type="xs:string">
+              <value/>
+            </prop>
+          </node>
+		  
+		  <node oor:name="menu15s" oor:op="replace">
+            <prop oor:name="URL" oor:type="xs:string">
+              <value>private:separator</value>
+            </prop>
+          </node>
+		  
+		  <node oor:name="menu16" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
             </prop>
@@ -266,6 +345,7 @@
               <value/>
             </prop>
           </node>
+		  
         </node>
       </node>
     </node>
@@ -280,6 +360,7 @@
           </prop>
         </node>
       </node>
+	  
       <node oor:name="org.openoffice.Office.addon.WriterTools.img02" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
           <value>macro:///WriterTools.Tools.EmailBackup</value>
@@ -290,6 +371,7 @@
           </prop>
         </node>
       </node>
+	  
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img03" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
           <value>macro:///WriterTools.RemoteBackup.SaveFTPDocument</value>
@@ -300,6 +382,7 @@
           </prop>
         </node>
       </node>
+	  
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img04" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
           <value>macro:///WriterTools.Tools.MultiFormatBackup</value>
@@ -310,6 +393,7 @@
           </prop>
         </node>
       </node>
+	  
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img05" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
           <value>macro:///WriterTools.Tools.GoogleTranslate</value>
@@ -319,7 +403,8 @@
             <value>%origin%/WriterTools/translate.png</value>
           </prop>
         </node>
-      </node>  
+      </node>
+	  
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img06" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
           <value>macro:///WriterTools.Wikify.WikifyWord</value>
@@ -330,6 +415,7 @@
           </prop>
         </node>
       </node>
+	  
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img07" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
           <value>macro:///WriterTools.Timer.StartTiming</value>
@@ -340,6 +426,7 @@
           </prop>
         </node>
       </node>
+	  
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img08" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
           <value>macro:///WriterTools.Timer.EndTiming</value>
@@ -350,6 +437,7 @@
           </prop>
         </node>
       </node>
+	  
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img09" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
           <value>macro:///WriterTools.WordGame.WordHunt</value>
@@ -360,6 +448,7 @@
           </prop>
         </node>
       </node>
+	  
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img10" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
           <value>macro:///WriterTools.WordOfTheDay.RandomWord</value>
@@ -370,6 +459,7 @@
           </prop>
         </node>
       </node>
+	  
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img11" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
           <value>macro:///WriterTools.BasketDB.InsertTextSnippet</value>
@@ -380,6 +470,7 @@
           </prop>
         </node>
       </node>
+	  
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img12" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
           <value>macro:///WriterTools.GoogleMaps.ShowOnTheMap</value>
@@ -389,8 +480,42 @@
             <value>%origin%/WriterTools/map.png</value>
           </prop>
         </node>
-      </node>	  
-	  	  <node oor:name="org.openoffice.Office.addon.WriterTools.img13" oor:op="replace">
+      </node>
+	  
+	  <node oor:name="org.openoffice.Office.addon.WriterTools.img13" oor:op="replace">
+        <prop oor:name="URL" oor:type="xs:string">
+          <value>macro:///WriterTools.Tasks.NewTask</value>
+        </prop>
+        <node oor:name="UserDefinedImages">
+          <prop oor:name="ImageSmallURL">
+            <value>%origin%/WriterTools/date_add.png</value>
+          </prop>
+        </node>
+      </node>
+	  
+	  <node oor:name="org.openoffice.Office.addon.WriterTools.img14" oor:op="replace">
+        <prop oor:name="URL" oor:type="xs:string">
+          <value>macro:///WriterTools.Tasks.ShowTasks</value>
+        </prop>
+        <node oor:name="UserDefinedImages">
+          <prop oor:name="ImageSmallURL">
+            <value>%origin%/WriterTools/date.png</value>
+          </prop>
+        </node>
+      </node>
+	  
+	  <node oor:name="org.openoffice.Office.addon.WriterTools.img15" oor:op="replace">
+        <prop oor:name="URL" oor:type="xs:string">
+          <value>macro:///WriterTools.Tasks.PurgeTasks</value>
+        </prop>
+        <node oor:name="UserDefinedImages">
+          <prop oor:name="ImageSmallURL">
+            <value>%origin%/WriterTools/date_delete.png</value>
+          </prop>
+        </node>
+      </node>
+	  
+	  	  <node oor:name="org.openoffice.Office.addon.WriterTools.img16" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
           <value>macro:///WriterTools.Donate.DonatePayPal</value>
         </prop>
