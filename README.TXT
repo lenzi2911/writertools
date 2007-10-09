@@ -16,6 +16,7 @@ http://writertools.googlecode.com/svn/trunk/
 VERSION 0.9.x
   * Status messages added to the Timer tool.
   * wnotes form added to the WriterDB database.
+  * Meaningful message when the task list in the Tasks tool is empty.
 
 VERSION 0.9.0 2007-10-08
   * Minor fixes in the Word Hunt game.
