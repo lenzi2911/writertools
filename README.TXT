@@ -36,7 +36,7 @@ VERSION 0.8.9.2 2007-10-04
 
 VERSION 0.8.8 2007-09-29
   * Wikify Word tool added.
-  * Writer templates (generec article and book) added.
+  * Writer templates (generic article and book) added.
   * User-friendly error messages for failed database connection.
   * Minor fixes.
 
