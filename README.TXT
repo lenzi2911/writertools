@@ -19,6 +19,8 @@ VERSION 0.9.x
   * Meaningful message when the task list in the Tasks tool is empty.
   * Added a confirmation dialog when purging tasks.
   * Show on the Map tool switched to Google Maps.
+  * Multi-format Backup tool now uses timestamps for folder names.
+  * Multi-format Backup can use 7-Zip (must be installed separately) to compress the resulting backup folder.
 
 VERSION 0.9.0 2007-10-08
   * Minor fixes in the Word Hunt game.
