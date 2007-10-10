@@ -16,13 +16,16 @@ Dim DataSource As Object,ConnectToDB,SQLStatement
 Dim SQLQuery As String,SQLResult,RandomID,rows,ResultRecord
 
 DBContext=createUnoService(&quot;com.sun.star.sdb.DatabaseContext&quot;)
-If not DBContext.hasByName(&quot;WriterDB&quot;) then
-MsgBox (&quot;Connection to the database failed. Make sure that the WriterDB database is registered in OpenOffice.org. See Writer&apos;s Tools Use Guide for further info.&quot;, , &quot;Connection failed!&quot;) : End
+Dim NameDB As String
+NameDB=&quot;WriterDB&quot;
+If not DBContext.hasByName(NameDB) then
+&apos;MsgBox (&quot;Connection to the database failed. Make sure that the WriterDB database is registered in OpenOffice.org. See Writer&apos;s Tools Use Guide for further info.&quot;, , &quot;Connection failed!&quot;) : End
+MsgBox (FmtString(GetLocalizedString(11),Array(NameDB)),,GetLocalizedString(12)) : End
 End If
 
 SQLResult=createUnoService(&quot;com.sun.star.sdb.RowSet&quot;)
 
-DataSource=DBContext.getByName(&quot;WriterDB&quot;)
+DataSource=DBContext.getByName(NameDB)
 ConnectToDB=DataSource.GetConnection (&quot;&quot;,&quot;&quot;)
 
 SQLQuery=&quot;SELECT &quot;&quot;ID&quot;&quot;, &quot;&quot;Word&quot;&quot;, &quot;&quot;Usage&quot;&quot;  FROM &quot;&quot;wnotes&quot;&quot;&quot;
@@ -40,7 +43,8 @@ Do
  ResultRecord = SQLResult.getString(2) &amp; &quot; - &quot; &amp; SQLResult.getString(3)
 Loop While isEmpty(ResultRecord)
 
-MsgBox (ResultRecord, , &quot;Word of the Day&quot;)
+&apos;MsgBox (ResultRecord, , &quot;Word of the Day&quot;)
+MsgBox (ResultRecord, , GetLocalizedString(42))
 
 ConnectToDB.close
 ConnectToDB.dispose()

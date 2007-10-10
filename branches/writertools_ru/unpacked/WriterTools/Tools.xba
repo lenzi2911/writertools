@@ -8,6 +8,9 @@
 &apos;	of the Gnu General Public License.
 &apos;	See:  http://www.gnu.org/licenses/gpl.html
 &apos;************************************************************
+Global Const DefaultWindowsBrowser=&quot;C:\Program Files\Mozilla Firefox\firefox.exe&quot;
+Global Const DefaultLinuxBrowser=&quot;firefox&quot;
+&apos; On Mac OS X replace &quot;firefox&quot; with &quot;open -a /Applications/Firefox.app&quot;
 
 Sub LookupTool()
 
@@ -26,8 +29,8 @@ URLArray=Array(&quot;http://en.wikipedia.org/wiki/&quot;,_
 
 ThisDoc=ThisComponent
 LookupWord=ThisDoc.CurrentController.getViewCursor
-If LookupWord.String =&quot;&quot; then MsgBox (&quot;Please select a word to look up!&quot;, , &quot;Attention!&quot;) : End
-
+&apos;If LookupWord.String =&quot;&quot; then MsgBox (&quot;Please select a word to look up!&quot;, , &quot;Attention!&quot;) : End
+If LookupWord.String =&quot;&quot; then ZMessageBox(6,48,3) :End
 
 exitOK=com.sun.star.ui.dialogs.ExecutableDialogResults.OK
 DialogLibraries.LoadLibrary(&quot;WriterTools&quot;)
@@ -40,11 +43,13 @@ DialogField.SelectItemPos(1, True)
 
 If Dialog.Execute=exitOK Then
 CurrentItemPos=DialogField.SelectedItemPos
+
  If GetGUIType=1 Then
-  Shell(&quot;C:\WINDOWS\system32\cmd.exe /c start&quot;,1, URLArray(CurrentItemPos) &amp; LookupWord.String)
- Else
-  Shell(&quot;firefox&quot;,1, URLArray(CurrentItemPos) &amp; LookupWord.String)
+  Shell(DefaultWindowsBrowser,1, URLArray(CurrentItemPos) &amp; LookupWord.String)
+   Else
+    Shell(DefaultLinuxBrowser,1, URLArray(CurrentItemPos) &amp; LookupWord.String)
  End If
+
 End If
 
 Dialog.Dispose
@@ -63,9 +68,12 @@ SourceLanguage=Array(&quot;en&quot;, &quot;de&quot;, &quot;fr&quot;, &quot;it&qu
 TargetLanguage=Array(&quot;en&quot;, &quot;de&quot;, &quot;fr&quot;, &quot;it&quot;, &quot;es&quot;, &quot;pt&quot;, &quot;ar&quot;, &quot;ja&quot;, &quot;ko&quot;, &quot;zh-CN&quot;, &quot;ru&quot;)
 
 ThisDoc=ThisComponent
-TranslateWord=ThisDoc.CurrentController.getViewCursor
-If TranslateWord.String =&quot;&quot; then MsgBox (&quot;Please select a word to look up!&quot;, , &quot;Attention!&quot;) : End
+GetSelection=ThisDoc.getCurrentController().getSelection().getByIndex(0).getString()
+&apos;If GetSelection=&quot;&quot; then MsgBox (&quot;Please select a word to look up!&quot;, , &quot;Attention!&quot;) : End
+If GetSelection=&quot;&quot; then ZMessageBox(7,48,3) : End
 
+TranslateTextURL=ConvertToURL(GetSelection)
+TranslateText=Right(TranslateTextURL, Len(TranslateTextURL)-8)
 
 exitOK=com.sun.star.ui.dialogs.ExecutableDialogResults.OK
 DialogLibraries.LoadLibrary(&quot;WriterTools&quot;)
@@ -84,20 +92,20 @@ If Dialog.Execute=exitOK Then
 CurrentItemPos1=DialogField1.SelectedItemPos
 CurrentItemPos2=DialogField2.SelectedItemPos
 CurrentItemPos3=DialogField3.SelectedItemPos
-Dim s as string
-s = ConvertToUrl(GoogleTranslateURL(CurrentItemPos3) &amp; TranslateWord.String) &amp; &quot;&amp;hl=&quot;&amp; TargetLanguage(CurrentItemPos2) &amp; &quot;&amp;langpair=&quot; &amp; SourceLanguage(CurrentItemPos1)&amp; &quot;|&quot; &amp; TargetLanguage(CurrentItemPos2)
+
  If GetGUIType=1 Then
-  Shell(&quot;C:\Program Files\Mozilla Firefox\firefox.exe&quot;,1, s)
- Else
-  Shell(&quot;firefox&quot;,1, s)
+  Shell(DefaultWindowsBrowser,1, GoogleTranslateURL(CurrentItemPos3) &amp;&quot;&quot;&amp; TranslateText &amp;&quot;&quot; &amp; &quot;&amp;langpair=&quot; &amp; SourceLanguage(CurrentItemPos1)&amp; &quot;|&quot; &amp; TargetLanguage(CurrentItemPos2))
+   Else
+    Shell(DefaultLinuxBrowser,1, GoogleTranslateURL(CurrentItemPos3) &amp;&quot;&quot;&amp; TranslateText &amp;&quot;&quot; &amp; &quot;&amp;langpair=&quot; &amp; SourceLanguage(CurrentItemPos1)&amp; &quot;|&quot; &amp; TargetLanguage(CurrentItemPos2))
  End If
+ 
 End If
 
 Dialog.Dispose
 
 End Sub
 
-Sub EMailBackup()
+Sub EmailBackup()
 Dim MailAddress As String, MessageSubject As String
 Dim ThisDocURL As String, DocDir As String, FileName As String
 Dim MailAgent As Object, MailClient As Object, MailMessage As Object, ThisDoc As Object
@@ -105,7 +113,8 @@ Dim Args()
 
 ThisDoc=ThisComponent
 If ThisDoc.hasLocation=False Then
-MsgBox (&quot;You must save the document first!&quot;, , &quot;Attention!&quot;) :End
+&apos;MsgBox (&quot;You must save the document first!&quot;, , &quot;Attention!&quot;) :End
+ZMessageBox(4,48,3) :End
 End If
 ThisDocURL=ThisDoc.getURL()
 
@@ -120,13 +129,14 @@ End If
 DocDir=DirectoryNameoutofPath(ThisDocURL, &quot;/&quot;)
 FileName=Dir(ThisDocURL, 0)
 
-MailAddress=InputBox(&quot;Email address&quot;)
+MailAddress=InputBox(GetLocalizedString(47))
 MessageSubject=&quot;[OOO_DOC_BACKUP] &quot; &amp; FileName &amp; &quot; &quot; &amp; CDateToISO(Date) &amp; &quot; - &quot; &amp; _
 Format(Hour(Now), &quot;00&quot;) &amp; &quot;:&quot; &amp; _
 Format(Minute(Now), &quot;00&quot;) &amp; &quot;:&quot;  &amp; _
 Format(Second(Now), &quot;00&quot;)
 
-If MailAddress=&quot;&quot; then MsgBox (&quot;The email address field is empty!&quot;, , &quot;Attention!&quot;) : End
+&apos;If MailAddress=&quot;&quot; then MsgBox (&quot;The email address field is empty!&quot;, , &quot;Attention!&quot;) : End
+If MailAddress=&quot;&quot; then ZMessageBox(8, ,3) :End
 
 If GetGUIType=1 Then
 MailAgent=CreateUnoService(&quot;com.sun.star.system.SimpleSystemMail&quot;)
@@ -142,8 +152,8 @@ MailMessage.setAttachement(Array(ThisDocURL))
 
 MailClient.sendSimpleMailMessage(MailMessage, 1)
   
-MsgBox (&quot;The document has been sent.&quot;, , &quot;All done!&quot;)
-  
+&apos;MsgBox (&quot;The document has been sent.&quot;, , &quot;All done!&quot;)
+ZMessageBox(2, ,1)  
 End Sub
 
 Sub OpenFTP()
@@ -180,7 +190,7 @@ End If
 
 End Sub
 
- Sub MultiFormatBackup()
+Sub MultiFormatBackup()
 Dim ThisDoc As Object
 Dim DocURL As String, DocDir As String, DocName As String, TarString As String
 Dim Args(0) As New com.sun.star.beans.PropertyValue
@@ -191,7 +201,8 @@ GlobalScope.BasicLibraries.LoadLibrary(&quot;Tools&quot;)
 End If
 
 If ThisDoc.hasLocation=False Then
-MsgBox (&quot;You must save the document first!&quot;, , &quot;Attention!&quot;) :End
+&apos;MsgBox (&quot;You must save the document first!&quot;, , &quot;Attention!&quot;) :End
+ZMessageBox(4,48,3) :End
 End If
 
 DocURL=ThisDoc.getURL()
@@ -218,6 +229,7 @@ If GetGUIType=4 Then
  Shell(&quot;tar&quot;, 1, TarString)
 End If
 
-MsgBox (&quot;The document has been saved.&quot;, ,&quot;All done!&quot;)
+&apos;MsgBox (&quot;The document has been saved.&quot;, ,&quot;All done!&quot;)
+ZMessageBox(5, ,1)
 End Sub
 </script:module>

@@ -17,7 +17,8 @@ Dim Args(0) As New com.sun.star.beans.PropertyValue
 ThisDoc=ThisComponent
 
 If ThisDoc.hasLocation=False Then
-MsgBox (&quot;You must save the document first!&quot;, , &quot;Attention!&quot;) :End
+&apos;MsgBox (&quot;You must save the document first!&quot;, , &quot;Attention!&quot;) :End
+ZMessageBox(4,48,3):End
 End If
 
 DocURL=ThisDoc.getURL()
@@ -36,7 +37,8 @@ ThisDoc.storeToURL(VersionPath, Args())
 
 ThisDoc=StarDesktop.loadComponentFromURL(RSSFile, &quot;_blank&quot;, 0, Array())
 
-ChangesDescription=InputBox(&quot;Summary of changes&quot;, &quot;Enter a brief description of changes&quot; , &quot;&quot;)
+&apos;ChangesDescription=InputBox(&quot;Summary of changes&quot;, &quot;Enter a brief description of changes&quot; , &quot;&quot;)
+ChangesDescription=InputBox(GetLocalizedString(45), GetLocalizedString(46) , &quot;&quot;)
 
 RSSEnd=&quot;&lt;/channel&gt;&quot;
 NewRSSItem=Chr(13) &amp; &quot;&lt;item&gt;\n &lt;title&gt;&quot;&amp; FileName &amp; &quot;&lt;/title&gt;\n &lt;description&gt;&quot; &amp; ChangesDescription &amp;_

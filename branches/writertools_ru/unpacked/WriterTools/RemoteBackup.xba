@@ -20,12 +20,15 @@ GlobalScope.BasicLibraries.LoadLibrary(&quot;Tools&quot;)
 End If
 
 If ThisDoc.hasLocation=False Then
-MsgBox (&quot;You must save the document first!&quot;, , &quot;Attention!&quot;) :End
+&apos;MsgBox (&quot;You must save the document first!&quot;, , &quot;Attention!&quot;) :End
+ZMessageBox(4,48,3):End
 End If
 
-ConnectionString=InputBox(&quot;Enter the FTP address&quot;, &quot;Remote Backup&quot; , &quot;ftp://user:password@192.168.1.7/pub/&quot;)
+&apos;ConnectionString=InputBox(&quot;Enter the FTP address&quot;, &quot;Remote Backup&quot; , &quot;ftp://user:password@192.168.1.7/pub/&quot;)
+ConnectionString=InputBox(GetLocalizedString(43), GetLocalizedString(44) , &quot;ftp://user:password@192.168.1.7/pub/&quot;)
 
-If ConnectionString=&quot;&quot; then MsgBox (&quot;The FTP address field is empty!&quot;, , &quot;Attention!&quot;) : End
+&apos;If ConnectionString=&quot;&quot; then MsgBox (&quot;The FTP address field is empty!&quot;, , &quot;Attention!&quot;) : End
+If ConnectionString=&quot;&quot; then ZMessageBox(14, ,3):End
 
 DateToday=CDateToISO(Date) &amp; &quot;_&quot; &amp; Format(Hour(Now), &quot;00&quot;) &amp; &quot;-&quot; &amp; Format(Minute(Now), &quot;00&quot;) &amp; &quot;-&quot;  &amp; _
 Format(Second(Now), &quot;00&quot;)
@@ -38,7 +41,8 @@ Args(0).Name=&quot;Overwrite&quot;
 Args(0).Value=True
 ThisDoc.storeToURL(SaveFTP, Args())
 
-MsgBox (&quot;The document has been uploaded.&quot;, , &quot;All done!&quot;)
+&apos;MsgBox (&quot;The document has been uploaded.&quot;, , &quot;All done!&quot;)
+ZMessageBox(15, ,1)
 
 End Sub
 </script:module>

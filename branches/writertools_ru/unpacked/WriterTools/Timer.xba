@@ -15,36 +15,46 @@ Global StartTime
 Sub StartTiming()
 
 If ElapsedTime &lt;&gt; 0 then
-Message=&quot;A timing session is in progress!&quot; &amp; Chr(13) &amp; &quot;Start a new one?&quot;
-Else Message=&quot;Do you want to start a timing session?&quot;
+&apos;Message=&quot;A timing session is in progress!&quot; &amp; Chr(13) &amp; &quot;Start a new one?&quot;
+Answer=ZMessageBox(16,4+32,18)
+&apos;Else Message=&quot;Do you want to start a timing session?&quot;
+Else
+ Answer=ZMessageBox(17,4+32,18)
 EndIf
-Answer=MsgBox(Message,4,&quot;Start Timing?&quot;)
+&apos;Answer=MsgBox(Message,4,&quot;Start Timing?&quot;)
+
 If Answer=7 then End
 StartTime=Time
 ElapsedTime=Timer
+&apos;StatusText(&quot;Timer is running...&quot;)
+&apos;StatusText(GetLocalizedString(37))
 
 End Sub
 
 Sub EndTiming()
 
 If ElapsedTime &lt;&gt; 0 then
-Answer=MsgBox(&quot;End current timing session?&quot;,4,&quot;End Timing?&quot;)
+&apos;Answer=MsgBox(&quot;End current timing session?&quot;,4,&quot;End Timing?&quot;)
+Answer=ZMessageBox(19,4+32,20)
 If Answer=7 then End
  Else 
-MsgBox &quot;No session running, nothing to stop.&quot;
+&apos;MsgBox &quot;No session running, nothing to stop.&quot;
+ ZMessageBox(21, ,3)
  End
 EndIf
 
 EndTime=Time
 ElapsedTime=Timer-ElapsedTime
 ElapsedTimeMinutes=CInt(ElapsedTime/60)
-Message=&quot;Elapsed time: ~ &quot; &amp; ElapsedTimeMinutes &amp; &quot; minute(s) or &quot; &amp;_
-ElapsedTime &amp; &quot; second(s)&quot; &amp; Chr(13) &amp;_
-&quot;Started at &quot; &amp; StartTime &amp; &quot; - Ended at &quot; &amp; EndTime
-MsgBox (Message,,&quot;Elapsed Time&quot;)
+&apos;Message=&quot;Elapsed time: ~ &quot; &amp; ElapsedTimeMinutes &amp; &quot; minute(s) or &quot; &amp;_
+&apos;ElapsedTime &amp; &quot; second(s)&quot; &amp; Chr(13) &amp;_
+&apos;&quot;Started at &quot; &amp; StartTime &amp; &quot; - Ended at &quot; &amp; EndTime
+MsgBox (FmtString(GetLocalizedString(25),Array(ElapsedTimeMinutes,ElapsedTime,CHR(13),StartTime,EndTime)),,_
+GetLocalizedString(26))
 
-Message=&quot;Would you like to save the data?&quot;
-Answer=MsgBox(Message,4,&quot;Save&quot;)
+&apos;Message=&quot;Would you like to save the data?&quot;
+&apos;Answer=MsgBox(Message,4,&quot;Save&quot;)
+Answer=ZMessageBox(23,4+32,22)
 If Answer=7 then ElapsedTime=0 End
 
 If (Not GlobalScope.BasicLibraries.isLibraryLoaded(&quot;Tools&quot;)) Then
@@ -60,11 +70,14 @@ WordCount=ThisDoc.WordCount
 DateToday=Format(Year(Now), &quot;0000&quot;) &amp; &quot;-&quot; &amp; Format(Month(Now), &quot;00&quot;) &amp; &quot;-&quot;  &amp; Format(Day(Now), &quot;00&quot;)
 
 DBContext=createUnoService(&quot;com.sun.star.sdb.DatabaseContext&quot;)
-If not DBContext.hasByName(&quot;WriterDB&quot;) then
-MsgBox (&quot;Connection to the database failed. Make sure that the WriterDB database is registered in OpenOffice.org. See Writer&apos;s Tools Use Guide for further info.&quot;, , &quot;Connection failed!&quot;) : End
+Dim NameDB As String
+NameDB=&quot;WriterDB&quot;
+If not DBContext.hasByName(NameDB) then
+&apos;MsgBox (&quot;Connection to the database failed. Make sure that the WriterDB database is registered in OpenOffice.org. See Writer&apos;s Tools Use Guide for further info.&quot;, , &quot;Connection failed!&quot;) : End
+MsgBox (FmtString(GetLocalizedString(11),Array(NameDB)),,GetLocalizedString(12)) : End
 End If
 
-DataSource=DBContext.getByName(&quot;WriterDB&quot;)
+DataSource=DBContext.getByName(NameDB)
 ConnectToDB=DataSource.GetConnection (&quot;&quot;,&quot;&quot;)
 
 SQLQuery=&quot;INSERT INTO &quot;&quot;docstats&quot;&quot; &quot; + &quot;(&quot;&quot;FileName&quot;&quot;, &quot;&quot;TimeUsed&quot;&quot;, &quot;&quot;WordCount&quot;&quot;, &quot;&quot;Date&quot;&quot;) VALUES &quot;_
@@ -78,7 +91,7 @@ ConnectToDB.dispose()
 
 ElapsedTime=0
 
-MsgBox (&quot;The data has been saved.&quot;, , &quot;All done!&quot;)
-
+&apos;MsgBox (&quot;The data has been saved.&quot;, , &quot;All done!&quot;)
+ZMessageBox(24, ,1)
 End Sub
 </script:module>

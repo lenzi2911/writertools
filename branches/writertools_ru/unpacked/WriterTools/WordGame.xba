@@ -27,9 +27,12 @@ REM asking user whether she wants to play and explaining the basic rules.
 REM Note the Join(WordArray(), &quot;, &quot;) function. It lists all the words in teh WordArray.
 
 Counter=3
-Message=&quot;Writer has picked up one of these words: &quot; &amp; Chr(13) &amp; Chr(13) &amp; Join(WordArray(), &quot;, &quot;) &amp; Chr(13) &amp; Chr(13) &amp; &quot;Would you like to guess which one?&quot;
-Answer=MsgBox(Message,4,&quot;Play&quot;)
+&apos;Message=&quot;Writer has picked up one of these words: &quot; &amp; Chr(13) &amp; Chr(13) &amp; Join(WordArray(), &quot;, &quot;) &amp; Chr(13) &amp; Chr(13) &amp; &quot;Would you like to guess which one?&quot;
+&apos;Answer=MsgBox(Message,4,&quot;Play&quot;)
+Answer=MsgBox (FmtString(GetLocalizedString(27),Array(Chr(13),Chr(13),Join(WordArray(), &quot;, &quot;),CHR(13),CHR(13))),,_
+GetLocalizedString(28))
 If Answer=7 then End
+
 REM The While ... WEnd block makes the game run until you either guess the correct word
 REM or you run out of attemps.
 
@@ -41,8 +44,10 @@ RandomNumber=Rnd()*UBound(WordArray())
 REM Time to pick up a random word from the array.
 RandomWord=WordArray(RandomNumber)
 REM Now, we have to ask the user to type a word. 
-InputMessage=&quot;Type your word:&quot;
-InputTitle=&quot;Word game&quot;
+&apos;InputMessage=&quot;Type your word:&quot;
+&apos;InputTitle=&quot;Word game&quot;
+InputMessage=GetLocalizedString(29)
+InputTitle=GetLocalizedString(30)
 InputWord=InputBox(InputMessage, InputTitle)
 REM To stop the game, user can type a specified stop word.
 REM In this case, if the field is left empty the macro exits the loop and stops.
@@ -52,14 +57,18 @@ REM Otherwise the If block check whether the word entered by the user is the sam
 REM as the random word.
 If InputWord=RandomWord then
 REM If it is, then it displays the following message:
-MsgBox (&quot;Yep, that&apos;s the word!&quot; &amp; Chr(13) &amp; &quot;You win!&quot;, , &quot;Congratulations!&quot;) : End
+&apos;MsgBox (&quot;Yep, that&apos;s the word!&quot; &amp; Chr(13) &amp; &quot;You win!&quot;, , &quot;Congratulations!&quot;) : End
+ZMessageBox(31, ,32) : End
 REM But if it&apos;s not...
 else
 REM ... it displays another message.
 Counter=Counter-1
-MsgBox (&quot;Nope, try again.&quot; &amp; Chr(13) &amp; &quot;You have &quot; &amp; Counter &amp; &quot; attemps left.&quot;, , &quot;Try again&quot;)
-If Counter=0 Then MsgBox (&quot;No more attemps left!&quot; &amp; Chr(13) &amp; &quot;Sorry, you lose!&quot;, , &quot;Better luck next time!&quot;) : End
+&apos;If Counter=0 Then MsgBox (&quot;No more attemps left!&quot; &amp; Chr(13) &amp; &quot;Sorry, you lose!&quot;, , &quot;Better luck next time!&quot;) : End
+If Counter=0 Then ZMessageBox(35, ,36) : End
 End if
+&apos;MsgBox (&quot;Nope, try again.&quot; &amp; Chr(13) &amp; &quot;You have &quot; &amp; Counter &amp; &quot; attempts left.&quot;, , &quot;Try again&quot;)
+MsgBox (FmtString(GetLocalizedString(33),Array(Chr(13),Counter)),,_
+GetLocalizedString(34))
 WEnd
 End Sub
 

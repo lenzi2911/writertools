@@ -1,0 +1,5 @@
+Writer's Tools
+(c) 2007 Dmitri Popov
+http://code.google.com/p/writertools/
+
+Writer's Tools is an all-around tool designed to help OpenOffice.org users to perform a wide range of tasks.

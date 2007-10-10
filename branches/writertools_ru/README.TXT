@@ -13,10 +13,24 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 0.8.9
+VERSION 0.9.x
+  * Status messages added to the Timer tool.
+  * wnotes form added to the WriterDB database.
+  * Meaningful message when the task list in the Tasks tool is empty.
+  * Added a confirmation dialog when purging tasks.
+  * Show on the Map tool switched to Google Maps.
+
+VERSION 0.9.0 2007-10-08
+  * Minor fixes in the Word Hunt game.
+  * Minor cosmetic tweak to dialog windows.
+  * Added package meta info (provides extension info in Extension Manager).
+  * Post to Gelato tool added (experimental and is not in the Writer's Tools menu).
+  * Tasks tool added.
+
+VERSION 0.8.9.2 2007-10-04
   * Word Source reference added to the Lookup tool.
-  * Fixed a bug in Google Traslate on Linux.
-  * Improved default browser detection on Windows (http://code.google.com/p/writertools/issues/detail?id=12).
+  * Fixed a few serious bugs in Google Translate.
+  * Improved default browser detection on Windows and Linux.
 
 VERSION 0.8.8 2007-09-29
   * Wikify Word tool added.

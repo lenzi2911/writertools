@@ -29,7 +29,8 @@ End If
 
 REM The If block checks whether the document has been saved.
 If ThisDoc.hasLocation=False Then
-MsgBox &quot;You must save the document first!&quot; :End
+&apos;MsgBox &quot;You must save the document first!&quot; :End
+ZMessageBox(4,48,3):End
 End If
 
 REM The first thing is to obtain the document&apos;s directory.
@@ -39,7 +40,8 @@ DocDir=DirectoryNameoutofPath(DocURL, &quot;/&quot;)
 REM The next step is to construct a full path to the new document named as the currently selected word + .odt
 WikiWord=ThisDoc.CurrentController.getViewCursor
 If WikiWord.String=&quot;&quot; Then
-MsgBox &quot;Please select a word or a text fragment first!&quot; :End
+&apos;MsgBox &quot;Please select a word or a text fragment first!&quot; :End
+ZMessageBox(9,48,3):End
 End If
 WikiWordURL=DocDir &amp; &quot;/&quot; &amp; WikiWord.String &amp; &quot;.odt&quot;
 WikiWord.HyperlinkURL=WikiWordURL
