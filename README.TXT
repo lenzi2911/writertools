@@ -3,7 +3,7 @@
 Copyright 2007 Dmitri Popov
 Anyone may run the code associated with this document. If you wish to modify or distribute this document and or its code, then you are granted a license to do so under the terms of the GNU General Public License. See:  http://www.gnu.org/licenses/gpl.html
 
-Thanks to JohnV, Mark Bain, and other OOoForum users for their help.
+Thanks to JohnV, Mark Bain, Konstantin Lavrov, and many OOoForum users for their help.
 
 Official page:
 http://code.google.com/p/writertools/
@@ -12,6 +12,10 @@ The latest development release is available in the following SVN repository:
 http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
+
+VERSION 0.9.3
+  * Removed StatusText from the StartTiming macro due to its erratic behavior.
+  * Minor fixes for the Writer Templates extension.
 
 VERSION 0.9.2 2007-10-11
   * Added a link to the Writer for Writers book instead of Donate.
