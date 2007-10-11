@@ -8,6 +8,7 @@
         </prop>
         <prop oor:name="Title" oor:type="xs:string">
           <value>Writer&apos;s Tools</value>
+          <value xml:lang="en">Writer&apos;s Tools</value>
           <value xml:lang="ru-RU">Writer&apos;s Tools</value>
         </prop>
         <node oor:name="Submenu">
@@ -17,6 +18,7 @@
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
               <value>Lookup Tool</value>
+              <value xml:lang="en">Lookup Tool</value>
               <value xml:lang="ru-RU">Поиск</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
@@ -36,6 +38,7 @@
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
               <value>Google Translate</value>
+              <value xml:lang="en">Google Translate</value>
               <value xml:lang="ru-RU">Перевод с Google</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
@@ -55,6 +58,7 @@
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
               <value>Show on the Map</value>
+              <value xml:lang="en">Show on the Map</value>
               <value xml:lang="ru-RU">Показать на карте</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
@@ -80,6 +84,7 @@
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
               <value>Email Backup</value>
+              <value xml:lang="en">Email Backup</value>
               <value xml:lang="ru-RU">Email Архив</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
@@ -99,6 +104,7 @@
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
               <value>Multi-format Backup</value>
+              <value xml:lang="en">Multi-format Backup</value>
               <value xml:lang="ru-RU">Мульти-Архив</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
@@ -118,6 +124,7 @@
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
               <value>Remote Backup</value>
+              <value xml:lang="en">Remote Backup</value>
               <value xml:lang="ru-RU">Внешний Архив</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
@@ -143,6 +150,7 @@
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
               <value>Wikify Word</value>
+              <value xml:lang="en">Wikify Word</value>
               <value xml:lang="ru-RU">Викизировать слово</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
@@ -168,6 +176,7 @@
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
               <value>Start Timer</value>
+              <value xml:lang="en">Start Timer</value>
               <value xml:lang="ru-RU">Запустить таймер</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
@@ -187,6 +196,7 @@
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
               <value>Stop Timer</value>
+              <value xml:lang="en">Stop Timer</value>
               <value xml:lang="ru-RU">Остановить таймер</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
@@ -212,6 +222,7 @@
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
               <value>Word Hunt Game</value>
+              <value xml:lang="en">Word Hunt Game</value>
               <value xml:lang="ru-RU">Охота на слово</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
@@ -237,6 +248,7 @@
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
               <value>Word of the Day</value>
+              <value xml:lang="en">Word of the Day</value>
               <value xml:lang="ru-RU">Слово дня</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
@@ -262,7 +274,8 @@
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
               <value>Add to Basket</value>
-			  <value xml:lang="ru-RU">Пополнить багаж</value>
+              <value xml:lang="en">Add to Basket</value>
+	      <value xml:lang="ru-RU">Пополнить багаж</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
               <value>macro:///WriterTools.BasketDB.InsertTextSnippet</value>
@@ -287,7 +300,8 @@
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
               <value>Add Task</value>
-			  <value xml:lang="ru-RU">Добавить задачу</value>
+              <value xml:lang="en">Add Task</value>
+	      <value xml:lang="ru-RU">Добавить задачу</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
               <value>macro:///WriterTools.Tasks.NewTask</value>
@@ -306,7 +320,8 @@
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
               <value>Show Tasks</value>
-			  <value xml:lang="ru-RU">Показать задачи</value>
+              <value xml:lang="en">Show Tasks</value>
+	      <value xml:lang="ru-RU">Показать задачи</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
               <value>macro:///WriterTools.Tasks.ShowTasks</value>
@@ -325,7 +340,8 @@
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
               <value>Purge Tasks</value>
-			  <value xml:lang="ru-RU">Очистить задачи</value>
+              <value xml:lang="en">Purge Tasks</value>
+	      <value xml:lang="ru-RU">Очистить задачи</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
               <value>macro:///WriterTools.Tasks.PurgeTasks</value>
@@ -349,11 +365,12 @@
               <value/>
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
-              <value>Donate</value>
-			  <value xml:lang="ru-RU">Пожертвование</value>
+              <value>Writer for Writers</value>
+              <value xml:lang="en">Writer for Writers</value>
+	          <value xml:lang="ru-RU">Writer for Writers</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
-              <value>macro:///WriterTools.Donate.DonatePayPal</value>
+              <value>macro:///WriterTools.Ad.AdLink</value>
             </prop>
             <prop oor:name="Target" oor:type="xs:string">
               <value>_self</value>
@@ -534,11 +551,11 @@
 	  
 	  	  <node oor:name="org.openoffice.Office.addon.WriterTools.img16" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
-          <value>macro:///WriterTools.Donate.DonatePayPal</value>
+          <value>macro:///WriterTools.Ad.AdLink</value>
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/money.png</value>
+            <value>%origin%/WriterTools/ad.png</value>
           </prop>
         </node>
       </node>  

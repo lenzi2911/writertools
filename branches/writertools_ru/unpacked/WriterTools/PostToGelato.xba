@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">
+<script:module xmlns:script="http://openoffice.org/2000/script" script:name="PostToGelato" script:language="StarBasic">&apos;************************************************************
+&apos;	Copyright © 2007 Dmitri Popov
+&apos;	Anyone may run this code.
+&apos;	If you wish to modify or distribute this code, then
+&apos;	you are granted a license to do so under the terms
+&apos;	of the Gnu General Public License.
+&apos;	See:  http://www.gnu.org/licenses/gpl.html
+&apos;************************************************************
+
+Sub NewPost()
+
+Dim Dialog As Object, Library As Object
+Dim TheDialog As Object, DialogField As Object
+Dim exitOK As String, CurrentItemPos As Integer
+Const GelatoUser=1
+
+GelatoPostType=Array(&quot;1&quot;, &quot;3&quot;, &quot;4&quot;)
+
+ThisDoc=ThisComponent
+SelectedSnippet=ThisDoc.getCurrentController().getSelection().getByIndex(0).getString()
+
+DBContext=createUnoService(&quot;com.sun.star.sdb.DatabaseContext&quot;)
+Dim NameDB As String
+NameDB=&quot;GelatoDB&quot;
+If not DBContext.hasByName(NameDB) then
+&apos;MsgBox (&quot;Connection to the database failed. Make sure that the GelatoDB database is registered in OpenOffice.org. See Writer&apos;s Tools Use Guide for further info.&quot;, , &quot;Connection failed!&quot;) : End
+MsgBox (FmtString(GetLocalizedString(11),Array(NameDB)),,GetLocalizedString(12)) : End
+End If
+
+DataSource=DBContext.getByName(NameDB)
+ConnectToDB=DataSource.GetConnection (&quot;root&quot;,&quot;&quot;)
+
+exitOK=com.sun.star.ui.dialogs.ExecutableDialogResults.OK
+DialogLibraries.LoadLibrary(&quot;WriterTools&quot;)
+Library=DialogLibraries.GetByName(&quot;WriterTools&quot;)
+TheDialog=Library.GetByName(&quot;GelatoDialog&quot;)
+
+Dialog=CreateUnoDialog(TheDialog)
+
+DialogField1=Dialog.getControl(&quot;TextField1&quot;).setText(SelectedSnippet)
+DialogField4=Dialog.GetControl(&quot;ListBox1&quot;)
+DialogField4.SelectItemPos(0, True)
+
+If Dialog.Execute=exitOK Then
+DialogField1=Dialog.getControl(&quot;TextField1&quot;)
+GelatoEntry=DialogField1.Text
+DialogField2=Dialog.GetControl(&quot;TextField2&quot;)
+GelatoURL=DialogField2.Text
+DialogField3=Dialog.GetControl(&quot;TextField3&quot;)
+GelatoDescription=DialogField3.Text
+GelatoCurrentItemPos=DialogField4.SelectedItemPos
+
+GelatoTimestamp=Format(Year(Now), &quot;0000&quot;) &amp; &quot;-&quot; &amp; Format(Month(Now), &quot;00&quot;) &amp; &quot;-&quot;  &amp; Format(Day(Now), &quot;00&quot;) &amp; &quot; &quot; &amp;_
+Format(Hour(Time), &quot;00&quot;) &amp; &quot;:&quot; &amp; Format(Minute(Time), &quot;00&quot;) &amp; &quot;:&quot; &amp; Format(Second(Time), &quot;00&quot;)
+
+SQLQuery=&quot;INSERT INTO gelato_data &quot; + &quot;(title, url, description,type, date, id_user) VALUES&quot;_
++ &quot;(&apos;&quot; + GelatoEntry + &quot;&apos;, &apos;&quot; + GelatoURL + &quot;&apos;, &apos;&quot; + GelatoDescription + &quot;&apos;, &apos;&quot; + GelatoPostType(GelatoCurrentItemPos) + &quot;&apos;, &apos;&quot; + GelatoTimestamp + &quot;&apos;, &apos;&quot; + GelatoUser + &quot;&apos;)&quot;
+
+SQLStatement=ConnectToDB.createStatement
+Result=SQLStatement.executeUpdate(SQLQuery)
+
+ConnectToDB.close
+ConnectToDB.dispose()
+
+&apos;MsgBox (&quot;The post has been added.&quot;, , &quot;All done!&quot;)
+ZMessageBox(41, ,1)
+
+End If
+
+Dialog.Dispose
+
+End Sub
+</script:module>

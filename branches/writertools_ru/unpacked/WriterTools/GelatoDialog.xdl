@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="GelatoDialog" dlg:left="204" dlg:top="74" dlg:width="226" dlg:height="292" dlg:help-text="&amp;50.GelatoDialog.HelpText" dlg:closeable="true" dlg:moveable="true" dlg:title="&amp;51.GelatoDialog.Title">
+ <dlg:styles>
+  <dlg:style dlg:style-id="0" dlg:border="0x999999"/>
+  <dlg:style dlg:style-id="1" dlg:text-color="0x999999" dlg:font-name="Bitstream Vera Sans" dlg:font-height="17" dlg:font-stylename="Roman" dlg:font-family="swiss" dlg:font-weight="150"/>
+  <dlg:style dlg:style-id="2" dlg:border="0x999999" dlg:font-name="Bitstream Vera Sans" dlg:font-height="9" dlg:font-stylename="Roman" dlg:font-family="swiss"/>
+ </dlg:styles>
+ <dlg:bulletinboard>
+  <dlg:textfield dlg:style-id="0" dlg:id="TextField1" dlg:tab-index="0" dlg:left="19" dlg:top="42" dlg:width="188" dlg:height="99" dlg:help-text="&amp;52.GelatoDialog.TextField1.HelpText" dlg:multiline="true"/>
+  <dlg:text dlg:style-id="1" dlg:id="Label1" dlg:tab-index="1" dlg:left="46" dlg:top="9" dlg:width="130" dlg:height="16" dlg:help-text="&amp;54.GelatoDialog.Label1.HelpText" dlg:value="&amp;55.GelatoDialog.Label1.Label" dlg:align="center"/>
+  <dlg:button dlg:id="CommandButton1" dlg:tab-index="4" dlg:left="51" dlg:top="265" dlg:width="58" dlg:height="18" dlg:help-text="&amp;56.GelatoDialog.CommandButton1.HelpText" dlg:value="&amp;57.GelatoDialog.CommandButton1.Label" dlg:button-type="ok"/>
+  <dlg:button dlg:id="CommandButton2" dlg:tab-index="5" dlg:left="117" dlg:top="265" dlg:width="58" dlg:height="18" dlg:help-text="&amp;58.GelatoDialog.CommandButton2.HelpText" dlg:value="&amp;59.GelatoDialog.CommandButton2.Label" dlg:button-type="cancel"/>
+  <dlg:text dlg:id="Label4" dlg:tab-index="6" dlg:left="19" dlg:top="30" dlg:width="53" dlg:height="9" dlg:help-text="&amp;60.GelatoDialog.Label4.HelpText" dlg:value="&amp;61.GelatoDialog.Label4.Label"/>
+  <dlg:text dlg:id="Label5" dlg:tab-index="7" dlg:left="19" dlg:top="145" dlg:width="53" dlg:height="9" dlg:help-text="&amp;62.GelatoDialog.Label5.HelpText" dlg:value="&amp;63.GelatoDialog.Label5.Label"/>
+  <dlg:text dlg:id="Label6" dlg:tab-index="8" dlg:left="19" dlg:top="174" dlg:width="53" dlg:height="9" dlg:help-text="&amp;64.GelatoDialog.Label6.HelpText" dlg:value="&amp;65.GelatoDialog.Label6.Label"/>
+  <dlg:textfield dlg:style-id="0" dlg:id="TextField3" dlg:tab-index="3" dlg:left="19" dlg:top="185" dlg:width="188" dlg:height="42" dlg:help-text="&amp;66.GelatoDialog.TextField3.HelpText" dlg:multiline="true"/>
+  <dlg:textfield dlg:style-id="0" dlg:id="TextField2" dlg:tab-index="2" dlg:left="19" dlg:top="157" dlg:width="188" dlg:height="13" dlg:help-text="&amp;68.GelatoDialog.TextField2.HelpText" dlg:value="&amp;69.GelatoDialog.TextField2.Text"/>
+  <dlg:menulist dlg:style-id="2" dlg:id="ListBox1" dlg:tab-index="9" dlg:left="18" dlg:top="242" dlg:width="89" dlg:height="12" dlg:help-text="&amp;70.GelatoDialog.ListBox1.HelpText" dlg:spin="true">
+   <dlg:menupopup>
+    <dlg:menuitem dlg:value="&amp;564.ListBox1.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;565.ListBox1.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;566.ListBox1.StringItemList"/>
+   </dlg:menupopup>
+  </dlg:menulist>
+  <dlg:text dlg:id="Label2" dlg:tab-index="10" dlg:left="19" dlg:top="231" dlg:width="53" dlg:height="9" dlg:help-text="&amp;74.GelatoDialog.Label2.HelpText" dlg:value="&amp;75.GelatoDialog.Label2.Label"/>
+ </dlg:bulletinboard>
+</dlg:window>

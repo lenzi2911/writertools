@@ -349,11 +349,11 @@
               <value/>
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
-              <value>Donate</value>
-			  <value xml:lang="ru-RU">Пожертвование</value>
+              <value>Writer for Writers</value>
+			  <value xml:lang="ru-RU">Writer for Writers</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
-              <value>macro:///WriterTools.Donate.DonatePayPal</value>
+              <value>macro:///WriterTools.Ad.AdLink</value>
             </prop>
             <prop oor:name="Target" oor:type="xs:string">
               <value>_self</value>
@@ -534,11 +534,11 @@
 	  
 	  	  <node oor:name="org.openoffice.Office.addon.WriterTools.img16" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
-          <value>macro:///WriterTools.Donate.DonatePayPal</value>
+          <value>macro:///WriterTools.Ad.AdLink</value>
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/money.png</value>
+            <value>%origin%/WriterTools/ad.png</value>
           </prop>
         </node>
       </node>  

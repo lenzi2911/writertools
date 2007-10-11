@@ -196,6 +196,9 @@ Dim DocURL As String, DocDir As String, DocName As String, TarString As String
 Dim Args(0) As New com.sun.star.beans.PropertyValue
 ThisDoc=ThisComponent
 
+Timestamp=Format(Year(Now), &quot;0000&quot;) &amp; &quot;-&quot; &amp; Format(Month(Now), &quot;00&quot;) &amp; &quot;-&quot;  &amp; Format(Day(Now), &quot;00&quot;) &amp; &quot;_&quot; &amp;_
+Format(Hour(Time), &quot;00&quot;) &amp; &quot;-&quot; &amp; Format(Minute(Time), &quot;00&quot;) &amp; &quot;-&quot; &amp; Format(Second(Time), &quot;00&quot;)
+
 If (Not GlobalScope.BasicLibraries.isLibraryLoaded(&quot;Tools&quot;)) Then
 GlobalScope.BasicLibraries.LoadLibrary(&quot;Tools&quot;)
 End If
@@ -211,22 +214,26 @@ FileName=Left(Dir(DocURL, 0), Len(Dir(DocURL, 0))-4)
 
 Args(0).Name=&quot;FilterName&quot;
 Args(0).Value=&quot;Text&quot;
-BackupFilePath=ConvertToURL(DocDir &amp; &quot;/&quot; &amp; CDateToISO(Date()) &amp; &quot;/&quot; &amp; FileName &amp; &quot;.txt&quot;)
+BackupFilePath=ConvertToURL(DocDir &amp; &quot;/&quot; &amp; Timestamp &amp; &quot;/&quot; &amp; FileName &amp; &quot;.txt&quot;)
 
 ThisDoc.StoreToURL(BackupFilePath, Args())
 Args(0).Name=&quot;FilterName&quot;
 Args(0).Value=&quot;Rich Text Format&quot;
-BackupFilePath=ConvertToURL(DocDir &amp; &quot;/&quot; &amp; CDateToISO(Date()) &amp; &quot;/&quot; &amp; FileName &amp; &quot;.rtf&quot;)
+BackupFilePath=ConvertToURL(DocDir &amp; &quot;/&quot; &amp; Timestamp &amp; &quot;/&quot; &amp; FileName &amp; &quot;.rtf&quot;)
 
 ThisDoc.StoreToURL(BackupFilePath, Args())
 Args(0).Name=&quot;FilterName&quot;
 Args(0).Value=&quot;MS Word 97&quot;
-BackupFilePath=ConvertToURL(DocDir &amp; &quot;/&quot; &amp; CDateToISO(Date()) &amp; &quot;/&quot; &amp; FileName &amp; &quot;.doc&quot;)
+BackupFilePath=ConvertToURL(DocDir &amp; &quot;/&quot; &amp; Timestamp &amp; &quot;/&quot; &amp; FileName &amp; &quot;.doc&quot;)
 ThisDoc.StoreToURL(BackupFilePath, Args())
 
 If GetGUIType=4 Then
- TarString=&quot; -cjvf &quot; &amp; ConvertFromURL(DocDir) &amp; &quot;/&quot; &amp; CDateToISO(Date()) &amp; &quot;.tar.bz2 &quot; &amp; ConvertFromURL(DocDir) &amp; &quot;/&quot; &amp; CDateToISO(Date()
+ TarString=&quot; -cjvf &quot; &amp; ConvertFromURL(DocDir) &amp; &quot;/&quot; &amp; Timestamp &amp; &quot;.tar.bz2 &quot; &amp; ConvertFromURL(DocDir) &amp; &quot;/&quot; &amp; Timestamp
  Shell(&quot;tar&quot;, 1, TarString)
+REM Uncomment the following lines if you want to compress the resulting backup directory
+REM  ElseIf GetGUIType=1 Then
+REM   ZipString=&quot; a -tzip &quot; &amp;&quot;&quot;&quot;&quot;&amp; ConvertFromURL(DocDir) &amp; &quot;\&quot; &amp; Timestamp &amp; &quot;.zip&quot;&quot; &quot; &amp;&quot;&quot;&quot;&quot;&amp; ConvertFromURL(DocDir) &amp; &quot;\&quot; &amp; Timestamp &amp; &quot;\*&quot;&quot;&quot;
+REM   Shell(&quot;7za.exe&quot;, 1, ZipString)
 End If
 
 &apos;MsgBox (&quot;The document has been saved.&quot;, ,&quot;All done!&quot;)

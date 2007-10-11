@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">
+<script:module xmlns:script="http://openoffice.org/2000/script" script:name="Ad" script:language="StarBasic">Sub AdLink()
+
+If GetGUIType=1 Then
+  Shell(DefaultWindowsBrowser,1, &quot;http://www.lulu.com/content/221513&quot;)
+   Else
+    Shell(DefaultLinuxBrowser,1, &quot;http://www.lulu.com/content/221513&quot;)
+End If
+
+End Sub
+</script:module>

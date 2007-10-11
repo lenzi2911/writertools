@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">
+<script:module xmlns:script="http://openoffice.org/2000/script" script:name="Tasks" script:language="StarBasic">&apos;************************************************************
+&apos;	Copyright © 2007 Dmitri Popov
+&apos;	Anyone may run this code.
+&apos;	If you wish to modify or distribute this code, then
+&apos;	you are granted a license to do so under the terms
+&apos;	of the Gnu General Public License.
+&apos;	See:  http://www.gnu.org/licenses/gpl.html
+&apos;************************************************************
+
+&apos;Global Const ConnectionFailedMessage=&quot;Connection to the database failed. Make sure that the WriterDB database is registered in OpenOffice.org. See Writer&apos;s Tools Use Guide for further info.&quot;
+
+Sub NewTask()
+
+Dim Dialog As Object, Library As Object, TheDialog As Object
+
+ThisDoc=ThisComponent
+SelectedSnippet=ThisDoc.getCurrentController().getSelection().getByIndex(0).getString()
+
+DBContext=createUnoService(&quot;com.sun.star.sdb.DatabaseContext&quot;)
+Dim NameDB As String
+NameDB=&quot;WriterDB&quot;
+If not DBContext.hasByName(NameDB) then
+&apos;MsgBox (&quot;Connection to the database failed. Make sure that the WriterDB database is registered in OpenOffice.org. See Writer&apos;s Tools Use Guide for further info.&quot;, , &quot;Connection failed!&quot;) : End
+MsgBox (FmtString(GetLocalizedString(11),Array(NameDB)),,GetLocalizedString(12)) : End
+End If
+
+DataSource=DBContext.getByName(NameDB)
+ConnectToDB=DataSource.GetConnection (&quot;&quot;,&quot;&quot;)
+
+exitOK=com.sun.star.ui.dialogs.ExecutableDialogResults.OK
+DialogLibraries.LoadLibrary(&quot;WriterTools&quot;)
+Library=DialogLibraries.GetByName(&quot;WriterTools&quot;)
+TheDialog=Library.GetByName(&quot;AddTaskDialog&quot;)
+
+Dialog=CreateUnoDialog(TheDialog)
+
+DialogField1=Dialog.getControl(&quot;TextField1&quot;).setText(SelectedSnippet)
+
+If Dialog.Execute=exitOK Then
+DialogField1=Dialog.getControl(&quot;TextField1&quot;)
+Task=DialogField1.Text
+DialogField2=Dialog.GetControl(&quot;TextField2&quot;)
+DueDate=DialogField2.Text
+
+SQLQuery=&quot;INSERT INTO &quot;&quot;tasks&quot;&quot; &quot; + &quot;(&quot;&quot;Task&quot;&quot;, &quot;&quot;Date&quot;&quot;) VALUES &quot;_
++ &quot;(&apos;&quot; + Task + &quot;&apos;,&apos;&quot; + DueDate + &quot;&apos;)&quot;
+
+SQLStatement=ConnectToDB.createStatement
+Result=SQLStatement.executeQuery (SQLQuery)
+
+ConnectToDB.close
+ConnectToDB.dispose()
+
+&apos;MsgBox (&quot;The task has been added.&quot;, , &quot;All done!&quot;)
+ZMessageBox(40, ,1)
+
+Dialog.Dispose
+
+End If
+
+End Sub
+
+REM Show all tasks
+
+Sub ShowTasks()
+
+Dim RowSetObj As Object, ConnectToDatabase As Object
+
+DBContext=createUnoService(&quot;com.sun.star.sdb.DatabaseContext&quot;)
+Dim NameDB As String
+NameDB=&quot;WriterDB&quot;
+If not DBContext.hasByName(NameDB) then
+&apos;MsgBox (&quot;Connection to the database failed. Make sure that the WriterDB database is registered in OpenOffice.org. See Writer&apos;s Tools Use Guide for further info.&quot;, , &quot;Connection failed!&quot;) : End
+MsgBox (FmtString(GetLocalizedString(11),Array(NameDB)),,GetLocalizedString(12)) : End
+End If
+
+DataSource=DBContext.getByName(NameDB)
+ConnectToDB=DataSource.GetConnection (&quot;&quot;,&quot;&quot;)
+
+SQLQuery= &quot;SELECT &quot;&quot;Task&quot;&quot;, &quot;&quot;Date&quot;&quot; FROM &quot;&quot;tasks&quot;&quot; ORDER BY &quot;&quot;Date&quot;&quot; ASC&quot;
+
+SQLStatement=ConnectToDB.createStatement
+RowSetObj=SQLStatement.executeQuery (SQLQuery)
+
+TaskList = &quot;&quot;
+While RowSetObj.Next
+TaskList=TaskList &amp; &quot; &quot; &amp; RowSetObj.getString(1) &amp; &quot;: &quot; &amp; RowSetObj.getString(2) &amp; Chr(13)
+Wend
+ If Len(TaskList) &gt; 0  then
+  &apos;MsgBox (TaskList, , &quot;Task list&quot;)
+  MsgBox (TaskList, , GetLocalizedString(38))
+   Else
+  &apos;MsgBox (&quot;The task list is empty.&quot;;, , &quot;Task list&quot;)
+  ZMessageBox(49, ,38)
+ End If
+
+ConnectToDB.close
+ConnectToDB.dispose()
+
+End Sub
+
+REM Delete all tasks
+
+Sub PurgeTasks()
+
+DBContext=createUnoService(&quot;com.sun.star.sdb.DatabaseContext&quot;)
+Dim NameDB As String
+NameDB=&quot;WriterDB&quot;
+If not DBContext.hasByName(NameDB) then
+&apos;MsgBox (&quot;Connection to the database failed. Make sure that the WriterDB database is registered in OpenOffice.org. See Writer&apos;s Tools Use Guide for further info.&quot;, , &quot;Connection failed!&quot;) : End
+MsgBox (FmtString(GetLocalizedString(11),Array(NameDB)),,GetLocalizedString(12)) : End
+End If
+
+&apos;Answer=MsgBox(&quot;Do you really want to purge all tasks?&quot;,4,&quot;Attention!&quot;)
+Answer= ZMessageBox(48,4+32,3)
+If Answer=7 then End
+
+DataSource=DBContext.getByName(NameDB)
+ConnectToDB=DataSource.GetConnection (&quot;&quot;,&quot;&quot;)
+
+SQLQuery=&quot;DELETE FROM &quot;&quot;tasks&quot;&quot;&quot;
+
+SQLStatement=ConnectToDB.createStatement
+Result=SQLStatement.executeQuery (SQLQuery)
+
+ConnectToDB.close
+ConnectToDB.dispose()
+
+&apos;MsgBox (&quot;The tasks have been purged.&quot;, , &quot;All done!&quot;)
+ZMessageBox(39, ,1)
+
+End Sub
+</script:module>

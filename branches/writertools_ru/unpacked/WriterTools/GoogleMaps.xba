@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">
+<script:module xmlns:script="http://openoffice.org/2000/script" script:name="GoogleMaps" script:language="StarBasic">&apos;************************************************************
+&apos;	Copyright © 2007 Dmitri Popov
+&apos;	Anyone may run this code.
+&apos;	If you wish to modify or distribute this code, then
+&apos;	you are granted a license to do so under the terms
+&apos;   of the Gnu General Public License.
+&apos;	See:  http://www.gnu.org/licenses/gpl.html
+&apos;************************************************************
+
+Sub ShowOnTheMap()
+
+GoogleMapsURL=&quot;http://maps.google.com/maps?&amp;q=&quot;
+
+ThisDoc=ThisComponent
+AddressInfo=ThisDoc.CurrentController.getViewCursor
+&apos;If AddressInfo.String =&quot;&quot; then MsgBox (&quot;Please select an address info to map!&quot;, , &quot;Attention!&quot;) : End
+If AddressInfo.String =&quot;&quot; then ZMessageBox(10,48,3) : End
+
+AddressInfoURL=Right(ConvertToURL(AddressInfo.String), Len(ConvertToURL(AddressInfo.String))-8)
+
+ If GetGUIType=1 Then
+  Shell(DefaultWindowsBrowser,1, GoogleMapsURL &amp; AddressInfoURL)
+   Else
+    Shell(DefaultLinuxBrowser,1, GoogleMapsURL &amp; AddressInfoURL)
+ End If
+
+End Sub
+</script:module>

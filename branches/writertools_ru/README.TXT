@@ -13,7 +13,10 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 0.9.x
+VERSION 0.9.2 2007-10-11
+  * Added a link to the Writer for Writers book instead of Donate.
+
+VERSION 0.9.1 2007-10-10
   * Status messages added to the Timer tool.
   * wnotes form added to the WriterDB database.
   * Meaningful message when the task list in the Tasks tool is empty.
