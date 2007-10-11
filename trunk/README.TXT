@@ -13,7 +13,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 0.9.1 2007-10-11
+VERSION 0.9.2 2007-10-11
   * Added a link to the Writer for Writers book instead of Donate.
 
 VERSION 0.9.1 2007-10-10
