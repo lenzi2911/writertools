@@ -13,6 +13,9 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 0.9.4
+  * Minor improvements to the Translit tool.
+
 VERSION 0.9.3 2007-10-13
   * Removed StatusText from the StartTiming macro due to its erratic behavior.
   * Minor fixes for the Writer Templates extension.
