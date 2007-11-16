@@ -11,6 +11,10 @@
 
 Sub ShowOnTheMap()
 
+Dim Dialog As Object, Library As Object
+Dim TheDialog As Object, DialogField As Object
+Dim exitOK As String, AddressInfoURL As String
+
 GoogleMapsURL=&quot;http://maps.google.com/maps?&amp;q=&quot;
 
 ThisDoc=ThisComponent

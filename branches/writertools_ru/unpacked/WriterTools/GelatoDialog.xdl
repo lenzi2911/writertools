@@ -18,9 +18,9 @@
   <dlg:textfield dlg:style-id="0" dlg:id="TextField2" dlg:tab-index="2" dlg:left="19" dlg:top="157" dlg:width="188" dlg:height="13" dlg:help-text="&amp;68.GelatoDialog.TextField2.HelpText" dlg:value="&amp;69.GelatoDialog.TextField2.Text"/>
   <dlg:menulist dlg:style-id="2" dlg:id="ListBox1" dlg:tab-index="9" dlg:left="18" dlg:top="242" dlg:width="89" dlg:height="12" dlg:help-text="&amp;70.GelatoDialog.ListBox1.HelpText" dlg:spin="true">
    <dlg:menupopup>
-    <dlg:menuitem dlg:value="&amp;564.ListBox1.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;565.ListBox1.StringItemList"/>
-    <dlg:menuitem dlg:value="&amp;566.ListBox1.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;71.ListBox1.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;72.ListBox1.StringItemList"/>
+    <dlg:menuitem dlg:value="&amp;73.ListBox1.StringItemList"/>
    </dlg:menupopup>
   </dlg:menulist>
   <dlg:text dlg:id="Label2" dlg:tab-index="10" dlg:left="19" dlg:top="231" dlg:width="53" dlg:height="9" dlg:help-text="&amp;74.GelatoDialog.Label2.HelpText" dlg:value="&amp;75.GelatoDialog.Label2.Label"/>

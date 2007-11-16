@@ -7,11 +7,9 @@
  <library:element library:name="WordGame"/>
  <library:element library:name="WordOfTheDay"/>
  <library:element library:name="BasketDB"/>
- <library:element library:name="ZModule"/>
- <library:element library:name="RemoteBackup"/>
- <library:element library:name="RSSFeed"/>
- <library:element library:name="Wikify"/>
- <library:element library:name="PostToGelato"/>
  <library:element library:name="Tasks"/>
+ <library:element library:name="RemoteBackup"/>
  <library:element library:name="Ad"/>
+ <library:element library:name="Wikify"/>
+<library:element library:name="ZModule"/>
 </library:library>

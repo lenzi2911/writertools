@@ -26,12 +26,12 @@ EndIf
 If Answer=7 then End
 StartTime=Time
 ElapsedTime=Timer
-&apos;StatusText(&quot;Timer is running...&quot;)
-&apos;StatusText(GetLocalizedString(37))
 
 End Sub
 
 Sub EndTiming()
+
+Dim Dialog As Object, Library As Object
 
 If ElapsedTime &lt;&gt; 0 then
 &apos;Answer=MsgBox(&quot;End current timing session?&quot;,4,&quot;End Timing?&quot;)
@@ -80,8 +80,24 @@ End If
 DataSource=DBContext.getByName(NameDB)
 ConnectToDB=DataSource.GetConnection (&quot;&quot;,&quot;&quot;)
 
-SQLQuery=&quot;INSERT INTO &quot;&quot;docstats&quot;&quot; &quot; + &quot;(&quot;&quot;FileName&quot;&quot;, &quot;&quot;TimeUsed&quot;&quot;, &quot;&quot;WordCount&quot;&quot;, &quot;&quot;Date&quot;&quot;) VALUES &quot;_
-+ &quot;(&apos;&quot; + FileName + &quot;&apos;,&apos;&quot; + ElapsedTimeMinutes + &quot;&apos;,&apos;&quot; + WordCount + &quot;&apos;,&apos;&quot; + DateToday + &quot;&apos;)&quot;
+exitOK=com.sun.star.ui.dialogs.ExecutableDialogResults.OK
+DialogLibraries.LoadLibrary(&quot;WriterTools&quot;)
+Library=DialogLibraries.GetByName(&quot;WriterTools&quot;)
+TheDialog=Library.GetByName(&quot;TimerDialog&quot;)
+
+Dialog=CreateUnoDialog(TheDialog)
+
+DialogField1=Dialog.getControl(&quot;TextField1&quot;).setText(FileName)
+DialogField2=Dialog.getControl(&quot;TextField2&quot;).setText(ElapsedTimeMinutes)
+DialogField3=Dialog.getControl(&quot;TextField3&quot;).setText(WordCount)
+DialogField4=Dialog.getControl(&quot;TextField4&quot;).setText(DateToday)
+
+If Dialog.Execute=exitOK Then
+DialogField5=Dialog.GetControl(&quot;TextField5&quot;)
+Notes=DialogField5.Text
+
+SQLQuery=&quot;INSERT INTO &quot;&quot;docstats&quot;&quot; &quot; + &quot;(&quot;&quot;FileName&quot;&quot;, &quot;&quot;TimeUsed&quot;&quot;, &quot;&quot;WordCount&quot;&quot;, &quot;&quot;Date&quot;&quot;, &quot;&quot;Notes&quot;&quot;) VALUES &quot;_
++ &quot;(&apos;&quot; + FileName + &quot;&apos;,&apos;&quot; + ElapsedTimeMinutes + &quot;&apos;,&apos;&quot; + WordCount + &quot;&apos;,&apos;&quot; + DateToday + &quot;&apos;,&apos;&quot; + Notes + &quot;&apos;)&quot;
 
 SQLStatement=ConnectToDB.createStatement
 Result=SQLStatement.executeQuery (SQLQuery)
@@ -90,6 +106,10 @@ ConnectToDB.close
 ConnectToDB.dispose()
 
 ElapsedTime=0
+
+End If
+
+Dialog.Dispose
 
 &apos;MsgBox (&quot;The data has been saved.&quot;, , &quot;All done!&quot;)
 ZMessageBox(24, ,1)

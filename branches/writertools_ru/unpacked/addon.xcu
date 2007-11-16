@@ -142,8 +142,8 @@
             <prop oor:name="URL" oor:type="xs:string">
               <value>private:separator</value>
             </prop>
-          </node>
-
+          </node>	
+		  
 		  <node oor:name="menu07" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
@@ -390,7 +390,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/lookup.png</value>
+            <value>%origin%/icons/lookup.png</value>
           </prop>
         </node>
       </node>
@@ -401,7 +401,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/emailbackup.png</value>
+            <value>%origin%/icons/emailbackup.png</value>
           </prop>
         </node>
       </node>
@@ -412,7 +412,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/remotebackup.png</value>
+            <value>%origin%/icons/remotebackup.png</value>
           </prop>
         </node>
       </node>
@@ -423,7 +423,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/multiformatbackup.png</value>
+            <value>%origin%/icons/multiformatbackup.png</value>
           </prop>
         </node>
       </node>
@@ -434,7 +434,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/translate.png</value>
+            <value>%origin%/icons/translate.png</value>
           </prop>
         </node>
       </node>
@@ -445,7 +445,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/wikifyword.png</value>
+            <value>%origin%/icons/wikifyword.png</value>
           </prop>
         </node>
       </node>
@@ -456,7 +456,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/clock_play.png</value>
+            <value>%origin%/icons/clock_play.png</value>
           </prop>
         </node>
       </node>
@@ -467,7 +467,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/clock_stop.png</value>
+            <value>%origin%/icons/clock_stop.png</value>
           </prop>
         </node>
       </node>
@@ -478,7 +478,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/cake.png</value>
+            <value>%origin%/icons/cake.png</value>
           </prop>
         </node>
       </node>
@@ -489,7 +489,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/randomword.png</value>
+            <value>%origin%/icons/randomword.png</value>
           </prop>
         </node>
       </node>
@@ -500,7 +500,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/basket.png</value>
+            <value>%origin%/icons/basket.png</value>
           </prop>
         </node>
       </node>
@@ -511,7 +511,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/map.png</value>
+            <value>%origin%/icons/map.png</value>
           </prop>
         </node>
       </node>
@@ -522,7 +522,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/date_add.png</value>
+            <value>%origin%/icons/date_add.png</value>
           </prop>
         </node>
       </node>
@@ -533,7 +533,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/date.png</value>
+            <value>%origin%/icons/date.png</value>
           </prop>
         </node>
       </node>
@@ -544,7 +544,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/date_delete.png</value>
+            <value>%origin%/icons/date_delete.png</value>
           </prop>
         </node>
       </node>
@@ -555,7 +555,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/ad.png</value>
+            <value>%origin%/icons/ad.png</value>
           </prop>
         </node>
       </node>  

@@ -3,7 +3,7 @@
 Copyright 2007 Dmitri Popov
 Anyone may run the code associated with this document. If you wish to modify or distribute this document and or its code, then you are granted a license to do so under the terms of the GNU General Public License. See:  http://www.gnu.org/licenses/gpl.html
 
-Thanks to JohnV, Mark Bain, and other OOoForum users for their help.
+Thanks to JohnV, Mark Bain, Konstantin Lavrov, and many OOoForum users for their help.
 
 Official page:
 http://code.google.com/p/writertools/
@@ -12,6 +12,16 @@ The latest development release is available in the following SVN repository:
 http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
+
+VERSION 0.9.4
+  * Minor improvements to the Translit tool.
+
+VERSION 0.9.3 2007-10-13
+  * Removed StatusText from the StartTiming macro due to its erratic behavior.
+  * Minor fixes for the Writer Templates extension.
+  * Save Session dialog box added to the Timer tool. It's now possible to add notes to the saved session.
+  * Translit tool added. Converts latin to cyrillic (experimental and is not in the Writer's Tools menu).
+  * Post to Gelato tool removed.
 
 VERSION 0.9.2 2007-10-11
   * Added a link to the Writer for Writers book instead of Donate.
@@ -22,6 +32,8 @@ VERSION 0.9.1 2007-10-10
   * Meaningful message when the task list in the Tasks tool is empty.
   * Added a confirmation dialog when purging tasks.
   * Show on the Map tool switched to Google Maps.
+  * Multi-format Backup tool now uses timestamps for folder names.
+  * Multi-format Backup can use 7-Zip (must be installed separately) to compress the resulting backup folder.
 
 VERSION 0.9.0 2007-10-08
   * Minor fixes in the Word Hunt game.
@@ -37,7 +49,7 @@ VERSION 0.8.9.2 2007-10-04
 
 VERSION 0.8.8 2007-09-29
   * Wikify Word tool added.
-  * Writer templates (generec article and book) added.
+  * Writer templates (generic article and book) added.
   * User-friendly error messages for failed database connection.
   * Minor fixes.
 
