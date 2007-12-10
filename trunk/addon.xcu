@@ -214,21 +214,15 @@
             </prop>
           </node>
 		  
-		  <node oor:name="menu10s" oor:op="replace">
-            <prop oor:name="URL" oor:type="xs:string">
-              <value>private:separator</value>
-            </prop>
-          </node>
-		  
 		  <node oor:name="menu11" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
-              <value>Word of the Day</value>
+              <value>Q and A Game</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
-              <value>macro:///WriterTools.WordOfTheDay.RandomWord</value>
+              <value>macro:///WriterTools.QandAGame.QandA</value>
             </prop>
             <prop oor:name="Target" oor:type="xs:string">
               <value>_self</value>
@@ -249,10 +243,10 @@
               <value/>
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
-              <value>Add to Basket</value>
+              <value>Word of the Day</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
-              <value>macro:///WriterTools.BasketDB.InsertTextSnippet</value>
+              <value>macro:///WriterTools.WordOfTheDay.RandomWord</value>
             </prop>
             <prop oor:name="Target" oor:type="xs:string">
               <value>_self</value>
@@ -273,6 +267,30 @@
               <value/>
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
+              <value>Add to Basket</value>
+            </prop>
+            <prop oor:name="URL" oor:type="xs:string">
+              <value>macro:///WriterTools.BasketDB.InsertTextSnippet</value>
+            </prop>
+            <prop oor:name="Target" oor:type="xs:string">
+              <value>_self</value>
+            </prop>
+            <prop oor:name="ImageIdentifier" oor:type="xs:string">
+              <value/>
+            </prop>
+          </node>
+		  
+		  <node oor:name="menu13s" oor:op="replace">
+            <prop oor:name="URL" oor:type="xs:string">
+              <value>private:separator</value>
+            </prop>
+          </node>
+		  
+		  <node oor:name="menu14" oor:op="replace">
+            <prop oor:name="Context" oor:type="xs:string">
+              <value/>
+            </prop>
+            <prop oor:name="Title" oor:type="xs:string">
               <value>Add Task</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
@@ -286,7 +304,7 @@
             </prop>
           </node>
 		  
-		  <node oor:name="menu14" oor:op="replace">
+		  <node oor:name="menu15" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
             </prop>
@@ -304,7 +322,7 @@
             </prop>
           </node>
 		  
-		  <node oor:name="menu15" oor:op="replace">
+		  <node oor:name="menu16" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
             </prop>
@@ -322,13 +340,13 @@
             </prop>
           </node>
 		  
-		  <node oor:name="menu15s" oor:op="replace">
+		  <node oor:name="menu16s" oor:op="replace">
             <prop oor:name="URL" oor:type="xs:string">
               <value>private:separator</value>
             </prop>
           </node>
 		  
-		  <node oor:name="menu16" oor:op="replace">
+		  <node oor:name="menu17" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
             </prop>
@@ -356,7 +374,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/lookup.png</value>
+            <value>%origin%/icons/lookup.png</value>
           </prop>
         </node>
       </node>
@@ -367,7 +385,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/emailbackup.png</value>
+            <value>%origin%/icons/emailbackup.png</value>
           </prop>
         </node>
       </node>
@@ -378,7 +396,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/remotebackup.png</value>
+            <value>%origin%/icons/remotebackup.png</value>
           </prop>
         </node>
       </node>
@@ -389,7 +407,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/multiformatbackup.png</value>
+            <value>%origin%/icons/multiformatbackup.png</value>
           </prop>
         </node>
       </node>
@@ -400,7 +418,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/translate.png</value>
+            <value>%origin%/icons/translate.png</value>
           </prop>
         </node>
       </node>
@@ -411,7 +429,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/wikifyword.png</value>
+            <value>%origin%/icons/wikifyword.png</value>
           </prop>
         </node>
       </node>
@@ -422,7 +440,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/clock_play.png</value>
+            <value>%origin%/icons/clock_play.png</value>
           </prop>
         </node>
       </node>
@@ -433,7 +451,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/clock_stop.png</value>
+            <value>%origin%/icons/clock_stop.png</value>
           </prop>
         </node>
       </node>
@@ -444,7 +462,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/cake.png</value>
+            <value>%origin%/icons/cake.png</value>
           </prop>
         </node>
       </node>
@@ -455,7 +473,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/randomword.png</value>
+            <value>%origin%/icons/randomword.png</value>
           </prop>
         </node>
       </node>
@@ -466,7 +484,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/basket.png</value>
+            <value>%origin%/icons/basket.png</value>
           </prop>
         </node>
       </node>
@@ -477,7 +495,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/map.png</value>
+            <value>%origin%/icons/map.png</value>
           </prop>
         </node>
       </node>
@@ -488,7 +506,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/date_add.png</value>
+            <value>%origin%/icons/date_add.png</value>
           </prop>
         </node>
       </node>
@@ -499,7 +517,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/date.png</value>
+            <value>%origin%/icons/date.png</value>
           </prop>
         </node>
       </node>
@@ -510,21 +528,33 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/date_delete.png</value>
+            <value>%origin%/icons/date_delete.png</value>
           </prop>
         </node>
       </node>
 	  
-	  	  <node oor:name="org.openoffice.Office.addon.WriterTools.img16" oor:op="replace">
+	  <node oor:name="org.openoffice.Office.addon.WriterTools.img16" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
           <value>macro:///WriterTools.Ad.AdLink</value>
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/WriterTools/ad.png</value>
+            <value>%origin%/icons/ad.png</value>
           </prop>
         </node>
-      </node>  
+      </node>
+	  
+	  <node oor:name="org.openoffice.Office.addon.WriterTools.img17" oor:op="replace">
+        <prop oor:name="URL" oor:type="xs:string">
+          <value>macro:///WriterTools.QandAGame.QandA</value>
+        </prop>
+        <node oor:name="UserDefinedImages">
+          <prop oor:name="ImageSmallURL">
+            <value>%origin%/icons/hourglass.png</value>
+          </prop>
+        </node>
+      </node>
+	  
     </node>
   </node>
 </oor:node>

@@ -13,8 +13,9 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 0.9.4
+VERSION 0.9.5
   * Minor improvements to the Translit tool.
+  * Q and A game added.
 
 VERSION 0.9.3 2007-10-13
   * Removed StatusText from the StartTiming macro due to its erratic behavior.
