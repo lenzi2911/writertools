@@ -13,7 +13,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 0.9.5
+VERSION 0.9.5 2007-12-11
   * Minor improvements to the Translit tool.
   * Q and A game added.
 
