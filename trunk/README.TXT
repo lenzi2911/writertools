@@ -13,6 +13,9 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 0.9.5
+  * Tasks in the WriterDB database can now be marked as done, which are not displayed when running the Show Tasks command.
+
 VERSION 0.9.5 2007-12-11
   * Minor improvements to the Translit tool.
   * Q and A game added.
