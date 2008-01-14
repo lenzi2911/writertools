@@ -11,5 +11,6 @@
  <library:element library:name="RemoteBackup"/>
  <library:element library:name="Ad"/>
  <library:element library:name="Wikify"/>
-<library:element library:name="ZModule"/>
+ <library:element library:name="QandAGame"/>
+ <library:element library:name="ZModule"/>
 </library:library>

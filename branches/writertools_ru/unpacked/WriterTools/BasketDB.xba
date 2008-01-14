@@ -65,4 +65,40 @@ End If
 Dialog.Dispose
 
 End Sub
+&apos; The OpenForm macro is based on an example from:
+&apos; &quot;Programmation OpenOffice.org2&quot; by Bernard Marcelly and Laurent Godard
+&apos; Eyrolles, 2006, p.636
+
+Dim astuce As Object &apos; pour maintenir le formulaire affiché
+
+Global maConnexion as Object, dbDoc As Object
+
+Sub OpenForm()
+Dim monDbContext As Object, maSource As Object
+Dim monFormulaire As Object, lesFormulaires As Object
+Dim OdbOpt(0) as new com.sun.star.beans.PropertyValue
+Dim stdOpenArgs(1) as new com.sun.star.beans.PropertyValue
+Dim adrOdb As String
+Const nomSource = &quot;WriterDB&quot;, nomFormulaire = &quot;basket&quot;
+
+monDbContext = CreateUnoService(&quot;com.sun.star.sdb.DatabaseContext&quot;)
+maSource = monDbContext.getByName(NomSource)
+dbDoc = maSource.DatabaseDocument
+adrOdb = dbDoc.URL
+OdbOpt(0).Name = &quot;Hidden&quot;
+OdbOpt(0).Value = True
+dbDoc = StarDesktop.loadComponentFromURL(adrOdb, &quot;_blank&quot;, 0, OdbOpt())
+lesFormulaires = dbDoc.FormDocuments
+
+&apos; contournement de bogue : l&apos;instruction suivante est
+&apos; indispensable pour visualiser le formulaire en fin de macro
+astuce = lesFormulaires.getByName(nomFormulaire)
+
+stdOpenArgs(0).Name = &quot;ActiveConnection&quot;
+maConnexion = dbDoc.Datasource.getConnection(&quot;&quot;,&quot;&quot;)
+stdOpenArgs(0).Value = maConnexion
+stdOpenArgs(1).Name = &quot;OpenMode&quot;
+stdOpenArgs(1).Value = &quot;open&quot;
+lesFormulaires.loadComponentFromURL(nomFormulaire, &quot;_blank&quot;, 0, stdOpenArgs())
+End Sub
 </script:module>

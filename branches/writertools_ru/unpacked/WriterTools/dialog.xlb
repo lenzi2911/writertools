@@ -6,7 +6,6 @@
  <library:element library:name="LookupDialog"/>
  <library:element library:name="AddTaskDialog"/>
  <library:element library:name="BasketDialog"/>
- <library:element library:name="GelatoDialog"/>
  <library:element library:name="ZDialog"/>
  <library:element library:name="TimerDialog"/>
 </library:library>

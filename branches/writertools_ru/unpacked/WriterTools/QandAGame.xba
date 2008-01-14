@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">
+<script:module xmlns:script="http://openoffice.org/2000/script" script:name="QandAGame" script:language="StarBasic">&apos;************************************************************
+&apos;	Copyright © 2007 Dmitri Popov
+&apos;	Anyone may run this code.
+&apos;	If you wish to modify or distribute this code, then
+&apos;	you are granted a license to do so under the terms
+&apos;	of the Gnu General Public License.
+&apos;	See:  http://www.gnu.org/licenses/gpl.html
+&apos;************************************************************
+
+Sub QandA()
+
+Dim DBContext As Object
+Dim DataSource As Object,ConnectToDB,SQLStatement
+Dim SQLQuery As String,SQLResult,RandomID,rows,ResultRecord
+Dim NumberOfRounds As Integer
+
+DBContext=createUnoService(&quot;com.sun.star.sdb.DatabaseContext&quot;)
+
+NameDB=&quot;WriterDB&quot;
+If not DBContext.hasByName(NameDB) then
+&apos;MsgBox (&quot;Connection to the database failed. Make sure that the WriterDB database is registered in OpenOffice.org. See Writer&apos;s Tools Use Guide for further info.&quot;, , &quot;Connection failed!&quot;) : End
+MsgBox (FmtString(GetLocalizedString(11),Array(NameDB)),,GetLocalizedString(12)) : End
+End If
+
+SQLResult=createUnoService(&quot;com.sun.star.sdb.RowSet&quot;)
+
+DataSource=DBContext.getByName(NameDB)
+ConnectToDB=DataSource.GetConnection (&quot;&quot;,&quot;&quot;)
+
+SQLQuery=&quot;SELECT &quot;&quot;ID&quot;&quot;, &quot;&quot;Question&quot;&quot;, &quot;&quot;Answer&quot;&quot;  FROM &quot;&quot;qanda&quot;&quot;&quot;
+
+SQLResult.activeConnection = ConnectToDB
+SQLResult.Command = SQLQuery
+SQLResult.execute
+
+SQLResult.Last
+rows = SQLResult.getRow
+
+CorrectAnswerCounter=0
+IncorrectAnswerCounter=0
+
+&apos;NumberOfRounds=InputBox(&quot;QandA Game&quot;, &quot;How many rounds would you like to play?&quot;,,)
+NumberOfRounds=InputBox(GetLocalizedString(50), GetLocalizedString(51),,)
+While RoundCounter&lt;NumberOfRounds
+
+Do
+ RandomID=Int(Rnd()*rows)
+ SQLResult.Absolute(RandomID)
+ ResultRecord = SQLResult.getString(2) &amp; &quot; - &quot; &amp; SQLResult.getString(3)
+Loop While isEmpty(ResultRecord)
+
+InputMessage=SQLResult.getString(2)
+InputTitle=GetLocalizedString(50)
+InputWord=InputBox(InputMessage, InputTitle)
+
+If InputWord=SQLResult.getString(3) Then
+&apos;Answer=MsgBox (&quot;Correct!&quot;, , &quot;Congratulations!&quot;)
+Answer=ZMessageBox(52, ,32)
+CorrectAnswerCounter=CorrectAnswerCounter+1
+
+Else
+
+&apos;Answer=MsgBox (&quot;Wrong!&quot;, , &quot;Sorry!&quot;)
+Answer=ZMessageBox(53, ,54)
+IncorrectAnswerCounter=IncorrectAnswerCounter+1
+End If
+
+&apos; If InputWord=&quot;&quot; Then
+&apos; MsgBox (&quot;Your results:&quot; &amp; Chr(13) &amp; &quot; - &quot; &amp; CorrectAnswerCounter &amp; &quot; correct answers&quot; &amp; Chr(13) &amp;_
+&apos; &quot; - &quot; &amp; IncorrectAnswerCounter &amp; &quot; correct answers&quot;, , &quot;Results&quot;) : End
+
+RoundCounter=RoundCounter+1
+
+WEnd
+
+&apos;MsgBox (&quot;Your results:&quot; &amp; Chr(13) &amp; &quot; - &quot; &amp; CorrectAnswerCounter &amp; &quot; correct answers&quot; &amp; Chr(13) &amp;_
+&apos;&quot; - &quot; &amp; IncorrectAnswerCounter &amp; &quot; correct answers&quot;, , &quot;Results&quot;)
+MsgBox (GetLocalizedString(55) &amp; Chr(13) &amp; &quot; - &quot; &amp; CorrectAnswerCounter &amp; &quot; &quot; &amp; GetLocalizedString(56) &amp; Chr(13) &amp;_
+&quot; - &quot; &amp; IncorrectAnswerCounter &amp; &quot; &quot; &amp; GetLocalizedString(57), , GetLocalizedString(58))
+
+ConnectToDB.close
+ConnectToDB.dispose()
+End Sub
+</script:module>

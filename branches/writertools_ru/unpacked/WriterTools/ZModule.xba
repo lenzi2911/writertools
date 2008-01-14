@@ -60,8 +60,17 @@
 &apos; 47 - Email address
 &apos; 48 - Do you really want to purge all tasks?
 &apos; 49 - The task list is empty
+&apos; 50 - Q and A Game
+&apos; 51 - How many rounds would you like to play?
+&apos; 52 - Correct!
+&apos; 53 - Wrong!
+&apos; 54 - Sorry!
+&apos; 55 - Your results:
+&apos; 56 - correct answers
+&apos; 57 - incorrect answers
+&apos; 58 - Results
 
-&apos;Const NumberOfTextIds  = 50
+&apos;Const NumberOfTextIds  = 59
 
 Sub Main
 

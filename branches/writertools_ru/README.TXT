@@ -13,8 +13,13 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 0.9.4
+VERSION 0.9.6
+  * Tasks in the WriterDB database can now be marked as done, which are not displayed when running the Show Tasks command.
+  * Basket form and Browse Basket commmand added
+
+VERSION 0.9.5 2007-12-11
   * Minor improvements to the Translit tool.
+  * Q and A game added.
 
 VERSION 0.9.3 2007-10-13
   * Removed StatusText from the StartTiming macro due to its erratic behavior.

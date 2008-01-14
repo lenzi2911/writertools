@@ -236,23 +236,16 @@
             </prop>
           </node>
 		  
-		  <node oor:name="menu10s" oor:op="replace">
-            <prop oor:name="URL" oor:type="xs:string">
-              <value>private:separator</value>
-            </prop>
-          </node>
-		  
 		  <node oor:name="menu11" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
-              <value>Word of the Day</value>
-              <value xml:lang="en">Word of the Day</value>
-              <value xml:lang="ru-RU">Слово дня</value>
+              <value>Q and A Game</value>
+              <value xml:lang="ru-RU">Игра Вопрос-Ответ</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
-              <value>macro:///WriterTools.WordOfTheDay.RandomWord</value>
+              <value>macro:///WriterTools.QandAGame.QandA</value>
             </prop>
             <prop oor:name="Target" oor:type="xs:string">
               <value>_self</value>
@@ -273,12 +266,12 @@
               <value/>
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
-              <value>Add to Basket</value>
-              <value xml:lang="en">Add to Basket</value>
-	      <value xml:lang="ru-RU">Пополнить багаж</value>
+              <value>Word of the Day</value>
+              <value xml:lang="en">Word of the Day</value>
+              <value xml:lang="ru-RU">Слово дня</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
-              <value>macro:///WriterTools.BasketDB.InsertTextSnippet</value>
+              <value>macro:///WriterTools.WordOfTheDay.RandomWord</value>
             </prop>
             <prop oor:name="Target" oor:type="xs:string">
               <value>_self</value>
@@ -299,6 +292,50 @@
               <value/>
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
+              <value>Add to Basket</value>
+              <value xml:lang="en">Add to Basket</value>
+	      <value xml:lang="ru-RU">Пополнить багаж</value>
+            </prop>
+            <prop oor:name="URL" oor:type="xs:string">
+              <value>macro:///WriterTools.BasketDB.InsertTextSnippet</value>
+            </prop>
+            <prop oor:name="Target" oor:type="xs:string">
+              <value>_self</value>
+            </prop>
+            <prop oor:name="ImageIdentifier" oor:type="xs:string">
+              <value/>
+            </prop>
+          </node>
+		  
+		  <node oor:name="menu14" oor:op="replace">
+            <prop oor:name="Context" oor:type="xs:string">
+              <value/>
+            </prop>
+            <prop oor:name="Title" oor:type="xs:string">
+              <value>Browse Basket</value>
+            </prop>
+            <prop oor:name="URL" oor:type="xs:string">
+              <value>macro:///WriterTools.BasketDB.OpenForm</value>
+            </prop>
+            <prop oor:name="Target" oor:type="xs:string">
+              <value>_self</value>
+            </prop>
+            <prop oor:name="ImageIdentifier" oor:type="xs:string">
+              <value/>
+            </prop>
+          </node>
+		  
+		  <node oor:name="menu14s" oor:op="replace">
+            <prop oor:name="URL" oor:type="xs:string">
+              <value>private:separator</value>
+            </prop>
+          </node>
+		  
+		  <node oor:name="menu15" oor:op="replace">
+            <prop oor:name="Context" oor:type="xs:string">
+              <value/>
+            </prop>
+            <prop oor:name="Title" oor:type="xs:string">
               <value>Add Task</value>
               <value xml:lang="en">Add Task</value>
 	      <value xml:lang="ru-RU">Добавить задачу</value>
@@ -314,7 +351,7 @@
             </prop>
           </node>
 		  
-		  <node oor:name="menu14" oor:op="replace">
+		  <node oor:name="menu16" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
             </prop>
@@ -334,7 +371,7 @@
             </prop>
           </node>
 		  
-		  <node oor:name="menu15" oor:op="replace">
+		  <node oor:name="menu17" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
             </prop>
@@ -354,13 +391,13 @@
             </prop>
           </node>
 		  
-		  <node oor:name="menu15s" oor:op="replace">
+		  <node oor:name="menu17s" oor:op="replace">
             <prop oor:name="URL" oor:type="xs:string">
               <value>private:separator</value>
             </prop>
           </node>
 		  
-		  <node oor:name="menu16" oor:op="replace">
+		  <node oor:name="menu18" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
             </prop>
@@ -549,7 +586,7 @@
         </node>
       </node>
 	  
-	  	  <node oor:name="org.openoffice.Office.addon.WriterTools.img16" oor:op="replace">
+	  <node oor:name="org.openoffice.Office.addon.WriterTools.img16" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
           <value>macro:///WriterTools.Ad.AdLink</value>
         </prop>
@@ -558,7 +595,30 @@
             <value>%origin%/icons/ad.png</value>
           </prop>
         </node>
-      </node>  
+      </node>
+	  
+	  <node oor:name="org.openoffice.Office.addon.WriterTools.img17" oor:op="replace">
+        <prop oor:name="URL" oor:type="xs:string">
+          <value>macro:///WriterTools.QandAGame.QandA</value>
+        </prop>
+        <node oor:name="UserDefinedImages">
+          <prop oor:name="ImageSmallURL">
+            <value>%origin%/icons/hourglass.png</value>
+          </prop>
+        </node>
+      </node>
+	  
+	  <node oor:name="org.openoffice.Office.addon.WriterTools.img18" oor:op="replace">
+        <prop oor:name="URL" oor:type="xs:string">
+          <value>macro:///WriterTools.BasketDB.OpenForm</value>
+        </prop>
+        <node oor:name="UserDefinedImages">
+          <prop oor:name="ImageSmallURL">
+            <value>%origin%/icons/browse_basket.png</value>
+          </prop>
+        </node>
+      </node>
+	  
     </node>
   </node>
 </oor:node>
