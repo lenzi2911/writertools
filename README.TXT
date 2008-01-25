@@ -1,6 +1,6 @@
-=WRITER'S TOOLS EXTENSION FOR OPENOFFICE.ORG =
+= WRITER'S TOOLS EXTENSION FOR OPENOFFICE.ORG =
 
-Copyright 2007 Dmitri Popov
+Copyright 2008 Dmitri Popov
 Anyone may run the code associated with this document. If you wish to modify or distribute this document and or its code, then you are granted a license to do so under the terms of the GNU General Public License. See:  http://www.gnu.org/licenses/gpl.html
 
 Thanks to JohnV, Mark Bain, Konstantin Lavrov, and many OOoForum users for their help.
