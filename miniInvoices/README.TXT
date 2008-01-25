@@ -13,7 +13,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 miniInvoices is a simple invoicing solution designed specifically for writing professionals. miniInvoices requires the Sun Report Builder extension (http://extensions.services.openoffice.org/project/reportdesign).
 
-To print a single invoice, switch to the Reports section, and run the Single_Invoice report by double clicking on it.
+To print a single invoice, switch to the Reports section, and run the Single_Invoice report by double clicking on it. In the Parameter Input dialog window, enter the desired invoice number into the Value field and press OK.
 
 Preparing miniInvoices:
 
