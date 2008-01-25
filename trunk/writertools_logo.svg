@@ -16,37 +16,12 @@
    sodipodi:docbase="/home/dmpop/Documents/WriterTools"
    sodipodi:docname="writertools_logo.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
-   inkscape:export-filename="C:\Documents and Settings\Dmitri Popov\Desktop\writertools_logo.png"
+   inkscape:export-filename="/home/dmpop/Desktop/writertools.png"
    inkscape:export-xdpi="299.96191"
    inkscape:export-ydpi="299.96191"
    version="1.0">
   <defs
-     id="defs4">
-    <filter
-       inkscape:collect="always"
-       x="-0.016352914"
-       width="1.0327058"
-       y="-0.19612366"
-       height="1.3922473"
-       id="filter3218">
-      <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="4.2271545"
-         id="feGaussianBlur3220" />
-    </filter>
-    <filter
-       inkscape:collect="always"
-       x="-0.24593358"
-       width="1.4918672"
-       y="-0.7482267"
-       height="2.4964534"
-       id="filter3385">
-      <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="29.800934"
-         id="feGaussianBlur3387" />
-    </filter>
-  </defs>
+     id="defs4" />
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -57,17 +32,17 @@
      objecttolerance="10"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="259.33376"
+     inkscape:zoom="1.979899"
+     inkscape:cx="204.33046"
      inkscape:cy="63.674118"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:window-width="1039"
-     inkscape:window-height="739"
-     inkscape:window-x="216"
-     inkscape:window-y="30"
+     inkscape:window-width="1280"
+     inkscape:window-height="748"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      width="465px"
      height="195px"
      showborder="true"
@@ -90,7 +65,8 @@
      id="layer1">
     <flowRoot
        xml:space="preserve"
-       id="flowRoot2160"><flowRegion
+       id="flowRoot2160"
+       transform="translate(20,0)"><flowRegion
          id="flowRegion2162"><rect
            id="rect2164"
            width="187.88835"
@@ -101,31 +77,35 @@
          style="font-size:64px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Familian Elder">NO THICK MANUALS</flowPara></flowRoot>    <text
        xml:space="preserve"
        style="font-size:57px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#86b6a1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:COM4t Sans"
-       x="97.39817"
+       x="117.39817"
        y="125.96748"
        id="text2168"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan2170"
-         x="97.39817"
+         x="117.39817"
          y="125.96748"
-         style="font-size:57px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#86b6a1;fill-opacity:1;font-family:Yanone Kaffeesatz">WRITER'S TOOLS</tspan></text>
+         style="font-size:57px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#86b6a1;fill-opacity:1;font-family:Yanone Kaffeesatz"><tspan
+           style="fill:#800080"
+           id="tspan2171">Writer's</tspan><tspan
+           style="fill:#ff6600"
+           id="tspan2177"> Tools</tspan></tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:8.70246792px;font-style:normal;font-weight:normal;line-height:125%;fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
-       x="188.38553"
-       y="142.83691"
+       style="font-size:10.53541374px;font-style:normal;font-weight:normal;line-height:125%;fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="126.75157"
+       y="146.89796"
        id="text3222"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3224"
-         x="188.38553"
-         y="142.83691"
-         style="font-size:15.22931957px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#b3b3b3;fill-opacity:1;font-family:COM4t Sans Medium">writertools.googlecode.com</tspan></text>
+         x="126.75157"
+         y="146.89796"
+         style="font-size:18.43697548px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#b3b3b3;fill-opacity:1;font-family:COM4t Sans Medium">writertools.googlecode.com</tspan></text>
     <g
        id="g2252"
        inkscape:label="Layer 1"
-       transform="matrix(0.1362257,0,0,0.1362257,161.98893,-0.435362)"
+       transform="matrix(0.1362257,0,0,0.1362257,163.98893,-0.435362)"
        style="fill:#cccccc">
       <path
          id="path2221"
