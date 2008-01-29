@@ -24,6 +24,7 @@ Preparing miniInvoices:
 
 VERSION 0.1.1
   * Conditional Print Expression added to the Country field in the Single_Invoice report.
+  * Specified tabstop order in the Invoice form.
 
 VERSION 0.1.0 2008-01-25
   * Initial release
