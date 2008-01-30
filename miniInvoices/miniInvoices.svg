@@ -15,7 +15,10 @@
    inkscape:version="0.45.1"
    sodipodi:docbase="/home/dmpop/Documents/miniInvoices"
    sodipodi:docname="miniInvoices.svg"
-   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   inkscape:export-filename="/home/dmpop/Desktop/miniInvoices.png"
+   inkscape:export-xdpi="299.96191"
+   inkscape:export-ydpi="299.96191">
   <defs
      id="defs4">
     <marker
@@ -107,7 +110,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
      inkscape:cx="375"
-     inkscape:cy="520"
+     inkscape:cy="462.85714"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      inkscape:window-width="1280"
