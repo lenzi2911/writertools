@@ -13,7 +13,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 0.9.6
+VERSION 0.9.6 2008-01-30
   * Tasks in the WriterDB database can now be marked as done, which are not displayed when running the Show Tasks command.
   * Basket form and Browse Basket commmand added
 
