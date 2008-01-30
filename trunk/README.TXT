@@ -15,7 +15,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 VERSION 0.9.6 2008-01-30
   * Tasks in the WriterDB database can now be marked as done, which are not displayed when running the Show Tasks command.
-  * Basket form and Browse Basket commmand added
+  * Basket form and Browse Basket command added.
 
 VERSION 0.9.5 2007-12-11
   * Minor improvements to the Translit tool.
