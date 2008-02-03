@@ -27,6 +27,7 @@ VERSION 0.1.1
   * Tweaked logo.
   * Invoice_no field is no Text [VARCHAR].
   * Notes field in the Invoices table added.
+  * Conditional print expression fixed.
 
 VERSION 0.1.0 2008-01-25
   * Initial release
