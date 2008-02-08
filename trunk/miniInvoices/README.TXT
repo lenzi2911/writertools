@@ -22,12 +22,14 @@ Preparing miniInvoices:
 
 ==CHANGELOG==
 
-VERSION 0.1.1
+VERSION 0.2.1
   * Conditional Print Expression added to the Country field in the Single_Invoice report.
   * Tweaked logo.
   * Invoice_no field is no Text [VARCHAR].
   * Notes field in the Invoices table added.
   * Conditional print expression fixed.
+  * Earnings_by_Year and Earnings_by_Month reports and related queries added.
+  * Invoices form cosmetical tweaks.
 
 VERSION 0.1.0 2008-01-25
   * Initial release
