@@ -8,12 +8,12 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="465"
-   height="195"
+   width="247"
+   height="123"
    id="svg2"
    sodipodi:version="0.32"
    inkscape:version="0.45.1"
-   sodipodi:docbase="/home/dmpop/Documents/WriterTools"
+   sodipodi:docbase="/home/dmpop/2E2DB00D/WriterTools"
    sodipodi:docname="writertools_logo.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
    inkscape:export-filename="/home/dmpop/Desktop/writertools.png"
@@ -40,11 +40,11 @@
      showguides="true"
      inkscape:guide-bbox="true"
      inkscape:window-width="1280"
-     inkscape:window-height="748"
+     inkscape:window-height="745"
      inkscape:window-x="0"
      inkscape:window-y="0"
-     width="465px"
-     height="195px"
+     width="247px"
+     height="123px"
      showborder="true"
      borderlayer="true"
      inkscape:showpageshadow="false" />
@@ -66,7 +66,7 @@
     <flowRoot
        xml:space="preserve"
        id="flowRoot2160"
-       transform="translate(20,0)"><flowRegion
+       transform="translate(-94.383245,-29.474621)"><flowRegion
          id="flowRegion2162"><rect
            id="rect2164"
            width="187.88835"
@@ -77,14 +77,14 @@
          style="font-size:64px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Familian Elder">NO THICK MANUALS</flowPara></flowRoot>    <text
        xml:space="preserve"
        style="font-size:57px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#86b6a1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:COM4t Sans"
-       x="117.39817"
-       y="125.96748"
+       x="3.0149221"
+       y="96.492851"
        id="text2168"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan2170"
-         x="117.39817"
-         y="125.96748"
+         x="3.0149221"
+         y="96.492851"
          style="font-size:57px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#86b6a1;fill-opacity:1;font-family:Yanone Kaffeesatz"><tspan
            style="fill:#800080"
            id="tspan2171">Writer's</tspan><tspan
@@ -93,19 +93,19 @@
     <text
        xml:space="preserve"
        style="font-size:10.53541374px;font-style:normal;font-weight:normal;line-height:125%;fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
-       x="126.75157"
-       y="146.89796"
+       x="12.368317"
+       y="117.92839"
        id="text3222"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3224"
-         x="126.75157"
-         y="146.89796"
+         x="12.368317"
+         y="117.92839"
          style="font-size:18.43697548px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#b3b3b3;fill-opacity:1;font-family:COM4t Sans Medium">writertools.googlecode.com</tspan></text>
     <g
        id="g2252"
        inkscape:label="Layer 1"
-       transform="matrix(0.1362257,0,0,0.1362257,163.98893,-0.435362)"
+       transform="matrix(0.1362257,0,0,0.1362257,49.605682,-29.909981)"
        style="fill:#cccccc">
       <path
          id="path2221"
