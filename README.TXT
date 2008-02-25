@@ -14,6 +14,7 @@ http://writertools.googlecode.com/svn/trunk/
 ==CHANGELOG==
 
 VERSION 0.9.7
+  * Proper error message when default browser is not found.
   * Basket form improvements.
 
 VERSION 0.9.6 2008-01-30
