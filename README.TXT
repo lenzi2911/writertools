@@ -16,6 +16,7 @@ http://writertools.googlecode.com/svn/trunk/
 VERSION 0.9.7
   * Proper error message when default browser is not found.
   * Basket form improvements.
+  * Tasks to Calc export tool added.
 
 VERSION 0.9.6 2008-01-30
   * Tasks in the WriterDB database can now be marked as done, which are not displayed when running the Show Tasks command.
