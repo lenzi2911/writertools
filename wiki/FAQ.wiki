@@ -1,5 +1,5 @@
 #labels Featured
-=== I installed the downloaded archive using the Extension Manager, but the extension doesn't work. Am I doing something wrong? ===
+=== I installed the downloaded archive, but the extension doesn't work. Am I doing something wrong? ===
 
 Yes. You have to unpack the downloaded archive first, and then install it using the Extension Manager
 
