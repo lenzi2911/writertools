@@ -1,7 +1,7 @@
 #labels Featured
 === I installed the downloaded archive, but the extension doesn't work. Am I doing something wrong? ===
 
-Yes. You have to unpack the downloaded archive first, and then install the !WriterTools.oxt extension using the Extension Manager
+Yes. You have to unpack the downloaded archive first, and then install the !WriterTools.oxt extension using the Extension Manager.
 
 === Where do I get help with Writer's Tools? ===
 
