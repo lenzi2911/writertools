@@ -13,6 +13,9 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 0.9.7
+  * Convert to HTML and Covert to DOC tools added.
+
 VERSION 0.9.7 2008-02-27
   * Proper error message when the default browser is not found.
   * Basket form improvements.

@@ -369,6 +369,48 @@
               <value/>
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
+              <value>Convert to HTML</value>
+            </prop>
+            <prop oor:name="URL" oor:type="xs:string">
+              <value>macro:///WriterTools.Convert.ConvertToHTML</value>
+            </prop>
+            <prop oor:name="Target" oor:type="xs:string">
+              <value>_self</value>
+            </prop>
+            <prop oor:name="ImageIdentifier" oor:type="xs:string">
+              <value/>
+            </prop>
+          </node>
+		  
+		  <node oor:name="menu19" oor:op="replace">
+            <prop oor:name="Context" oor:type="xs:string">
+              <value/>
+            </prop>
+            <prop oor:name="Title" oor:type="xs:string">
+              <value>Convert to DOC</value>
+            </prop>
+            <prop oor:name="URL" oor:type="xs:string">
+              <value>macro:///WriterTools.Convert.ConvertToDOC</value>
+            </prop>
+            <prop oor:name="Target" oor:type="xs:string">
+              <value>_self</value>
+            </prop>
+            <prop oor:name="ImageIdentifier" oor:type="xs:string">
+              <value/>
+            </prop>
+          </node>
+
+		  <node oor:name="menu19s" oor:op="replace">
+            <prop oor:name="URL" oor:type="xs:string">
+              <value>private:separator</value>
+            </prop>
+          </node>		  
+		  
+		  <node oor:name="menu20" oor:op="replace">
+            <prop oor:name="Context" oor:type="xs:string">
+              <value/>
+            </prop>
+            <prop oor:name="Title" oor:type="xs:string">
               <value>Writer for Writers</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
@@ -580,6 +622,28 @@
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
             <value>%origin%/icons/browse_basket.png</value>
+          </prop>
+        </node>
+      </node>
+	  
+	  <node oor:name="org.openoffice.Office.addon.WriterTools.img19" oor:op="replace">
+        <prop oor:name="URL" oor:type="xs:string">
+          <value>macro:///WriterTools.Convert.ConvertToHTML</value>
+        </prop>
+        <node oor:name="UserDefinedImages">
+          <prop oor:name="ImageSmallURL">
+            <value>%origin%/icons/convert_html.png</value>
+          </prop>
+        </node>
+      </node>
+	  
+	  <node oor:name="org.openoffice.Office.addon.WriterTools.img20" oor:op="replace">
+        <prop oor:name="URL" oor:type="xs:string">
+          <value>macro:///WriterTools.Convert.ConvertToDOC</value>
+        </prop>
+        <node oor:name="UserDefinedImages">
+          <prop oor:name="ImageSmallURL">
+            <value>%origin%/icons/convert_doc.png</value>
           </prop>
         </node>
       </node>
