@@ -13,7 +13,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 0.9.7
+VERSION 0.9.7 2008-02-27
   * Proper error message when default browser is not found.
   * Basket form improvements.
   * Tasks to Calc export tool added.
