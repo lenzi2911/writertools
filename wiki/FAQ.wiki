@@ -13,7 +13,7 @@ Yes, a comprehensive Writer's Tools manual is available in both printed and PDF 
 
 === Is it possible to install install only the tools I need ===
 
-Not really. Bu you can use the [http://extensions.services.openoffice.org/project/bookmarksmenu Bookmarks Menu] extension to bookmark often-used tools.
+Not really. But you can use the [http://extensions.services.openoffice.org/project/bookmarksmenu Bookmarks Menu] extension to bookmark often-used tools.
 
 === How do I contact the author? ===
 
