@@ -15,6 +15,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 VERSION 0.9.7
   * Convert to HTML and Covert to DOC tools added.
+  * Q and A game improvements. The correct and wrong answers are marked accordingly during the game.
 
 VERSION 0.9.7 2008-02-27
   * Proper error message when the default browser is not found.
