@@ -13,12 +13,14 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 0.9.7
+VERSION 0.9.9
   * Convert to HTML and Covert to DOC tools added.
   * Q and A game improvements:
     * The system marks correct answers, and they are not ued in the game again.
 	* User can exclude records from the game by ticking the Status check box.
 	* The Counter field keeps track of the number of correct/incorrect answers.
+  * Letter Game added.
+  * All games moved into the WriterGames module.
 
 VERSION 0.9.7 2008-02-27
   * Proper error message when the default browser is not found.

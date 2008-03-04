@@ -204,7 +204,7 @@
               <value>Word Hunt Game</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
-              <value>macro:///WriterTools.WordGame.WordHunt</value>
+              <value>macro:///WriterTools.WriterGames.WordHunt</value>
             </prop>
             <prop oor:name="Target" oor:type="xs:string">
               <value>_self</value>
@@ -222,7 +222,7 @@
               <value>Q and A Game</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
-              <value>macro:///WriterTools.QandAGame.QandA</value>
+              <value>macro:///WriterTools.WriterGames.QandAGame</value>
             </prop>
             <prop oor:name="Target" oor:type="xs:string">
               <value>_self</value>
@@ -518,7 +518,7 @@
 	  
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img09" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
-          <value>macro:///WriterTools.WordGame.WordHunt</value>
+          <value>macro:///WriterTools.WriterGames.WordHunt</value>
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
@@ -606,7 +606,7 @@
 	  
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img17" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
-          <value>macro:///WriterTools.QandAGame.QandA</value>
+          <value>macro:///WriterTools.WriterGames.QandAGame</value>
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
