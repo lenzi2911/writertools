@@ -19,7 +19,7 @@ VERSION 0.9.9
     * The system marks correct answers, and they are not ued in the game again.
 	* User can exclude records from the game by ticking the Status check box.
 	* The Counter field keeps track of the number of correct/incorrect answers.
-  * Letter Game added.
+  * Letter Hunt Game added.
   * All games moved into the WriterGames module.
 
 VERSION 0.9.7 2008-02-27
