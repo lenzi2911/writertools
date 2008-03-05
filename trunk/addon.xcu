@@ -232,21 +232,15 @@
             </prop>
           </node>
 		  
-		  <node oor:name="menu11s" oor:op="replace">
-            <prop oor:name="URL" oor:type="xs:string">
-              <value>private:separator</value>
-            </prop>
-          </node>
-		  
 		  <node oor:name="menu12" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
-              <value>Word of the Day</value>
+              <value>Letter Hunt Game</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
-              <value>macro:///WriterTools.WordOfTheDay.RandomWord</value>
+              <value>macro:///WriterTools.WriterGames.LetterHunt</value>
             </prop>
             <prop oor:name="Target" oor:type="xs:string">
               <value>_self</value>
@@ -267,6 +261,30 @@
               <value/>
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
+              <value>Word of the Day</value>
+            </prop>
+            <prop oor:name="URL" oor:type="xs:string">
+              <value>macro:///WriterTools.WordOfTheDay.RandomWord</value>
+            </prop>
+            <prop oor:name="Target" oor:type="xs:string">
+              <value>_self</value>
+            </prop>
+            <prop oor:name="ImageIdentifier" oor:type="xs:string">
+              <value/>
+            </prop>
+          </node>
+		  
+		  <node oor:name="menu13s" oor:op="replace">
+            <prop oor:name="URL" oor:type="xs:string">
+              <value>private:separator</value>
+            </prop>
+          </node>
+		  
+		  <node oor:name="menu14" oor:op="replace">
+            <prop oor:name="Context" oor:type="xs:string">
+              <value/>
+            </prop>
+            <prop oor:name="Title" oor:type="xs:string">
               <value>Add to Basket</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
@@ -280,7 +298,7 @@
             </prop>
           </node>
 		  
-		  <node oor:name="menu14" oor:op="replace">
+		  <node oor:name="menu15" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
             </prop>
@@ -298,13 +316,13 @@
             </prop>
           </node>
 		  
-		  <node oor:name="menu14s" oor:op="replace">
+		  <node oor:name="menu15s" oor:op="replace">
             <prop oor:name="URL" oor:type="xs:string">
               <value>private:separator</value>
             </prop>
           </node>
 		  
-		  <node oor:name="menu15" oor:op="replace">
+		  <node oor:name="menu16" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
             </prop>
@@ -322,7 +340,7 @@
             </prop>
           </node>
 		  
-		  <node oor:name="menu16" oor:op="replace">
+		  <node oor:name="menu17" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
             </prop>
@@ -340,7 +358,7 @@
             </prop>
           </node>
 		  
-		  <node oor:name="menu17" oor:op="replace">
+		  <node oor:name="menu18" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
             </prop>
@@ -358,13 +376,13 @@
             </prop>
           </node>
 		  
-		  <node oor:name="menu17s" oor:op="replace">
+		  <node oor:name="menu18s" oor:op="replace">
             <prop oor:name="URL" oor:type="xs:string">
               <value>private:separator</value>
             </prop>
           </node>
 		  
-		  <node oor:name="menu18" oor:op="replace">
+		  <node oor:name="menu19" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
             </prop>
@@ -382,7 +400,7 @@
             </prop>
           </node>
 		  
-		  <node oor:name="menu19" oor:op="replace">
+		  <node oor:name="menu20" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
             </prop>
@@ -400,13 +418,13 @@
             </prop>
           </node>
 
-		  <node oor:name="menu19s" oor:op="replace">
+		  <node oor:name="menu20s" oor:op="replace">
             <prop oor:name="URL" oor:type="xs:string">
               <value>private:separator</value>
             </prop>
           </node>		  
 		  
-		  <node oor:name="menu20" oor:op="replace">
+		  <node oor:name="menu21" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
             </prop>
@@ -617,6 +635,17 @@
 	  
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img18" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
+          <value>macro:///WriterTools.WriterGames.LetterHunt</value>
+        </prop>
+        <node oor:name="UserDefinedImages">
+          <prop oor:name="ImageSmallURL">
+            <value>%origin%/icons/cup.png</value>
+          </prop>
+        </node>
+      </node>
+	  
+	  <node oor:name="org.openoffice.Office.addon.WriterTools.img19" oor:op="replace">
+        <prop oor:name="URL" oor:type="xs:string">
           <value>macro:///WriterTools.BasketDB.OpenForm</value>
         </prop>
         <node oor:name="UserDefinedImages">
@@ -626,7 +655,7 @@
         </node>
       </node>
 	  
-	  <node oor:name="org.openoffice.Office.addon.WriterTools.img19" oor:op="replace">
+	  <node oor:name="org.openoffice.Office.addon.WriterTools.img20" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
           <value>macro:///WriterTools.Convert.ConvertToHTML</value>
         </prop>
@@ -637,7 +666,7 @@
         </node>
       </node>
 	  
-	  <node oor:name="org.openoffice.Office.addon.WriterTools.img20" oor:op="replace">
+	  <node oor:name="org.openoffice.Office.addon.WriterTools.img21" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
           <value>macro:///WriterTools.Convert.ConvertToDOC</value>
         </prop>
