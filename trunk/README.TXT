@@ -13,7 +13,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 0.9.9
+VERSION 0.9.9 2007-03-07
   * Convert to HTML and Covert to DOC tools added.
   * Q and A game improvements:
     * The system marks correct answers, and they are not ued in the game again.
