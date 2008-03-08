@@ -824,7 +824,7 @@ config.formatters.push(
 <div title="Letter Hunt Game" modifier="Dmitri Popov" modified="200803061027" created="200803050945" tags="game, letters" changecount="4">
 <pre>The Letter Hunt game picks random words from the {{{wordlist}}} table in the WriterDB database. The table already contains a few examples, and you can easily add your own words. Note that you have to use the dash (-) as a separator, for example: m-o-n-k-e-y, b-a-n-a-n-a, g-a-r-d-e-n.</pre>
 </div>
-<div title="MainMenu" modifier="Dmitri Popov" modified="200803050947" created="200802251649" changecount="23">
+<div title="MainMenu" modifier="Dmitri Popov" modified="200803081147" created="200802251649" changecount="25">
 <pre>[[Install/upgrade]]
 [[Change browser]]
 [[Register WriterDB]]
@@ -832,6 +832,7 @@ config.formatters.push(
 [[Tweak Multi-backup]]
 [[Tweak Remote Backup]]
 [[Tweak Lookup tool]]
+[[Tweak Convert To tool]]
 [[Word Hunt Game]]
 [[Q and A Game]]
 [[Letter Hunt Game]]
@@ -911,6 +912,17 @@ config.macros.sparkline.handler = function(place,macroName,params)
 
 }
 //}}}</pre>
+</div>
+<div title="Tweak Convert To tool" modifier="Dmitri Popov" modified="200803081147" created="200803081142" tags="convert, calc, excel" changecount="3">
+<pre>By default, the Convert To tools supports only the MS Word 97, Rich Text, Plain Text, and PDF formats. But you can easily add any other supported format by modifying the ~ConvertTo macro. Here is how to add a filter that can convert Calc spreadsheet to the MS Excel 97 format. Launch ~OpenOffice.org and choose Tools -&gt; Macros -&gt; Organize Macros -&gt; ~OpenOffice.org Basic. Select then ~WriterTools -&gt; Convert -&gt; ~ConvertTo and press the Edit button. Locate the following code:
+
+{{{FormatArray=Array(&quot;.doc&quot;, &quot;.rtf&quot;, &quot;.txt&quot;, &quot;.html&quot;, &quot;.pdf&quot;)}}}
+
+Add the &quot;.xls&quot; file extension to the array, so it looks as follows:
+
+{{{FormatArray=Array(&quot;.doc&quot;, &quot;.rtf&quot;, &quot;.txt&quot;, &quot;.html&quot;, &quot;.pdf&quot;, &quot;.xls&quot;)}}}
+
+Next, you have to add the &quot;MS Excel 97&quot; entry to the drop-down list in the Covert dialog. Click on the ~ConvertDialog tab at the bottom of the ~OpenOffice.org Basic IDE, then double-click on the drop-down list. In the Properties window, add the &quot;MS Excel 97&quot; item in the List entries drop-down list (use Shift+Enter to add a new line). Save the changes, and you are done.</pre>
 </div>
 <div title="Tweak Email Backup" modifier="Dmitri Popov" modified="200802251708" created="200802251705" tags="email backup" changecount="5">
 <pre>Using the Email Backup command, you can email a backup copy of the current document to a specified email address. If you are using a specific email address for all your backups, you might want to add it to the command, so you don’t have to type it every single time. To do this, launch ~OpenOffice.org and choose Tools -&gt; Macros -&gt; Organize Macros -&gt; ~OpenOffice.org Basic. Select then ~WriterTools -&gt; Tools -&gt; ~EmailBackup and press the Edit button. Locate the following line {{{MailAddress=InputBox(&quot;Email address&quot;)}}} and replace the {{{InputBox(&quot;Email address&quot;)}}} part with your actual email address; for example, {{{MailAddress=&quot;user@email.org&quot;}}}
