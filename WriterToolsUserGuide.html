@@ -824,7 +824,7 @@ config.formatters.push(
 <div title="Letter Hunt Game" modifier="Dmitri Popov" modified="200803061027" created="200803050945" tags="game, letters" changecount="4">
 <pre>The Letter Hunt game picks random words from the {{{wordlist}}} table in the WriterDB database. The table already contains a few examples, and you can easily add your own words. Note that you have to use the dash (-) as a separator, for example: m-o-n-k-e-y, b-a-n-a-n-a, g-a-r-d-e-n.</pre>
 </div>
-<div title="MainMenu" modifier="Dmitri Popov" modified="200803081147" created="200802251649" changecount="25">
+<div title="MainMenu" modifier="Dmitri Popov" modified="200803081232" created="200802251649" changecount="26">
 <pre>[[Install/upgrade]]
 [[Change browser]]
 [[Register WriterDB]]
@@ -832,7 +832,7 @@ config.formatters.push(
 [[Tweak Multi-backup]]
 [[Tweak Remote Backup]]
 [[Tweak Lookup tool]]
-[[Tweak Convert To tool]]
+[[Tweak Convert To]]
 [[Word Hunt Game]]
 [[Q and A Game]]
 [[Letter Hunt Game]]
@@ -913,7 +913,7 @@ config.macros.sparkline.handler = function(place,macroName,params)
 }
 //}}}</pre>
 </div>
-<div title="Tweak Convert To tool" modifier="Dmitri Popov" modified="200803081147" created="200803081142" tags="convert, calc, excel" changecount="3">
+<div title="Tweak Convert To" modifier="Dmitri Popov" modified="200803081231" created="200803081142" tags="convert, calc, excel" changecount="4">
 <pre>By default, the Convert To tools supports only the MS Word 97, Rich Text, Plain Text, and PDF formats. But you can easily add any other supported format by modifying the ~ConvertTo macro. Here is how to add a filter that can convert Calc spreadsheet to the MS Excel 97 format. Launch ~OpenOffice.org and choose Tools -&gt; Macros -&gt; Organize Macros -&gt; ~OpenOffice.org Basic. Select then ~WriterTools -&gt; Convert -&gt; ~ConvertTo and press the Edit button. Locate the following code:
 
 {{{FormatArray=Array(&quot;.doc&quot;, &quot;.rtf&quot;, &quot;.txt&quot;, &quot;.html&quot;, &quot;.pdf&quot;)}}}
@@ -984,8 +984,8 @@ Replace the words in the array with your own.</pre>
 
 To create a new document from the desired template, choose File -&gt; New -&gt; Templates and Documents. In the Templates and Documents dialog window, click on Templates, select the template you want, and press Open.</pre>
 </div>
-<div title="Writer's Tools Manual" modifier="Dmitri Popov" modified="200802271444" created="200802251744" tags="manual" changecount="12">
-<pre>@@A comprehensive Writer's Tools manual is available in both printed and PDF formats at the [[Lulu|http://www.lulu.com/content/2115121]] bookstore. @@The manual covers all the important topics, which can help you to get the most out of the Writer's Tools ~OpenOffice.org extension. It's easier to read, too.</pre>
+<div title="Writer's Tools Manual" modifier="Dmitri Popov" modified="200803081233" created="200802251744" tags="manual" changecount="13">
+<pre>@@A comprehensive Writer's Tools manual is available in both printed and PDF formats at the [[Lulu bookstore|http://www.lulu.com/content/2115121]]. @@The manual covers all the important topics, which can help you to get the most out of the Writer's Tools ~OpenOffice.org extension. It's easier to read, too.</pre>
 </div>
 </div>
 <!--POST-STOREAREA-->
