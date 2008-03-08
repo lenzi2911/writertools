@@ -14,7 +14,7 @@ http://writertools.googlecode.com/svn/trunk/
 ==CHANGELOG==
 
 VERSION 0.9.10 2007-03-09
-  * Rewritten Convert tool replaces the Convert to HTML and Covert to DOC tools.
+  * Rewritten Convert To tool replaced the Convert to HTML and Covert to DOC tools.
 
 VERSION 0.9.9 2007-03-07
   * Convert to HTML and Covert to DOC tools added.
