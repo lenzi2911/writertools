@@ -13,6 +13,9 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 0.9.11
+  * Minor regrouping of macros.
+
 VERSION 0.9.10 2007-03-09
   * Rewritten Convert To tool replaced the Convert to HTML and Covert to DOC tools.
 

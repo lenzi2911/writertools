@@ -54,7 +54,7 @@
               <value>Show on the Map</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
-              <value>macro:///WriterTools.GoogleMaps.ShowOnTheMap</value>
+              <value>macro:///WriterTools.Tools.ShowOnTheMap</value>
             </prop>
             <prop oor:name="Target" oor:type="xs:string">
               <value>_self</value>
@@ -114,7 +114,7 @@
               <value>Remote Backup</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
-              <value>macro:///WriterTools.RemoteBackup.SaveFTPDocument</value>
+              <value>macro:///WriterTools.FTP.SaveFTPDocument</value>
             </prop>
             <prop oor:name="Target" oor:type="xs:string">
               <value>_self</value>
@@ -452,7 +452,7 @@
 	  
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img03" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
-          <value>macro:///WriterTools.RemoteBackup.SaveFTPDocument</value>
+          <value>macro:///WriterTools.FTP.SaveFTPDocument</value>
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
@@ -551,7 +551,7 @@
 	  
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img12" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
-          <value>macro:///WriterTools.GoogleMaps.ShowOnTheMap</value>
+          <value>macro:///WriterTools.Tools.ShowOnTheMap</value>
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
