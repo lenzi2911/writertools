@@ -15,6 +15,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 VERSION 0.9.11
   * Minor regrouping of macros.
+  * Post to Twitter tool added (hidden).
 
 VERSION 0.9.10 2007-03-09
   * Rewritten Convert To tool replaced the Convert to HTML and Covert to DOC tools.
