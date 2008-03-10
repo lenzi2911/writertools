@@ -8,11 +8,11 @@
   <update-information>
 	  <src xlink:href="http://writertools.googlecode.com/svn/trunk/writertools_update.xml" />
   </update-information>
-<!--
+
 <registration>
 <simple-license accept-by="user" default-license-id="en-US" suppress-on-update="true" >
-<license-text xlink:href="GPL.txt" lang="en-US" license-id="en-US" />
+<license-text xlink:href="GPL.TXT" lang="en-US" license-id="en-US" />
 </simple-license>
 </registration>
--->
+
 </description>
