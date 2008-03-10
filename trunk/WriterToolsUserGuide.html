@@ -824,12 +824,11 @@ config.formatters.push(
 <div title="Letter Hunt Game" modifier="Dmitri Popov" modified="200803061027" created="200803050945" tags="game, letters" changecount="4">
 <pre>The Letter Hunt game picks random words from the {{{wordlist}}} table in the WriterDB database. The table already contains a few examples, and you can easily add your own words. Note that you have to use the dash (-) as a separator, for example: m-o-n-k-e-y, b-a-n-a-n-a, g-a-r-d-e-n.</pre>
 </div>
-<div title="MainMenu" modifier="Dmitri Popov" modified="200803081232" created="200802251649" changecount="26">
+<div title="MainMenu" modifier="Dmitri Popov" modified="200803102234" created="200802251649" changecount="27">
 <pre>[[Install/upgrade]]
 [[Change browser]]
 [[Register WriterDB]]
 [[Tweak Email Backup]]
-[[Tweak Multi-backup]]
 [[Tweak Remote Backup]]
 [[Tweak Lookup tool]]
 [[Tweak Convert To]]
@@ -952,13 +951,6 @@ All you have to do is to add it to the ~URLArray as follows:
 {{{&quot;http://dictionary.reference.com/browse/&quot;)}}}
 
 Next, you have to add the Dictionary.com entry to the drop-down list in the Lookup dialog. Click on the ~LookupDialog tab at the bottom of the ~OpenOffice.org Basic IDE, then double-click on the drop-down list. In the Properties window, add the Dictionary.com item in the List entries drop-down list (use Shift+Enter to add a new line). Save the changes, and you are done.</pre>
-</div>
-<div title="Tweak Multi-backup" modifier="Dmitri Popov" modified="200802251713" created="200802251710" tags="multi-backup compression 7-zip" changecount="5">
-<pre>If you want the Multi-format Backup tool to compress the resulting backup folder, you can do so by installing and enabling the 7-Zip compression utility. Start with downloading the command-line version of [[7-Zip|http://www.7-zip.org]]. Unzip the {{{7za.exe}}} file and move it into the {{{C:\WINDOWS\}}} directory. Launch ~OpenOffice.org and choose Tools -&gt; Macros -&gt; Organize Macros -&gt; ~OpenOffice.org Basic. Select then ~WriterTools -&gt; Tools -&gt; ~MultiFormatBackup. Locate the following lines, and uncomment them by removing the REM markers:
-
-{{{ElseIf GetGUIType=1 Then}}}
-{{{ZipString=&quot; a -tzip &quot; &amp;&quot;&quot;&quot;&quot;&amp; ConvertFromURL(DocDir) &amp; &quot;\&quot; &amp; Timestamp &amp; &quot;.zip&quot;&quot; &quot; &amp;&quot;&quot;&quot;&quot;&amp; ConvertFromURL(DocDir) &amp; &quot;\&quot; &amp; Timestamp &amp; &quot;\*&quot;&quot;&quot;}}}
-{{{Shell(&quot;7za.exe&quot;, 1, ZipString)}}}</pre>
 </div>
 <div title="Tweak Remote Backup" modifier="Dmitri Popov" created="200802251715" tags="ftp backup" changecount="1">
 <pre>Using the Remote Backup command, you can upload a backup copy of the current document to a specified FTP server. If you are using a specific FTP address for all your backups, you might want to add it to the command, so you don’t have to type it every single time. To do this, launch ~OpenOffice.org and choose Tools -&gt; Macros -&gt; Organize Macros -&gt; ~OpenOffice.org Basic. Select then ~WriterTools -&gt; Remote Backup -&gt; ~SaveFTPDocument and press the Edit button. Locate the following code block:
