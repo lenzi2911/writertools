@@ -13,7 +13,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 0.9.11
+VERSION 0.9.11 2008-03-11
   * Minor regrouping of macros.
   * Post to Twitter tool added (hidden).
   * Multi-format backup now uses the built-in zip feature.
