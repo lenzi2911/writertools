@@ -13,6 +13,9 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 0.9.11
+  * List boxes in the Lookup and Convert To tools are populated dynamically via arrays.
+
 VERSION 0.9.11 2008-03-11
   * Minor regrouping of macros.
   * Post to Twitter tool added (hidden).
