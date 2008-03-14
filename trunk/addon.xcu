@@ -387,7 +387,7 @@
               <value/>
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
-              <value>Convert to ...</value>
+              <value>Convert To ...</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
               <value>macro:///WriterTools.Convert.ConvertTo</value>
