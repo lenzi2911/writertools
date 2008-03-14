@@ -404,9 +404,33 @@
             <prop oor:name="URL" oor:type="xs:string">
               <value>private:separator</value>
             </prop>
+          </node>
+
+		  <node oor:name="menu20" oor:op="replace">
+            <prop oor:name="Context" oor:type="xs:string">
+              <value/>
+            </prop>
+            <prop oor:name="Title" oor:type="xs:string">
+              <value>App Launcher</value>
+            </prop>
+            <prop oor:name="URL" oor:type="xs:string">
+              <value>macro:///WriterTools.AppLauncher.LaunchApp</value>
+            </prop>
+            <prop oor:name="Target" oor:type="xs:string">
+              <value>_self</value>
+            </prop>
+            <prop oor:name="ImageIdentifier" oor:type="xs:string">
+              <value/>
+            </prop>
+          </node>		 
+
+		  <node oor:name="menu20s" oor:op="replace">
+            <prop oor:name="URL" oor:type="xs:string">
+              <value>private:separator</value>
+            </prop>
           </node>		  
 		  
-		  <node oor:name="menu20" oor:op="replace">
+		  <node oor:name="menu21" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
             </prop>
@@ -644,6 +668,17 @@
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
             <value>%origin%/icons/convert.png</value>
+          </prop>
+        </node>
+      </node>
+	  
+	  	  <node oor:name="org.openoffice.Office.addon.WriterTools.img21" oor:op="replace">
+        <prop oor:name="URL" oor:type="xs:string">
+          <value>macro:///WriterTools.AppLauncher.LaunchApp</value>
+        </prop>
+        <node oor:name="UserDefinedImages">
+          <prop oor:name="ImageSmallURL">
+            <value>%origin%/icons/lightning.png</value>
           </prop>
         </node>
       </node>
