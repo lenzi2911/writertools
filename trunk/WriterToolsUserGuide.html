@@ -781,7 +781,7 @@ Now select the data in the sheet and copy it into the Clipboard (Edit -&gt; Copy
 
 In the Assign Columns dialog window, check whether all the fields in the Source table window have been selected and aligned with the respective fields in the Target table window. To align the fields, use the blue Up and Down arrows. Finally, click Create to import the data.</pre>
 </div>
-<div title="Install/upgrade" modifier="Dmitri Popov" modified="200802271445" created="200802251653" tags="install upgrade" changecount="12">
+<div title="Install/upgrade" modifier="Dmitri Popov" modified="200803141038" created="200802251653" tags="install upgrade" changecount="13">
 <pre>To install the Writer’s Tools extension, download the latest release. Unzip the downloaded file. Launch ~OpenOffice.org, and choose Tools -&gt; Extension Manager (Package Manager in older versions of ~OpenOffice.org). Select the My Extensions section, and press the Add button. Select the downloaded extension (the {{{WriterTools.oxt}}} package), and press OK. Restart ~OpenOffice.org, and you should see the Writer’s Tools menu in the Main toolbar.
 
 !Updating Writer’s Tools
@@ -790,7 +790,7 @@ To update the existing version of Writer’s Tools, install the new version as d
 
 !Updating Writer’s Tools from ~OpenOffice.org
 
-Starting with version 0.9.7, the Writer's Tools extension can be updated directly from ~OpenOffice.org using the Update feature in Extension manager. To update the extension, choose Tools -&gt; Extension Manager and press the Updates button. If a new version of Writer's Tools appears in the Available extension update list, press the Install button to install it. Note @@that this installs the latest development version of Writer's Tools extension from the Subversion repository@@. If you prefer to use the stable release of the extension, you should update it manually.</pre>
+Starting with version 0.9.7, the Writer's Tools extension can be updated directly from ~OpenOffice.org using the Update feature in Extension manager. To update the extension, choose Tools -&gt; Extension Manager and press the Updates button. If a new version of Writer's Tools appears in the Available extension update list, press the Install button to install it. Note @@color(red):that this installs the latest development version of Writer's Tools extension from the Subversion repository@@. If you prefer to use the stable release of the extension, you should update it manually.</pre>
 </div>
 <div title="LegacyStrikeThroughPlugin" modifier="MartinBudden" created="200607210000" tags="systemConfig">
 <pre>/***
@@ -912,7 +912,7 @@ config.macros.sparkline.handler = function(place,macroName,params)
 }
 //}}}</pre>
 </div>
-<div title="Tweak Convert To" modifier="Dmitri Popov" modified="200803081231" created="200803081142" tags="convert, calc, excel" changecount="4">
+<div title="Tweak Convert To" modifier="Dmitri Popov" modified="200803141035" created="200803081142" tags="convert, calc, excel" changecount="5">
 <pre>By default, the Convert To tools supports only the MS Word 97, Rich Text, Plain Text, and PDF formats. But you can easily add any other supported format by modifying the ~ConvertTo macro. Here is how to add a filter that can convert Calc spreadsheet to the MS Excel 97 format. Launch ~OpenOffice.org and choose Tools -&gt; Macros -&gt; Organize Macros -&gt; ~OpenOffice.org Basic. Select then ~WriterTools -&gt; Convert -&gt; ~ConvertTo and press the Edit button. Locate the following code:
 
 {{{FormatArray=Array(&quot;.doc&quot;, &quot;.rtf&quot;, &quot;.txt&quot;, &quot;.html&quot;, &quot;.pdf&quot;)}}}
@@ -921,21 +921,30 @@ Add the &quot;.xls&quot; file extension to the array, so it looks as follows:
 
 {{{FormatArray=Array(&quot;.doc&quot;, &quot;.rtf&quot;, &quot;.txt&quot;, &quot;.html&quot;, &quot;.pdf&quot;, &quot;.xls&quot;)}}}
 
-Next, you have to add the &quot;MS Excel 97&quot; entry to the drop-down list in the Covert dialog. Click on the ~ConvertDialog tab at the bottom of the ~OpenOffice.org Basic IDE, then double-click on the drop-down list. In the Properties window, add the &quot;MS Excel 97&quot; item in the List entries drop-down list (use Shift+Enter to add a new line). Save the changes, and you are done.</pre>
+Next, locate the following array:
+
+{{{FilterListBox=Array(&quot;MS Word 97&quot;, &quot;Rich Text Format&quot;, &quot;Text&quot;, &quot;HTML&quot;, &quot;writer_pdf_Export&quot;)}}}
+
+Add then the &quot;MS Excel 97&quot; entry to the array, so it looks as follows:
+
+{{{FilterListBox=Array(&quot;MS Word 97&quot;, &quot;Rich Text Format&quot;, &quot;Text&quot;, &quot;HTML&quot;, &quot;writer_pdf_Export&quot;, &quot;MS Excel 97&quot;)}}}</pre>
 </div>
 <div title="Tweak Email Backup" modifier="Dmitri Popov" modified="200802251708" created="200802251705" tags="email backup" changecount="5">
 <pre>Using the Email Backup command, you can email a backup copy of the current document to a specified email address. If you are using a specific email address for all your backups, you might want to add it to the command, so you don’t have to type it every single time. To do this, launch ~OpenOffice.org and choose Tools -&gt; Macros -&gt; Organize Macros -&gt; ~OpenOffice.org Basic. Select then ~WriterTools -&gt; Tools -&gt; ~EmailBackup and press the Edit button. Locate the following line {{{MailAddress=InputBox(&quot;Email address&quot;)}}} and replace the {{{InputBox(&quot;Email address&quot;)}}} part with your actual email address; for example, {{{MailAddress=&quot;user@email.org&quot;}}}
 
 @@The Email Backup tool can only send backups using an external email client. This means that you must have a properly configured email application installed on your machine before you can use the Email Backup tool.@@</pre>
 </div>
-<div title="Tweak Lookup tool" modifier="Dmitri Popov" modified="200802251721" created="200802251720" tags="lookup references" changecount="2">
+<div title="Tweak Lookup tool" modifier="Dmitri Popov" modified="200803141033" created="200802251720" tags="lookup references" changecount="4">
 <pre>You can easily edit the default references in the Lookup Tool and add  new ones by modifying the ~LookupTool macro. To do this, launch ~OpenOffice.org and choose Tools -&gt; Macros -&gt; Organize Macros -&gt; ~OpenOffice.org Basic. Select then ~WriterTools -&gt; Tools -&gt; ~LookupTool and press the Edit button. Locate the following code:
 
 {{{URLArray=Array(&quot;http://en.wikipedia.org/wiki/&quot;,_}}}
 {{{&quot;http://dictionary.cambridge.org/results.asp?searchword=&quot;,_}}}
 {{{&quot;http://www.google.com/search?q=define%3A&quot;,_}}}
 {{{&quot;http://wordnet.princeton.edu/perl/webwn?s=&quot;,_}}}
-{{{&quot;http://www.askoxford.com/results/?view=searchresults&amp;freesearch=&quot;)}}}
+{{{&quot;http://www.askoxford.com/results/?view=searchresults&amp;freesearch=&quot;,_}}}
+{{{&quot;http://dict.tu-chemnitz.de/dings.cgi?lang=en&amp;query=&quot;,_}}}
+{{{&quot;http://word.sc/&quot;,_}}}
+{{{&quot;http://word.sc/thes/&quot;)}}}
 
 Let’s say you want to add the [[Dictionary.com reference|http://dictionary.reference.com]] to the Lookup Tool. First of all, do a simple search, and note the query URL. It should look something like this:
 
@@ -947,10 +956,25 @@ All you have to do is to add it to the ~URLArray as follows:
 {{{&quot;http://dictionary.cambridge.org/results.asp?searchword=&quot;,_}}}
 {{{&quot;http://www.google.com/search?q=define%3A&quot;,_}}}
 {{{&quot;http://wordnet.princeton.edu/perl/webwn?s=&quot;,_}}}
-{{{&quot;http://www.askoxford.com/results/?view=searchresults&amp;freesearch=&quot;,_)}}}
+{{{&quot;http://www.askoxford.com/results/?view=searchresults&amp;freesearch=&quot;,_}}}
+{{{&quot;http://dict.tu-chemnitz.de/dings.cgi?lang=en&amp;query=&quot;,_}}}
+{{{&quot;http://word.sc/&quot;,_}}}
+{{{&quot;http://word.sc/thes/&quot;,_}}}
 {{{&quot;http://dictionary.reference.com/browse/&quot;)}}}
 
-Next, you have to add the Dictionary.com entry to the drop-down list in the Lookup dialog. Click on the ~LookupDialog tab at the bottom of the ~OpenOffice.org Basic IDE, then double-click on the drop-down list. In the Properties window, add the Dictionary.com item in the List entries drop-down list (use Shift+Enter to add a new line). Save the changes, and you are done.</pre>
+Next, locate the following array:
+
+{{{ListBoxArray=Array(&quot;Wikipedia (En)&quot;, &quot;Cambridge Dictionaries Online&quot;,_}}}
+{{{&quot;Google Define&quot;, &quot;WordNet&quot;, &quot;Ask Oxford&quot;, &quot;BEOLINGUS&quot;,_}}}
+{{{&quot;Word Source Dictionary&quot;, &quot;Word Source Thesaurus&quot;)}}}
+
+Add then the &quot;Dictionary.com&quot; entry to array, so it looks as follows:
+
+{{{ListBoxArray=Array(&quot;Wikipedia (En)&quot;, &quot;Cambridge Dictionaries Online&quot;,_}}}
+{{{&quot;Google Define&quot;, &quot;WordNet&quot;, &quot;Ask Oxford&quot;, &quot;BEOLINGUS&quot;,_}}}
+{{{&quot;Word Source Dictionary&quot;, &quot;Word Source Thesaurus&quot;, &quot;Dictionary.com&quot;)}}}
+
+</pre>
 </div>
 <div title="Tweak Remote Backup" modifier="Dmitri Popov" created="200802251715" tags="ftp backup" changecount="1">
 <pre>Using the Remote Backup command, you can upload a backup copy of the current document to a specified FTP server. If you are using a specific FTP address for all your backups, you might want to add it to the command, so you don’t have to type it every single time. To do this, launch ~OpenOffice.org and choose Tools -&gt; Macros -&gt; Organize Macros -&gt; ~OpenOffice.org Basic. Select then ~WriterTools -&gt; Remote Backup -&gt; ~SaveFTPDocument and press the Edit button. Locate the following code block:
@@ -976,8 +1000,8 @@ Replace the words in the array with your own.</pre>
 
 To create a new document from the desired template, choose File -&gt; New -&gt; Templates and Documents. In the Templates and Documents dialog window, click on Templates, select the template you want, and press Open.</pre>
 </div>
-<div title="Writer's Tools Manual" modifier="Dmitri Popov" modified="200803081233" created="200802251744" tags="manual" changecount="13">
-<pre>@@A comprehensive Writer's Tools manual is available in both printed and PDF formats at the [[Lulu bookstore|http://www.lulu.com/content/2115121]]. @@The manual covers all the important topics, which can help you to get the most out of the Writer's Tools ~OpenOffice.org extension. It's easier to read, too.</pre>
+<div title="Writer's Tools Manual" modifier="Dmitri Popov" modified="200803141036" created="200802251744" tags="manual" changecount="14">
+<pre>@@A comprehensive Writer's Tools manual is available in both printed and PDF formats at the [[Lulu bookstore|http://www.lulu.com/content/2115121]]@@. The manual covers all the important topics, which can help you to get the most out of the Writer's Tools ~OpenOffice.org extension. It's easier to read, too.</pre>
 </div>
 </div>
 <!--POST-STOREAREA-->
