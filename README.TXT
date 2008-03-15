@@ -13,7 +13,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 0.9.13
+VERSION 0.9.13 2008-03-15
   * List boxes in the Lookup and Convert To tools are populated dynamically via arrays.
   * App Launcher tool added.
 
