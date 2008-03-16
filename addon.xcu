@@ -327,10 +327,10 @@
               <value/>
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
-              <value>Add Task</value>
+              <value>Tasks</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
-              <value>macro:///WriterTools.Tasks.NewTask</value>
+              <value>macro:///WriterTools.Tasks.ManageTasks</value>
             </prop>
             <prop oor:name="Target" oor:type="xs:string">
               <value>_self</value>
@@ -340,49 +340,13 @@
             </prop>
           </node>
 		  
-		  <node oor:name="menu17" oor:op="replace">
-            <prop oor:name="Context" oor:type="xs:string">
-              <value/>
-            </prop>
-            <prop oor:name="Title" oor:type="xs:string">
-              <value>Show Tasks</value>
-            </prop>
-            <prop oor:name="URL" oor:type="xs:string">
-              <value>macro:///WriterTools.Tasks.ShowTasks</value>
-            </prop>
-            <prop oor:name="Target" oor:type="xs:string">
-              <value>_self</value>
-            </prop>
-            <prop oor:name="ImageIdentifier" oor:type="xs:string">
-              <value/>
-            </prop>
-          </node>
-		  
-		  <node oor:name="menu18" oor:op="replace">
-            <prop oor:name="Context" oor:type="xs:string">
-              <value/>
-            </prop>
-            <prop oor:name="Title" oor:type="xs:string">
-              <value>Purge Tasks</value>
-            </prop>
-            <prop oor:name="URL" oor:type="xs:string">
-              <value>macro:///WriterTools.Tasks.PurgeTasks</value>
-            </prop>
-            <prop oor:name="Target" oor:type="xs:string">
-              <value>_self</value>
-            </prop>
-            <prop oor:name="ImageIdentifier" oor:type="xs:string">
-              <value/>
-            </prop>
-          </node>
-		  
-		  <node oor:name="menu18s" oor:op="replace">
+		  <node oor:name="menu16s" oor:op="replace">
             <prop oor:name="URL" oor:type="xs:string">
               <value>private:separator</value>
             </prop>
           </node>
 		  
-		  <node oor:name="menu19" oor:op="replace">
+		  <node oor:name="menu17" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
             </prop>
@@ -400,13 +364,13 @@
             </prop>
           </node>
 
-		  <node oor:name="menu19s" oor:op="replace">
+		  <node oor:name="menu17s" oor:op="replace">
             <prop oor:name="URL" oor:type="xs:string">
               <value>private:separator</value>
             </prop>
           </node>
 
-		  <node oor:name="menu20" oor:op="replace">
+		  <node oor:name="menu18" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
             </prop>
@@ -424,13 +388,13 @@
             </prop>
           </node>		 
 
-		  <node oor:name="menu20s" oor:op="replace">
+		  <node oor:name="menu18s" oor:op="replace">
             <prop oor:name="URL" oor:type="xs:string">
               <value>private:separator</value>
             </prop>
           </node>		  
 		  
-		  <node oor:name="menu21" oor:op="replace">
+		  <node oor:name="menu19" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
             </prop>
@@ -586,38 +550,16 @@
 	  
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img13" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
-          <value>macro:///WriterTools.Tasks.NewTask</value>
+          <value>macro:///WriterTools.Tasks.ManageTasks</value>
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/icons/date_add.png</value>
+            <value>%origin%/icons/tick.png</value>
           </prop>
         </node>
       </node>
 	  
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img14" oor:op="replace">
-        <prop oor:name="URL" oor:type="xs:string">
-          <value>macro:///WriterTools.Tasks.ShowTasks</value>
-        </prop>
-        <node oor:name="UserDefinedImages">
-          <prop oor:name="ImageSmallURL">
-            <value>%origin%/icons/date.png</value>
-          </prop>
-        </node>
-      </node>
-	  
-	  <node oor:name="org.openoffice.Office.addon.WriterTools.img15" oor:op="replace">
-        <prop oor:name="URL" oor:type="xs:string">
-          <value>macro:///WriterTools.Tasks.PurgeTasks</value>
-        </prop>
-        <node oor:name="UserDefinedImages">
-          <prop oor:name="ImageSmallURL">
-            <value>%origin%/icons/date_delete.png</value>
-          </prop>
-        </node>
-      </node>
-	  
-	  <node oor:name="org.openoffice.Office.addon.WriterTools.img16" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
           <value>macro:///WriterTools.Ad.AdLink</value>
         </prop>
@@ -628,7 +570,7 @@
         </node>
       </node>
 	  
-	  <node oor:name="org.openoffice.Office.addon.WriterTools.img17" oor:op="replace">
+	  <node oor:name="org.openoffice.Office.addon.WriterTools.img15" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
           <value>macro:///WriterTools.WriterGames.QandAGame</value>
         </prop>
@@ -639,7 +581,7 @@
         </node>
       </node>
 	  
-	  <node oor:name="org.openoffice.Office.addon.WriterTools.img18" oor:op="replace">
+	  <node oor:name="org.openoffice.Office.addon.WriterTools.img16" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
           <value>macro:///WriterTools.WriterGames.LetterHunt</value>
         </prop>
@@ -650,7 +592,7 @@
         </node>
       </node>
 	  
-	  <node oor:name="org.openoffice.Office.addon.WriterTools.img19" oor:op="replace">
+	  <node oor:name="org.openoffice.Office.addon.WriterTools.img17" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
           <value>macro:///WriterTools.BasketDB.OpenForm</value>
         </prop>
@@ -661,7 +603,7 @@
         </node>
       </node>
 	  
-	  <node oor:name="org.openoffice.Office.addon.WriterTools.img20" oor:op="replace">
+	  <node oor:name="org.openoffice.Office.addon.WriterTools.img18" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
           <value>macro:///WriterTools.Convert.ConvertTo</value>
         </prop>
@@ -672,7 +614,7 @@
         </node>
       </node>
 	  
-	  	  <node oor:name="org.openoffice.Office.addon.WriterTools.img21" oor:op="replace">
+	  	  <node oor:name="org.openoffice.Office.addon.WriterTools.img19" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
           <value>macro:///WriterTools.AppLauncher.LaunchApp</value>
         </prop>
