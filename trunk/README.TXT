@@ -14,8 +14,7 @@ http://writertools.googlecode.com/svn/trunk/
 ==CHANGELOG==
 
 VERSION 0.9.15
-  * Task list dialog added.
-  * It's now possible to delete individual tasks.
+  * The Tasks tool has been rewritten. The Task Manager allows the user to create, view, and delete tasks from a single interface. Tasks can be deleted individually or in bulk.
 
 VERSION 0.9.13 2008-03-15
   * List boxes in the Lookup and Convert To tools are populated dynamically via arrays.
