@@ -15,6 +15,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 VERSION 0.9.15
   * Task list dialog added.
+  * It's now possible to delete individual tasks.
 
 VERSION 0.9.13 2008-03-15
   * List boxes in the Lookup and Convert To tools are populated dynamically via arrays.
