@@ -15,6 +15,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 VERSION 0.9.15
   * The Tasks tool has been rewritten. The Task Manager allows the user to create, view, and delete tasks from a single interface. Tasks can be deleted individually or in bulk.
+  * Code cleaned up. Database connection is now established using a function.
 
 VERSION 0.9.13 2008-03-15
   * List boxes in the Lookup and Convert To tools are populated dynamically via arrays.
