@@ -13,10 +13,12 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 0.9.19
-  * Minor improvements: OpenForm function added.
+VERSION 0.9.19 2008-03-19
+  * Minor improvement: OpenForm function added.
+  * Notes field added to the tasks table.
+  * Writer's Tasks form added. It can be opened from the Tasks Manager window.
 
-VERSION 0.9.17 2008-03-19
+VERSION 0.9.17 2008-03-18
   * Writer's Notes database table added.
   * Notes tool added.
 

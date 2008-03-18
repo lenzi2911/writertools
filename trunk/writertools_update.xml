@@ -3,7 +3,7 @@
  xmlns="http://openoffice.org/extensions/update/2006"
  xmlns:xlink="http://www.w3.org/1999/xlink">
 	<identifier value="Writer's Tools" />
-	<version value="0.9.17" />
+	<version value="0.9.19" />
 	<update-download>
 		<src xlink:href="http://writertools.googlecode.com/svn/trunk/WriterTools.oxt" />
 	</update-download>
