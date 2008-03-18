@@ -13,6 +13,10 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 0.9.17
+  * Writer's Notes database table added.
+  * Notes tool added.
+
 VERSION 0.9.15 2008-03-17
   * The Tasks tool has been rewritten. The Task Manager allows the user to create, view, and delete tasks from a single interface. Tasks can be deleted individually or in bulk.
   * Code cleaned up. Database connection is now established using a function.
