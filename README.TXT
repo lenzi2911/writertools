@@ -13,6 +13,13 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 0.9.21 2008-03-19
+  * Improvements based on cenacchi's code.
+  * BrowseURL function is now used to detect and open the default browser.
+  * Lookup Tool can handle multiple words searches (e.g., you can lookup "World War II")
+  * Lookup Took can handle special characters (e.g., you can lookup "Procter&Gamble", quoted
+text, etc.).
+
 VERSION 0.9.19 2008-03-19
   * Minor improvement: OpenForm function added.
   * Notes field added to the tasks table.
