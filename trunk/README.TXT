@@ -19,6 +19,7 @@ VERSION 0.9.21 2008-03-19
   * Lookup Tool can handle multiple words searches (e.g., you can lookup "World War II")
   * Lookup Took can handle special characters (e.g., you can lookup "Procter&Gamble", quoted
 text, etc.).
+  * The Letter Hunt game improved. It now uses words without any separators.
 
 VERSION 0.9.19 2008-03-19
   * Minor improvement: OpenForm function added.
