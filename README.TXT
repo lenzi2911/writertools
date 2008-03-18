@@ -13,7 +13,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 0.9.17
+VERSION 0.9.17 2008-03-19
   * Writer's Notes database table added.
   * Notes tool added.
 
