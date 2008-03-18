@@ -504,7 +504,7 @@ Also see AdvancedOptions</pre>
 <div title="Bookmarks Menu" modifier="Dmitri Popov" modified="200802292302" created="200802251732" tags="bookmarks" changecount="4">
 <pre>Although the Writer’s Tools extension offers a few different tools, you might not need all of them. In this case, you can use the [[Bookmarks Menu|http://extensions.services.openoffice.org/project/bookmarksmenu]] extension to create shortcuts to your favorite tools. To do this, install the extension and add the Bookmarks menu to the main toolbar by choosing Tools -&gt; Add-ons -&gt; Bookmarks Menu and pressing OK. Let’s say you want to bookmark the ~Multi-Format Backup tool. Choose Bookmarks -&gt; Edit Bookmarks and press the New button. Give the bookmark a name (e.g., Multi-format Backup), select Macro from the Type drop-down list, press the Open button, and use the Script selector dialog window to navigate to the ~MultiFormatBackup macro (users -&gt; Basic -&gt; ~WriterTools -&gt;Tools -&gt; ~MultiFormatBackup). Press OK to save the bookmark and close the windows. Now you can access the ~Multi-Format Backup tool via the Bookmarks menu in the main toolbar.</pre>
 </div>
-<div title="Change browser" modifier="Dmitri Popov" modified="200803181625" created="200802251659" tags="browser windows linux mac" changecount="6">
+<div title="Change browser" modifier="Dmitri Popov" modified="200803181645" created="200802251659" tags="browser windows linux mac" changecount="8">
 <pre>The Writer’s Tools extension assumes that you are using Firefox as your default browser. If this is not the case, you have to adjust Writer’s Tools’ settings. To do this, launch ~OpenOffice.org and choose Tools -&gt; Macros -&gt; Organize Macros -&gt; ~OpenOffice.org Basic. Select then ~WriterTools -&gt; Tools -&gt; ~LookupTool and press the Edit button.
 
 Locate the following line:
@@ -515,7 +515,7 @@ Then specify the correct path to your browser, for example:
 
 {{{Global Const DefaultWindowsBrowser=&quot;C:\Program Files\Opera\opera.exe&quot;}}}
 
-Save the changes, and you are done. In a similar manner, you can change the default browser on Linux by modifying the following code: {{{Global Const DefaultLinuxBrowser=&quot;firefox&quot;}}}. On Mac OS X, modify the {{{Global Const DefaultMacOSXBrowser=&quot;open -a /Applications/Firefox.app/&quot;}}} code.</pre>
+Save the changes, and you are done. In a similar manner, you can change the default browser on Linux by modifying the following line: {{{Global Const DefaultLinuxBrowser=&quot;firefox&quot;}}}. On Mac OS X, modify the {{{Global Const DefaultMacOSXBrowser=&quot;open -a /Applications/Firefox.app/&quot;}}} line.</pre>
 </div>
 <div title="CryptoFunctionsPlugin" created="200710131134" tags="systemConfig excludeLists excludeSearch">
 <pre>/***
@@ -822,8 +822,8 @@ config.formatters.push(
 } //# end of &quot;install only once&quot;
 //}}}</pre>
 </div>
-<div title="Letter Hunt Game" modifier="Dmitri Popov" modified="200803061027" created="200803050945" tags="game, letters" changecount="4">
-<pre>The Letter Hunt game picks random words from the {{{wordlist}}} table in the WriterDB database. The table already contains a few examples, and you can easily add your own words. Note that you have to use the dash (-) as a separator, for example: m-o-n-k-e-y, b-a-n-a-n-a, g-a-r-d-e-n.</pre>
+<div title="Letter Hunt Game" modifier="Dmitri Popov" modified="200803182212" created="200803050945" tags="game, letters" changecount="5">
+<pre>The Letter Hunt game picks random words from the {{{wordlist}}} table in the WriterDB database. To make the game more interesting, add as many of your own words as you like.</pre>
 </div>
 <div title="MainMenu" modifier="Dmitri Popov" modified="200803142207" created="200802251649" changecount="28">
 <pre>[[Install/upgrade]]
