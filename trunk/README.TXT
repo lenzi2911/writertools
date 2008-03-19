@@ -15,6 +15,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 VERSION 0.9.25
   * Minor improvements.
+  * Error handling improved.
 
 VERSION 0.9.23 2008-03-19
   * The Letter Hunt game improved. It now uses words without any separators.
