@@ -13,6 +13,9 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 0.9.25
+  * Minor bug fixes and tweaks.
+
 VERSION 0.9.25 2008-03-19
   * Minor improvements.
   * Error handling improved.
