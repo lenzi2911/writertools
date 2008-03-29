@@ -11,7 +11,7 @@ If you have questions, problems, or ideas how to improve Writer's Tools, post th
 
 Yes, a comprehensive Writer's Tools manual is available in both printed and PDF formats at the [http://www.lulu.com/content/2115121 Lulu bookstore]. The manual covers all the important topics, which can help you to get the most out of the Writer's Tools !OpenOffice.org extension. It's easier to read, too.
 
-=== Is it possible to install install only the tools I need ===
+=== Is it possible to install only the tools I need ===
 
 Not really. But you can use the [http://extensions.services.openoffice.org/project/bookmarksmenu Bookmarks Menu] extension to bookmark often-used tools.
 
