@@ -825,7 +825,14 @@ config.formatters.push(
 <div title="Letter Hunt Game" modifier="Dmitri Popov" modified="200803182212" created="200803050945" tags="game, letters" changecount="5">
 <pre>The Letter Hunt game picks random words from the {{{wordlist}}} table in the WriterDB database. To make the game more interesting, add as many of your own words as you like.</pre>
 </div>
-<div title="MainMenu" modifier="Dmitri Popov" modified="200803142207" created="200802251649" changecount="28">
+<div title="Localize" modifier="DmitriPopov" modified="200803291336" created="200803291331" tags="localize" changecount="6">
+<pre>If you want to localize Writer's Tools, you can do so as follows:
+
+# Translate all strings in the Messages and Error Warnings  section of the Tools module ( choose Tools -&gt; Macros -&gt; Organize Macros -&gt; ~OpenOffice.org Basic -&gt; Tools -&gt; ~LookupTool and scroll up to the top).
+# Translate all dialogs.
+# Add local resources to the Lookup Tool. For example, instead of the English version of Wikipedia, you might want to add a link to Wikipedia in your native language.</pre>
+</div>
+<div title="MainMenu" modifier="DmitriPopov" modified="200803291326" created="200802251649" changecount="30">
 <pre>[[Install/upgrade]]
 [[Change browser]]
 [[Register WriterDB]]
@@ -839,7 +846,8 @@ config.formatters.push(
 [[Letter Hunt Game]]
 [[Bookmarks Menu]]
 [[Import data]]
-[[Writer Templates]]</pre>
+[[Writer Templates]]
+[[Localize]]</pre>
 </div>
 <div title="Q and A Game" modifier="Dmitri Popov" modified="200803050946" created="200802251724" tags="games" changecount="5">
 <pre>To make the Q and A game useful, you have to add questions and correct answers to the {{{qanda}}} table in the ~WriterDB. You can enter whatever type of questions you like. Here are a couple of examples:
@@ -936,7 +944,7 @@ Add then the &quot;MS Excel 97&quot; entry to the array, so it looks as follows:
 
 @@The Email Backup tool can only send backups using an external email client. This means that you must have a properly configured email application installed on your machine before you can use the Email Backup tool.@@</pre>
 </div>
-<div title="Tweak Lookup tool" modifier="Dmitri Popov" modified="200803141033" created="200802251720" tags="lookup references" changecount="4">
+<div title="Tweak Lookup tool" modifier="DmitriPopov" modified="200803291333" created="200802251720" tags="lookup references" changecount="5">
 <pre>You can easily edit the default references in the Lookup Tool and add  new ones by modifying the ~LookupTool macro. To do this, launch ~OpenOffice.org and choose Tools -&gt; Macros -&gt; Organize Macros -&gt; ~OpenOffice.org Basic. Select then ~WriterTools -&gt; Tools -&gt; ~LookupTool and press the Edit button. Locate the following code:
 
 {{{URLArray=Array(&quot;http://en.wikipedia.org/wiki/&quot;,_}}}
