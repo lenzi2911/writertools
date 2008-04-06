@@ -13,6 +13,10 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 0.9.31
+  * "cmd /c start" is used to launch the default browser on Windows.
+  * Minor tweaks and improvements.
+
 VERSION 0.9.29 2008-04-07
   * Reworked and simplified Tasks tool.
   * Minor tweaks and improvements.
