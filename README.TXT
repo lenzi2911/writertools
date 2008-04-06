@@ -13,7 +13,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 0.9.27
+VERSION 0.9.29 2008-04-07
   * Reworked and simplified Tasks tool.
 
 VERSION 0.9.27 2008-03-29
