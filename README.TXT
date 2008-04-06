@@ -15,6 +15,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 VERSION 0.9.29 2008-04-07
   * Reworked and simplified Tasks tool.
+  * Minor tweaks and improvements.
 
 VERSION 0.9.27 2008-03-29
   * Minor bug fixes and tweaks.
@@ -30,8 +31,8 @@ VERSION 0.9.23 2008-03-19
 VERSION 0.9.21 2008-03-19
   * Improvements based on cenacchi's code.
   * BrowseURL function is now used to detect and open the default browser.
-  * Lookup Tool can handle multiple words searches (e.g., you can lookup "World War II")
-  * Lookup Took can handle special characters (e.g., you can lookup "Procter&Gamble", quoted
+  * Lookup Tool can handle multiple words searches (e.g. you can lookup "World War II").
+  * Lookup Took can handle special characters (e.g. you can lookup "Procter&Gamble", quoted
 text, etc.).
 
 VERSION 0.9.19 2008-03-19
