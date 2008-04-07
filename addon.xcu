@@ -298,39 +298,22 @@
             </prop>
           </node>
 		  
-		  <node oor:name="menu15" oor:op="replace">
-            <prop oor:name="Context" oor:type="xs:string">
-              <value/>
-            </prop>
-            <prop oor:name="Title" oor:type="xs:string">
-              <value>Browse Basket</value>
-            </prop>
-            <prop oor:name="URL" oor:type="xs:string">
-              <value>macro:///WriterTools.BasketNotes.OpenBasketForm</value>
-            </prop>
-            <prop oor:name="Target" oor:type="xs:string">
-              <value>_self</value>
-            </prop>
-            <prop oor:name="ImageIdentifier" oor:type="xs:string">
-              <value/>
-            </prop>
-          </node>
 		  
-		  <node oor:name="menu15s" oor:op="replace">
+		  <node oor:name="menu14s" oor:op="replace">
             <prop oor:name="URL" oor:type="xs:string">
               <value>private:separator</value>
             </prop>
           </node>
 		  
-		  <node oor:name="menu16" oor:op="replace">
+		  <node oor:name="menu15" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
-              <value>Notes</value>
+              <value>Database</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
-              <value>macro:///WriterTools.BasketNotes.OpenNotesForm</value>
+              <value>macro:///WriterTools.BasketNotes.OpenDatabase</value>
             </prop>
             <prop oor:name="Target" oor:type="xs:string">
               <value>_self</value>
@@ -340,13 +323,13 @@
             </prop>
           </node>
 		 
-		  <node oor:name="menu16s" oor:op="replace">
+		  <node oor:name="menu15s" oor:op="replace">
             <prop oor:name="URL" oor:type="xs:string">
               <value>private:separator</value>
             </prop>
           </node>
 		  
-		  <node oor:name="menu17" oor:op="replace">
+		  <node oor:name="menu16" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
             </prop>
@@ -364,13 +347,13 @@
             </prop>
           </node>
 		  
-		  <node oor:name="menu17s" oor:op="replace">
+		  <node oor:name="menu16s" oor:op="replace">
             <prop oor:name="URL" oor:type="xs:string">
               <value>private:separator</value>
             </prop>
           </node>
 		  
-		  <node oor:name="menu18" oor:op="replace">
+		  <node oor:name="menu17" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
             </prop>
@@ -388,13 +371,13 @@
             </prop>
           </node>
 
-		  <node oor:name="menu18s" oor:op="replace">
+		  <node oor:name="menu17s" oor:op="replace">
             <prop oor:name="URL" oor:type="xs:string">
               <value>private:separator</value>
             </prop>
           </node>
 
-		  <node oor:name="menu19" oor:op="replace">
+		  <node oor:name="menu18" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
             </prop>
@@ -412,13 +395,13 @@
             </prop>
           </node>		 
 
-		  <node oor:name="menu19s" oor:op="replace">
+		  <node oor:name="menu18s" oor:op="replace">
             <prop oor:name="URL" oor:type="xs:string">
               <value>private:separator</value>
             </prop>
           </node>		  
 		  
-		  <node oor:name="menu20" oor:op="replace">
+		  <node oor:name="menu19" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
             </prop>
@@ -616,24 +599,13 @@
         </node>
       </node>
 	  
-	  <node oor:name="org.openoffice.Office.addon.WriterTools.img17" oor:op="replace">
-        <prop oor:name="URL" oor:type="xs:string">
-          <value>macro:///WriterTools.BasketNotes.OpenBasketForm</value>
-        </prop>
-        <node oor:name="UserDefinedImages">
-          <prop oor:name="ImageSmallURL">
-            <value>%origin%/icons/browse_basket.png</value>
-          </prop>
-        </node>
-      </node>
-	  
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img18" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
-          <value>macro:///WriterTools.BasketNotes.OpenNotesForm</value>
+          <value>macro:///WriterTools.BasketNotes.OpenDatabase</value>
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/icons/note.png</value>
+            <value>%origin%/icons/database.png</value>
           </prop>
         </node>
       </node>
