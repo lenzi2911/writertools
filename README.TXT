@@ -13,6 +13,10 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 0.9.33 2008-04-07
+  * Important fix in the OpenForm function.
+  * Minor tweaks and improvements.
+
 VERSION 0.9.31 2008-04-07
   * "cmd /c start" is used to launch the default browser on Windows.
   * "/etc/alternatives/x-www-browser" is used to launch the default browser on Linux.
