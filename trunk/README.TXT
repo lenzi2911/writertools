@@ -13,6 +13,10 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 0.9.35 2008-04-07
+  * Completely rewritten the OpenForm function.
+  * Minor tweaks and improvements.
+
 VERSION 0.9.33 2008-04-07
   * Important fix in the OpenForm function.
   * Minor tweaks and improvements.
