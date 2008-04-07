@@ -13,6 +13,9 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 0.9.41
+  * Added a cancel action to the Convert To tool.
+
 VERSION 0.9.39 2008-04-07
   * Error handling added to the OpenDatabase routine.
 
