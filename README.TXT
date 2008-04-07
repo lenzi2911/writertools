@@ -13,6 +13,9 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 0.9.39 2008-04-07
+  * Error handling added to the OpenDatabase routine.
+
 VERSION 0.9.37 2008-04-07
   * The OpenForm function has been replaced with the OpenDatabase routine, which opens the WriterDB database instead of individual forms.
   * Minor tweaks in the WriterDB database.
