@@ -15,6 +15,8 @@ http://writertools.googlecode.com/svn/trunk/
 
 VERSION 0.9.41
   * Added a cancel action to the Convert To tool.
+  * Functions moved to a separate module.
+  * Verb Conjugator tool added (not in the main menu).
 
 VERSION 0.9.39 2008-04-07
   * Error handling added to the OpenDatabase routine.
