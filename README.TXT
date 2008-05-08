@@ -19,6 +19,7 @@ VERSION 0.9.41
   * Verb Conjugator tool added (not in the main menu).
   * Writer's Tasks report added (Required the Sun Report Builder extension).
   * Export to Calc feature added to the Task Viewer.
+  * Detect language option added to the Google Translate tool.
 
 VERSION 0.9.39 2008-04-07
   * Error handling added to the OpenDatabase routine.
