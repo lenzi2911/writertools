@@ -13,7 +13,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 0.9.41
+VERSION 0.9.41 2008-05-09
   * Added a cancel action to the Convert To tool.
   * Functions moved to a separate module.
   * Verb Conjugator tool added (not in the main menu).
