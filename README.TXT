@@ -13,7 +13,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 0.9.43
+VERSION 0.9.43 2008-06-27
   * New languages added to the Google Translate tool: Bulgarian, Croatian, Czech, Danish, Finnish, Hindi, Norwegian, Polish, Romanian, and Swedish.
   * Minor tweaks to the Post to Twitter tool.
   * Quick Converter tool added.

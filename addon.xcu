@@ -518,7 +518,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/icons/convert_sys.png</value>
+            <value>%origin%/icons/calculator.png</value>
           </prop>
         </node>
       </node>
