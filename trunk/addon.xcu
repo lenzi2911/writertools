@@ -201,10 +201,10 @@
               <value/>
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
-              <value>Word Hunt Game</value>
+              <value>Quick Converter</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
-              <value>macro:///WriterTools.WriterGames.WordHunt</value>
+              <value>macro:///WriterTools.Convert.ConvertSystem</value>
             </prop>
             <prop oor:name="Target" oor:type="xs:string">
               <value>_self</value>
@@ -213,7 +213,7 @@
               <value/>
             </prop>
           </node>
-		  
+	<!--	  
 		  <node oor:name="menu11" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
@@ -249,6 +249,7 @@
               <value/>
             </prop>
           </node>
+		  -->
 		  
 		  <node oor:name="menu12s" oor:op="replace">
             <prop oor:name="URL" oor:type="xs:string">
@@ -361,7 +362,7 @@
               <value>Convert To ...</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
-              <value>macro:///WriterTools.Convert.ConvertTo</value>
+              <value>macro:///WriterTools.Convert.ConvertFormat</value>
             </prop>
             <prop oor:name="Target" oor:type="xs:string">
               <value>_self</value>
@@ -513,11 +514,11 @@
 	  
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img09" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
-          <value>macro:///WriterTools.WriterGames.WordHunt</value>
+          <value>macro:///WriterTools.Convert.ConvertSystem</value>
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/icons/cake.png</value>
+            <value>%origin%/icons/convert_sys.png</value>
           </prop>
         </node>
       </node>
@@ -576,7 +577,7 @@
           </prop>
         </node>
       </node>
-	  
+	<!--  
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img15" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
           <value>macro:///WriterTools.WriterGames.QandAGame</value>
@@ -598,7 +599,7 @@
           </prop>
         </node>
       </node>
-	  
+	 --> 
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img18" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
           <value>macro:///WriterTools.BasketNotes.OpenDatabase</value>
@@ -612,7 +613,7 @@
 	  
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img19" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
-          <value>macro:///WriterTools.Convert.ConvertTo</value>
+          <value>macro:///WriterTools.Convert.ConvertFormat</value>
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
