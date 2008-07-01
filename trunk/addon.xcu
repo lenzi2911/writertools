@@ -213,16 +213,22 @@
               <value/>
             </prop>
           </node>
-	<!--	  
+		  
+		  <node oor:name="menu10s" oor:op="replace">
+            <prop oor:name="URL" oor:type="xs:string">
+              <value>private:separator</value>
+            </prop>
+          </node>
+  
 		  <node oor:name="menu11" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
-              <value>Q and A Game</value>
+              <value>Add File to Favorites</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
-              <value>macro:///WriterTools.WriterGames.QandAGame</value>
+              <value>macro:///WriterTools.FileLauncher.PickFile</value>
             </prop>
             <prop oor:name="Target" oor:type="xs:string">
               <value>_self</value>
@@ -237,10 +243,10 @@
               <value/>
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
-              <value>Letter Hunt Game</value>
+              <value>Open Favorite File</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
-              <value>macro:///WriterTools.WriterGames.LetterHunt</value>
+              <value>macro:///WriterTools.FileLauncher.OpenFile</value>
             </prop>
             <prop oor:name="Target" oor:type="xs:string">
               <value>_self</value>
@@ -249,7 +255,7 @@
               <value/>
             </prop>
           </node>
-		  -->
+
 		  
 		  <node oor:name="menu12s" oor:op="replace">
             <prop oor:name="URL" oor:type="xs:string">
@@ -577,29 +583,29 @@
           </prop>
         </node>
       </node>
-	<!--  
+
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img15" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
-          <value>macro:///WriterTools.WriterGames.QandAGame</value>
+          <value>macro:///WriterTools.FileLauncher.PickFile</value>
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/icons/hourglass.png</value>
+            <value>%origin%/icons/pickfile.png</value>
           </prop>
         </node>
       </node>
 	  
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img16" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
-          <value>macro:///WriterTools.WriterGames.LetterHunt</value>
+          <value>macro:///WriterTools.FileLauncher.OpenFile</value>
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/icons/cup.png</value>
+            <value>%origin%/icons/openfile.png</value>
           </prop>
         </node>
       </node>
-	 --> 
+ 
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img18" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
           <value>macro:///WriterTools.BasketNotes.OpenDatabase</value>
