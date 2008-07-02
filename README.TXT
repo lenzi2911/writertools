@@ -15,7 +15,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 VERSION 0.9.45
   * Minor fixes in the Quick converter tool.
-  * New File Launcher tool added.
+  * New Bookmarks tool added.
 
 VERSION 0.9.43 2008-06-27
   * New languages added to the Google Translate tool: Bulgarian, Croatian, Czech, Danish, Finnish, Hindi, Norwegian, Polish, Romanian, and Swedish.
