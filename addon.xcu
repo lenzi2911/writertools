@@ -225,10 +225,10 @@
               <value/>
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
-              <value>Add File to Favorites</value>
+              <value>Add to Bookmarks</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
-              <value>macro:///WriterTools.FileLauncher.PickFile</value>
+              <value>macro:///WriterTools.Bookmarks.BookmarkDocument</value>
             </prop>
             <prop oor:name="Target" oor:type="xs:string">
               <value>_self</value>
@@ -243,10 +243,10 @@
               <value/>
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
-              <value>Open Favorite File</value>
+              <value>Open Bookmarks</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
-              <value>macro:///WriterTools.FileLauncher.OpenFile</value>
+              <value>macro:///WriterTools.Bookmarks.OpenBookmarks</value>
             </prop>
             <prop oor:name="Target" oor:type="xs:string">
               <value>_self</value>
@@ -586,22 +586,22 @@
 
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img15" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
-          <value>macro:///WriterTools.FileLauncher.PickFile</value>
+          <value>macro:///WriterTools.Bookmarks.BookmarkDocument</value>
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/icons/pickfile.png</value>
+            <value>%origin%/icons/bookmark_add.png</value>
           </prop>
         </node>
       </node>
 	  
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img16" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
-          <value>macro:///WriterTools.FileLauncher.OpenFile</value>
+          <value>macro:///WriterTools.Bookmarks.OpenBookmarks</value>
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/icons/openfile.png</value>
+            <value>%origin%/icons/bookmarks.png</value>
           </prop>
         </node>
       </node>
