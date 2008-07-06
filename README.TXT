@@ -16,6 +16,7 @@ http://writertools.googlecode.com/svn/trunk/
 VERSION 0.9.45
   * Minor fixes in the Quick converter tool.
   * New Bookmarks tool added.
+  * Export tasks to Calc macro has been reworked. It now creates a pie chart based on the finished and unfinished tasks.
 
 VERSION 0.9.43 2008-06-27
   * New languages added to the Google Translate tool: Bulgarian, Croatian, Czech, Danish, Finnish, Hindi, Norwegian, Polish, Romanian, and Swedish.
