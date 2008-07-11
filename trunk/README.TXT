@@ -13,10 +13,10 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 0.9.45
+VERSION 0.9.45 2008-07-11
   * Minor fixes in the Quick converter tool.
   * New Bookmarks tool added.
-  * Export tasks to Calc macro has been reworked. It now creates a pie chart based on the finished and unfinished tasks.
+  * Export tasks to Calc macro has been reworked. It now creates a pie chart of the finished and unfinished tasks.
   * Default browser fall back fix. If default browser is not found, the user can enter the path to the desired browser manually.
 
 VERSION 0.9.43 2008-06-27
