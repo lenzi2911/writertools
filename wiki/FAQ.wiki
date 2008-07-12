@@ -5,7 +5,7 @@ Yes. You have to unpack the downloaded archive first, and then install the !Writ
 
 === Where do I get help with Writer's Tools? ===
 
-If you have questions, problems, or ideas how to improve Writer's Tools, post them in the [http://code.google.com/p/writertools/issues/list Issues] section.
+If you have questions, problems, or ideas how to improve Writer's Tools, post them in the [http://groups.google.com/group/writertools Writer's Tools Google Group]. If you think you've found a bug, report it in the [http://code.google.com/p/writertools/issues/list Issues] section.
 
 === Is there a manual of sorts? ===
 
