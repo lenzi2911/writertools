@@ -407,10 +407,10 @@
               <value/>
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
-              <value>App Launcher</value>
+              <value>Visual Word Count</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
-              <value>macro:///WriterTools.AppLauncher.LaunchApp</value>
+              <value>macro:///WriterTools.Tools.VisualWordCount</value>
             </prop>
             <prop oor:name="Target" oor:type="xs:string">
               <value>_self</value>
@@ -659,11 +659,11 @@
 	  
 	  	  <node oor:name="org.openoffice.Office.addon.WriterTools.img20" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
-          <value>macro:///WriterTools.AppLauncher.LaunchApp</value>
+          <value>macro:///WriterTools.Tools.VisualWordCount</value>
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/icons/lightning.png</value>
+            <value>%origin%/icons/asterisk.png</value>
           </prop>
         </node>
       </node>
