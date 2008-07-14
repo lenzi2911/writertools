@@ -13,6 +13,9 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 0.9.47
+  * Visual Word Count tool added.
+
 VERSION 0.9.45 2008-07-11
   * Minor fixes in the Quick converter tool.
   * New Bookmarks tool added.
