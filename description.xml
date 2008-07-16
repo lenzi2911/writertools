@@ -17,6 +17,9 @@
 
 <display-name>
     <name lang="en">Writer's Tools</name>
-  </display-name>
+</display-name>
+<publisher>
+    <name xlink:href="http://stores.lulu.com/nothickmanuals" lang="en">Dmitri Popov</name>
+</publisher>
 
 </description>
