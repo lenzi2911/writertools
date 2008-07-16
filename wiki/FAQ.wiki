@@ -3,7 +3,7 @@
 
 Yes. You have to unpack the downloaded archive first, and then install the !WriterTools.oxt extension using the Extension Manager.
 
-=== How do I install Writer's Tools on !OpenOffice.org 3.0? ===
+=== How do I install Writer's Tools in !OpenOffice.org 3.0? ===
 
 Choose Tools -> Extension Manager, press the Add button, and select the !WriterTools.oxt file. *Important:* Press _Only for me_ button to install the extension.
 
