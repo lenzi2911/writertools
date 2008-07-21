@@ -17,6 +17,7 @@ VERSION 0.9.47
   * Visual Word Count tool added.
   * Message boxes minor tweaks.
   * Games removed.
+  * Confusing Words dictionary added to the Lookup tool.
   
 
 VERSION 0.9.45 2008-07-11
