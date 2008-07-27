@@ -13,7 +13,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 0.9.47
+VERSION 0.9.47 2008-07-27
   * Visual Word Count tool added.
   * Message boxes minor tweaks.
   * Games removed.
