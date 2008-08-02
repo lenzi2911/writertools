@@ -564,7 +564,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/icons/basket.png</value>
+            <value>%origin%/icons/notebook.png</value>
           </prop>
         </node>
       </node>
@@ -575,7 +575,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/icons/map.png</value>
+            <value>%origin%/icons/pin.png</value>
           </prop>
         </node>
       </node>
@@ -663,7 +663,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/icons/asterisk.png</value>
+            <value>%origin%/icons/balloon.png</value>
           </prop>
         </node>
       </node>
