@@ -219,26 +219,8 @@
               <value>private:separator</value>
             </prop>
           </node>
-  
-		  <node oor:name="menu11" oor:op="replace">
-            <prop oor:name="Context" oor:type="xs:string">
-              <value/>
-            </prop>
-            <prop oor:name="Title" oor:type="xs:string">
-              <value>Bookmark Document</value>
-            </prop>
-            <prop oor:name="URL" oor:type="xs:string">
-              <value>macro:///WriterTools.Bookmarks.BookmarkDocument</value>
-            </prop>
-            <prop oor:name="Target" oor:type="xs:string">
-              <value>_self</value>
-            </prop>
-            <prop oor:name="ImageIdentifier" oor:type="xs:string">
-              <value/>
-            </prop>
-          </node>
 		  
-		  <node oor:name="menu12" oor:op="replace">
+		  <node oor:name="menu11" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
             </prop>
@@ -247,6 +229,24 @@
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
               <value>macro:///WriterTools.Bookmarks.OpenBookmarks</value>
+            </prop>
+            <prop oor:name="Target" oor:type="xs:string">
+              <value>_self</value>
+            </prop>
+            <prop oor:name="ImageIdentifier" oor:type="xs:string">
+              <value/>
+            </prop>
+          </node>
+  
+		  <node oor:name="menu12" oor:op="replace">
+            <prop oor:name="Context" oor:type="xs:string">
+              <value/>
+            </prop>
+            <prop oor:name="Title" oor:type="xs:string">
+              <value>Bookmark Document</value>
+            </prop>
+            <prop oor:name="URL" oor:type="xs:string">
+              <value>macro:///WriterTools.Bookmarks.BookmarkDocument</value>
             </prop>
             <prop oor:name="Target" oor:type="xs:string">
               <value>_self</value>
@@ -520,7 +520,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/icons/clock_play.png</value>
+            <value>%origin%/icons/clock_start.png</value>
           </prop>
         </node>
       </node>
@@ -663,7 +663,7 @@
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/icons/balloon.png</value>
+            <value>%origin%/icons/wordcount.png</value>
           </prop>
         </node>
       </node>
