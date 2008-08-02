@@ -310,10 +310,10 @@
               <value/>
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
-              <value>Add to Basket</value>
+              <value>Add to Notebook</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
-              <value>macro:///WriterTools.BasketNotes.InsertTextSnippet</value>
+              <value>macro:///WriterTools.Notebook.InsertToNotebook</value>
             </prop>
             <prop oor:name="Target" oor:type="xs:string">
               <value>_self</value>
@@ -338,7 +338,7 @@
               <value>Database</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
-              <value>macro:///WriterTools.BasketNotes.OpenDatabase</value>
+              <value>macro:///WriterTools.Notebook.OpenDatabase</value>
             </prop>
             <prop oor:name="Target" oor:type="xs:string">
               <value>_self</value>
@@ -560,7 +560,7 @@
 	  
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img11" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
-          <value>macro:///WriterTools.BasketNotes.InsertTextSnippet</value>
+          <value>macro:///WriterTools.Notebook.InsertToNotebook</value>
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
@@ -637,7 +637,7 @@
  
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img18" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
-          <value>macro:///WriterTools.BasketNotes.OpenDatabase</value>
+          <value>macro:///WriterTools.Notebook.OpenDatabase</value>
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
