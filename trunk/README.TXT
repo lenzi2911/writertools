@@ -13,7 +13,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 0.9.49
+VERSION 1.0.0 2008-08-03
   * New icons.
   * Basket tool renamed to Notebook.
   * Path to the default browser is not saved in the .ini file (yay!).
