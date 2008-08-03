@@ -16,6 +16,7 @@ http://writertools.googlecode.com/svn/trunk/
 VERSION 0.9.49
   * New icons.
   * Basket tool renamed to Notebook.
+  * Path to the default browser is not saved in the .ini file (yay!).
 
 VERSION 0.9.47 2008-07-27
   * Visual Word Count tool added.
