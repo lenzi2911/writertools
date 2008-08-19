@@ -13,6 +13,9 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 1.1.0
+  * Python-based email backup feature added.
+
 VERSION 1.0.0 2008-08-03
   * New icons.
   * Basket tool renamed to Notebook.
