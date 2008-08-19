@@ -501,6 +501,11 @@ Also see AdvancedOptions</pre>
 <div title="Bookmarks Menu" modifier="Dmitri Popov" modified="200802292302" created="200802251732" tags="bookmarks" changecount="4">
 <pre>Although the Writer’s Tools extension offers a few different tools, you might not need all of them. In this case, you can use the [[Bookmarks Menu|http://extensions.services.openoffice.org/project/bookmarksmenu]] extension to create shortcuts to your favorite tools. To do this, install the extension and add the Bookmarks menu to the main toolbar by choosing Tools -&gt; Add-ons -&gt; Bookmarks Menu and pressing OK. Let’s say you want to bookmark the ~Multi-Format Backup tool. Choose Bookmarks -&gt; Edit Bookmarks and press the New button. Give the bookmark a name (e.g., Multi-format Backup), select Macro from the Type drop-down list, press the Open button, and use the Script selector dialog window to navigate to the ~MultiFormatBackup macro (users -&gt; Basic -&gt; ~WriterTools -&gt;Tools -&gt; ~MultiFormatBackup). Press OK to save the bookmark and close the windows. Now you can access the ~Multi-Format Backup tool via the Bookmarks menu in the main toolbar.</pre>
 </div>
+<div title="Configure Email Backup" modifier="DmitriPopov" modified="200808191942" created="200802251705" tags="email backup" changecount="9">
+<pre>Using the Email Backup command, you can email a backup copy of the current document to a specified email address. This tool requires Python installed on your machine. On most Linux distributions, Python is already installed. On Windows, download the latest version of Python from [[Python's official website|http://www.python.org/]] and install it your machine. You must install Python into the default {{{C:/Python25}}} directory. Copy the gmail_backup.py script into the {{{C:/Python25}}} directory. Open the script and replace the {{{GMAIL_USER}}}, {{{GMAIL_PASSWD}}}, and {{{RECIPIENT}}} values with your actual Gmail email, password, and desired backup email address.
+
+@@Note that the Email Backup tool requires a Gmail account.@@</pre>
+</div>
 <div title="CryptoFunctionsPlugin" created="200710131134" tags="systemConfig excludeLists excludeSearch">
 <pre>/***
 |''Name:''|CryptoFunctionsPlugin|
@@ -813,11 +818,11 @@ config.formatters.push(
 # Translate all dialogs.
 # Add local resources to the Lookup Tool. For example, instead of the English version of Wikipedia, you might want to add a link to Wikipedia in your native language.</pre>
 </div>
-<div title="MainMenu" modifier="DmitriPopov" modified="200808031923" created="200802251649" changecount="32">
+<div title="MainMenu" modifier="DmitriPopov" modified="200808191933" created="200802251649" changecount="33">
 <pre>[[Install/upgrade]]
 [[Set browser path]]
 [[Register WriterDB]]
-[[Tweak Email Backup]]
+[[Configure Email Backup]]
 [[Tweak Remote Backup]]
 [[Tweak Lookup tool]]
 [[Tweak Convert To]]
@@ -909,11 +914,6 @@ Next, locate the following array:
 Add then the &quot;MS Excel 97&quot; entry to the array, so it looks as follows:
 
 {{{FilterListBox=Array(&quot;MS Word 97&quot;, &quot;Rich Text Format&quot;, &quot;Text&quot;, &quot;HTML&quot;, &quot;writer_pdf_Export&quot;, &quot;MS Excel 97&quot;)}}}</pre>
-</div>
-<div title="Tweak Email Backup" modifier="Dmitri Popov" modified="200802251708" created="200802251705" tags="email backup" changecount="5">
-<pre>Using the Email Backup command, you can email a backup copy of the current document to a specified email address. If you are using a specific email address for all your backups, you might want to add it to the command, so you don’t have to type it every single time. To do this, launch ~OpenOffice.org and choose Tools -&gt; Macros -&gt; Organize Macros -&gt; ~OpenOffice.org Basic. Select then ~WriterTools -&gt; Tools -&gt; ~EmailBackup and press the Edit button. Locate the following line {{{MailAddress=InputBox(&quot;Email address&quot;)}}} and replace the {{{InputBox(&quot;Email address&quot;)}}} part with your actual email address; for example, {{{MailAddress=&quot;user@email.org&quot;}}}
-
-@@The Email Backup tool can only send backups using an external email client. This means that you must have a properly configured email application installed on your machine before you can use the Email Backup tool.@@</pre>
 </div>
 <div title="Tweak Lookup tool" modifier="DmitriPopov" modified="200803291333" created="200802251720" tags="lookup references" changecount="5">
 <pre>You can easily edit the default references in the Lookup Tool and add  new ones by modifying the ~LookupTool macro. To do this, launch ~OpenOffice.org and choose Tools -&gt; Macros -&gt; Organize Macros -&gt; ~OpenOffice.org Basic. Select then ~WriterTools -&gt; Tools -&gt; ~LookupTool and press the Edit button. Locate the following code:
