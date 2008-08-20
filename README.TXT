@@ -13,7 +13,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 1.1.0
+VERSION 1.1.0 2008-08-19
   * Python-based email backup feature added.
 
 VERSION 1.0.0 2008-08-03
