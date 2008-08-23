@@ -15,6 +15,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 VERSION 1.1.1
   * Code and comments cleaned up.
+  * Minor fixes and improvements in the Email Backup tool.
 
 VERSION 1.1.0 2008-08-19
   * Python-based email backup feature added.
