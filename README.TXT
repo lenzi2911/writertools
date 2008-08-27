@@ -13,6 +13,9 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 1.1.3
+  * Email Backup tool fixes and improvements.
+
 VERSION 1.1.1 2008-08-24
   * Code and comments cleaned up.
   * Minor fixes and improvements in the Email Backup tool.
