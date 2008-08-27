@@ -11,7 +11,7 @@ import sys
 GMAIL_USER = 'username@gmail.com'
 GMAIL_PASSWD = "password"
 RECIPIENT = "backup@gmail.com"
-SUBJECT = "Writer's Tools document backup"
+SUBJECT = "Writer's Tools document backup: " + sys.argv[2]
 MESSAGE = "A backup version of an OpenOffice.org document is attached."
 
 def mail(to, subject, text, attach):
