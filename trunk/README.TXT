@@ -15,6 +15,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 VERSION 1.1.5
   * Minor fixes.
+  * Quick Converter tool improved.
 
 VERSION 1.1.3 2008-08-27
   * Email Backup tool fixes and improvements.
