@@ -13,7 +13,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 1.1.5
+VERSION 1.1.5 2008-09-02
   * Minor fixes.
   * Quick Converter tool improved.
 
