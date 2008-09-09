@@ -1,4 +1,10 @@
 #labels Featured
+=== I entered incorrect browser path. How do I fix that? ===
+
+*On Windows with OpenOffice.org 3.0* Navigate to C:\Documents and Settings\USER\Application Data\OpenOffice.org\3\user (replace USER with your actual user name) and delete the writertools folder. Next time you use Writer's Tools, you'll be prompted to enter the path to a browser.
+
+*On Linux with OpenOffice.org 3.0* Navigate to the hidden OpenOffice.org folder in your home directory and delete the writertools folder. Next time you use Writer's Tools, you'll be prompted to enter the path to a browser.
+
 === I installed the downloaded archive, but the extension doesn't work. Am I doing something wrong? ===
 
 Yes. You have to unpack the downloaded archive first, and then install the !WriterTools.oxt extension using the Extension Manager.
