@@ -13,6 +13,10 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 1.1.7
+  * Minor fixes.
+  * Writer's Submission tracker added to WriterDB.
+
 VERSION 1.1.5 2008-09-02
   * Minor fixes.
   * Quick Converter tool improved.
