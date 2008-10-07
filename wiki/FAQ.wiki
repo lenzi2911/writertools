@@ -5,7 +5,7 @@ Yes, a comprehensive Writer's Tools manual is available in both printed and PDF 
 
 === I entered incorrect browser path. How do I fix that? ===
 
-*On Windows with !OpenOffice.org 3.0* Navigate to _C:\Documents and Settings\USER\Application Data\!OpenOffice.org\3\user_ (replace _USER_ with your actual user name) and delete the writertools folder. Next time you use Writer's Tools, you'll be prompted to enter the path to a browser.
+*On Windows with !OpenOffice.org 3.0* Navigate to _C:\Documents and Settings\USER\Application Data\!OpenOffice.org\3\user_ (replace _USER_ with your actual user name) and delete the writertools folder. In Windows Vista the path is _C:\Users\USER\AppData\Roaming\OpenOffice.org\3\user_. Next time you use Writer's Tools, you'll be prompted to enter the path to a browser.
 
 *On Linux with !OpenOffice.org 3.0* Navigate to the hidden !OpenOffice.org folder in your home directory and delete the writertools folder. Next time you use Writer's Tools, you'll be prompted to enter the path to a browser.
 
@@ -15,7 +15,7 @@ Yes. You have to unpack the downloaded archive first, and then install the !Writ
 
 === I'm using Writer's Tools on Windows Vista. Is it anything I should know? ===
 
-It seems that !OpenOffice.org Basic doesn't support Windows Vista native dialogs. Fortunately, this problem is easy to fix. In !OpenOffice.org, choose Tools -> Options and navigate to !OpenOffice.org -> General. Tick the Use OpenOffice.org dialogs check box. That should do the trick. 
+It seems that !OpenOffice.org Basic doesn't support Windows Vista native dialogs. Fortunately, this problem is easy to fix. In !OpenOffice.org, choose Tools -> Options and navigate to !OpenOffice.org -> General. Tick the _Use !OpenOffice.org dialogs_ check box. That should do the trick. 
 
 === Where do I get help with Writer's Tools? ===
 
