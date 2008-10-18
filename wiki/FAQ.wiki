@@ -15,7 +15,12 @@ Yes. You have to unpack the downloaded archive first, and then install the !Writ
 
 === I'm using Writer's Tools on Windows Vista. Is it anything I should know? ===
 
-It seems that !OpenOffice.org Basic doesn't support Windows Vista native dialogs. Fortunately, this problem is easy to fix. In !OpenOffice.org, choose Tools -> Options and navigate to !OpenOffice.org -> General. Tick the _Use !OpenOffice.org dialogs_ check box. That should do the trick. 
+It seems that !OpenOffice.org Basic doesn't support Windows Vista native dialogs. Fortunately, this problem is easy to fix. In !OpenOffice.org, choose Tools -> Options and navigate to !OpenOffice.org -> General. Tick the _Use !OpenOffice.org dialogs_ check box. That should do the trick.
+
+
+=== Does Writer's Tools work with Mac OS X? ===
+
+It should. But I don't do any intensive testing on Mac OS X. If you encounter a bug or a problem on Mac OS X, make sure to report them in the [http://code.google.com/p/writertools/issues/list Issues] sections.
 
 === Where do I get help with Writer's Tools? ===
 
