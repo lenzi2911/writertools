@@ -122,12 +122,6 @@
             <prop oor:name="ImageIdentifier" oor:type="xs:string">
               <value/>
             </prop>
-          </node>
-		  
-		  <node oor:name="menu06s" oor:op="replace">
-            <prop oor:name="URL" oor:type="xs:string">
-              <value>private:separator</value>
-            </prop>
           </node>	
 		  
 		  <node oor:name="menu07" oor:op="replace">
@@ -135,10 +129,10 @@
               <value/>
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
-              <value>Wikify Word</value>
+              <value>Amazon S3 Backup</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
-              <value>macro:///WriterTools.Wikify.WikifyWord</value>
+              <value>macro:///WriterTools.Backup.AmazonS3Backup</value>
             </prop>
             <prop oor:name="Target" oor:type="xs:string">
               <value>_self</value>
@@ -505,11 +499,11 @@
 	  
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img06" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
-          <value>macro:///WriterTools.Wikify.WikifyWord</value>
+          <value>macro:///WriterTools.Backup.AmazonS3Backup</value>
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
-            <value>%origin%/icons/wikifyword.png</value>
+            <value>%origin%/icons/safe.png</value>
           </prop>
         </node>
       </node>
