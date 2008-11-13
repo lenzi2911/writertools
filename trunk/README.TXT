@@ -16,6 +16,7 @@ http://writertools.googlecode.com/svn/trunk/
 VERSION 1.1.7
   * Writer's Submission tracker added to WriterDB.
   * Amazon S3 Backup tool added.
+  * Wikify Word tools removed from the main menu.
   * Minor fixes.
 
 VERSION 1.1.5 2008-09-02
