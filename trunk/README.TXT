@@ -14,8 +14,9 @@ http://writertools.googlecode.com/svn/trunk/
 ==CHANGELOG==
 
 VERSION 1.1.7
-  * Minor fixes.
   * Writer's Submission tracker added to WriterDB.
+  * Amazon S3 Backup tool added.
+  * Minor fixes.
 
 VERSION 1.1.5 2008-09-02
   * Minor fixes.
