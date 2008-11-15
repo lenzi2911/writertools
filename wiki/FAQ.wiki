@@ -13,7 +13,7 @@ Yes, a comprehensive Writer's Tools manual is available in both printed and PDF 
 
 Yes. You have to unpack the downloaded archive first, and then install the !WriterTools.oxt extension using the Extension Manager.
 
-=== I'm using Writer's Tools on Windows Vista. Is it anything I should know? ===
+=== I'm using Writer's Tools on Windows Vista. Is there anything I should know? ===
 
 It seems that !OpenOffice.org Basic doesn't support Windows Vista native dialogs. Fortunately, this problem is easy to fix. In !OpenOffice.org, choose Tools -> Options and navigate to !OpenOffice.org -> General. Tick the _Use !OpenOffice.org dialogs_ check box. That should do the trick.
 
