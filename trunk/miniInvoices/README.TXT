@@ -17,12 +17,13 @@ To print a single invoice, switch to the Reports section, and run the Single_Inv
 
 Preparing miniInvoices:
 
-  * In the Tables section, use the Publications table to add publications your write for.
+  * In the Forms section, use the Publications form to add publications your write for.
   * In the Reports sections, modify the default header of the Single_Invoice report.
+  * Use the Invoice form to create invoices.
 
 ==CHANGELOG==
 
-VERSION 0.2.1 [2008-12-11]
+VERSION 0.3.1 [2008-12-11]
   * Puplications form added.
   * Minor tweaks.
 
