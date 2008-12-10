@@ -22,7 +22,11 @@ Preparing miniInvoices:
 
 ==CHANGELOG==
 
-VERSION 0.2.1
+VERSION 0.2.1 [2008-12-11]
+  * Puplications form added.
+  * Minor tweaks.
+
+VERSION 0.2.1 [2008-02-12]
   * Conditional Print Expression added to the Country field in the Single_Invoice report.
   * Tweaked logo.
   * Invoice_no field is no Text [VARCHAR].
