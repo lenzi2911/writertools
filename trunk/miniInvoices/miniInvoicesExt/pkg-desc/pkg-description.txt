@@ -1,0 +1,5 @@
+miniInvoices
+(c) 2007, 2008 Dmitri Popov
+http://code.google.com/p/writertools/
+
+The miniInvoice extension integrates the miniInvoices application with OpenOffice.org.
