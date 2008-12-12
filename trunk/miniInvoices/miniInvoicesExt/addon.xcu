@@ -27,6 +27,7 @@
               <value/>
             </prop>
           </node>
+
           <node oor:name="menu02" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
@@ -44,6 +45,43 @@
               <value/>
             </prop>
           </node>
+
+         <node oor:name="menu03" oor:op="replace">
+            <prop oor:name="Context" oor:type="xs:string">
+              <value/>
+            </prop>
+            <prop oor:name="Title" oor:type="xs:string">
+              <value>Add Article</value>
+            </prop>
+            <prop oor:name="URL" oor:type="xs:string">
+              <value>macro:///miniInvoices.AddArticle.AddArticleItem</value>
+            </prop>
+            <prop oor:name="Target" oor:type="xs:string">
+              <value>_self</value>
+            </prop>
+            <prop oor:name="ImageIdentifier" oor:type="xs:string">
+              <value/>
+            </prop>
+          </node>
+
+         <node oor:name="menu04" oor:op="replace">
+            <prop oor:name="Context" oor:type="xs:string">
+              <value/>
+            </prop>
+            <prop oor:name="Title" oor:type="xs:string">
+              <value>Open miniInvoices</value>
+            </prop>
+            <prop oor:name="URL" oor:type="xs:string">
+              <value>macro:///miniInvoices.OpenDB.OpenDatabase</value>
+            </prop>
+            <prop oor:name="Target" oor:type="xs:string">
+              <value>_self</value>
+            </prop>
+            <prop oor:name="ImageIdentifier" oor:type="xs:string">
+              <value/>
+            </prop>
+          </node>
+
         </node>
       </node>
     </node>
@@ -58,6 +96,7 @@
           </prop>
         </node>
       </node>
+
       <node oor:name="org.openoffice.Office.addon.miniInvoices.img02" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
           <value>macro:///miniInvoices.OpenForm.OpenPublicationsForm</value>
@@ -68,6 +107,29 @@
           </prop>
         </node>
       </node>
+
+      <node oor:name="org.openoffice.Office.addon.miniInvoices.img03" oor:op="replace">
+        <prop oor:name="URL" oor:type="xs:string">
+          <value>macro:///miniInvoices.AddArticle.AddArticleItem</value>
+        </prop>
+        <node oor:name="UserDefinedImages">
+          <prop oor:name="ImageSmallURL">
+            <value>%origin%/icons/add_article.png</value>
+          </prop>
+        </node>
+      </node>
+
+      <node oor:name="org.openoffice.Office.addon.miniInvoices.img04" oor:op="replace">
+        <prop oor:name="URL" oor:type="xs:string">
+          <value>macro:///miniInvoices.OpenDB.OpenDatabase</value>
+        </prop>
+        <node oor:name="UserDefinedImages">
+          <prop oor:name="ImageSmallURL">
+            <value>%origin%/icons/database.png</value>
+          </prop>
+        </node>
+      </node>
+
     </node>
   </node>
 </oor:node>
