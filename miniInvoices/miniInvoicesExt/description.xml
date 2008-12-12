@@ -6,7 +6,7 @@
 <OpenOffice.org-minimal-version value="2.1" d:name="OpenOffice.org 2.1"/>
 </dependencies>
   <update-information>
-	  <src xlink:href="http://writertools.googlecode.com/svn/trunk/miniinvoices_update.xml" />
+	  <src xlink:href="http://writertools.googlecode.com/svn/trunk/miniInvoices/miniInvoicesExt/miniinvoices_update.xml" />
   </update-information>
 
 <registration>
