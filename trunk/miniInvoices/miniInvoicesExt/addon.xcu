@@ -51,7 +51,7 @@
               <value/>
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
-              <value>Add Article</value>
+              <value>Add Invoice Item</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
               <value>macro:///miniInvoices.AddArticle.AddArticleItem</value>
