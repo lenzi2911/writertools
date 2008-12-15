@@ -23,9 +23,13 @@ Preparing miniInvoices:
 
 ==CHANGELOG==
 
+VERSION 0.5.0
+  * miniInvoices extension added.
+
 VERSION 0.3.1 [2008-12-11]
   * Puplications form added.
   * Minor tweaks.
+  * miniInvoices extension added.
 
 VERSION 0.2.1 [2008-02-12]
   * Conditional Print Expression added to the Country field in the Single_Invoice report.
