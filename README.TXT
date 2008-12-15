@@ -13,6 +13,9 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 1.1.9
+  * Encyclopedia Britannica added to the Lookup Tool.
+
 VERSION 1.1.7 2008-11-15
   * Writer's Submission tracker added to WriterDB.
   * Amazon S3 Backup tool added.
