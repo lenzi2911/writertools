@@ -15,6 +15,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 VERSION 1.1.9
   * Encyclopedia Britannica added to the Lookup Tool.
+  * WriterTemplates.oxt removed
 
 VERSION 1.1.7 2008-11-15
   * Writer's Submission tracker added to WriterDB.
