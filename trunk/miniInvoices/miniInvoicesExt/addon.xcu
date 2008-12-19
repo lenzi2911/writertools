@@ -82,6 +82,24 @@
             </prop>
           </node>
 
+         <node oor:name="menu05" oor:op="replace">
+            <prop oor:name="Context" oor:type="xs:string">
+              <value/>
+            </prop>
+            <prop oor:name="Title" oor:type="xs:string">
+              <value>Generate Invoice</value>
+            </prop>
+            <prop oor:name="URL" oor:type="xs:string">
+              <value>macro:///miniInvoices.OpenReport.OpenSingleInvoice</value>
+            </prop>
+            <prop oor:name="Target" oor:type="xs:string">
+              <value>_self</value>
+            </prop>
+            <prop oor:name="ImageIdentifier" oor:type="xs:string">
+              <value/>
+            </prop>
+          </node>
+
         </node>
       </node>
     </node>
@@ -126,6 +144,17 @@
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
             <value>%origin%/icons/database.png</value>
+          </prop>
+        </node>
+      </node>
+
+      <node oor:name="org.openoffice.Office.addon.miniInvoices.img05" oor:op="replace">
+        <prop oor:name="URL" oor:type="xs:string">
+          <value>macro:///miniInvoices.OpenReport.OpenSingleInvoice</value>
+        </prop>
+        <node oor:name="UserDefinedImages">
+          <prop oor:name="ImageSmallURL">
+            <value>%origin%/icons/report.png</value>
           </prop>
         </node>
       </node>
