@@ -23,7 +23,7 @@ Preparing miniInvoices:
 
 ==CHANGELOG==
 
-VERSION 0.5.0
+VERSION 0.5.0 [2009-01-09]
   * miniInvoices extension added.
 
 VERSION 0.3.1 [2008-12-11]
