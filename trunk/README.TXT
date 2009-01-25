@@ -13,7 +13,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 1.1.9
+VERSION 1.1.9 2009-01-25
   * Encyclopedia Britannica added to the Lookup Tool.
   * WriterTemplates.oxt removed
 
