@@ -13,6 +13,9 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 1.2.1
+  * All dialogs and forms now use the Droid font family.
+
 VERSION 1.1.9 2009-01-25
   * Encyclopedia Britannica added to the Lookup Tool.
   * WriterTemplates.oxt removed
