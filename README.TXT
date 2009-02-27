@@ -13,8 +13,10 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 1.2.1
+VERSION 1.3.1
   * All dialogs and forms now use the Droid font family.
+  * Amazon S3 Backup tool removed.
+  * Convert To tool removed.
 
 VERSION 1.1.9 2009-01-25
   * Encyclopedia Britannica added to the Lookup Tool.
