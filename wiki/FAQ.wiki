@@ -32,4 +32,4 @@ Not really. But you can use the [http://extensions.services.openoffice.org/proje
 
 === How do I contact the author? ===
 
-To avoid spam, the best way to contact the author is via Jabber (dmpop@jabber.org). You can also stalk the author via Twitter (http://twitter.com/dmpop).
+To avoid spam, the best way to contact the author is via Jabber (dmpop@jabber.org). You can also follow the author via Twitter (http://twitter.com/dmpop).
