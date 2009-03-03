@@ -5,7 +5,7 @@ Yes, a comprehensive Writer's Tools manual is available in both printed and PDF 
 
 === I entered incorrect browser path. How do I fix that? ===
 
-*On Windows with !OpenOffice.org 3.0* Navigate to _C:\Documents and Settings\USER\Application Data\!OpenOffice.org\3\user_ (replace _USER_ with your actual user name) and delete the writertools folder. In Windows Vista the path is _C:\Users\USER\!AppData\Roaming\!OpenOffice.org\3\user_. Next time you use Writer's Tools, you'll be prompted to enter the path to a browser.
+*On Windows with !OpenOffice.org 3.0* Navigate to _C:\Documents and Settings\USER\Application Data\!OpenOffice.org\3\user_ (replace _USER_ with your actual user name) and delete the writertools folder. In Windows Vista, the path is _C:\Users\USER\!AppData\Roaming\!OpenOffice.org\3\user_. Next time you use Writer's Tools, you'll be prompted to enter the path to a browser.
 
 *On Linux with !OpenOffice.org 3.0* Navigate to the hidden !OpenOffice.org folder in your home directory and delete the writertools folder. Next time you use Writer's Tools, you'll be prompted to enter the path to a browser.
 
