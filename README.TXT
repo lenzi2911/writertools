@@ -17,6 +17,7 @@ VERSION 1.3.1
   * All dialogs and forms now use the Droid font family.
   * Amazon S3 Backup tool removed.
   * Convert To tool removed.
+  * Writer's Submission Tracker can store documents.
 
 VERSION 1.1.9 2009-01-25
   * Encyclopedia Britannica added to the Lookup Tool.
