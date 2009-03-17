@@ -17,6 +17,7 @@ VERSION 1.3.3
   * All dialogs and forms now use the Droid font family.
   * Convert To tool removed.
   * Writer's Submission Tracker can store documents.
+  * Add to Submission Tracket tool added (not in the menu).
   * Amazon S3 Backup tool is now based on aws: http://timkay.com/aws/
 
 VERSION 1.1.9 2009-01-25
