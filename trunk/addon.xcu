@@ -123,7 +123,7 @@
               <value/>
             </prop>
           </node>	
-<!--		  
+
 		  <node oor:name="menu07" oor:op="replace">
             <prop oor:name="Context" oor:type="xs:string">
               <value/>
@@ -140,8 +140,7 @@
             <prop oor:name="ImageIdentifier" oor:type="xs:string">
               <value/>
             </prop>
-          </node>
--->		  
+          </node>
 		  <node oor:name="menu07s" oor:op="replace">
             <prop oor:name="URL" oor:type="xs:string">
               <value>private:separator</value>
