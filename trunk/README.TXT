@@ -13,7 +13,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 1.3.3
+VERSION 1.3.3 2009-03-21
   * All dialogs and forms now use the Droid font family.
   * Convert To tool removed.
   * Writer's Submission Tracker can store documents.
