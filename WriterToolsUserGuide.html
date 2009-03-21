@@ -501,6 +501,25 @@ Also see AdvancedOptions</pre>
 <div title="Bookmarks Menu" modifier="Dmitri Popov" modified="200802292302" created="200802251732" tags="bookmarks" changecount="4">
 <pre>Although the Writer’s Tools extension offers a few different tools, you might not need all of them. In this case, you can use the [[Bookmarks Menu|http://extensions.services.openoffice.org/project/bookmarksmenu]] extension to create shortcuts to your favorite tools. To do this, install the extension and add the Bookmarks menu to the main toolbar by choosing Tools -&gt; Add-ons -&gt; Bookmarks Menu and pressing OK. Let’s say you want to bookmark the ~Multi-Format Backup tool. Choose Bookmarks -&gt; Edit Bookmarks and press the New button. Give the bookmark a name (e.g., Multi-format Backup), select Macro from the Type drop-down list, press the Open button, and use the Script selector dialog window to navigate to the ~MultiFormatBackup macro (users -&gt; Basic -&gt; ~WriterTools -&gt;Tools -&gt; ~MultiFormatBackup). Press OK to save the bookmark and close the windows. Now you can access the ~Multi-Format Backup tool via the Bookmarks menu in the main toolbar.</pre>
 </div>
+<div title="Configure Amazon S3 Backup" modifier="DmitriPopov" modified="200903211219" created="200903211213" tags="backup, amazon, s3" changecount="3">
+<pre>Before you start, you have to sign up for Amazon S3. Next, use your Linux distribution's package manager to install the {{{curl}}} utility. On a Ubuntu-based distro, this can be done using the {{{sudo apt-get install curl}}} command.
+
+Download the latest version of the [[aws|http://timkay.com/aws/]] script and put it into your home directory. In the terminal, run the following command as root:
+
+{{{
+perl aws --install
+}}}
+
+Create a {{{.awssecret}}} text file in your home directory, and enter your Access Key ID on the first line and the Secret Access Key on the second line. Use then the {{{s3mkdir}}} command to create a new S3 bucket:
+
+{{{
+s3mkdir openoffice_org_backup_bucket
+}}}
+
+Not that the name of the bucket must be unique.
+
+To install and configure {{{aws}}} on Windows, follow instructions on the [[project's Web site|http://timkay.com/aws/#windows]].</pre>
+</div>
 <div title="Configure Email Backup" modifier="DmitriPopov" modified="200808271456" created="200802251705" tags="email backup" changecount="17">
 <pre>Using the Email Backup command, you can email a copy of the current document to a specified email address. This tool requires a Gmail account and Python installed on your machine. On most Linux distributions, Python is already installed, so all you have to do is to place the {{{gmail_backup.py}}} script into your user directory. On Windows, download Python 2.5 from [[Python's official website|http://www.python.org/]] and install it your machine. @@You must install Python into the default {{{C:/Python25}}} directory.@@ Copy the {{{gmail_backup.py}}} script into the {{{C:/Python25}}} directory.
 
@@ -820,11 +839,12 @@ config.formatters.push(
 # Translate all dialogs.
 # Add local resources to the Lookup Tool. For example, instead of the English version of Wikipedia, you might want to add a link to Wikipedia in your native language.</pre>
 </div>
-<div title="MainMenu" modifier="DmitriPopov" modified="200902271314" created="200802251649" changecount="36">
+<div title="MainMenu" modifier="DmitriPopov" modified="200903211220" created="200802251649" changecount="37">
 <pre>[[Install/upgrade]]
 [[Set browser path]]
 [[Register WriterDB]]
 [[Configure Email Backup]]
+[[Configure Amazon S3 Backup]]
 [[Tweak Remote Backup]]
 [[Tweak Lookup tool]]
 [[Tweak Convert To]]
