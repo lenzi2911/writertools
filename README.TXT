@@ -16,6 +16,7 @@ http://writertools.googlecode.com/svn/trunk/
 VERSION 1.3.5
   * Dutch added to the Google Translate tool.
   * Published status added to the Writer's Submission Tracker.
+  * Email Backup error message fixed.
 
 VERSION 1.3.3 2009-03-21
   * All dialogs and forms now use the Droid font family.
