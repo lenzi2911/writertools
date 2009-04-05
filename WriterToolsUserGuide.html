@@ -520,12 +520,21 @@ Not that the name of the bucket must be unique.
 
 To install and configure {{{aws}}} on Windows, follow instructions on the [[project's Web site|http://timkay.com/aws/#windows]].</pre>
 </div>
-<div title="Configure Email Backup" modifier="DmitriPopov" modified="200808271456" created="200802251705" tags="email backup" changecount="17">
-<pre>Using the Email Backup command, you can email a copy of the current document to a specified email address. This tool requires a Gmail account and Python installed on your machine. On most Linux distributions, Python is already installed, so all you have to do is to place the {{{gmail_backup.py}}} script into your user directory. On Windows, download Python 2.5 from [[Python's official website|http://www.python.org/]] and install it your machine. @@You must install Python into the default {{{C:/Python25}}} directory.@@ Copy the {{{gmail_backup.py}}} script into the {{{C:/Python25}}} directory.
+<div title="Configure Email Backup" modifier="DmitriPopov" modified="200904051756" created="200802251705" tags="email backup" changecount="19">
+<pre>Using the Email Backup command, you can email a copy of the current document to a specified email address. This tool requires a Gmail account and Python installed on your machine. On most Linux distributions, Python is already installed, so all you have to do is to place the {{{gmail_backup.py}}} script into your user directory. On Windows, download Python 2.5 from [[Python's official website|http://www.python.org/]] and install it your machine. @@You must install Python into the default {{{C:/Python30}}} directory.@@ Copy the {{{gmail_backup.py}}} script into the {{{C:/Python30}}} directory.
 
 Open the script and replace the {{{GMAIL_USER}}}, {{{GMAIL_PASSWD}}}, and {{{RECIPIENT}}} values with your actual Gmail email, password, and desired backup email address.
 
-@@Note:@@ On Linux, the script can't handle file names containing spaces, so you must convert them into underscore characters, e.g., {{{Linux ipsum dolor sit amet.odt}}} should be {{{Linux_ipsum_dolor_sit_amet.odt}}}.</pre>
+@@Note:@@ On Linux, the script can't handle file names containing spaces, so you must convert them into underscore characters, e.g., {{{Linux ipsum dolor sit amet.odt}}} should be {{{Linux_ipsum_dolor_sit_amet.odt}}}.
+
+!Providing the correct path to Python
+
+If the Email backup tool displays an error message, you have to provide the correct path to the Python on your system. To do this, choose Tools -&gt; Macros -&gt; Organize Macros -&gt; ~OpenOffice.org Basic. Select then ~WriterTools -&gt; Backup -&gt;
+EmailBackup. Locate the following line:
+
+{{{Shell(&quot;C:\Python30\python.exe&quot;, 1, &quot;C:\Python30\gmail_backup.py &quot; &amp; &quot;&quot;&quot;&quot; &amp; DocPath &amp; &quot;&quot;&quot;&quot; &amp; &quot;&quot;&quot;&quot; &amp; FileName &amp; &quot;&quot;&quot;&quot;)}}}
+
+Change {{{Python30}}} to the actual version installed on your system.</pre>
 </div>
 <div title="CryptoFunctionsPlugin" created="200710131134" tags="systemConfig excludeLists excludeSearch">
 <pre>/***
