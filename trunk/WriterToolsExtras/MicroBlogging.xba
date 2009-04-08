@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">
+<script:module xmlns:script="http://openoffice.org/2000/script" script:name="MicroBlogging" script:language="StarBasic">&apos;************************************************************
+&apos;	Copyright © 2009 Dmitri Popov
+&apos;	Anyone may run this code.
+&apos;	If you wish to modify or distribute this code, then
+&apos;	you are granted a license to do so under the terms
+&apos;	of the Gnu General Public License.
+&apos;	See:  http://www.gnu.org/licenses/gpl.html
+&apos;************************************************************
+
+Sub UpdateMicroBlog()
+
+Dim Username as String
+Dim Password As String
+
+ServiceAPI=Array(&quot;http://identi.ca/api/statuses/update.xml&quot;, &quot;http://twitter.com/statuses/update.xml&quot;)
+ServiceName=Array(&quot;Identi.ca&quot;, &quot;Twitter&quot;)
+
+exitOK=com.sun.star.ui.dialogs.ExecutableDialogResults.OK
+
+DialogLibraries.LoadLibrary(&quot;WriterToolsExtras&quot;)
+Library=DialogLibraries.GetByName(&quot;WriterToolsExtras&quot;)
+MicroBlogDialog=Library.GetByName(&quot;MicroBlogDialog&quot;)
+Dialog=CreateUnoDialog(MicroBlogDialog)
+
+DialogField=Dialog.GetControl(&quot;ListBox1&quot;)
+DialogField.Model.StringItemList() = ServiceName()
+
+DialogField.SelectItemPos(0, True)
+
+If Dialog.Execute=exitOK Then
+CurrentItemPos=DialogField.SelectedItemPos
+
+DialogField1=Dialog.getControl(&quot;TextFieldStatus&quot;)
+MessageTxt=DialogField1.Text
+
+SplitStr = Split(MessageTxt, &quot; &quot;)
+StatusMsg = Join(SplitStr, &quot;%20&quot;)
+
+DialogField2=Dialog.GetControl(&quot;TextFieldUsename&quot;)
+Username=DialogField2.Text
+DialogField3=Dialog.GetControl(&quot;TextFieldPassword&quot;)
+Password=DialogField3.Text
+
+StatusUpdate=&quot; -u &quot; &amp; Username &amp; &quot;:&quot; &amp; Password &amp; &quot; -d status=&quot; &amp; &quot;&quot;&quot;&quot; &amp; StatusMsg &amp; &quot;&quot;&quot;&quot; &amp; &quot; &quot; &amp; ServiceAPI(CurrentItemPos)
+
+End If
+
+Dialog.dispose
+
+If GetGUIType=1 Then
+On Error goto EH
+  Shell(&quot;C:\curl.exe&quot;,1, StatusUpdate)
+   Else
+    Shell(&quot;curl&quot;,1, StatusUpdate)
+End If
+
+Exit Sub
+EH:
+MsgBox (&quot;Looks like cURL is not installed.&quot;, , &quot;Error!&quot;)
+
+End Sub
+</script:module>
