@@ -323,7 +323,7 @@
               <value>Add to Notebook</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
-              <value>macro:///WriterTools.Notebook.InsertToNotebook</value>
+              <value>macro:///WriterTools.Notebook.InsertNotebook</value>
             </prop>
             <prop oor:name="Target" oor:type="xs:string">
               <value>_self</value>
@@ -417,7 +417,7 @@
               <value/>
             </prop>
             <prop oor:name="Title" oor:type="xs:string">
-              <value>Writer for Writers</value>
+              <value>Writer's Tools Books</value>
             </prop>
             <prop oor:name="URL" oor:type="xs:string">
               <value>macro:///WriterTools.Ad.AdLink</value>
@@ -546,7 +546,7 @@
 	  
 	  <node oor:name="org.openoffice.Office.addon.WriterTools.img11" oor:op="replace">
         <prop oor:name="URL" oor:type="xs:string">
-          <value>macro:///WriterTools.Notebook.InsertToNotebook</value>
+          <value>macro:///WriterTools.Notebook.InsertNotebook</value>
         </prop>
         <node oor:name="UserDefinedImages">
           <prop oor:name="ImageSmallURL">
