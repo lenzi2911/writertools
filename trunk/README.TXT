@@ -13,6 +13,9 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 1.3.7
+  * Post To Microblog tool added.
+
 VERSION 1.3.5 2009-04-07
   * Dutch added to the Google Translate tool.
   * Published status added to the Writer's Submission Tracker.
