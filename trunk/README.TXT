@@ -13,9 +13,10 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 1.3.7
+VERSION 1.3.7 2009-04-15
   * Post to Microblog tool added (supports Identi.ca and Twitter).
   * Quotations Book reference added to the Lookup Tool.
+  * Minor tweaks and fixes.
 
 VERSION 1.3.5 2009-04-07
   * Dutch added to the Google Translate tool.
