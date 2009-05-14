@@ -13,6 +13,9 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 1.5.1
+  * Email Backup tool now uses the default email client.
+
 VERSION 1.3.9 2009-04-19
   * Post to Microblog tool saves status messages in the microblog table of the WriterDB database.
   * Few issues in the Post to Microblog tool fixed.
