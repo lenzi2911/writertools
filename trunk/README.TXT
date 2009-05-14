@@ -13,7 +13,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 1.5.1
+VERSION 1.5.1 2009-05-15
   * Email Backup tool now uses the default email client.
 
 VERSION 1.3.9 2009-04-19
