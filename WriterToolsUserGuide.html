@@ -520,12 +520,8 @@ Not that the name of the bucket must be unique.
 
 To install and configure {{{aws}}} on Windows, follow instructions on the [[project's Web site|http://timkay.com/aws/#windows]].</pre>
 </div>
-<div title="Configure Email Backup" modifier="DmitriPopov" modified="200904062044" created="200802251705" tags="email backup" changecount="21">
-<pre>Using the Email Backup command, you can email a copy of the current document to a specified email address. This tool requires a Gmail account and Python installed on your machine. On most Linux distributions, Python is already installed, so all you have to do is to place the {{{GmailBackup.py}}} script into your user directory. On Windows, download Python 2.6 from [[Python's official website|http://www.python.org/]] and install it your machine. @@You must install Python into the default {{{C:/Python26}}} directory.@@ Copy the {{{GmailBackup.py}}} script into the {{{C:/Python26}}} directory.
-
-Open the script and replace the {{{GMAIL_USER}}}, {{{GMAIL_PASSWD}}}, and {{{RECIPIENT}}} values with your actual Gmail email, password, and desired backup email address.
-
-@@Note:@@ On Linux, the script can't handle file names containing spaces, so you must convert them into underscore characters, e.g., {{{Linux ipsum dolor sit amet.odt}}} should be {{{Linux_ipsum_dolor_sit_amet.odt}}}.</pre>
+<div title="Configure Email Backup" modifier="DmitriPopov" modified="200905141802" created="200802251705" tags="email backup" changecount="23">
+<pre>Using the Email Backup command, you can email a copy of the current document to a specified email address. This tool requires an email client such as Mozilla Thunderbird installed on your system. On Linux, you have to explicitly specify your default email client. To do this, launch ~OpenOffice.org, choose Tools -&gt; Options -&gt; Internet -&gt; E-mail and specify the email client you want in the E-mail program field.</pre>
 </div>
 <div title="CryptoFunctionsPlugin" created="200710131134" tags="systemConfig excludeLists excludeSearch">
 <pre>/***
