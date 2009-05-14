@@ -498,7 +498,7 @@ Also see AdvancedOptions</pre>
 </div>
 <!--POST-SHADOWAREA-->
 <div id="storeArea">
-<div title="Bookmarks Menu" modifier="Dmitri Popov" modified="200802292302" created="200802251732" tags="bookmarks" changecount="4">
+<div title="Bookmarks Menu" modifier="DmitriPopov" modified="200905142015" created="200802251732" tags="bookmarks" changecount="5">
 <pre>Although the Writer’s Tools extension offers a few different tools, you might not need all of them. In this case, you can use the [[Bookmarks Menu|http://extensions.services.openoffice.org/project/bookmarksmenu]] extension to create shortcuts to your favorite tools. To do this, install the extension and add the Bookmarks menu to the main toolbar by choosing Tools -&gt; Add-ons -&gt; Bookmarks Menu and pressing OK. Let’s say you want to bookmark the ~Multi-Format Backup tool. Choose Bookmarks -&gt; Edit Bookmarks and press the New button. Give the bookmark a name (e.g., Multi-format Backup), select Macro from the Type drop-down list, press the Open button, and use the Script selector dialog window to navigate to the ~MultiFormatBackup macro (users -&gt; Basic -&gt; ~WriterTools -&gt;Tools -&gt; ~MultiFormatBackup). Press OK to save the bookmark and close the windows. Now you can access the ~Multi-Format Backup tool via the Bookmarks menu in the main toolbar.</pre>
 </div>
 <div title="Configure Amazon S3 Backup" modifier="DmitriPopov" modified="200903211236" created="200903211213" tags="backup, amazon, s3" changecount="4">
@@ -520,8 +520,8 @@ Not that the name of the bucket must be unique.
 
 To install and configure {{{aws}}} on Windows, follow instructions on the [[project's Web site|http://timkay.com/aws/#windows]].</pre>
 </div>
-<div title="Configure Email Backup" modifier="DmitriPopov" modified="200905141802" created="200802251705" tags="email backup" changecount="23">
-<pre>Using the Email Backup command, you can email a copy of the current document to a specified email address. This tool requires an email client such as Mozilla Thunderbird installed on your system. On Linux, you have to explicitly specify your default email client. To do this, launch ~OpenOffice.org, choose Tools -&gt; Options -&gt; Internet -&gt; E-mail and specify the email client you want in the E-mail program field.</pre>
+<div title="Configure Email Backup" modifier="DmitriPopov" modified="200905142013" created="200802251705" tags="email backup" changecount="25">
+<pre>Using the Email Backup command, you can email a copy of the current document to a specified email address. This tool requires an email client such as Mozilla Thunderbird installed on your system. On Linux and Mac OS X, you have to explicitly specify the email application, which ~OpenOffice.org uses to send emails. To do this, choose Tools -&gt; Options -&gt; Internet -&gt; E-mail and specify the desired email application.</pre>
 </div>
 <div title="CryptoFunctionsPlugin" created="200710131134" tags="systemConfig excludeLists excludeSearch">
 <pre>/***
@@ -779,7 +779,7 @@ var regexpCarriageReturn = new RegExp(&quot;\r&quot;,&quot;mg&quot;);
 }
 //}}}</pre>
 </div>
-<div title="Import data" modifier="Dmitri Popov" created="200802251735" tags="import writerdb" changecount="1">
+<div title="Import data" modifier="DmitriPopov" modified="200905142015" created="200802251735" tags="import writerdb" changecount="2">
 <pre>The {{{basket}}} table in the ~WriterDB database contains a few sample records. However, in some cases, you might want to import the existing data into the database. The following description shows how to import data from a Calc spreadsheet into ~WriterDB.
 
 Since properly formatted source data can greatly simplify the import procedure, it’s worth spending time on some preparatory work. First of all, you need to tweak the spreadsheet’s structure, so that it becomes identical to the structure of the basket table. Make sure that the first row contains the field names, which are identical to those in the database table. Ideally, they should also be in the same order. Ensure that all the data bits are in the proper columns.
@@ -788,7 +788,7 @@ Now select the data in the sheet and copy it into the Clipboard (Edit -&gt; Copy
 
 In the Assign Columns dialog window, check whether all the fields in the Source table window have been selected and aligned with the respective fields in the Target table window. To align the fields, use the blue Up and Down arrows. Finally, click Create to import the data.</pre>
 </div>
-<div title="Install/upgrade" modifier="Dmitri Popov" modified="200803141038" created="200802251653" tags="install upgrade" changecount="13">
+<div title="Install/upgrade" modifier="DmitriPopov" modified="200905142013" created="200802251653" tags="install upgrade" changecount="14">
 <pre>To install the Writer’s Tools extension, download the latest release. Unzip the downloaded file. Launch ~OpenOffice.org, and choose Tools -&gt; Extension Manager (Package Manager in older versions of ~OpenOffice.org). Select the My Extensions section, and press the Add button. Select the downloaded extension (the {{{WriterTools.oxt}}} package), and press OK. Restart ~OpenOffice.org, and you should see the Writer’s Tools menu in the Main toolbar.
 
 !Updating Writer’s Tools
@@ -835,7 +835,7 @@ config.formatters.push(
 # Translate all dialogs.
 # Add local resources to the Lookup Tool. For example, instead of the English version of Wikipedia, you might want to add a link to Wikipedia in your native language.</pre>
 </div>
-<div title="MainMenu" modifier="DmitriPopov" modified="200903211224" created="200802251649" changecount="38">
+<div title="MainMenu" modifier="DmitriPopov" modified="200905142014" created="200802251649" changecount="39">
 <pre>[[Install/upgrade]]
 [[Set browser path]]
 [[Register WriterDB]]
@@ -843,13 +843,12 @@ config.formatters.push(
 [[Tweak Remote Backup]]
 [[Configure Amazon S3 Backup]]
 [[Tweak Lookup tool]]
-[[Tweak Convert To]]
 [[Bookmarks Menu]]
 [[Import data]]
 [[Writer Templates]]
 [[Localize]]</pre>
 </div>
-<div title="Register WriterDB" modifier="Dmitri Popov" modified="200802251704" created="200802251703" tags="writerdb database datasource" changecount="2">
+<div title="Register WriterDB" modifier="DmitriPopov" modified="200905142014" created="200802251703" tags="writerdb database datasource" changecount="3">
 <pre>Some WT tools rely on the ~WriterDB database, which must be registered as an ~OpenOffice.org data source. To do this, launch ~OpenOffice.org and choose Tools -&gt; Options. Select ~OpenOffice.org Base -&gt; Databases and press the New button. Select the ~WriterDB database and give the new connection the “~WriterDB” name. Press OK -&gt; OK, and you are done.</pre>
 </div>
 <div title="Set browser path" modifier="DmitriPopov" modified="200808031931" created="200808031926" tags="browser" changecount="3">
@@ -916,23 +915,6 @@ config.macros.sparkline.handler = function(place,macroName,params)
 }
 //}}}</pre>
 </div>
-<div title="Tweak Convert To" modifier="Dmitri Popov" modified="200803141035" created="200803081142" tags="convert, calc, excel" changecount="5">
-<pre>By default, the Convert To tools supports only the MS Word 97, Rich Text, Plain Text, and PDF formats. But you can easily add any other supported format by modifying the ~ConvertTo macro. Here is how to add a filter that can convert Calc spreadsheet to the MS Excel 97 format. Launch ~OpenOffice.org and choose Tools -&gt; Macros -&gt; Organize Macros -&gt; ~OpenOffice.org Basic. Select then ~WriterTools -&gt; Convert -&gt; ~ConvertTo and press the Edit button. Locate the following code:
-
-{{{FormatArray=Array(&quot;.doc&quot;, &quot;.rtf&quot;, &quot;.txt&quot;, &quot;.html&quot;, &quot;.pdf&quot;)}}}
-
-Add the &quot;.xls&quot; file extension to the array, so it looks as follows:
-
-{{{FormatArray=Array(&quot;.doc&quot;, &quot;.rtf&quot;, &quot;.txt&quot;, &quot;.html&quot;, &quot;.pdf&quot;, &quot;.xls&quot;)}}}
-
-Next, locate the following array:
-
-{{{FilterListBox=Array(&quot;MS Word 97&quot;, &quot;Rich Text Format&quot;, &quot;Text&quot;, &quot;HTML&quot;, &quot;writer_pdf_Export&quot;)}}}
-
-Add then the &quot;MS Excel 97&quot; entry to the array, so it looks as follows:
-
-{{{FilterListBox=Array(&quot;MS Word 97&quot;, &quot;Rich Text Format&quot;, &quot;Text&quot;, &quot;HTML&quot;, &quot;writer_pdf_Export&quot;, &quot;MS Excel 97&quot;)}}}</pre>
-</div>
 <div title="Tweak Lookup tool" modifier="DmitriPopov" modified="200803291333" created="200802251720" tags="lookup references" changecount="5">
 <pre>You can easily edit the default references in the Lookup Tool and add  new ones by modifying the ~LookupTool macro. To do this, launch ~OpenOffice.org and choose Tools -&gt; Macros -&gt; Organize Macros -&gt; ~OpenOffice.org Basic. Select then ~WriterTools -&gt; Tools -&gt; ~LookupTool and press the Edit button. Locate the following code:
 
@@ -975,7 +957,7 @@ Add then the &quot;Dictionary.com&quot; entry to array, so it looks as follows:
 
 </pre>
 </div>
-<div title="Tweak Remote Backup" modifier="Dmitri Popov" created="200802251715" tags="ftp backup" changecount="1">
+<div title="Tweak Remote Backup" modifier="DmitriPopov" modified="200905142014" created="200802251715" tags="ftp backup" changecount="2">
 <pre>Using the Remote Backup command, you can upload a backup copy of the current document to a specified FTP server. If you are using a specific FTP address for all your backups, you might want to add it to the command, so you don’t have to type it every single time. To do this, launch ~OpenOffice.org and choose Tools -&gt; Macros -&gt; Organize Macros -&gt; ~OpenOffice.org Basic. Select then ~WriterTools -&gt; Remote Backup -&gt; ~SaveFTPDocument and press the Edit button. Locate the following code block:
 
 {{{ConnectionString=InputBox(&quot;Enter the FTP address&quot;, &quot;Remote Backup&quot; , &quot;ftp://user:password@192.168.1.7/pub/&quot;)}}}
@@ -987,12 +969,12 @@ and replace it with:
 
 where the string in the quotes should be the actual FTP address.</pre>
 </div>
-<div title="Writer Templates" modifier="Dmitri Popov" created="200802251736" tags="templates" changecount="1">
+<div title="Writer Templates" modifier="DmitriPopov" modified="200905142015" created="200802251736" tags="templates" changecount="2">
 <pre>The {{{WriterTemplates.oxt}}} extension contains two ~OpenOffice.org Writer templates: generic article and book. To install the extension, launch ~OpenOffice.org, and choose Tools -&gt; Extension Manager. Select the My Extensions section, and press the Add button. Select the downloaded {{{WriterTemplates.oxt}}} extension, and press OK.
 
 To create a new document from the desired template, choose File -&gt; New -&gt; Templates and Documents. In the Templates and Documents dialog window, click on Templates, select the template you want, and press Open.</pre>
 </div>
-<div title="Writer's Tools Manual" modifier="Dmitri Popov" modified="200803141036" created="200802251744" tags="manual" changecount="14">
+<div title="Writer's Tools Manual" modifier="DmitriPopov" modified="200905142013" created="200802251744" tags="manual" changecount="15">
 <pre>@@A comprehensive Writer's Tools manual is available in both printed and PDF formats at the [[Lulu bookstore|http://www.lulu.com/content/2115121]]@@. The manual covers all the important topics, which can help you to get the most out of the Writer's Tools ~OpenOffice.org extension. It's easier to read, too.</pre>
 </div>
 </div>
