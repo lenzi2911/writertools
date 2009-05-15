@@ -520,8 +520,10 @@ Not that the name of the bucket must be unique.
 
 To install and configure {{{aws}}} on Windows, follow instructions on the [[project's Web site|http://timkay.com/aws/#windows]].</pre>
 </div>
-<div title="Configure Email Backup" modifier="DmitriPopov" modified="200905142013" created="200802251705" tags="email backup" changecount="25">
-<pre>Using the Email Backup command, you can email a copy of the current document to a specified email address. This tool requires an email client such as Mozilla Thunderbird installed on your system. On Linux and Mac OS X, you have to explicitly specify the email application, which ~OpenOffice.org uses to send emails. To do this, choose Tools -&gt; Options -&gt; Internet -&gt; E-mail and specify the desired email application.</pre>
+<div title="Configure Email Backup" modifier="DmitriPopov" modified="200905150728" created="200802251705" tags="email backup" changecount="28">
+<pre>Using the Email Backup command, you can email a backup copy of the current document to a specified email address. If you are using a specific email address for all your backups, you might want to add it to the command, so you don’t have to type it every single time. To do this, launch ~OpenOffice.org and choose Tools -&gt; Macros -&gt; Organize Macros -&gt; ~OpenOffice.org Basic. Select then ~WriterTools -&gt; Tools -&gt; ~EmailBackup and press the Edit button. Locate the following line {{{MailAddress=InputBox(InputBoxMailAddr, MsgEmailBackup)}}} and replace the {{{InputBox(InputBoxMailAddr, MsgEmailBackup)}}} part with your actual email address; for example, {{{MailAddress=&quot;user@email.org&quot;}}}
+
+@@The Email Backup tool can only send backups using an external email client. This means that you must have a properly configured email application installed on your machine before you can use the Email Backup tool.@@ On Linux and Mac OS X, you have to explicitly specify the email application, which ~OpenOffice.org uses to send emails. To do this, choose Tools -&gt; Options -&gt; Internet -&gt; E-mail and specify the desired email application.</pre>
 </div>
 <div title="CryptoFunctionsPlugin" created="200710131134" tags="systemConfig excludeLists excludeSearch">
 <pre>/***
