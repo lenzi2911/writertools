@@ -2,40 +2,25 @@
 #
 # Copyright 2007-2009 Timothy Kay
 # http://timkay.com/aws/
-# You are welcome to use this script [without any warranty express or implied]
-# provided you retain my copyright notice and, when possible, a link to my website.
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-# THIS PROGRAM IS OFFERED WITHOUT ANY WARRANTY EXPRESSED OR
-# IMPLIED. NO WARRANTY OF FITNESS FOR A PARTICULAR PURPOSE IS OFFERED.
-# THE USER ASSUMES THE ENTIRE RISK OF USING THE PROGRAM.  ANY
-# LIABILITY OF SELLER OR MANUFACTURE IS LIMITED EXCLUSIVELY TO REFUND
-# OF THE PURCHASE PRICE.
 
-$program_version = "1.32";
-$aws_version = "2009-03-01";
-
-
-
-
-
-###############################################################
-###############################################################
-###############################################################
-###
-###
-###  FOR DOCUMENTATION, SEE
-###
-###	http://timkay.com/aws/
-###
-###
-###############################################################
-###############################################################
-###############################################################
-
-
-
-
+$program_version = "1.39";
+$ec2_version = "2009-03-01";
+$sqs_version = "2009-02-01";
 
 
 #
@@ -170,31 +155,81 @@ $aws_version = "2009-03-01";
 	["s3", "put", PUT],
 	["s3", "delete rmdir rm", DELETE],
 	["s3", "copy cp", COPY],
+
+	["sqs", "add-permission addperm", AddPermission, [
+							  ["" => QueueUri],
+							  [label => Label],
+							  [account => AWSAccountIdN],
+							  [action => ActionNameN],
+							  ]],
+
+	["sqs", "change-message-visibility cmv", ChangeMessageVisibility, [
+									   ["" => QueueUri],
+									   [handle => ReceiptHandle],
+									   [timeout => VisibilityTimeout],
+									   ]],
+
+	["sqs", "create-queue cq", CreateQueue, [
+						 ["" => QueueName],
+						 [timeout => DefaultVisibilityTimeout],
+						 ]],
+
+	["sqs", "delete-message dm", DeleteMessage, [
+						     ["" => QueueUri],
+						     [handle => ReceiptHandle],
+						     ]],
+
+	["sqs", "delete-queue dq", DeleteQueue, [
+						 ["" => QueueUri],
+						 ]],
+
+	["sqs", "get-queue-attributes gqa", GetQueueAttributes, [
+							["" => QueueUri],
+							[attribute => AttributeNameN],
+							]],
+
+	["sqs", "list-queues lq", ListQueues, [
+						 ["" => QueueNamePrefix],
+						 ]],
+
+	["sqs", "receive-message recv", ReceiveMessage, [
+							 ["" => QueueUri],
+							 [attribute => AttributeNameN],
+							 [n => MaxNumberOfMessages],
+							 [timeout => VisibilityTimeout],
+							 ]],
+
+	["sqs", "remove-permission remperm", RemovePermission, [
+								["" => QueueUri],
+								[label => Label],
+								]],
+
+	["sqs", "send-message send", SendMessage, [
+						   ["" => QueueUri],
+						   [message => MessageBody, "", sub {encode_url($_[0])}],
+						   ]],
+
+	["sqs", "set-queue-attributes sqa", SetQueueAttributes, [
+								 ["" => QueueUri],
+								 [attribute => "Attribute.Name"],
+								 [value => "Attribute.Value"],
+								 ]],
 	);
 
 
 $home = get_home_directory();
 
 
-# make a hash of aws keywords (%keyword), which are not treated as meta-parameters
-
-{
-    for (@cmd)
-    {
-	for (@{$_->[3]})
-	{
-	    (my $key = $_->[0]) =~ s/-/_/g;
-	    $keyword{$key} = undef;
-	}
-    }
-}
+# Figure out $cmd.  If the program is run as other than "aws", then $0 contains
+# the command.  This way, you can link aws to the command names (with or without
+# ec2 or s3 prefix) and not have to type "aws".
+unshift @ARGV, $1 if $0 =~ /^(?:.*[\\\/])?(?:(?:ec2|s3|sqs)-?)?(.+?)(?:\..+)?$/ && $1 !~ /^l?aws/;
 
 
 # parse meta-parameters, leaving parameters in @argv
 
 for (split(/[\r\s]+/, load_file_silent("$home/.awsrc")), @ARGV)
 {
-
     if (/^--([\w\-]+?)(?:=(.*))?$/s)
     {
 	my($key, $val) = ($1, $2);
@@ -206,6 +241,8 @@ for (split(/[\r\s]+/, load_file_silent("$home/.awsrc")), @ARGV)
 	else
 	{
 	    $ {$key} = defined $val? $val: 1;
+	    # --cmd0 is used to call self but without getting the command from $0
+	    undef $cmd if $key eq "cmd0" && $val;
 	}
     }
     elsif (/^-(\w+)$/)
@@ -225,7 +262,37 @@ for (split(/[\r\s]+/, load_file_silent("$home/.awsrc")), @ARGV)
     }
     else
     {
-	push @argv, $_;
+	if ($cmd)
+	{
+	    push @argv, $_;
+	}
+	else
+	{
+	    $cmd = $_;
+
+	    # moved this code here, so that arguments to specific ec2, s3, and sqs commands
+	    # are active only if the particular command is indicated
+
+	    # make a hash of aws keywords (%keyword), which are not treated as meta-parameters
+
+	  CMDLAST:
+	    for (@cmd)
+	    {
+		for my $c (split(" ", $_->[1]))
+		{
+		    if ($cmd eq $c)
+		    {
+			$cmd_data = $_;
+			for (@{$cmd_data->[3]})
+			{
+			    (my $key = $_->[0]) =~ s/-/_/g;
+			    $keyword{$key} = undef;
+			}
+			last CMDLAST;
+		    }
+		}
+	    }
+	}
     }
 }
 
@@ -250,7 +317,7 @@ if ($cut)
 END {close STDOUT}
 
 
-print STDERR "aws version: v$program_version  (protocol version $aws_version)\n" if $v;
+print STDERR "aws version: v$program_version  (ec2: $ec2_version, sqs: $sqs_version)\n" if $v;
 
 $insecsign = "--insecure" if $insecure || $insecure_signing;
 $insecureaws = "--insecure" if $insecureaws || $insecure_aws;
@@ -276,7 +343,7 @@ if (!-e "$home/.awsrc" || $sanity_check)
     {
 	if (!-e $secrets_file)
 	{
-	    warn "sanity-check: \"$secrets_file\": file is missing\n";
+	    warn "sanity-check: \"$secrets_file\": file is missing.  (Format: AccessKeyID\\nSeecretAccessKey\\n)\n";
 	}
 	elsif (!-r $secrets_file)
 	{
@@ -309,7 +376,7 @@ if (!-e "$home/.awsrc" || $sanity_check)
 
     if (!$d)
     {
-	$aws = qx[curl -q -s --insecure $fail --dump-header - $scheme://s3.amazonaws.com/];
+	$aws = qx[curl -q -s --insecure $fail --dump-header - $scheme://s3.amazonaws.com/connection/test];
 	($d, $mon, $y, $h, $m, $s) = $aws =~ /^Date: ..., (..) (...) (....) (..):(..):(..) GMT\r?$/m;
 	if ($d)
 	{
@@ -317,7 +384,7 @@ if (!-e "$home/.awsrc" || $sanity_check)
 	}
 	else
 	{
-	    die "sanity-check: Problems accessing AWS (not related to SSL certificates).\n";
+	    die "sanity-check: Problems accessing AWS (not related to SSL certificates).  Check that curl is installed.\n";
 	}
     }
 
@@ -330,7 +397,7 @@ if (!-e "$home/.awsrc" || $sanity_check)
     }
 }
 
-$curl_options .= " -q -S";
+$curl_options .= " -q -g -S";
 $curl_options .= " --retry $retry" if $retry;
 $curl_options .= " --fail" if $fail;
 $curl_options .= " --verbose" if $v >= 2;
@@ -456,41 +523,33 @@ sub make_links
 }
 
 
-{
-    # Figure out $cmd.  If the program is run as other than "aws", then $0 contains
-    # the command.  This way, you can link aws to the command names (with or without
-    # ec2 or s3 prefix) and not have to type "aws".
-
-    ($cmd = $0) =~ s/^.*[\\\/](?:(?:ec2|s3)-?)?//;
-    $cmd = shift @argv if $cmd =~ /^l?aws/ || $cmd0;
-}
-
-
-for (@cmd)
-{
-    my($service, $cmd) = @$_;
-    my @cmd = split(" ", $cmd);
-    @cmd{@cmd} = ($_) x @cmd;
-}
-
-
-if (!exists $cmd{$cmd})
+if (!$cmd_data)
 {
     my $output = "$cmd: unknown command\n" if $cmd;
-    $output .= "Usage: aws ACTION [--help]\n\twhere ACTION is one of\n\t";
+    $output .= "Usage: aws ACTION [--help]\n\twhere ACTION is one of\n";
+    my(%output);
     for (@cmd)
     {
 	my($service, $cmd, $action, $param) = @$_;
-	$output .= " $cmd";
+	$output{$service} .= " $cmd";
     }
-    $output .= "\n";
-    $output .= "aws version: v$program_version  (protocol version $aws_version)\n";
+    for my $service (sort keys %output)
+    {
+	$output .= "\t$service";
+	while ($output{$service} =~ /\s*(.{1,80})(?:\s|$)/g)
+	{
+	    my($one) = ($1);
+	    $output .= "\t" if $output =~ /\n$/;
+	    $output .= "\t\t$one\n";
+	}
+    }
+    $output .= "aws version: v$program_version  (ec2 $ec2_version, sqs $sqs_version)\n";
     die $output;
 }
 
 
 {
-    my($service, $cmd, $action, $param) = @{$cmd{$cmd}};
+    my($service, $cmd, $action, $param) = @$cmd_data;
 
     if ($h)
     {
@@ -508,6 +567,7 @@ if (!exists $cmd{$cmd})
 
 	    $help .= " [$x$name$ddd$def]";
 	}
+	$help .= " BUCKET[/OBJECT] [SOURCE]" if $service eq "s3";
 	$help .= "\n";
 	print STDERR $help;
 	exit;
@@ -516,7 +576,7 @@ if (!exists $cmd{$cmd})
 
     my($result);
 
-    if ($service eq "ec2")
+    if ($service eq "ec2" || $service eq "sqs")
     {
 	#print STDERR "(@{[join(', ', @argv)]})\n" if $v;
 
@@ -562,7 +622,7 @@ if (!exists $cmd{$cmd})
 
 	print STDERR "ec2(@{[join(', ', @list)]})\n" if $v;
 
-	$result = ec2(@list);
+	$result = ec2($service, @list);
     }
     elsif ($service eq "s3")
     {
@@ -624,10 +684,10 @@ if (!exists $cmd{$cmd})
 
 	my(@result);
 
-	while ($result =~ /<(?:Contents|Bucket)>\s*(.*?)\s*<\/(?:Contents|Bucket)>/g)
+	while ($result =~ /<(?:Contents|Bucket)>\s*(.*?)\s*<\/(?:Contents|Bucket)>/sg)
 	{
 	    my($item) = ($1);
-	    my($key) = $item =~ /<(?:Key|Name)>(.*?)<\/(?:Key|Name)>/s;
+	    my $key = dentity($item =~ /<(?:Key|Name)>(.*?)<\/(?:Key|Name)>/s);
 	    my($size) = $item =~ /<Size>(.*?)<\/Size>/s;
 	    my($mod) = $item =~ /<(?:LastModified|CreationDate)>(.*?)<\/(?:LastModified|CreationDate)>/s;
 	    my($owner) = $item =~ /<DisplayName>(.*?)<\/DisplayName>/s;
@@ -656,6 +716,7 @@ if (!exists $cmd{$cmd})
 	    my($item, $key, $size, $mod, $owner) = (@$_);
 	    if ($l)
 	    {
+		$key = printable($key);
 		if ($isdir)
 		{
 		    print "drwx------  2 $owner   0 $mod $key\n";
@@ -726,6 +787,32 @@ if (!exists $cmd{$cmd})
 	    $result = qx[$0 --cmd0 --xml --region=$region describe-instances @instanceId];
 	}
     }
+    elsif ($result =~ /<ListQueuesResult/)
+    {
+	print ary2tab(xml2ary(ListQueuesResult, $result), {title => "Queue URLs", empty => "no queues\n"});
+    }
+    elsif ($result =~ /<ReceiveMessageResult/)
+    {
+	my $ary = xml2ary(Message, $result);
+	if ($simple)
+	{
+	    my($handle, $body);
+	    for (@$ary)
+	    {
+		$handle = $_->[1] if $_->[0] eq "ReceiptHandle";
+		$body = decode_url($_->[1]) if $_->[0] eq "Body";
+	    }
+	    print "$handle\t$body\n" if $handle;
+	}
+	else
+	{
+	    print ary2tab($ary, {title => "Messages", empty => "no messages\n"});
+	}
+    }
+    elsif ($result =~ /<GetQueueAttributesResponse/)
+    {
+	print ary2tab(xml2ary(GetQueueAttributesResult, $result, {key => Name, value => Value}), {title => "Attributes", empty => "no attributes\n"});
+    }
     else
     {
 	print xml2tab($result) || xmlpp($result);
@@ -735,12 +822,90 @@ if (!exists $cmd{$cmd})
 }
 
 
+sub xml2ary
+{
+    my($tag, $result, $param, @result) = @_;
+    for ($result =~ /<$tag.*?>(.*?)<\/$tag>/sg)
+    {
+	while (/<(.*?)>(.*?)<\/\1>/sg)
+	{
+	    my($key, $val1) = ($1, $2);
+	    my($val);
+	    while ($val1 =~ /<(.+?)>(.*?)<\/\1>/sg)
+	    {
+		if ($1 eq $param->{key})
+		{
+		    $key = $2;
+		}
+		elsif ($1 eq $param->{value})
+		{
+		    $val = $2;
+		}
+		else
+		{
+		    $val .= " " if $val;
+		    $val .= "$1=$2";
+		}
+	    }
+	    $val = $val1 unless length($val);
+	    push @result, [$key, $val];
+	}
+    }
+    \@result;
+}
+
+
+sub ary2tab
+{
+    my($ary, $param) = @_;
+    return $param->{empty} if exists $param->{empty} && !@$ary;
+    my(@width);
+    for (@$ary)
+    {
+	if (ref $_ eq SCALAR)
+	{
+	    $_ = [$_];
+	}
+
+	if (ref $_ eq ARRAY)
+	{
+	    for (my $i = 0; $i < @$_; $i++)
+	    {
+		$width[$i] = length($_->[$i]) if $width[$i] < length($_->[$i]);
+	    }
+	}
+    }
+    if ($param->{title})
+    {
+	my $width = -1;
+	$width += 2 + $_ for @width;
+	my $l = int(($width - length($param->{title})) / 2);
+	my $r = $width - length($param->{title}) - $l;
+	$output .= "+" . "-" x (@width - 1);
+	$output .= "-" x (2 + $_) for @width;
+	$output .= "+\n";
+	$output .= "| " . " " x $l . $param->{title} . " " x $r  . " |\n";
+    }
+    $output .= "+" . "-" x (2 + $_) for @width;
+    $output .= "+\n";
+    for (@$ary)
+    {
+	for (my $i = 0; $i < @width; $i++)
+	{
+	    $output .= "| " . $_->[$i] . " " x (1 + $width[$i] - length($_->[$i]));
+	}
+	$output .= "|\n";
+    }
+    $output .= "+" . "-" x (2 + $_) for @width;
+    $output .= "+\n";
+}
+
+
 sub xml2tab
 {
     my($xml) = @_;
     my($output);
     $xml =~ s/^<\?xml.*?>(\r?\n)*//;
-    $xml =~ s/&quot;/\"/g;
     my @xml = grep !/^\s*$/, split(/(<.*?>)/, $xml);
     my(@tag, @depth);
     my $depth = 0;
@@ -784,11 +949,9 @@ sub xml2tab
 
 	if (@head && $i == @xml || $depth[$i] && $depth[$i] < $depth)
 	{
-	    ###unshift @head, "";
-
 	    for (@table)
 	    {
-		$_ = [@$_{@head}];
+		$_ = [map {printable(dentity($_))} @$_{@head}];
 	    }
 
 	    unshift @table, [@head];
@@ -850,8 +1013,13 @@ sub xml2tab
 			   |CreateKeyPairResponse|CreateSecurityGroupResponse|CreateSnapshotResponse|CreateVolumeResponse
 			   |DeleteSecurityGroupResponse|DeleteKeyPairResponse|DeleteSnapshotResponse|DeleteVolumeResponse
 			   |DetachVolumeResponse|Error|GetConsoleOutputResponse|ListBucketResult|RebootInstancesResponse
-			   |RevokeSecurityGroupIngressResponse|AllocateAddressResponse|ReleaseAddressResponse|AssociateAddressResponse|DescribeRegionsResponse)$/x
-	    || $tag2 =~ /^(?:addressesSet-item|availabilityZoneInfo-item|imagesSet-item|instancesSet-item|ipPermissions-item|keySet-item|reservedInstancesOfferingsSet-item|securityGroupInfo-item|volumeSet-item|snapshotSet-item|regionInfo-item)$/
+			   |RevokeSecurityGroupIngressResponse|AllocateAddressResponse|ReleaseAddressResponse|AssociateAddressResponse|DescribeRegionsResponse
+			   |CreateQueueResponse|ResponseMetadata
+			   )$/x
+	    || $tag2 =~ /^(?:addressesSet-item|availabilityZoneInfo-item|imagesSet-item|instancesSet-item
+			   |ipPermissions-item|keySet-item|reservedInstancesOfferingsSet-item|securityGroupInfo-item|volumeSet-item|snapshotSet-item|regionInfo-item
+			   |ReceiveMessageResult-Message
+			   )$/x
 	    || $i == @xml)
 	{
 	    $depth = $depth[$i];
@@ -1029,6 +1197,9 @@ sub s3
 
     if ($verb eq PUT && ($file eq "-" || $file eq "" && $name !~ /\?acl$/))
     {
+	# and not when a terminal
+	die "$0: will not to read from terminal (use \"-\" for filename to force)\n" if -t && $file ne "-";
+
 	($temp_fh, $file) = tempfile(UNLINK => 1);
 	while (STDIN->read(my $buf, 16_384))
 	{
@@ -1057,7 +1228,7 @@ sub s3
 	    (my $where = $name) =~ s/\/[^\/]+$/\//;
 	    $file = "/$where$file";
 	}
-	push @header, "x-amz-copy-source: $file";
+	push @header, "x-amz-copy-source: @{[encode_url($file)]}";
 	undef $file;
 	$verb = PUT;
     }
@@ -1076,19 +1247,29 @@ sub s3
 	$verb = GET;
     }
 
-    my($vhost, $vname) = ("s3.amazonaws.com", $name);
-    ($vhost, $vname) = ($dns_alias? $1: "$1.$vhost", $2) if $name =~ /^([0-9a-z][\.\-0-9a-z]{1,61}[0-9a-z])(?:\/(.*))?$/;
+    my($ub, $uo, $uq) = $name =~ /^(.+?)(?:\/(.*?))?(\?(?:acl|location|logging|bittorrent))?$/s;
+    my $uname = encode_url($ub) . "/" . encode_url($uo) . $uq if $name;
+
+    if ($v >= 2)
+    {
+	print "name = $name\n";
+	print "ub = $ub\n";
+	print "uo = $uo\n";
+	print "uq = $uq\n";
+	print "uname = $uname\n";
+    }
+
+    my($vhost, $vname) = ("s3.amazonaws.com", $uname);
+    ($vhost, $vname) = ($dns_alias? $1: "$1.$vhost", $2) if $uname =~ /^([0-9a-z][\.\-0-9a-z]{1,61}[0-9a-z])(?:\/(.*))?$/;
     print STDERR "vhost=$vhost  vname=$vname\n" if $v;
 
-    my $isGETobj = $verb eq GET && $name =~ /\/./ && $name !~ /\?/;
+    my $isGETobj = $verb eq GET && $uname =~ /\/./ && $uname !~ /\?/;
 
     if ($isGETobj && !$fail && !$request)
     {
-	my $data = "HEAD\n\n\n$expires\n/$name";
-	$data =~ s/([\+\ \#])/%@{[unpack(H2,$1)]}/g;
+	my $data = "HEAD\n\n\n$expires\n/$uname";
 	my($sig, $awskey) = sign($data);
 	my $url = "$scheme://$vhost/$vname@{[$vname =~ /\?/? '&': '?']}AWSAccessKeyId=@{[encode_url($awskey)]}&Expires=$expires&Signature=@{[encode_url($sig)]}";
-	$url =~ s/([\+\ \#])/%@{[unpack(H2,$1)]}/g;
 	my $cmd = qq[curl $curl_options $insecureaws --header "Expect: " --head @{[cq($url)]}];
 	print STDERR "$cmd\n" if $v;
 	my $head = qx[$cmd];
@@ -1117,15 +1298,13 @@ sub s3
     }
 
     my $header = join("\n", sort(map {s/^(.*?):\s*/\L$1:/s; $_} grep /^x-amz-/, @header), "") if @header;
-    my $data = "$verb\n$content_md5\n$content_type\n$expires\n$header/$name";
-    $data =~ s/([\+\ \#])/%@{[unpack(H2,$1)]}/g;
+    my $data = "$verb\n$content_md5\n$content_type\n$expires\n$header/$uname";
 
     my($sig, $awskey) = sign($data);
 
     my $url = "$scheme://$vhost/$vname@{[$vname =~ /\?/? '&': '?']}AWSAccessKeyId=@{[encode_url($awskey)]}&Expires=$expires&Signature=@{[encode_url($sig)]}";
     $url .= "&marker=$marker" if $marker;
     $url .= "&prefix=$prefix" if $prefix;
-    $url =~ s/([\+\ \#])/%@{[unpack(H2,$1)]}/g;
 
     return $url if $request;
 
@@ -1146,7 +1325,13 @@ sub s3
 
     my $header = join(" --header ", undef, map {cq($_)} @header);
 
-    if ($isGETobj && !$md5)
+
+    # exec() is used because we can, but it doesn't work under Windows:
+    # curl.exe runs asynchronously, and control is returned to the caller
+    # before the file transfer request is complete.  Thus, for Windows,
+    # no exec().
+
+    if ($isGETobj && !$md5 && $ENV{OS} !~ /windows/i)
     {
 	my $cmd = qq[curl $curl_options $insecureaws --header "Expect: " $header --request $verb $content --location @{[cq($url)]}];
 	print STDERR "exec $cmd\n" if $v;
@@ -1201,27 +1386,49 @@ sub s3
 
 sub ec2
 {
+    my $service = shift;
+
     $expire_time ||= 30;	# force it to use Expires rather than Timestamp, so it expires more quickly
 
     my($sec, $min, $hour, $mday, $mon, $year, undef, undef, undef) = gmtime(time + $time_offset + $expire_time);
     my $zulu = sprintf "%04d-%02d-%02dT%02d:%02d:%02dZ", 1900 + $year, $mon + 1, $mday, $hour, $min, $sec;
-    my %data = (AWSAccessKeyId => _, SignatureMethod => HmacSHA1, SignatureVersion => 2, Version => $aws_version, ($expire_time? Expires: Timestamp) => $zulu, @_);
 
-    my $endpoint = {eu => "eu-west-1", us => "us-east-1"}->{lc $region} || $region;
-    $endpoint .= "." if $endpoint;
-    $endpoint .= "ec2.amazonaws.com";
+    my($version);
+    $version .= $ec2_version if $service eq "ec2";
+    $version .= $sqs_version if $service eq "sqs";
+
+    my %data = (AWSAccessKeyId => _, SignatureMethod => HmacSHA1, SignatureVersion => 2, Version => $version, ($expire_time? Expires: Timestamp) => $zulu, @_);
+
+    if ($service eq "ec2")
+    {
+	$endpoint = {eu => "eu-west-1", us => "us-east-1"}->{lc $region} || $region;
+	$endpoint .= "." if $endpoint;
+	$endpoint .= "ec2.amazonaws.com";
+    }
+
+    if ($service eq "sqs")
+    {
+	$endpoint = "queue.amazonaws.com";
+    }
+
+    $queue ||= "/";
 
     my($url);
 
     for (sort keys %data)
     {
+	if ($service eq "sqs" && $_ eq "QueueUri")
+	{
+	    $queue = $data{$_};
+	    next;
+	}
 	$url .= "&" if $url;
 	$url .= "$_=@{[encode_url($data{$_})]}";
     }
 
-    my($sig, $awskey) = sign("GET\n$endpoint\n/\n$url");
+    my($sig, $awskey) = sign("GET\n$endpoint\n$queue\n$url");
     $url =~ s/(AWSAccessKeyId=?)_/$1$awskey/;
-    $url = "$scheme://$endpoint/?Signature=@{[encode_url($sig)]}&$url";
+    $url = "$scheme://$endpoint$queue?Signature=@{[encode_url($sig)]}&$url";
     return $url if $request;
     local($/);			# return a string regardless of wantarray
     qx[curl $curl_options $insecureaws @{[cq($url)]}];
@@ -1232,6 +1439,31 @@ sub encode_url
 {
     my($s) = @_;
     $s =~ s/([^\-\.0-9a-z\_\~])/%@{[uc unpack(H2,$1)]}/ig;
+    $s;
+}
+
+sub decode_url
+{
+    my($s) = @_;
+    $s =~ s/%(..)/@{[uc pack(H2,$1)]}/ig;
+    $s;
+}
+
+sub dentity
+{
+    my($s) = @_;
+    for ($s)
+    {
+	s/&\#x([0-9a-f]{1,2});/pack(C, hex($1))/iseg;
+	s/&(.*?);/{quot => '"', amp => "&", apos => "'", lt => "<", gt => ">"}->{$1} || "&$1;"/seg;
+    }
+    $s;
+}
+
+sub printable
+{
+    my($s) = @_;
+    $s =~ s/[\x00-\x1f\x7f]/\?/sg;
     $s;
 }
 
@@ -1388,8 +1620,6 @@ sub hmac
 #
 # Conversion from Javascript
 # Copyright 2007 Timothy Kay
-#
-# This code has not been tested on 64-bit processors and may fail.
 #
 
 sub sha1_sha1
