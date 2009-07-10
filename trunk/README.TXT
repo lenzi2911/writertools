@@ -13,6 +13,9 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 1.5.3
+  * WordNet link in Lookup Tool fixed.
+
 VERSION 1.5.1 2009-05-15
   * Email Backup tool now uses the default email client.
 
