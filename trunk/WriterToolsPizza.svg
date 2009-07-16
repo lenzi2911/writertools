@@ -8,7 +8,7 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="446"
+   width="608"
    height="136"
    id="svg2"
    sodipodi:version="0.32"
@@ -54,7 +54,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="143.05901"
+     inkscape:cx="285.06103"
      inkscape:cy="196.86722"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -80,9 +80,10 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-107.66054,-422.14792)">
+     transform="translate(-111.76078,-426.43359)">
     <g
-       id="g2404">
+       id="g2404"
+       transform="translate(19.999997,4.2857142)">
       <rect
          ry="17.525253"
          y="430.93359"
@@ -276,15 +277,15 @@
     </g>
     <text
        xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;fill:#ffac00;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
-       x="245.97998"
-       y="518.46649"
+       style="font-size:57.78961563px;font-style:normal;font-weight:normal;line-height:125%;fill:#ffac00;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="270.1535"
+       y="534.99725"
        id="text2455"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         x="245.97998"
-         y="518.46649"
-         style="font-size:72px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffac00;fill-opacity:1;font-family:Yanone Kaffeesatz Rg;-inkscape-font-specification:Yanone Kaffeesatz Rg Bold"
+         x="270.1535"
+         y="534.99725"
+         style="font-size:104.0213089px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffac00;fill-opacity:1;font-family:Yanone Kaffeesatz Rg;-inkscape-font-specification:Yanone Kaffeesatz Rg Bold"
          id="tspan2471">Writer's Tools</tspan></text>
   </g>
 </svg>
