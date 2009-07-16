@@ -13,7 +13,7 @@
    id="svg2"
    sodipodi:version="0.32"
    inkscape:version="0.46"
-   sodipodi:docname="WriterToolsLogo.svg"
+   sodipodi:docname="WriterToolsPizza.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
    version="1.0"
    inkscape:export-filename="C:\Documents and Settings\Dmitri Popov\Skrivebord\WriterToolsPizza.png"
@@ -54,15 +54,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="285.06103"
-     inkscape:cy="196.86722"
+     inkscape:cx="281.41471"
+     inkscape:cy="82.581506"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1103"
      inkscape:window-height="798"
-     inkscape:window-x="196"
-     inkscape:window-y="26"
+     inkscape:window-x="246"
+     inkscape:window-y="25"
      showguides="true"
      inkscape:guide-bbox="true" />
   <metadata
@@ -83,7 +83,7 @@
      transform="translate(-111.76078,-426.43359)">
     <g
        id="g2404"
-       transform="translate(19.999997,4.2857142)">
+       transform="translate(17.999997,4.2857142)">
       <rect
          ry="17.525253"
          y="430.93359"
@@ -287,5 +287,17 @@
          y="534.99725"
          style="font-size:104.0213089px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffac00;fill-opacity:1;font-family:Yanone Kaffeesatz Rg;-inkscape-font-specification:Yanone Kaffeesatz Rg Bold"
          id="tspan2471">Writer's Tools</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12.68256569px;font-style:normal;font-weight:normal;line-height:125%;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="560.53088"
+       y="554.94012"
+       id="text2403"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan2405"
+         x="560.53088"
+         y="554.94012"
+         style="font-size:20.29210472px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans">tr.im/writertools</tspan></text>
   </g>
 </svg>
