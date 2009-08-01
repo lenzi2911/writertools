@@ -18,6 +18,7 @@ VERSION 1.5.3
   * Incorrect browser path error message added.
   * Preferences directory name fixed.
   * Fix single quotes escaping in the Add to Notebook tool.
+  * Minor cosmetic changes in WriterDB.
 
 VERSION 1.5.1 2009-05-15
   * Email Backup tool now uses the default email client.
