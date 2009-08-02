@@ -13,7 +13,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 1.5.3
+VERSION 1.5.3 [2009-08-02]
   * WordNet link in Lookup Tool fixed.
   * Incorrect browser path error message added.
   * Preferences directory name fixed.
