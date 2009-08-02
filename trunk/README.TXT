@@ -19,7 +19,6 @@ VERSION 1.5.3
   * Preferences directory name fixed.
   * Fix single quotes escaping in the Add to Notebook tool.
   * Minor cosmetic changes in WriterDB.
-  * Minor cosmetic changes in miniInvoices.
 
 VERSION 1.5.1 2009-05-15
   * Email Backup tool now uses the default email client.
