@@ -18,7 +18,7 @@
    sodipodi:docname="WriterTools_Wallpaper_800x480.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
    version="1.0"
-   inkscape:export-filename="C:\Documents and Settings\Dmitri Popov\Skrivebord\WriterTools_Wallpaper_800x480.png"
+   inkscape:export-filename="C:\Documents and Settings\Dmitri Popov\Skrivebord\@dmpop_wallpaper.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
   <defs
@@ -228,20 +228,64 @@
        inkscape:vp_y="0 : 1000 : 0"
        inkscape:vp_x="0 : 526.18109 : 1"
        sodipodi:type="inkscape:persp3d" />
-    <filter
-       inkscape:collect="always"
-       id="filter3355"
-       x="-0.132"
-       width="1.2640001"
-       y="-0.132"
-       height="1.2640001">
-      <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="7.095"
-         id="feGaussianBlur3357" />
-    </filter>
     <inkscape:perspective
        id="perspective3412"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective2447" />
+    <inkscape:perspective
+       id="perspective2500"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3386"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective2509" />
+    <inkscape:perspective
+       id="perspective2507"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective2491"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective2511"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective2499"
        inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
        inkscape:vp_z="744.09448 : 526.18109 : 1"
        inkscape:vp_y="0 : 1000 : 0"
@@ -258,11 +302,11 @@
      objecttolerance="10"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="695.56042"
-     inkscape:cy="447.66072"
+     inkscape:zoom="0.9899495"
+     inkscape:cx="418.99853"
+     inkscape:cy="208.94482"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer2"
      inkscape:window-width="1213"
      inkscape:window-height="789"
      inkscape:window-x="137"
@@ -282,10 +326,11 @@
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:label="Layer 1"
+     inkscape:label="background"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(421.86121,-703.66589)">
+     transform="translate(322.73111,-790.88269)"
+     style="display:inline">
     <flowRoot
        xml:space="preserve"
        id="flowRoot2160"
@@ -297,27 +342,7 @@
            x="113.13708"
            y="213.93558" /></flowRegion><flowPara
          id="flowPara2166"
-         style="font-size:64px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Familian Elder">NO THICK MANUALS</flowPara></flowRoot>    <image
-       y="703.66589"
-       x="-421.86121"
-       id="image3414"
-       height="480"
-       width="800"
-       sodipodi:absref="C:\Documents and Settings\Dmitri Popov\Dokumenter\WriterTools\WriterTools_Wallpaper\Tiled_bg_800x480.png"
-       xlink:href="Tiled_bg_800x480.png" />
-    <text
-       xml:space="preserve"
-       style="font-size:7.10879898px;font-style:normal;font-weight:normal;line-height:125%;fill:#f2f2f2;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
-       x="-69.145828"
-       y="1025.4667"
-       id="text2406"
-       sodipodi:linespacing="125%"><tspan
-         id="tspan2410"
-         sodipodi:role="line"
-         x="-69.145828"
-         y="1025.4667"
-         style="font-size:12.79583931px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#f2f2f2;font-family:Droid Sans;-inkscape-font-specification:Droid Sans">tr.im/writertools</tspan></text>
-    <text
+         style="font-size:64px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Familian Elder">NO THICK MANUALS</flowPara></flowRoot>    <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
        x="1451.5892"
@@ -328,47 +353,32 @@
          id="tspan2683"
          x="1451.5892"
          y="552.50751" /></text>
-    <g
-       id="g3359"
-       transform="translate(3.6548916,11.857796)">
-      <rect
-         ry="17.525253"
-         y="871.80811"
-         x="-85.516098"
-         height="120"
-         width="120"
-         id="rect2524"
-         style="fill:#cd87ec;fill-opacity:1;stroke:#ad6ec5;stroke-width:9;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter3355)" />
-      <g
-         transform="translate(-219.77687,436.58879)"
-         id="g2391">
-        <g
-           id="g3172">
-          <rect
-             ry="17.525253"
-             y="435.2193"
-             x="134.26077"
-             height="120"
-             width="120"
-             id="rect3163"
-             style="fill:#cd87ec;fill-opacity:1;stroke:#ad6ec5;stroke-width:9;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-          <path
-             id="rect3166"
-             d="M 193.9081,490.90624 C 178.88749,491.13004 155.70318,494.58986 133.9081,498.53124 L 133.9081,537.68749 C 133.9081,547.39648 141.73034,555.21874 151.43935,555.21874 L 236.37685,555.21874 C 246.08584,555.21874 253.9081,547.39648 253.9081,537.68749 L 253.9081,496.49999 C 231.80008,493.2704 208.97872,490.6817 193.9081,490.90624 z"
-             style="opacity:0.27000002;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:12.88300037;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-          <text
-             xml:space="preserve"
-             style="font-size:87.74200439px;font-style:normal;font-weight:normal;opacity:0.51999996;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
-             x="152.9787"
-             y="525.48993"
-             id="text2394"><tspan
-               sodipodi:role="line"
-               id="tspan2396"
-               x="152.9787"
-               y="525.48993"
-               style="font-size:87.74200439px;font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;font-family:TitilliumText14L;-inkscape-font-specification:TitilliumText14L Heavy">W</tspan></text>
-        </g>
-      </g>
-    </g>
+    <image
+       y="790.88269"
+       x="-322.73111"
+       id="image2496"
+       height="480"
+       width="800"
+       sodipodi:absref="C:\Documents and Settings\Dmitri Popov\Dokumenter\WriterTools\WriterTools_Wallpaper\Tiled_bg_800x480.png"
+       xlink:href="Tiled_bg_800x480.png" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="dmpop"
+     transform="translate(-650.55862,-411.5025)">
+    <text
+       xml:space="preserve"
+       style="font-size:18.56751442px;font-style:normal;font-weight:normal;line-height:125%;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="-723.86292"
+       y="1442.1428"
+       id="text2518"
+       sodipodi:linespacing="125%"
+       transform="matrix(0,-1,1,0,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan2520"
+         x="-723.86292"
+         y="1442.1428"
+         style="font-size:17.17495155px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;font-family:FFF Tusj;-inkscape-font-specification:FFF Tusj Bold">tr.im/writertools</tspan></text>
   </g>
 </svg>
