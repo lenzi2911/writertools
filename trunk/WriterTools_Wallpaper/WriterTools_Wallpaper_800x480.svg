@@ -291,6 +291,13 @@
        inkscape:vp_y="0 : 1000 : 0"
        inkscape:vp_x="0 : 526.18109 : 1"
        sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective2490"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -303,7 +310,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.9899495"
-     inkscape:cx="418.99853"
+     inkscape:cx="401.46143"
      inkscape:cy="208.94482"
      inkscape:document-units="px"
      inkscape:current-layer="layer2"
@@ -356,7 +363,7 @@
     <image
        y="790.88269"
        x="-322.73111"
-       id="image2496"
+       id="image2492"
        height="480"
        width="800"
        sodipodi:absref="C:\Documents and Settings\Dmitri Popov\Dokumenter\WriterTools\WriterTools_Wallpaper\Tiled_bg_800x480.png"
@@ -369,16 +376,16 @@
      transform="translate(-650.55862,-411.5025)">
     <text
        xml:space="preserve"
-       style="font-size:18.56751442px;font-style:normal;font-weight:normal;line-height:125%;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
-       x="-723.86292"
-       y="1442.1428"
+       style="font-size:27.53979111px;font-style:normal;font-weight:normal;line-height:125%;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="-758.82922"
+       y="1440.2909"
        id="text2518"
        sodipodi:linespacing="125%"
        transform="matrix(0,-1,1,0,0,0)"><tspan
          sodipodi:role="line"
          id="tspan2520"
-         x="-723.86292"
-         y="1442.1428"
-         style="font-size:17.17495155px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;font-family:FFF Tusj;-inkscape-font-specification:FFF Tusj Bold">tr.im/writertools</tspan></text>
+         x="-758.82922"
+         y="1440.2909"
+         style="font-size:25.47430801px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;font-family:FFF Tusj;-inkscape-font-specification:FFF Tusj Bold">tr.im/writertools</tspan></text>
   </g>
 </svg>
