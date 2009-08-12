@@ -13,6 +13,9 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 1.5.5
+  * Post to Microblog tool saves data in a CSV file.
+  
 VERSION 1.5.3 [2009-08-02]
   * WordNet link in Lookup Tool fixed.
   * Incorrect browser path error message added.
