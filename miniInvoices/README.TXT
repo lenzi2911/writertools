@@ -1,6 +1,6 @@
 = MINIINVOICES =
 
-Copyright 2008 Dmitri Popov
+Copyright 2008, 2009 Dmitri Popov
 Anyone may run the code associated with this document. If you wish to modify or distribute this document and or its code, then you are granted a license to do so under the terms of the GNU General Public License. See:  http://www.gnu.org/licenses/gpl.html
 
 Official page:
@@ -23,6 +23,9 @@ Preparing miniInvoices:
 
 ==CHANGELOG==
 
+VERSION 0.7.0
+  * Cosmetic tweaks and minor improvements.
+  
 VERSION 0.5.1
   * Minor cosmetic tweaks.
 
