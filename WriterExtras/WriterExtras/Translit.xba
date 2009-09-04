@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">
+<script:module xmlns:script="http://openoffice.org/2000/script" script:name="Translit" script:language="StarBasic">&apos;************************************************************
+&apos;	Copyright © 2009 Dmitri Popov
+&apos;	Anyone may run this code.
+&apos;	If you wish to modify or distribute this code, then
+&apos;	you are granted a license to do so under the terms
+&apos;	of the Gnu General Public License.
+&apos;	See:  http://www.gnu.org/licenses/gpl.html
+&apos;************************************************************
+
+Sub TranslitToCyrillic()
+Dim ThisDoc As Object
+Dim SearchObj As Object, nTimes As Long
+Dim Args1()
+
+ThisDoc=ThisComponent
+
+TextSnippet=ThisDoc.getCurrentController().getSelection().getByIndex(0).getString()
+If TextSnippet=&quot;&quot; then MsgBox (&quot;Please select a text fragment to convert!&quot;, 48, MsgAttn) : End
+
+ThisDoc=StarDesktop.loadComponentFromURL(&quot;private:factory/swriter&quot;, &quot;_blank&quot;, 0, Args1())
+ThisDoc=ThisComponent
+ThisText=ThisDoc.Text
+TheCursor=ThisText.createTextCursor
+TheCursor.String=TextSnippet
+ 
+Latin=Array(&quot;YA&quot;, &quot;YA&quot;, &quot;YA&quot;, &quot;EH&quot;, &quot;CH&quot;, &quot;ZH&quot;, &quot;SH&quot;, &quot;SJ&quot;,_
+&quot;Ya&quot;, &quot;Yu&quot;, &quot;Yo&quot;, &quot;Eh&quot;, &quot;Ch&quot;, &quot;Zh&quot;, &quot;Sh&quot;, &quot;Sj&quot;, &quot;A&quot;,&quot;B&quot;, &quot;V&quot;, &quot;G&quot;, &quot;D&quot;, &quot;E&quot;, &quot;Z&quot;, &quot;I&quot;, &quot;J&quot;, &quot;K&quot;, &quot;L&quot;, &quot;M&quot;,_
+&quot;N&quot;, &quot;P&quot;, &quot;R&quot;, &quot;S&quot;, &quot;T&quot;, &quot;U&quot;, &quot;F&quot;, &quot;H&quot;, &quot;C&quot;, &quot;``&quot;, &quot;Y&quot;, &quot;&apos;&apos;&quot;,_
+&quot;ya&quot;, &quot;yu&quot;, &quot;yo&quot;, &quot;eh&quot;, &quot;ch&quot;, &quot;zh&quot;, &quot;sh&quot;, &quot;sj&quot;, &quot;a&quot;,&quot;b&quot;, &quot;v&quot;, &quot;g&quot;, &quot;d&quot;, &quot;e&quot;, &quot;z&quot;, &quot;i&quot;, &quot;j&quot;, &quot;k&quot;, &quot;l&quot;, &quot;m&quot;,_
+&quot;n&quot;, &quot;p&quot;, &quot;r&quot;, &quot;s&quot;, &quot;t&quot;, &quot;u&quot;, &quot;f&quot;, &quot;h&quot;, &quot;c&quot;, &quot;`&quot;, &quot;y&quot;, &quot;&apos;&quot;, &quot;|&quot;)
+Cyrillic = Array(&quot;Я&quot;, &quot;Ю&quot;, &quot;Ё&quot;, &quot;Э&quot;, &quot;Ч&quot;, &quot;Ж&quot;, &quot;Ш&quot;, &quot;Щ&quot;,_
+&quot;Я&quot;, &quot;Ю&quot;, &quot;Ё&quot;, &quot;Э&quot;, &quot;Ч&quot;, &quot;Ж&quot;, &quot;Ш&quot;, &quot;Щ&quot;, &quot;А&quot;, &quot;Б&quot;, &quot;В&quot;, &quot;Г&quot;, &quot;Д&quot;, &quot;Е&quot;, &quot;З&quot;, &quot;И&quot;, &quot;Й&quot;, &quot;К&quot;, &quot;Л&quot;, &quot;М&quot;,_
+&quot;Н&quot;, &quot;П&quot;, &quot;Р&quot;, &quot;С&quot;, &quot;Т&quot;, &quot;У&quot;, &quot;Ф&quot;, &quot;Х&quot;, &quot;Ц&quot;, &quot;Ъ&quot;, &quot;Ы&quot;, &quot;Ь&quot;,_
+&quot;я&quot;, &quot;ю&quot;, &quot;ё&quot;, &quot;э&quot;, &quot;ч&quot;, &quot;ж&quot;, &quot;ш&quot;,  &quot;щ&quot;, &quot;а&quot;, &quot;б&quot;, &quot;в&quot;, &quot;г&quot;, &quot;д&quot;, &quot;е&quot;, &quot;з&quot;, &quot;и&quot;, &quot;й&quot;, &quot;к&quot;, &quot;л&quot;, &quot;м&quot;,_
+&quot;н&quot;, &quot;п&quot;, &quot;р&quot;, &quot;с&quot;, &quot;т&quot;, &quot;у&quot;, &quot;ф&quot;, &quot;х&quot;, &quot;ц&quot;, &quot;ъ&quot;, &quot;ы&quot;, &quot;ь&quot;, &quot;&quot;)
+
+SearchObj=ThisDoc.createReplaceDescriptor
+ For I = lBound(Latin()) to uBound(Latin())
+   With SearchObj
+    .SearchString=Latin(I)
+    .ReplaceString=Cyrillic(I)
+    .SearchWords=false
+    .SearchCaseSensitive=true
+   End With
+   nTimes = ThisDoc.replaceAll(SearchObj)
+  Next I
+End Sub
+</script:module>

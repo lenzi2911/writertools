@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">
+<script:module xmlns:script="http://openoffice.org/2000/script" script:name="PostToBlog" script:language="StarBasic">&apos;************************************************************
+&apos;	Copyright © 2009 Dmitri Popov
+&apos;	Anyone may run this code.
+&apos;	If you wish to modify or distribute this code, then
+&apos;	you are granted a license to do so under the terms
+&apos;	of the Gnu General Public License.
+&apos;	See:  http://www.gnu.org/licenses/gpl.html
+&apos;************************************************************
+
+Sub PostScribbles
+MarkupStr(&quot;CharWeight&quot;, com.sun.star.awt.FontWeight.BOLD, &quot;[b]&amp;[/b]&quot;)
+MarkupStr(&quot;CharPosture&quot;, com.sun.star.awt.FontSlant.ITALIC, &quot;[i]&amp;[/i]&quot;)
+MarkupStr(&quot;CharUnderline&quot;, com.sun.star.awt.FontUnderline.SINGLE, &quot;[u]&amp;[/u]&quot;)
+MarkupStr(&quot;CharStrikeout&quot;, com.sun.star.awt.FontStrikeout.SINGLE, &quot;[s]&amp;[/s]&quot;)
+MarkupURL
+ThisDoc=ThisComponent
+ThisText=ThisDoc.Text
+Article=ThisText.String
+DBContext=createUnoService(&quot;com.sun.star.sdb.DatabaseContext&quot;)
+DataSource=DBContext.getByName(&quot;Scribbles-n-Scraps&quot;)
+UserName=InputBox(&quot;Enter MySQL user name&quot;, &quot;Attention&quot;)
+UserPassword=InputBox(&quot;Enter MySQL password&quot;, &quot;Attention&quot;)
+DB=DataSource.GetConnection (UserName, UserPassword)
+Timestamp=InputBox(&quot;Enter timestamp&quot;, &quot;Attention&quot;)
+On Error Resume
+SQLQuery=&quot;INSERT INTO articles (article_content, article_pub) VALUES (&apos;&quot; + Article + &quot;&apos;, &apos;&quot; + Timestamp + &quot;&apos;)&quot;
+SQLStatement=DB.createStatement
+Result=SQLStatement.executeQuery (SQLQuery)
+DB.close
+DB.dispose
+MsgBox (&quot;The article has been submitted.&quot;, 64, &quot;All done!&quot;)
+End Sub
+
+Function MarkupStr(SearchAttrName, SearchAttrValue, ReplaceStr)
+Dim SearchAttributes(0) As New com.sun.star.beans.PropertyValue
+ThisDoc=ThisComponent
+SearchAttributes(0).Name=SearchAttrName
+SearchAttributes(0).Value=SearchAttrValue
+ReplaceObj=ThisDoc.createReplaceDescriptor
+ReplaceObj.SearchRegularExpression=true
+ReplaceObj.searchStyles=false
+ReplaceObj.searchAll=true
+ReplaceObj.SetSearchAttributes(SearchAttributes)
+ReplaceObj.SearchString=&quot;.*&quot;
+ReplaceObj.ReplaceString=ReplaceStr
+ThisDoc.replaceAll(ReplaceObj)
+End Function
+
+Sub MarkupURL
+ThisDoc=ThisComponent
+ThisText=ThisDoc.Text
+ParaEnum=ThisText.createEnumeration
+While ParaEnum.hasmoreElements
+ Para=ParaEnum.nextElement
+  PortionEnum=Para.createEnumeration
+   While PortionEnum.hasMoreElements
+    Portion=PortionEnum.nextElement
+     If Portion.HyperlinkURL &lt;&gt; &quot;&quot; then
+       Portion.String = &quot;[url=&quot; + Portion.HyperlinkURL +&quot;]&quot; +Portion.String + &quot;[/url]&quot;
+      End if
+   Wend
+Wend
+End Sub
+</script:module>
