@@ -24,7 +24,7 @@ UserName=InputBox(&quot;Enter MySQL user name&quot;, &quot;Attention&quot;)
 UserPassword=InputBox(&quot;Enter MySQL password&quot;, &quot;Attention&quot;)
 DB=DataSource.GetConnection (UserName, UserPassword)
 Timestamp=InputBox(&quot;Enter timestamp&quot;, &quot;Attention&quot;)
-On Error Resume
+On Error Resume Next
 SQLQuery=&quot;INSERT INTO articles (article_content, article_pub) VALUES (&apos;&quot; + Article + &quot;&apos;, &apos;&quot; + Timestamp + &quot;&apos;)&quot;
 SQLStatement=DB.createStatement
 Result=SQLStatement.executeQuery (SQLQuery)
