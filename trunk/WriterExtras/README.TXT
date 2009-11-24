@@ -11,5 +11,5 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 0.1.0
+VERSION 0.3.0
   * First public release.
