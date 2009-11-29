@@ -15,6 +15,8 @@ http://writertools.googlecode.com/svn/trunk/
 
 VERSION 1.5.7
   * Quick markup tool added.
+  * Post to Microblog tool now uses a selected text fragment in the current document as update text.
+  * Quick Converter and Word of the Day tools removed.
 
 VERSION 1.5.5 2009-11-27
   * Post to Microblog tool saves data in a CSV file.
