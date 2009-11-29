@@ -13,6 +13,9 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 1.5.7
+  * Quick markup tool added.
+
 VERSION 1.5.5 2009-11-27
   * Post to Microblog tool saves data in a CSV file.
   * New Post To Microblog and Word Count icons.
