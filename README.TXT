@@ -13,8 +13,8 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 1.5.7
-  * Quick markup tool added.
+VERSION 1.5.7 2009-12-01
+  * Text Markup tool added.
   * Post to Microblog tool now uses a selected text fragment in the current document as update text.
   * Quick Converter and Word of the Day tools removed.
 
