@@ -13,6 +13,9 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 1.5.9
+  * Incorrect browser error message triggers the browser path reset.
+
 VERSION 1.5.7 2009-12-01
   * Text Markup tool added.
   * Post to Microblog tool now uses a selected text fragment in the current document as update text.
