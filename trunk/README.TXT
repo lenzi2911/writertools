@@ -14,7 +14,7 @@ http://writertools.googlecode.com/svn/trunk/
 ==CHANGELOG==
 
 VERSION 1.5.9 2010-03-11
-  * Incorrect browser error message triggers the browser path reset.
+  * Incorrect browser error message triggers a browser path reset.
 
 VERSION 1.5.7 2009-12-01
   * Text Markup tool added.
