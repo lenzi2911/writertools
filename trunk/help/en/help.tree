@@ -2,7 +2,7 @@
 <tree_view>
 <help_section application="Writer's Tools" id="WriterTools" title="Writer's Tools Help">
 	<node id="getstarted" title="Getting Started">
-		<topic id="en/vnd.dmitripopov.writertools/page1.xhp">About Writer's Tools</topic>
+		<topic id="en/vnd.dmitripopov.writertools/page1.xhp">Configure Writer's Tools</topic>
 	</node>
 </help_section>
 </tree_view>
