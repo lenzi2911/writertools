@@ -13,6 +13,9 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 1.7.1
+  * Online help added.
+
 VERSION 1.5.9 2010-03-11
   * Incorrect browser error message triggers a browser path reset.
 

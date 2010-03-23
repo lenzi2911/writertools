@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<helpdocument version="1.0">
+<meta>
+<topic id="Extension help for dummies" indexer="include" status="PUBLISH">
+<title Hd="title">Extension help for dummies</title>
+<filename>/vnd.dmitripopov.writertools/page1.xhp</filename>
+</topic>
+</meta>
+<body>
+
+<bookmark xml-lang="en-US" branch="index" id="bm1">
+<bookmark_value>About Writer's Tools</bookmark_value>
+</bookmark>
+<paragraph role="heading" level="1">About Writer's Tools</paragraph>
+<paragraph role="paragraph">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis ante. Quisque eleifend augue id nisl. In nulla turpis, commodo id, dapibus non, facilisis vulputate, ligula.</paragraph>
+</body>
+</helpdocument>
