@@ -16,6 +16,8 @@ http://writertools.googlecode.com/svn/trunk/
 VERSION 1.7.1
   * Online help added.
   * Text Markup now supports simple lists.
+  * Complete Addons.xcu rewrite.
+  * Icons removed.
 
 VERSION 1.5.9 2010-03-11
   * Incorrect browser error message triggers a browser path reset.
