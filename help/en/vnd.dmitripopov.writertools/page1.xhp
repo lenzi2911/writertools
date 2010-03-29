@@ -13,34 +13,16 @@
 <bookmark_value>Register WriterDB Database</bookmark_value>
 </bookmark>  -->
 
-<paragraph role="heading" level="1">Set Browser Path</paragraph>
+<paragraph role="heading" level="1">Writer's Tools Help Resources</paragraph>
 <paragraph role="paragraph">
-When you use the <emph>Lookup</emph>, Google Translate, or Show on the Map tools for the first time, the system prompts you to enter a path to the default browser. On Linux, enter firefox if you are using Mozilla Firefox as your default browser. On Windows, the path to Firefox could look like this: C:\Program Files\Mozilla Firefox\firefox.exe. On Mac OS X, the path is open -a /Applications/Firefox.app.</paragraph>
-
-<paragraph role="heading" level="1">Register WriterDB Database</paragraph>
-<paragraph role="paragraph">
-Some WT tools rely on the WriterDB database, which must be registered as an OpenOffice.org data source. To do this, launch OpenOffice.org and choose Tools | Options. Select OpenOffice.org Base | Databases and press the New button. Select the WriterDB database and give the new connection the "WriterDB" name. Press OK | OK, and you are done.</paragraph>
-
-<paragraph role="heading" level="1">Configure Email Backup</paragraph>
-<paragraph role="paragraph">
-Using the Email Backup command, you can email a backup copy of the current document to a specified email address. If you are using a specific email address for all your backups, you might want to add it to the command, so you don’t have to type it every single time. To do this, launch OpenOffice.org and choose Tools | Macros | Organize Macros | OpenOffice.org Basic. Select then WriterTools | Tools | EmailBackup and press the Edit button. Locate the following line MailAddress=InputBox(InputBoxMailAddr, MsgEmailBackup) and replace the InputBox(InputBoxMailAddr, MsgEmailBackup) part with your actual email address; for example, MailAddress="user@email.org"</paragraph>
-
-<paragraph role="heading" level="1">Configure Email Backup</paragraph>
-<paragraph role="paragraph">
-Using the Remote Backup command, you can upload a backup copy of the current document to a specified FTP server. If you are using a specific FTP address for all your backups, you might want to add it to the command, so you don’t have to type it every single time. To do this, launch OpenOffice.org and choose Tools | Macros | Organize Macros | OpenOffice.org Basic. Select then WriterTools | Remote Backup | SaveFTPDocument and press the Edit button. Locate the following code block:
+Please read the supplied <emph>WriterToolsUserGuide.html</emph> file for more information on how to configure and use the Writer's Tools extension.
 <br />
 <br />
-ConnectionString=InputBox("Enter the FTP address", "Remote Backup" , "ftp://user:password@192.168.1.7/pub/")<br />
-If ConnectionString="" then MsgBox ("The FTP address field is empty!", , "Attention!") : End
+If you run into problems, take a look at the <link href="http://code.google.com/p/writertools/wiki/FAQ" name="Writer's Tools FAQ">FAQ</link> section and visit the <link href="http://groups.google.com/group/writertools/" name="Writer's Tools group">Writer's Tools group</link>.
 <br />
 <br />
-and replace it with:
-<br />
-<br />
-ConnectionString="ftp://user:password@192.168.1.7/pub/"
-<br />
-<br />
-where the string in the quotes should be the actual FTP address.</paragraph>
-
+<emph>To get the most out of the Writer's Tools extension, read the 
+<link href="http://www.lulu.com/content/paperback-book/writers-tools-manual/2115121" name="Writer's Tools Manual">Writer's Tools Manual</link>.</emph>
+</paragraph>
 </body>
 </helpdocument>
