@@ -13,7 +13,7 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
-VERSION 1.7.1
+VERSION 1.7.3 2010-04-05
   * Online help added.
   * Text Markup now supports simple lists.
   * Complete Addons.xcu rewrite.
