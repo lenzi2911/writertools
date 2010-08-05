@@ -20,7 +20,7 @@ It seems that !OpenOffice.org Basic doesn't support Windows Vista native dialogs
 
 === Does Writer's Tools work with Mac OS X? ===
 
-It should. But I don't do any intensive testing on Mac OS X. If you encounter a bug or a problem on Mac OS X, make sure to report them in the [http://code.google.com/p/writertools/issues/list Issues] sections.
+It should, but I haven't tested it. If you encounter a bug or a problem on Mac OS X, make sure to report them in the [http://code.google.com/p/writertools/issues/list Issues] sections.
 
 === Where do I get help with Writer's Tools? ===
 
@@ -32,4 +32,4 @@ Not really. But you can use the [http://extensions.services.openoffice.org/proje
 
 === How do I contact the author? ===
 
-To avoid spam, the best way to contact the author is via Jabber (dmpop@jabber.org). You can also follow the author via Twitter (http://twitter.com/dmpop).
+Send me an email at dmpop AT openoffice DOT org. You can also follow the author on Twitter (http://twitter.com/dmpop) or Identi.ca (http://identi.ca/dmpop).
