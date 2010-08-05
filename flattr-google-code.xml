@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+<ModulePrefs
+	title="Flattr plugin"
+	author="Stefan Sundin"
+	author_location="Sweden"
+	author_email="recover89@gmail.com"
+	width="76"
+	height="66">
+</ModulePrefs>
+<UserPref name="uid" datatype="string" default_value="" />
+<UserPref name="title" datatype="string" default_value="" />
+<UserPref name="desc" datatype="string" default_value="" />
+<UserPref name="cat" datatype="string" default_value="software" />
+<UserPref name="lang" datatype="string" default_value="en_GB" />
+<UserPref name="tags" datatype="string" default_value="" />
+<UserPref name="url" datatype="string" default_value="" />
+<UserPref name="button" datatype="string" default_value="" />
+<Content type="html">
+<![CDATA[
+
+<script type="text/javascript">
+var prefs = new gadgets.Prefs();
+var flattr_uid = prefs.getString("uid");
+var flattr_tle = prefs.getString("title");
+var flattr_dsc = prefs.getString("desc");
+var flattr_cat = prefs.getString("cat");
+var flattr_lng = prefs.getString("lang");
+var flattr_tag = prefs.getString("tags");
+var flattr_url = prefs.getString("url");
+var flattr_btn = prefs.getString("button");
+</script>
+<script src="http://api.flattr.com/button/load.js" type="text/javascript"></script>
+
+]]>
+</Content>
+</Module>
