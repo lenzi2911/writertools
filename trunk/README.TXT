@@ -13,6 +13,10 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 1.7.7
+  * Unused and hidden macros cleanup.
+  * Insert Dummy Text hidden macro added.
+
 VERSION 1.7.5 2010-08-05
   * New icon and logo.
 
