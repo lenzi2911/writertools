@@ -32,4 +32,4 @@ Not really. But you can use the [http://extensions.services.openoffice.org/proje
 
 === How do I contact the author? ===
 
-Send me an email at dmpop AT openoffice DOT org. You can also follow the author on Twitter (http://twitter.com/dmpop) or Identi.ca (http://identi.ca/dmpop).
+Send me an email at dmpop AT openoffice DOT org. You can also follow me on Twitter (http://twitter.com/dmpop) or Identi.ca (http://identi.ca/dmpop).
