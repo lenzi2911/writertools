@@ -18,9 +18,10 @@
 #
 
 
-$program_version = "1.39";
-$ec2_version = "2009-03-01";
+$program_version = "1.54";
+$ec2_version = "2009-11-30";
 $sqs_version = "2009-02-01";
+$elb_version = "2009-05-15";
 
 
 #
@@ -65,11 +66,26 @@ $sqs_version = "2009-02-01";
 								  ["o", SourceSecurityGroupName],
 								  ["s", CidrIp],
 								  ]],
+	["ec2", "cancel-spot-instance-requests cancel csir", CancelSpotInstanceRequests, [
+									   ["", SpotInstanceRequestIdN],
+									   ]],								  
 	["ec2", "confirm-product-instance", ConfirmProductInstance, [
 								     ["", ProductCode],
 								     ["i", InstanceId],
 								     ]],
-	["ec2", "create-snapshot csnap", CreateSnapshot, [["", VolumeId]]],
+	["ec2", "create-snapshot csnap", CreateSnapshot, [
+							  ["", VolumeId],
+							  ["description", Description],
+							  ]],
+	["ec2", "describe-spot-instance-requests dsir", DescribeSpotInstanceRequests, [
+										       ["", SpotInstanceRequestIdN],
+										       ]],
+	["ec2", "describe-spot-price-history dsph", DescribeSpotPriceHistory, [
+									       ["start", StartTime],
+									       ["end", EndTime],
+									       ["instance-type", InstanceType, "m1.small"],
+									       ["description", ProductDescription, "Linux/UNIX"],
+									       ]],									   
 	["ec2", "create-volume cvol", CreateVolume, [
 						     ["size", Size],
 						     ["zone", AvailabilityZone],
@@ -109,7 +125,26 @@ $sqs_version = "2009-02-01";
 											      ["z", AvailabilityZone],
 											      ["description", ProductDescription],
 											      ]],
-	["ec2", "describe-snapshots dsnap", DescribeSnapshots, [["", SnapshotId]]],
+	["ec2", "describe-snapshot-attribute dsa", DescribeSnapshotAttribute, [
+									       ["", SnapshotIdN],
+									       ["attribute", Attribute],
+									       ]],
+	["ec2", "reset-snapshot-attribute rsa", ResetSnapshotAttribute, [
+									 ["", SnapshotIdN],
+									 ["attribute", Attribute],
+									 ]],
+	["ec2", "modify-snapshot-attribute msa", ModifySnapshotAttribute, [
+									   ["", SnapshotId],
+									   ["user", UserId],
+									   ["group", UserGroup],
+									   ["attribute", Attribute],
+									   ["type", OperationType],
+									   ]],
+	["ec2", "describe-snapshots dsnap", DescribeSnapshots, [
+								["", SnapshotIdN],
+								["owner", Owner, "self"],
+								["restorableby", RestorableBy],
+								]],
 	["ec2", "describe-volumes dvol", DescribeVolumes, [["", VolumeIdN]]],
 	["ec2", "detach-volume detvol", DetachVolume, [["", VolumeId]]],
 	["ec2", "disassociate-address disad", DisassociateAddress, [["", PublicIp]]],
@@ -121,6 +156,21 @@ $sqs_version = "2009-02-01";
 	["ec2", "reboot-instances reboot", RebootInstances, [["", InstanceIdN]]],
 	["ec2", "release-address rad", ReleaseAddress, [["", PublicIp]]],
 	["ec2", "register-image register", RegisterImage, [["", ImageLocation]]],
+	["ec2", "request-spot-instances req-spot rsi", RequestSpotInstances, [
+								 ["", "LaunchSpecification.ImageId", "ami-5647a33f"],
+								 ["p", SpotPrice],
+								 ["t", Type, "one-time"],
+								 ["i", "LaunchSpecification.InstanceType", "m1.small"],
+								 ["a", "LaunchSpecification.AddressingType", "public"],
+								 ["n", InstanceCount, 1],
+								 ["g", "LaunchSpecification.SecurityGroupN", "default"],
+								 ["k", "LaunchSpecification.KeyName", "default"],
+								 ["z", "LaunchSpecification.Placement.AvailabilityZone"],
+								 ["kernel", "LaunchSpecification.KernelId"],
+								 ["ramdisk", "LaunchSpecification.RamdiskId"],
+								 ["d", "LaunchSpecification.UserData", undef, sub {encode_base64($_[0], "")}],
+								 ["f", "LaunchSpecification.UserData", undef, sub {encode_base64(load_file($_[0]))}],
+								 ]],
 	["ec2", "revoke", RevokeSecurityGroupIngress, [
 						       ["", GroupName],
 						       ["P", IpProtocol],
@@ -136,12 +186,15 @@ $sqs_version = "2009-02-01";
 	["ec2", "run-instances run-instance run", RunInstances, [
 								 ["", ImageId, "ami-5647a33f"],
 								 ["i", InstanceType, "m1.small"],
+								 ["type", InstanceType],
+								 ["t", InstanceType],
 								 ["a", AddressingType, "public"],
 								 ["n", MinCount, 1],
 								 ["n", MaxCount, 1],
 								 ["g", SecurityGroupN, "default"],
 								 ["k", KeyName, "default"],
 								 ["z", "Placement.AvailabilityZone"],
+								 ["availability-zone", "Placement.AvailabilityZone"],
 								 ["kernel", KernelId],
 								 ["ramdisk", RamdiskId],
 								 ["d", UserData, undef, sub {encode_base64($_[0], "")}],
@@ -149,8 +202,65 @@ $sqs_version = "2009-02-01";
 								 ]],
 	["ec2", "terminate-instances tin", TerminateInstances, [["", InstanceIdN]]],
 
+	["elb", "create-lb clb", CreateLoadBalancer, [
+						      ["", LoadBalancerName],
+						      ["availability-zone", "AvailabilityZones.memberN"],
+						      ["protocol", "Listeners.member.1.Protocol"],
+						      ["loadbalancerport", "Listeners.member.1.LoadBalancerPort"],
+						      ["instanceport", "Listeners.member.1.InstancePort"],
+						      ]],
+	["elb", "delete-lb", DeleteLoadBalancer, [
+						      ["", LoadBalancerName],
+						      ]],
+	["elb", "describe-lbs dlb", DescribeLoadBalancers, [
+							    ["", LoadBalancerNameN],
+							    ]],
+	["elb", "enable-zones-for-lb elbz", EnableAvailabilityZonesForLoadBalancer, [
+										     ["", LoadBalancerName],
+										     ["availability-zone", "AvailabilityZones.memberN"],
+										     ]],
+	["elb", "disable-zones-for-lb dlbz", DisableAvailabilityZonesForLoadBalancer, [
+										       ["", LoadBalancerName],
+										       ["availability-zone", "AvailabilityZones.memberN"],
+										       ]],
+	["elb", "register-instances-with-lb rlbi", RegisterInstancesWithLoadBalancer, [
+										       ["", LoadBalancerName],
+										       ["instance", "Instances.member.N.InstanceId"],
+										       ]],
+	["elb", "deregister-instances-with-lb dlbi", DeregisterInstancesFromLoadBalancer, [
+											   ["", LoadBalancerName],
+											   ["instance", "Instances.member.N.InstanceId"],
+											   ]],
+	["elb", "configure-healthcheck ch", ConfigureHealthCheck, [
+								   ["", LoadBalancerName],
+								   ["target", "HealthCheck.Target"],
+								   ["healthy-threshold", "HealthCheck.HealthyThreshold"],
+								   ["unhealthy-threshold", "HealthCheck.UnhealthyThreshold"],
+								   ["interval", "HealthCheck.Interval"],
+								   ["timeout", "HealthCheck.Timoout"],
+								   ]],
+	["elb", "create-app-cookie-stickiness-policy cacsp", CreateAppCookieStickinessPolicy, [
+											       ["", LoadBalancerName],
+											       ["policy-name", PolicyName],
+											       ["cookie-name", CookieName],
+											       ]],
+	["elb", "create-lb-cookie-stickiness-policy clbcsp", CreateLBCookieStickinessPolicy, [
+											      ["", LoadBalancerName],
+											      ["policy-name", PolicyName],
+											      ["expiration-period", "policy-name", PolicyName],
+											      ]],
+	["elb", "set-lb-policies-of-listener slbpol", SetLoadBalancerPoliciesOfListener, [
+											  ["", LoadBalancerName],
+											  ["policy-name", PolicyNames.memberN],
+											  ]],
+	["elb", "delete-lb-policy dlbp", DeleteLoadBalancerPolicy, [
+								    ["", LoadBalancerName],
+								    ["policy-name", PolicyName],
+								    ]],
+
 	["s3", "ls", LS],
 	["s3", "get cat", GET],
+	["s3", "head", HEAD],
 	["s3", "mkdir", MKDIR],
 	["s3", "put", PUT],
 	["s3", "delete rmdir rm", DELETE],
@@ -217,8 +327,8 @@ $sqs_version = "2009-02-01";
 	);
 
 
+$isUnix = guess_is_unix();
 $home = get_home_directory();
-
 
 # Figure out $cmd.  If the program is run as other than "aws", then $0 contains
 # the command.  This way, you can link aws to the command names (with or without
@@ -228,67 +338,84 @@ unshift @ARGV, $1 if $0 =~ /^(?:.*[\\\/])?(?:(?:ec2|s3|sqs)-?)?(.+?)(?:\..+)?$/ 
 
 # parse meta-parameters, leaving parameters in @argv
 
-for (split(/[\r\s]+/, load_file_silent("$home/.awsrc")), @ARGV)
 {
-    if (/^--([\w\-]+?)(?:=(.*))?$/s)
+    # The %need_arg items must have a value.  If they aren't of the form
+    # --foo=bar, then slurp up the next item as the value.  Thus, for example,
+    #  --region=eu  and  --region eu  both work, with or without the =.
+    my(%need_arg, $key_for_arg);
+    @needs_arg{qw(region)} = undef;
+
+    for (split(/[\r\s]+/, load_file_silent("$home/.awsrc")), @ARGV)
     {
-	my($key, $val) = ($1, $2);
-	$key =~ s/-/_/g;
-	if (exists $keyword{$key})
+	if ($key_for_arg)
 	{
-	    push @argv, $_;
+	    $ {$key_for_arg} = $_;
+	    undef $key_for_arg;
 	}
-	else
+	elsif (/^--([\w\-]+?)(?:=(.*))?$/s)
 	{
-	    $ {$key} = defined $val? $val: 1;
-	    # --cmd0 is used to call self but without getting the command from $0
-	    undef $cmd if $key eq "cmd0" && $val;
-	}
-    }
-    elsif (/^-(\w+)$/)
-    {
-	if (exists $keyword{$1})
-	{
-	    push @argv, $_;
-	}
-	else
-	{
-	    for (split(//, $1))
+	    my($key, $val) = ($1, $2);
+	    $key =~ s/-/_/g;
+	    if (exists $needs_arg{$key} && !defined $val)
 	    {
-		s/^(\d)$/d$1/;
-		$ {$_}++;
+		$key_for_arg = $key;
+	    }
+	    elsif (exists $keyword{$key})
+	    {
+		push @argv, $_;
+	    }
+	    else
+	    {
+		$ {$key} = defined $val? $val: 1;
+		# --cmd0 is used to call self but without getting the command from $0
+		undef $cmd if $key eq "cmd0" && $val;
 	    }
 	}
-    }
-    else
-    {
-	if ($cmd)
+	elsif (/^-(\w+)$/)
 	{
-	    push @argv, $_;
+	    if (exists $keyword{$1})
+	    {
+		push @argv, $_;
+	    }
+	    else
+	    {
+		for (split(//, $1))
+		{
+		    s/^(\d)$/d$1/;
+		    $ {$_}++;
+		}
+	    }
 	}
 	else
 	{
-	    $cmd = $_;
-
-	    # moved this code here, so that arguments to specific ec2, s3, and sqs commands
-	    # are active only if the particular command is indicated
-
-	    # make a hash of aws keywords (%keyword), which are not treated as meta-parameters
-
-	  CMDLAST:
-	    for (@cmd)
+	    if ($cmd)
 	    {
-		for my $c (split(" ", $_->[1]))
+		push @argv, $_;
+	    }
+	    else
+	    {
+		$cmd = $_;
+
+		# moved this code here, so that arguments to specific ec2, s3, and sqs commands
+		# are active only if the particular command is indicated
+
+		# make a hash of aws keywords (%keyword), which are not treated as meta-parameters
+
+	      CMDLAST:
+		for (@cmd)
 		{
-		    if ($cmd eq $c)
+		    for my $c (split(" ", $_->[1]))
 		    {
-			$cmd_data = $_;
-			for (@{$cmd_data->[3]})
+			if ($cmd eq $c)
 			{
-			    (my $key = $_->[0]) =~ s/-/_/g;
-			    $keyword{$key} = undef;
+			    $cmd_data = $_;
+			    for (@{$cmd_data->[3]})
+			    {
+				(my $key = $_->[0]) =~ s/-/_/g;
+				$keyword{$key} = undef;
+			    }
+			    last CMDLAST;
 			}
-			last CMDLAST;
 		    }
 		}
 	    }
@@ -317,7 +444,11 @@ if ($cut)
 END {close STDOUT}
 
 
-print STDERR "aws version: v$program_version  (ec2: $ec2_version, sqs: $sqs_version)\n" if $v;
+$s3host ||= $ENV{S3_URL} || "s3.amazonaws.com";
+$ec2host ||= $ENV{EC2_URL} || "ec2.amazonaws.com";
+
+
+print STDERR "aws version: v$program_version  (ec2: $ec2_version, sqs: $sqs_version, elb: $elb_version)\n" if $v;
 
 $insecsign = "--insecure" if $insecure || $insecure_signing;
 $insecureaws = "--insecure" if $insecureaws || $insecure_aws;
@@ -327,7 +458,13 @@ $scheme = $http? "http": "https";
 $silent ||= !-t;
 $retry ||= 3;
 
-$secrets_file ||= "$home/.awssecret";
+$secrets_file ||= "$home/.awssecret" || "$home/.s3cfg";
+
+# unfortunately, you can't have a delimiter of "1" this way
+if ($d || $delimiter == 1)
+{
+    $delimiter = "/";
+}
 
 for ([m => 60], [h => 60 * 60], [d => 24 * 60 * 60], [w => 7 * 24 * 60 * 60], [mo => 30 * 24 * 60 * 60], [y => 365.25 * 24 * 60 * 60])
 {
@@ -349,7 +486,7 @@ if (!-e "$home/.awsrc" || $sanity_check)
 	{
 	    warn "sanity-check: \"$secrets_file\": file is not readable\n";
 	}
-	elsif ($ENV{OS} !~ /windows/i)
+	elsif ($isUnix)
 	{
 	    my $stat = (stat $secrets_file)[2] & 0777;
 	    
@@ -370,21 +507,30 @@ if (!-e "$home/.awsrc" || $sanity_check)
 	warn "sanity-check: This curl (v$curl_version) does not support --retry (>= v7.12.3), so --retry is disabled\n" unless $silent;
     }
 
-    my $aws = qx[curl -q -s $insecureaws $fail --dump-header - $scheme://s3.amazonaws.com/connection/test];
+    my $aws = qx[curl -q -s $insecureaws --dump-header - $scheme://$s3host/connection/test];
     print $aws if $v >= 2;
     my($d, $mon, $y, $h, $m, $s) = $aws =~ /^Date: ..., (..) (...) (....) (..):(..):(..) GMT\r?$/m;
 
     if (!$d)
     {
-	$aws = qx[curl -q -s --insecure $fail --dump-header - $scheme://s3.amazonaws.com/connection/test];
+	$aws = qx[curl -q -s --insecure --dump-header - $scheme://$s3host/connection/test];
 	($d, $mon, $y, $h, $m, $s) = $aws =~ /^Date: ..., (..) (...) (....) (..):(..):(..) GMT\r?$/m;
 	if ($d)
 	{
-	    warn "sanity-check: Your host SSL certificates are not working for curl.exe.  Fix the problem or use --insecure-aws\n" unless $silent;
+	    warn "sanity-check: Your host SSL certificates are not working for curl.exe.  Try using --insecure-aws (e.g., aws --insecure-aws ls)\n";
 	}
 	else
 	{
-	    die "sanity-check: Problems accessing AWS (not related to SSL certificates).  Check that curl is installed.\n";
+	    $aws = qx[curl -q -s --insecure --dump-header - http://$s3host/connection/test];
+	    ($d, $mon, $y, $h, $m, $s) = $aws =~ /^Date: ..., (..) (...) (....) (..):(..):(..) GMT\r?$/m;
+	    if ($d)
+	    {
+		die "sanity-check:  Your curl doesn't seem to support SSL.  Try using --http (e.g., aws --http ls)\n";
+	    }
+	    else
+	    {
+		die "sanity-check:  Problems accessing AWS.  Is curl installed?\n";
+	    }
 	}
     }
 
@@ -543,7 +689,7 @@ if (!$cmd_data)
 	    $output .= "\t\t$one\n";
 	}
     }
-    $output .= "aws version: v$program_version  (ec2 $ec2_version, sqs $sqs_version)\n";
+    $output .= "aws version: v$program_version  (ec2 $ec2_version, sqs $sqs_version, elb $elb_version)\n";
     die $output;
 }
 
@@ -576,7 +722,7 @@ if (!$cmd_data)
 
     my($result);
 
-    if ($service eq "ec2" || $service eq "sqs")
+    if ($service eq "ec2" || $service eq "sqs" || $service eq "elb")
     {
 	#print STDERR "(@{[join(', ', @argv)]})\n" if $v;
 
@@ -603,6 +749,7 @@ if (!$cmd_data)
 		next if $b ne $a;
 		my $count = ++$key{$key};
 		$key =~ s/N$/\.$count/;
+		$key =~ s/\.N\./\.$count\./;
 		my $data = $argv[$i];
 		$data = $cref->($data) if $cref;
 		push @list, $key => $data;
@@ -631,6 +778,11 @@ if (!$cmd_data)
 	for (;;)
 	{
 	    my $r = s3($action, $marker, (grep(!/^(?:x-amz-|Cache-|Content-|Expires:|If-|Range:)/i, @argv))[0, 1], grep(/^(?:x-amz-|Cache-|Content-|Expires:|If-|Range:)/i, @argv));
+	    if ($r !~ /^<\?xml/)
+	    {
+		print $r;
+		exit;
+	    }
 	    $r =~ s/<\?xml.*?>\r?\s*//;
 	    $result .= $r;
 	    ($marker) = $r =~ /.*<Key>(.*?)<\/Key>/;
@@ -723,20 +875,20 @@ if (!$cmd_data)
 		}
 		else
 		{
-		    printf "-rw-------  1 $owner %9d $mod $key\n", $size;
+		    printf "-rw-------  1 $owner %10.0f $mod %s\n", $size, $key;
 		}
 	    }
 	    elsif ($d1)
 	    {
-		printf "$key\n";
+		print "$key\n";
 	    }
 	    elsif ($simple)
 	    {
-		printf "%9d\t$mod\t$key\n", $size;
+		printf "%10.0f\t$mod\t%s\n", $size, $key;
 	    }
 	    elsif ($exec)
 	    {
-		#local $_ = sprintf "%9d\t$mod\t$key\n", $size;
+		#local $_ = sprintf "%10.0f\t$mod\t$key\n", $size;
 		#local @_ = ($size, $mod, $key);
 		my($bucket, $prefix) = split(/\//, $argv[0], 2);
 		eval $exec;
@@ -793,20 +945,45 @@ if (!$cmd_data)
     }
     elsif ($result =~ /<ReceiveMessageResult/)
     {
-	my $ary = xml2ary(Message, $result);
-	if ($simple)
+	if ($exec)
 	{
-	    my($handle, $body);
-	    for (@$ary)
+	    print xmlpp($result) if $v;
+	    my($handle) = $result =~ /<ReceiptHandle>(.*?)<\/ReceiptHandle>/;
+	    my $body = decode_url($result =~ /<Body>(.*?)<\/Body>/);
+	    if ($handle && $body)
 	    {
-		$handle = $_->[1] if $_->[0] eq "ReceiptHandle";
-		$body = decode_url($_->[1]) if $_->[0] eq "Body";
+		$exec = 'system "$body"' if $exec == 1;
+		my $rc = eval $exec;
+		if ($rc)
+		{
+		    print "exec evaluated to non-zero ($rc): message not deleted from queue\n";
+		}
+		else
+		{
+		    my $cmd = qq[$0 dm $argv[0] --handle $handle];
+		    print "$cmd\n" if $v;
+		    my $dm = qx[$cmd];
+		    print "$dm\n" if $v;
+		}
 	    }
-	    print "$handle\t$body\n" if $handle;
 	}
 	else
 	{
-	    print ary2tab($ary, {title => "Messages", empty => "no messages\n"});
+	    my $ary = xml2ary(Message, $result);
+	    if ($simple)
+	    {
+		my($handle, $body);
+		for (@$ary)
+		{
+		    $handle = $_->[1] if $_->[0] eq "ReceiptHandle";
+		    $body = decode_url($_->[1]) if $_->[0] eq "Body";
+		}
+		print "$handle\t$body\n" if $handle;
+	    }
+	    else
+	    {
+		print ary2tab($ary, {title => "Messages", empty => "no messages\n"});
+	    }
 	}
     }
     elsif ($result =~ /<GetQueueAttributesResponse/)
@@ -1014,11 +1191,15 @@ sub xml2tab
 			   |DeleteSecurityGroupResponse|DeleteKeyPairResponse|DeleteSnapshotResponse|DeleteVolumeResponse
 			   |DetachVolumeResponse|Error|GetConsoleOutputResponse|ListBucketResult|RebootInstancesResponse
 			   |RevokeSecurityGroupIngressResponse|AllocateAddressResponse|ReleaseAddressResponse|AssociateAddressResponse|DescribeRegionsResponse
-			   |CreateQueueResponse|ResponseMetadata
+			   |CreateQueueResponse|ResponseMetadata|DescribeSnapshotAttributeResponse|ModifySnapshotAttributeResponse|ResetSnapshotAttributeResponse
+			   |CreateLoadBalancerResponse|DeleteLoadBalancerResponse
+			   |DescribeSpotInstanceRequestsResponse|CancelSpotInstanceRequestsResponse|RequestSpotInstancesResponse|DescribeSpotPriceHistoryResponse
 			   )$/x
 	    || $tag2 =~ /^(?:addressesSet-item|availabilityZoneInfo-item|imagesSet-item|instancesSet-item
 			   |ipPermissions-item|keySet-item|reservedInstancesOfferingsSet-item|securityGroupInfo-item|volumeSet-item|snapshotSet-item|regionInfo-item
 			   |ReceiveMessageResult-Message
+			   |LoadBalancerDescriptions-member
+			   |ReceiveMessageResult-Message|spotInstanceRequestSet-item|spotPriceHistorySet-item
 			   )$/x
 	    || $i == @xml)
 	{
@@ -1122,8 +1303,6 @@ sub s3
 {
     my($verb, $marker, $name, $file, @header) = @_;
 
-    my $expires = time + ($expire_time || 30) + $time_offset;
-
     $file ||= $name if $verb eq PUT && $ENV{S3_DIR};
     $name = "$ENV{S3_DIR}/$name" if $ENV{S3_DIR};
     $name =~ s/^([^\?\/]+)(\?|$ )/$1\/$2/xs;
@@ -1184,6 +1363,9 @@ sub s3
     $set_acl = "public-read"	if $public;
     $set_acl = "private"	if $private;
     push @header, "x-amz-acl: $set_acl" if $verb eq PUT && $set_acl;
+
+    $requester = "requester" if $requester == 1;
+    push @header, "x-amz-request-payer: $requester" if $requester;
 
     # read from stdin when
     #	aws put target
@@ -1247,7 +1429,7 @@ sub s3
 	$verb = GET;
     }
 
-    my($ub, $uo, $uq) = $name =~ /^(.+?)(?:\/(.*?))?(\?(?:acl|location|logging|bittorrent))?$/s;
+    my($ub, $uo, $uq) = $name =~ /^(.+?)(?:\/(.*?))?(\?(?:acl|location|logging|bittorrent|requestPayment))?$/s;
     my $uname = encode_url($ub) . "/" . encode_url($uo) . $uq if $name;
 
     if ($v >= 2)
@@ -1259,18 +1441,36 @@ sub s3
 	print "uname = $uname\n";
     }
 
-    my($vhost, $vname) = ("s3.amazonaws.com", $uname);
-    ($vhost, $vname) = ($dns_alias? $1: "$1.$vhost", $2) if $uname =~ /^([0-9a-z][\.\-0-9a-z]{1,61}[0-9a-z])(?:\/(.*))?$/;
+    my($vhost, $vname) = ($s3host, $uname);
+    if (!$no_vhost)
+    {
+	($vhost, $vname) = ($dns_alias? $1: "$1.$vhost", $2) if $uname =~ /^([0-9a-z][\.\-0-9a-z]{1,61}[0-9a-z])(?:\/(.*))?$/;
+    }
     print STDERR "vhost=$vhost  vname=$vname\n" if $v;
 
-    my $isGETobj = $verb eq GET && $uname =~ /\/./ && $uname !~ /\?/;
+    my $isGETobj = ($verb eq HEAD || $verb eq GET) && $uname =~ /\/./ && $uname !~ /\?/;
+    my $expires = time + ($expire_time || 30) + $time_offset;
+
+    my($content_type, $content_md5);
+
+    for (@header)
+    {
+	if (/^(.*?):\s*(.*)$/)
+	{
+	    $content_type = $2 if lc $1 eq "content-type";
+	    $content_md5 = $2 if lc $1 eq "content-md5";
+	}
+    }
+
+    my $header_sign = join("\n", sort(map {s/^(.*?):\s*/\L$1:/s; $_} grep /^x-amz-/, @header), "") if @header;
+    my $header = join(" --header ", undef, map {cq($_)} @header);
 
     if ($isGETobj && !$fail && !$request)
     {
-	my $data = "HEAD\n\n\n$expires\n/$uname";
+	my $data = "HEAD\n$content_md5\n$content_type\n$expires\n$header_sign/$uname";
 	my($sig, $awskey) = sign($data);
 	my $url = "$scheme://$vhost/$vname@{[$vname =~ /\?/? '&': '?']}AWSAccessKeyId=@{[encode_url($awskey)]}&Expires=$expires&Signature=@{[encode_url($sig)]}";
-	my $cmd = qq[curl $curl_options $insecureaws --header "Expect: " --head @{[cq($url)]}];
+	my $cmd = qq[curl $curl_options $insecureaws $header --head @{[cq($url)]}];
 	print STDERR "$cmd\n" if $v;
 	my $head = qx[$cmd];
 
@@ -1284,27 +1484,22 @@ sub s3
 	    $exit_code = 22;
 	    return;
 	}
-    }
 
-    my($content_type, $content_md5);
-
-    for (@header)
-    {
-	if (/^(.*?):\s*(.*)$/)
+	if ($verb eq HEAD)
 	{
-	    $content_type = $2 if lc $1 eq "content-type";
-	    $content_md5 = $2 if lc $1 eq "content-md5";
+	    print $head;
+	    return;
 	}
     }
 
-    my $header = join("\n", sort(map {s/^(.*?):\s*/\L$1:/s; $_} grep /^x-amz-/, @header), "") if @header;
-    my $data = "$verb\n$content_md5\n$content_type\n$expires\n$header/$uname";
+    my $data = "$verb\n$content_md5\n$content_type\n$expires\n$header_sign/$uname";
 
     my($sig, $awskey) = sign($data);
 
     my $url = "$scheme://$vhost/$vname@{[$vname =~ /\?/? '&': '?']}AWSAccessKeyId=@{[encode_url($awskey)]}&Expires=$expires&Signature=@{[encode_url($sig)]}";
     $url .= "&marker=$marker" if $marker;
     $url .= "&prefix=$prefix" if $prefix;
+    $url .= "&delimiter=$delimiter" if $delimiter;
 
     return $url if $request;
 
@@ -1323,31 +1518,35 @@ sub s3
 	$content = "--create-dirs --output @{[cq($file)]}";
     }
 
-    my $header = join(" --header ", undef, map {cq($_)} @header);
-
 
     # exec() is used because we can, but it doesn't work under Windows:
     # curl.exe runs asynchronously, and control is returned to the caller
     # before the file transfer request is complete.  Thus, for Windows,
     # no exec().
 
-    if ($isGETobj && !$md5 && $ENV{OS} !~ /windows/i)
+    if ($isGETobj && !$md5 && $isUnix)
     {
-	my $cmd = qq[curl $curl_options $insecureaws --header "Expect: " $header --request $verb $content --location @{[cq($url)]}];
+	my $cmd = qq[curl $curl_options $insecureaws $header --request $verb $content --location @{[cq($url)]}];
 	print STDERR "exec $cmd\n" if $v;
 	exec $cmd;
 	die;
     }
 
-    my $cmd = qq[curl $curl_options $insecureaws --header "Expect: " $header --request $verb --dump-header - $content --location @{[cq($url)]}];
+    # for a PUT, disable the "Expect: 100-Continue" header if the file is small
+    my($accept);
+    $accept = "--header \"Expect: \"" if $verb eq PUT && (-s $file) < 10_000;
+
+    my $cmd = qq[curl $curl_options $insecureaws $accept $header --request $verb --dump-header - $content --location @{[cq($url)]}];
 
     print STDERR "$cmd\n" if $v;
     my $item = qx[$cmd];
     exit $? >> 8 if $? && $fail;
+
+    # remove "HTTP/1.1 100 Continue"
+    $item =~ s/^HTTP\/\d+\.\d+\s+100\b.*?\r?\n\r?\n//s;
+
     my($head, $body) = $item =~ /^(.*?\r?\n)\r?\n(.*)$/s;
-
     print STDERR $head if $v;
-
     my($code) = $head =~ /^HTTP\/\d+\.\d+\s+(\d+\s+.*?)\r?\n/s;
 
     if ($code !~ /^2\d\d\s/)
@@ -1393,9 +1592,10 @@ sub ec2
     my($sec, $min, $hour, $mday, $mon, $year, undef, undef, undef) = gmtime(time + $time_offset + $expire_time);
     my $zulu = sprintf "%04d-%02d-%02dT%02d:%02d:%02dZ", 1900 + $year, $mon + 1, $mday, $hour, $min, $sec;
 
-    my($version);
+    my($version, $endpoint);
     $version .= $ec2_version if $service eq "ec2";
     $version .= $sqs_version if $service eq "sqs";
+    $version .= $elb_version if $service eq "elb";
 
     my %data = (AWSAccessKeyId => _, SignatureMethod => HmacSHA1, SignatureVersion => 2, Version => $version, ($expire_time? Expires: Timestamp) => $zulu, @_);
 
@@ -1403,12 +1603,18 @@ sub ec2
     {
 	$endpoint = {eu => "eu-west-1", us => "us-east-1"}->{lc $region} || $region;
 	$endpoint .= "." if $endpoint;
-	$endpoint .= "ec2.amazonaws.com";
+	$endpoint .= $ec2host;
     }
 
     if ($service eq "sqs")
     {
 	$endpoint = "queue.amazonaws.com";
+    }
+
+    if ($service eq "elb")
+    {
+	$endpoint = "elasticloadbalancing.amazonaws.com";
+	$endpoint = "elasticloadbalancing.$region.amazonaws.com" if $region eq "ap-southeast-1";
     }
 
     $queue ||= "/";
@@ -1431,6 +1637,7 @@ sub ec2
     $url = "$scheme://$endpoint$queue?Signature=@{[encode_url($sig)]}&$url";
     return $url if $request;
     local($/);			# return a string regardless of wantarray
+    print "$url\n" if $v >= 2;
     qx[curl $curl_options $insecureaws @{[cq($url)]}];
 }
 
@@ -1455,7 +1662,7 @@ sub dentity
     for ($s)
     {
 	s/&\#x([0-9a-f]{1,2});/pack(C, hex($1))/iseg;
-	s/&(.*?);/{quot => '"', amp => "&", apos => "'", lt => "<", gt => ">"}->{$1} || "&$1;"/seg;
+	s/&(.*?);/({quot => '"', amp => "&", apos => "'", lt => "<", gt => ">"}->{$1} || "&$1;")/seg;
     }
     $s;
 }
@@ -1494,11 +1701,17 @@ sub load_file_silent
     <$io>;
 }
 
+sub guess_is_unix 
+{
+    return 1 if $ENV{OS} =~ /windows/i && $ENV{OSTYPE} =~ /cygwin/i;
+    return 1 if $ENV{OS} !~ /windows/i;
+    return 0;
+}
 
 sub get_home_directory
 {
-    return "$ENV{HOMEDRIVE}$ENV{HOMEPATH}" || "C:" if $ENV{OS} =~ /windows/i;
-    (getpwuid($<))[7];
+    return "$ENV{HOMEDRIVE}$ENV{HOMEPATH}" || "C:" if !$isUnix;
+    return (getpwuid($<))[7];
 }
 
 
@@ -1510,7 +1723,23 @@ sub sign
 
     unless ($awskey || $secret || $signurl)
     {
-	($awskey, $secret, $signurl) = split(' ', load_file($secrets_file));
+	($awskey, $secret) = @ENV{qw(EC2_ACCESS_KEY EC2_SECRET_KEY)};
+    }
+
+    unless ($awskey || $secret || $signurl)
+    {
+	if ($secrets_file =~ /s3cfg$/)
+	{
+	    # if the secrets_file ends with s3cfg, treat it as a s3cmd init file
+	    # 	(can be tested with --secrets-file=s3cfg)
+	    # Poor man's ini parser
+	    my $s3cfg = load_file($secrets_file);
+	    ($awskey, $secret) = map {$s3cfg =~ /^$_\s*=\s*(\S+)/im} qw/access_key secret_key/;
+	}
+	else
+	{
+	    ($awskey, $secret, $signurl) = split(' ', load_file($secrets_file));
+	}
     }
 
     die if $signurl =~ /\'/;
@@ -1543,7 +1772,7 @@ sub cq
 {
     # quote for sending to curl via shell
     my($s) = @_;
-    return "\"$s\"" if $ENV{OS} =~ /windows/i;
+    return "\"$s\"" if !$isUnix;
     $s =~ s/\'/\'\\\'\'/g;
     "'$s'";
 }
@@ -1552,7 +1781,7 @@ sub curlq
 {
     # quote for sending URL to curl via shell
     my($s) = @_;
-    return "\"$s\"" if $ENV{OS} =~ /windows/i;
+    return "\"$s\"" if !$isUnix;
     $s =~ s/[\'\ \+\#]/%@{[unpack(H2, $1)]}/g;
     $s
 }
