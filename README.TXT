@@ -16,6 +16,7 @@ http://writertools.googlecode.com/svn/trunk/
 VERSION 1.9.1
   * Post to Microbog tool moved to _Hidden.
   * Shorten Selected URL tool added.
+  * Save Seleted Text Snippet hidden tool added.
 
 VERSION 1.7.7 2010-08-07
   * Unused and hidden macros cleanup.
