@@ -13,6 +13,9 @@ http://writertools.googlecode.com/svn/trunk/
 
 ==CHANGELOG==
 
+VERSION 1.9.3
+  * Save Seleted Text Snippet hidden tool tweaked.
+
 VERSION 1.9.1 2010-09-09
   * Post to Microbog tool moved to _Hidden.
   * Shorten Selected URL tool added.
