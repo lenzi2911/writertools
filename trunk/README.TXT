@@ -16,6 +16,7 @@ http://writertools.googlecode.com/svn/trunk/
 VERSION 1.9.3
   * Save Seleted Text Snippet hidden tool tweaked.
   * Shorten Selected URL tool tweaked.
+  * Google Traslate tool now remembers the target language selection.
 
 VERSION 1.9.1 2010-09-09
   * Post to Microbog tool moved to _Hidden.
